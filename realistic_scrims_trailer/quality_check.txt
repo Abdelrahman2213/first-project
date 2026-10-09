@@ -1,0 +1,97 @@
+REALISTIC SCRIMS trailer - QUALITY CHECK
+========================================
+File: realistic_scrims_trailer.mp4   (checked on the final encoded file, not the intermediates)
+Tools: ffprobe, ffmpeg blackdetect / freezedetect / ebur128 / astats, faster-whisper ASR,
+       frame extraction + visual review of contact sheets and full-resolution frames.
+
+SPEC SUMMARY
+  Resolution      1080x1920, square pixels, 9:16                      PASS
+  Frame rate      60/1 constant (source is genuine 60 fps)             PASS
+  Duration        32.000 s video / 32.000 s audio (1920 frames)       PASS (target 30-40 s)
+  Video           H.264 High, yuv420p, BT.709 tagged, CRF 17           PASS
+  Audio           AAC-LC 48 kHz stereo, 320 kb/s target                PASS
+  Container       MP4, +faststart                                      PASS
+  Size            70.8 MB (~17.7 Mb/s)
+
+AUTOMATED RESULTS (qa_check.py output)
+  == STREAMS
+  container      : mov,mp4,m4a,3gp,3g2,mj2  size 70.8 MB  overall 17.7 Mb/s
+  duration       : 32.000 s
+  video          : h264 (High) 1080x1920 SAR 1:1 DAR None 60/1 fps (avg 60/1) yuv420p bt709/tv frames 1920
+  audio          : aac (LC) 48000 Hz 2 ch 343 kb/s dur 32.000 s
+  
+  == BLACK FRAMES (blackdetect d>=0.03s, pix_th 0.10)
+    none
+  
+  == FROZEN PICTURE (freezedetect n=0.002 d=0.25s)
+    25.017 - 25.317
+  
+  == LOUDNESS (EBU R128)
+    I:     -14.0 LUFS
+    LRA:   2.3 LU
+    Peak:  -2.1 dBFS
+    Peak level dB: -2.139735
+    RMS level dB: -15.724553
+    samples at/over full scale (|x| >= 0.999): 0
+  
+  == SPEECH RECOGNITION OF FINAL MIX (faster-whisper small.en)
+    [ 0.00- 7.44] This is where your mechanics get tested jump into realistic scrims every round brings a new challenge
+    [ 8.88-15.18] No easy fights, no second chances build fast edit faster hit your shots
+    [17.60-19.60] Think you can dominate
+    [22.60-25.04] Load up lock in prove yourself
+    [25.04-31.00] 0 6 7 4 0 9 1 7 0 9 7 7
+    spoken map code recognised as 067409170977: YES
+  
+  contact sheet  : qa/contact_sheet_1s.jpg
+
+  Narration vs. bed (measured on final file, VO stem correlated out):
+    voice sits +7.3 dB above music/SFX/gameplay while speaking; bed is ducked ~6 dB
+    (-15.3 -> -21.4 dB RMS). Voice track and mix are sample-aligned (lag 0).
+
+NOTES ON THE AUTOMATED FLAGS
+  * freezedetect 25.017-25.317: the game's own static "VICTORY / ROUND 8 OF 100"
+    screen under a slow push-in (the zoom is too small for the detector). Intentional,
+    not a stuck frame. The two deliberate freeze-frames (2.70-3.00 s hook,
+    20.50-20.80 s impact) carry an animated zoom and are not flagged.
+  * Black frames: none. The last ~0.4 s is an intentional fade to black.
+
+VISUAL REVIEW (frames at 1 s intervals + full-res frames at cuts / impacts)
+  [x] Hook: frame 0 is clean real gameplay (fight #1), punch-in + impact; enemy hit
+      in mid-air at 0.45 s; ELIMINATED moment in 0.5x slow-mo; caption
+      "THINK YOU'RE READY?" readable, placed above the action.
+  [x] Title "REALISTIC SCRIMS" spelled correctly, readable, inside safe margins.
+  [x] Captions used: THINK YOU'RE READY? / REALISTIC SCRIMS / YOUR MECHANICS. YOUR TEST. /
+      BUILD. (over real build mode) / AIM. (over real ADS firing) / PROVE YOURSELF.
+      "EDIT." and "ELIMINATE." captions deliberately not used (no clear edit shot;
+      the game's own ELIMINATED banner already shows).
+  [x] End card: REALISTIC SCRIMS / MAP CODE / 0674-0917-0977 / PLAY NOW.
+      Code verified character by character = 0674-0917-0977, Anton 120 px
+      (~117 px tall glyphs), centred at y=1140, panel x 100-980, all elements
+      within y 470-1435 (clear of TikTok/Reels/Shorts top, bottom and right UI).
+      Code fully legible from 26.35 s to 31.6 s (~5.3 s); each group highlights
+      as the narrator reads it.
+  [x] No stretching: source is already 9:16; only uniform zooms are used
+      (1.30x on the letterboxed respawn shot to remove its black bars).
+  [x] Source dissolve artefacts from the original edit avoided (hook starts at
+      source 15.15 s, identity shot at 7.30 s after an earlier render showed ghosting).
+  [x] Old narration in the source (creator's voice) muted out of the gameplay track;
+      ASR of the final mix contains only the new voice-over.
+  [x] Ending: final impact at 31.0 s, card holds, clean fade to black at 32.0 s.
+
+ISSUES FOUND AND FIXED DURING QA
+  1. First frame was a double exposure (dissolve in the source) -> hook re-cut.
+  2. Impact flash at 20.5 s too white -> reduced to 0.8.
+  3. Voice only +2.3 dB over the bed -> deeper ducking, now +7.3 dB.
+  4. Limiter lookahead shifted audio 3 ms -> latency compensation enabled (lag 0).
+  5. AAC overshoot to -0.7 dBFS on the opening transient -> 320 kb/s AAC, now -2.1 dBFS.
+  6. End-card code panel touched the right-side app button column -> narrowed.
+
+HONEST LIMITATIONS
+  * Voice-over is local neural TTS (Piper "joe", CC0 dataset), not a human actor. It
+    is clear and correctly pronounced (ASR confirmed) but less dramatic than a
+    professional VO artist.
+  * Music and SFX are synthesised in code (original, royalty-free) rather than
+    produced in a DAW; listening review was not possible in this environment, so
+    balance was verified by measurement (loudness, ducking depth, peaks, ASR).
+  * Slow-motion uses frame repetition / blending of real frames - no interpolated
+    frames were invented.
