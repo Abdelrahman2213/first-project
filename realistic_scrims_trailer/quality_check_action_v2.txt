@@ -1,0 +1,105 @@
+REALISTIC SCRIMS - ACTION v2 - QUALITY CHECK
+============================================
+File: realistic_scrims_trailer_action_v2.mp4 (v1 realistic_scrims_trailer.mp4 left untouched)
+Checked on the final encoded file with qa_check.py + manual frame review.
+
+SPEC
+  1080x1920 9:16 | 60 fps CFR (genuine 60 fps source) | H.264 High yuv420p BT.709 CRF 17
+  AAC-LC 48 kHz stereo 320 kb/s | MP4 +faststart | 26.75 s (1605 frames) | 64.4 MB
+
+AUTOMATED RESULTS
+  == STREAMS
+  container      : mov,mp4,m4a,3gp,3g2,mj2  size 64.4 MB  overall 19.3 Mb/s
+  duration       : 26.750 s
+  video          : h264 (High) 1080x1920 SAR 1:1 DAR None 60/1 fps (avg 60/1) yuv420p bt709/tv frames 1605
+  audio          : aac (LC) 48000 Hz 2 ch 324 kb/s dur 26.750 s
+  
+  == BLACK FRAMES (blackdetect d>=0.03s, pix_th 0.10)
+    none
+  
+  == FROZEN PICTURE (freezedetect n=0.002 d=0.25s)
+    none
+  
+  == LOUDNESS (EBU R128)
+    I:     -14.0 LUFS
+    LRA:   1.9 LU
+    Peak:  -2.2 dBFS
+    Peak level dB: -2.153169
+    RMS level dB: -16.267744
+    samples at/over full scale (|x| >= 0.999): 0
+  
+  == SPEECH RECOGNITION OF FINAL MIX (faster-whisper small.en)
+    [ 0.00-12.00] This is where your mechanics get tested, jump into realistic scrims, every round brings a new challenge, no easy fights, no second chances, build fast, edit faster, hit your shots.
+    [14.00-15.00] Think you can dominate?
+    [18.00-20.00] Load up, lock in, prove yourself.
+    [21.00-26.00] 0674-0917-0977
+    spoken map code recognised as 067409170977: YES
+  
+  contact sheet  : qa_v2/contact_sheet_1s.jpg
+
+  Narration vs. effects/gameplay (VO stem correlated out of the final mix):
+    voice +8.0 dB over the SFX/gameplay bed while speaking; bed returns +5 dB between phrases
+    (-22.3 dB under words -> -17.2 dB between lines).
+  Source video untouched: md5 5cb758045fe7d4359da8ce7b057957e8 (same as before the edit).
+
+NO MUSIC - CONFIRMED BY CONSTRUCTION AND MEASUREMENT
+  * edit_trailer_v2.py has no music path at all: the mix = SFX bus + original gameplay
+    audio + narration (build_audio). The v1 music file is not read.
+  * sfx_only_action_v2.wav (the effects stem) is made only of one-shot synthesized
+    effects (impacts, subs, snaps, metal hits, whooshes, air slices, reverse swells,
+    risers, glitches, ticks, pulses, build/gun accents) - no sustained tonal bed,
+    no melody, no chords, no beat loop.
+  * Spectrogram check: no sustained harmonic bed; the faint 1.4-1.5 kHz band is the
+    narrator's vocal resonance (it disappears in every pause between lines) plus
+    low-level original game sound (-50 dBFS region).
+
+VOICE IDENTITY
+  * The request referenced Kokoro (am_fenrir 65% / am_puck 35%) and promo/config.json.
+    That file does not exist in this project, on this machine or in the linked Google
+    Drive, and Kokoro was never installed. The v1 narration was generated with Piper
+    TTS, voice en_US-joe-medium (see edit_trailer.py / README).
+  * To keep the SAME voice as the existing trailer, v2 reuses the already processed
+    v1 line files (assets/vo/line_01..08.wav) byte-for-byte - nothing regenerated,
+    no other voice substituted, no pitch/tempo change. Only placement changed.
+    Saved separately as voiceover_action_v2.wav; v1 voiceover.wav untouched.
+  * ASR of the final mix recognizes every line, including the code as 0674-0917-0977.
+
+v1 vs v2
+  shots (excl. end card): 20 -> 28; average shot 1.27 s -> 0.74 s; length 32.0 -> 26.75 s
+  visual accents: 42 -> 72 (flash 11, shake 16, RGB split 9, glitch 5, radial blur 5,
+     shock-ring 5, shockwave distortion 2, light streak 6, impact zoom bumps 5, whips 6)
+  sound design: music bed + 36 SFX cues -> NO music, 131 SFX cues from 32 distinct
+     original sounds, 3 dramatic silences (before title, finisher, end card),
+     accelerating tick/pulse countdown into the rocket launch, heartbeat before the
+     finisher, gunfire/build accents aligned to onsets detected in the real game audio.
+  hard scene changes detected: 12 -> 16
+
+SYNC / CONTENT CHECKS (frame review)
+  [x] Strongest treatment only on real events: ELIMINATED freeze (fight #1), rocket
+      launch, real rocket hit-burst, the finisher, Victory, title/end-card reveals.
+      Hit-confirm sounds on the 3 real damage numbers (38 / 63 / 113).
+  [x] No effect fakes a hit/elimination; rings/streaks only fire on real impacts.
+  [x] Captions on matching footage: BUILD. over build mode, AIM. over ADS firing,
+      both synced to the narrator's words; PROVE YOURSELF. on the Victory screen.
+  [x] End card: REALISTIC SCRIMS / MAP CODE / 0674-0917-0977 / PLAY NOW.
+      Code reveal assembled from 3 contiguous slices verified pixel-identical (max diff 0)
+      to a single full-code render; full code readable ~21.5 s -> 26.45 s (~5 s).
+  [x] No black frames; no unintended frozen frames; last 0.30 s is an intended fade.
+  [x] Peak -2.15 dBFS, 0 clipped samples, -14.0 LUFS integrated.
+
+ISSUES FOUND AND FIXED DURING v2 QA
+  1. End-card code rendered without dashes ("0674 0917 0977") in the first stills -
+     reveal slices now contiguous; verified pixel-exact.
+  2. REALISTIC overlapped SCRIMS on title + end card - re-spaced.
+  3. Finisher freeze too washed out - flash/radial blur reduced.
+  4. Reverse swells were being muted by the dramatic silences - swells now end
+     exactly where each silence starts.
+  5. Effects too quiet vs. voice (+12 dB) - rebalanced to +8 dB with deeper,
+     faster ducking so impacts return between phrases.
+  6. 24-bit WAV writer crashed on a non-contiguous array - fixed.
+
+LIMITATIONS
+  * 26.75 s is shorter than v1's 32 s: the faster cut removes setup/empty shots and
+    the source contains ~20 s of real action; padding would undercut the brief.
+  * Effects are synthesized (not recorded foley); audio was verified by measurement
+    and spectrograms, not by listening, in this environment.

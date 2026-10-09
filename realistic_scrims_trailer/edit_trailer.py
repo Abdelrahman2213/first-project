@@ -189,7 +189,7 @@ def write_wav(path, x, sr=SR, bits=24):
         if bits == 16:
             w.writeframes((x * 32767).astype("<i2").tobytes())
         else:
-            i = (x * 8388607).astype("<i4")
+            i = np.ascontiguousarray((x * 8388607).astype("<i4"))
             b = i.view(np.uint8).reshape(-1, 4)[:, :3]
             w.writeframes(b.tobytes())
 

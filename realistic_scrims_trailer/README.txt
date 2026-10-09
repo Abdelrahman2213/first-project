@@ -86,3 +86,23 @@ is muted out of the gameplay track. Narration = Piper TTS (en_US joe) processed
 with high-pass, EQ, de-esser, compressor and limiter; music is ducked ~10.5 dB and
 gameplay ~10 dB under the voice. Final mix: two-pass loudnorm to -14 LUFS,
 true peak target -2 dBTP before AAC (measured <= -1 dBTP after).
+
+
+ACTION v2 (sound-effects only, no music)
+----------------------------------------
+realistic_scrims_trailer_action_v2.mp4   26.75 s, 1080x1920, 60 fps, H.264 / AAC 320k
+final_audio_action_v2.wav                final v2 mix (SFX + gameplay + narration), -14 LUFS
+sfx_only_action_v2.wav                   the effects stem alone
+voiceover_action_v2.wav                  same v1 narration lines, re-placed for the v2 cut
+edit_trailer_v2.py                       v2 pipeline (imports helpers from edit_trailer.py)
+assets/sfx_v2/                           32 original synthesized effects
+assets/graphics_v2/                      v2 title / caption / end-card layers
+quality_check_action_v2.txt, qa_v2/      v2 QA report + contact sheet
+
+    python3 edit_trailer_v2.py --source "/path/fortnite new video scrims.mp4" --work /tmp/rs_work
+    python3 edit_trailer_v2.py --source ... --print-edl        # timeline
+    python3 edit_trailer_v2.py --source ... --audio-only       # remix without re-rendering
+    python3 qa_check.py realistic_scrims_trailer_action_v2.mp4 --sheet-dir qa_v2
+
+Voice: v2 reuses assets/vo/line_XX.wav unchanged (Piper en_US-joe-medium, the voice
+of v1). No Kokoro configuration exists in this project.
