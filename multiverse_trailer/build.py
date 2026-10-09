@@ -39,7 +39,7 @@ SEGMENTS = [
   # ---------------- WORLD 1 : CINEMATIC MOVIE (0.0 - 7.2) ----------------
   seg("w1_hook",   SRC_TIME,   1.30, 1.55, 2.60, (700,1245,150,258), "cine",
       cam=dict(push=(1.02,1.14)), accents=dict(fade_in=0.5)),
-  seg("w1_weapon", SRC_TIME,   5.90, 1.70, 2.20, (760,1351,210,200), "cine",
+  seg("w1_weapon", SRC_TIME,   6.90, 1.50, 2.20, (760,1351,210,200), "cine",
       cam=dict(push=(1.0,1.10)), accents=dict(flash_in=0.35)),
   seg("w1_walk",   SRC_SCRIMS, 8.70, 2.00, 2.40, (720,1280,210,230), "cine",
       cam=dict(push=(1.04,1.16))),
