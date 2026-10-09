@@ -11,15 +11,15 @@ DELIVERABLES
 ------------
   realistic_scrims_trailer.mp4   final trailer
   voiceover.wav                  narration track (aligned to the trailer timeline, 48 kHz / 24-bit)
-  final_audio.wav                final mixed + loudness-normalised audio (-14 LUFS, <= -1.5 dBTP)
+  final_audio.wav                final mixed + loudness-normalised audio (-14 LUFS, <= -2 dBTP)
   edit_trailer.py                complete, reproducible editing/rendering pipeline
   quality_check.txt              technical QA report of the rendered file
   qa_check.py                    script that produced the QA measurements (ffprobe, black/freeze detect,
                                  EBU R128, contact sheets, Whisper transcript of the final mix)
   assets/fonts/                  Anton-Regular.ttf (SIL Open Font License, see Anton-OFL.txt)
   assets/graphics/               rendered title / caption / end-card graphics (PNG, BGRA)
-  assets/music_original_instrumental.wav   original synthesized phonk instrumental (pre-duck)
-  assets/sfx_layer.wav           original synthesized impacts / risers / whooshes layer
+  assets/sfx_layer.wav           original synthesized sound-design layer (all cued effects)
+  assets/ambience_bed.wav        original non-musical air/rumble bed
 
 SOURCE FOOTAGE (not included - too large; never modified)
 ----------------------------------------------------------
@@ -61,8 +61,8 @@ REPRODUCE
 
   Render time: ~3-5 min on 4 CPU cores. Intermediates go to --work.
 
-EDIT STRUCTURE (120 BPM grid, cuts on beats)
----------------------------------------------
+EDIT STRUCTURE (cuts on a 0.5 s grid)
+-------------------------------------
   0.0 - 3.0   HOOK       real gold-AR shot + elimination  | "THINK YOU'RE READY?"
   3.0 - 9.0   IDENTITY   spawn-in title reveal, weapon-shop wall, gold weapon ADS
                          | "REALISTIC SCRIMS", "YOUR MECHANICS. YOUR TEST."
@@ -73,13 +73,24 @@ EDIT STRUCTURE (120 BPM grid, cuts on beats)
   31.0 - 37.0 END CARD   REALISTIC SCRIMS / MAP CODE / 0674-0917-0977 / PLAY NOW
                          (code on screen ~5.4 s; each group highlighted as it is read)
 
-AUDIO
------
-  Music: original phonk-style instrumental (A minor, 120 BPM: distorted 808, cowbell
-         melody, clap/hats, pads) synthesized by edit_trailer.py - no third-party music.
-  SFX:   original synthesized impacts, risers, whooshes, reverse cymbals, UI blips.
-  VO:    Piper TTS (en_US-joe-medium, CC0), EQ + compression + de-essing + light room;
-         music ducked ~9 dB under narration.
+AUDIO (no music - sound design only)
+------------------------------------
+  There is deliberately no music. The soundtrack is voice + real gameplay audio + original
+  sound effects synthesized by edit_trailer.py, each cued to an on-screen event:
+    0.0  hit on the first frame, kill-confirm ping on the elimination, heartbeat + inhale
+    3.0  low "braam" + digital materialise sparkle on the spawn-in title reveal
+    8.0  weapon rack click on the gold weapon; whooshes / swishes on every cut
+    9-14 caption slams (BUILD. / EDIT.), scope whirr + lock-on click (AIM.)
+    14.5 time-stop freeze: inhale, hit, kill-confirm ping, ear ring, release swish
+    16.5 / 29.0 shimmer hits on both VICTORY screens
+    17.6 suspense clock ticking faster over the climb + long riser into the launch
+    21.0 rocket launch blast + debris, engine roar, accelerating heartbeat, inhale
+    25.0 explosion: braam, debris, kill-confirm, ear ring; game audio muffled
+         ("shell-shock") during the slow-motion, then real time snaps back
+    31.0 end card braam, data blips as the code types in, UI confirm on PLAY NOW
+  Bed:   non-musical wind/rumble so the cut never drops into dead silence.
+  VO:    Piper TTS (en_US-joe-medium, CC0), EQ + compression + de-essing + light room.
   Game:  original Fortnite gameplay audio from the source clips, remapped with the same
-         time-map as the picture, mixed under the score.
-  Master: two-pass EBU R128 loudnorm to -14 LUFS, true-peak limited.
+         time-map as the picture (only where the creators' narration is silent).
+  Mix:   bed -8 dB, SFX -8 dB and game -6 dB under narration so every line stays on top.
+  Master: two-pass EBU R128 loudnorm to -14 LUFS, true-peak limited (<= -2 dBTP after AAC).
