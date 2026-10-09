@@ -1,0 +1,9 @@
+# Source footage (owned by the creator; too large; never modified) - fetched from Drive
+source/
+# Intermediate render frames & previews
+work/
+frames/
+inspect/
+proto/
+__pycache__/
+*.pyc
