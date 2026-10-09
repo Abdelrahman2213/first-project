@@ -1,0 +1,52 @@
+REALISTIC SCRIMS trailer - quality check of the rendered file
+===============================================================
+File: realistic_scrims_trailer.mp4   (measured with qa_check.py / ffprobe / ffmpeg on the final render)
+
+TECHNICAL
+  Size .............. 60.6 MB  (13.1 Mb/s overall)
+  Duration .......... 37.000 s  (2220 video frames, all decoded without errors)
+  Container ......... MP4 (faststart)
+  Video ............. H.264 High, 1080x1920 (9:16), 60/1 fps constant, yuv420p, BT.709 limited range
+                      x264 preset slow, CRF 18, VBV max 16 Mb/s
+  Audio ............. AAC-LC, 48 kHz, stereo, ~282 kb/s, 37.000 s (same length as video)
+  Loudness .......... -14.0 LUFS integrated, LRA 2.2 LU, true peak -1.4 dBTP
+  Sample peak ....... -1.41 dBFS, 0 samples at/above full scale (no clipping)
+  Frame rate source . both source clips are native 60 fps -> no frame-rate conversion or interpolation
+
+AUTOMATED CHECKS
+  Black frames (blackdetect d>=0.05 s) ......... none (the last 0.3 s fade to black is intentional)
+  Frozen frames (freezedetect n=0.002, >=0.3 s) . none (the 0.35 s ELIMINATE freeze at 14.5 s is
+                                                    intentional, with zoom/shake on top)
+  Full decode (ffmpeg -v error) ................ 0 errors
+  Speech recognition of the final mix (Whisper base.en):
+     "This is where your mechanics get tested. Jump into Realistic Scrims. No easy fights.
+      No second chances. Build fast. Edit faster. Hit your shots. Every round brings a new
+      challenge. Think you can dominate. Load up. Lock in. Prove yourself."
+     30-36 s: "0 6 7 4 0 9 1 7 0 9 7 7"   -> spoken map code matches 0674-0917-0977
+
+MIX BALANCE (stem RMS while narration plays)
+  Voice above music: +19.4 dB (hook), +7.9 (title), +6.1, +9.5, +9.7, +6.6, +8.7, +9.6 dB (code)
+  Music ducked ~12 dB under narration; gameplay audio sits under the music as texture.
+
+VISUAL REVIEW (frames every 0.5 s, plus full-res stills of hook, title, captions and end card)
+  [ok] Hook opens directly on real gameplay (gold weapon shot -> real elimination); first frame
+       is clean (no flash), caption "THINK YOU'RE READY?" in the upper third
+  [ok] In-game "ELIMINATED" banners stay visible (captions moved off them)
+  [ok] Map name spelled REALISTIC SCRIMS everywhere
+  [ok] End card: REALISTIC SCRIMS / MAP CODE / 0674-0917-0977 / PLAY NOW; code on screen
+       31.5 s -> 37.0 s (5.5 s), ~100 px tall Anton digits (880 px wide) in a high-contrast panel, centred,
+       inside 9:16 safe margins (end-card content spans x 60-1020, y ~350-1520); each group is underlined as it is read
+  [ok] All captions inside safe area (no text under the TikTok/Reels right-rail or bottom UI)
+  [ok] No stretching: sources are 9:16; only uniform zooms are used (the letterboxed spawn-in
+       shot at 3-5 s is uniformly zoomed 1.27x to fill the frame)
+  [ok] Transitions (whip blurs, flashes, punch-ins) land on the 120 BPM beat grid; no broken cuts
+  [ok] Ends cleanly: final impact at 36.0 s, card holds, 0.3 s fade to black
+
+KNOWN LIMITATIONS
+  * Both source clips are themselves edited videos with the creators' narration, burned-in captions
+    and logo stingers. Only caption-free ranges are used, and original game audio is used only
+    where that narration is silent - so gameplay audio is present but kept low under the score.
+  * The source's small top-right "0674-0917-0977" overlay and in-game HUD (net stats, storm timer)
+    remain visible in some shots - they are part of the original footage.
+  * Voice is a TTS voice (Piper "joe", CC0). It is clear and natural-sounding for TTS, but it is not
+    a human voice actor.
