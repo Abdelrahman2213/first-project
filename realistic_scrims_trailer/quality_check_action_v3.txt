@@ -1,0 +1,67 @@
+REALISTIC SCRIMS - ACTION v3 - QUALITY CHECK
+============================================
+File: realistic_scrims_trailer_action_v3.mp4  (v1 and v2 untouched)
+Same style as v2 (no music, same narration lines); this pass fixes cut quality and SFX sync.
+
+AUTOMATED RESULTS
+  == STREAMS
+  container      : mov,mp4,m4a,3gp,3g2,mj2  size 64.3 MB  overall 19.3 Mb/s
+  duration       : 26.700 s
+  video          : h264 (High) 1080x1920 SAR 1:1 DAR None 60/1 fps (avg 60/1) yuv420p bt709/tv frames 1602
+  audio          : aac (LC) 48000 Hz 2 ch 326 kb/s dur 26.700 s
+  
+  == BLACK FRAMES (blackdetect d>=0.03s, pix_th 0.10)
+    none
+  
+  == FROZEN PICTURE (freezedetect n=0.002 d=0.25s)
+    none
+  
+  == LOUDNESS (EBU R128)
+    I:     -14.0 LUFS
+    LRA:   1.4 LU
+    Peak:  -2.1 dBFS
+    Peak level dB: -2.079000
+    RMS level dB: -16.391125
+    samples at/over full scale (|x| >= 0.999): 0
+  
+  == SPEECH RECOGNITION OF FINAL MIX (faster-whisper small.en)
+    [ 0.00- 5.36] This is where your mechanics get tested, jump into realistic scrims, every round brings
+    [ 5.36-11.60] a new challenge, no easy fights, no second chances, build fast, edit faster, hit your
+    [11.60-14.28] shots.
+    [14.28-18.44] Think you can dominate?
+    [18.44-21.68] Load up, lock in, prove yourself.
+    [21.68-26.16] 0674-0917-0977
+    spoken map code recognised as 067409170977: YES
+  
+  contact sheet  : qa_v3/contact_sheet_1s.jpg
+
+CUT FIXES (found by auditing every cut in v2)
+  * Removed reused footage: v2 showed 0.55 s of fight #1 twice (hook burst + montage).
+    m2 now uses the later part of the fight (S17.55-18.15); m6 follows on; m9 no longer
+    overlaps m5. Only intentional repeat left: the 0.25 s flash-forward teaser at 0:00.
+  * Round-4 Victory shot now ends before the original video's blur-out transition.
+  * Round-8 Victory shot now starts as the game's VICTORY text slams in (v2 opened on
+    an empty blue frame, so the impact landed on nothing).
+  * Builds-destroyed shot trimmed to start after the aim-down-sights view (no double ADS).
+  * Whip-pan direction now follows the measured camera motion of each outgoing shot
+    (Farneback optical flow): 3 of 6 whips flipped to match, 3 had no clear motion.
+
+SFX SYNC FIXES
+  * Every effect is now placed by an anchor measured from its waveform:
+    onset (impacts, snaps, ticks) | peak (whooshes, air slices) | end (reverse swells, risers).
+  * v2 whooshes peaked 75-136 ms AFTER their cuts; v3 whooshes peak exactly on the cut.
+  * Steepest audio attack within +/-1 frame (17 ms) of the cut: v2 14/28 -> v3 22/28.
+    The 6 remaining are intentional (glitch sounds start with their visual glitch,
+    whoosh rise precedes its peak, or the "cut" is a speed-ramp/freeze inside one shot).
+
+SFX QUALITY
+  * New layered impacts (click + 150->55 Hz punch for phone speakers + sub + body +
+    crack + short tail) in 4 sizes; new asymmetric whooshes that build and snap off.
+  * Repeated sounds get a subtle per-use pitch/length variation (no machine-gun repeats).
+  * SFX bus: 15 kHz low-pass (hiss) and a gentle 3-4.5 kHz dip (harshness).
+  * Gameplay accents reduced to the strongest detected gunshots/build placements only.
+  * Balance: voice +8.4 dB over effects while speaking (v2 +8.0); effects bed between
+    lines -17.4 dB (v2 -17.2) - same punch, cleaner and better timed.
+
+VOICE: unchanged v1/v2 narration lines (Piper en_US-joe-medium), only placement.
+LIMITATION: verified by measurement, spectrograms and frame review, not by listening.

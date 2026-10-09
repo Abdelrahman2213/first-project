@@ -106,3 +106,13 @@ quality_check_action_v2.txt, qa_v2/      v2 QA report + contact sheet
 
 Voice: v2 reuses assets/vo/line_XX.wav unchanged (Piper en_US-joe-medium, the voice
 of v1). No Kokoro configuration exists in this project.
+
+ACTION v3 (refined cuts + SFX sync)
+-----------------------------------
+realistic_scrims_trailer_action_v3.mp4   26.7 s, 1080x1920, 60 fps - current best version
+edit_trailer_v3.py                       v2 pipeline + cut fixes, anchored SFX placement,
+                                         new impacts/whooshes, optical-flow whip matching
+final_audio_action_v3.wav, sfx_only_action_v3.wav, voiceover_action_v3.wav, assets/sfx_v3/,
+assets/graphics_v3/, quality_check_action_v3.txt, qa_v3/
+
+    python3 edit_trailer_v3.py --source "/path/fortnite new video scrims.mp4" --work /tmp/rs_work
