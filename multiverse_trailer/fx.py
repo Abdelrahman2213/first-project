@@ -86,13 +86,31 @@ def tint_shadows_highlights(a, shadow=(-8, 2, 18), highlight=(16, 8, -12)):
     return a + sh * (1 - l) + hi * l
 
 # ---------------------------------------------------------------- World 1: cinematic
-def grade_cinematic(a, vig=0.62, tb=0.6, grain=5.0, chroma=2.0, bloom=0.55, seed=0):
+_SCRIM = None
+def _scrim(top_h=0.16, bot_h=0.13, top_dark=0.92, bot_dark=0.86):
+    """Static cinematic top/bottom darkening scrim (also hides residual burned-in UI)."""
+    global _SCRIM
+    if _SCRIM is not None:
+        return _SCRIM
+    g = np.ones((H, W, 1), np.float32)
+    yv = _YY[:, :1]  # (H,1)
+    th = int(top_h * H); bh = int(bot_h * H)
+    tcol = (1 - top_dark) + top_dark * (yv[:th, 0] / th) ** 1.3
+    bcol = (1 - bot_dark) + bot_dark * ((H - 1 - yv[H - bh:, 0]) / bh) ** 1.3
+    g[:th, :, 0] = tcol[:, None]
+    g[H - bh:, :, 0] = bcol[:, None]
+    _SCRIM = g
+    return _SCRIM
+
+def grade_cinematic(a, vig=0.62, tb=0.6, grain=4.0, chroma=2.0, bloom=0.55, seed=0, scrim=True):
     a = contrast(a, 1.14)
     a = saturate(a, 0.92)
     a = tint_shadows_highlights(a, shadow=(-10, 0, 22), highlight=(20, 10, -14))  # teal shadows / warm highs
     a = gamma(a, 1.04)
     a = soft_bloom(a, thresh=180, blur=16, gain=bloom)
     a = vignette(a, strength=vig, top_bottom=tb)
+    if scrim:
+        a = a * _scrim()
     if chroma:
         a = chroma_shift(a, chroma)
     a = add_grain(a, grain, seed)

@@ -37,7 +37,7 @@ CT = (720, 1280, 180, 150)     # tighter / higher (detail)
 
 SEGMENTS = [
   # ---------------- WORLD 1 : CINEMATIC MOVIE (0.0 - 7.2) ----------------
-  seg("w1_hook",   SRC_TIME,   1.30, 1.55, 2.60, (700,1245,150,210), "cine",
+  seg("w1_hook",   SRC_TIME,   1.30, 1.55, 2.60, (700,1245,150,258), "cine",
       cam=dict(push=(1.02,1.14)), accents=dict(fade_in=0.5)),
   seg("w1_weapon", SRC_TIME,   5.90, 1.70, 2.20, (760,1351,210,200), "cine",
       cam=dict(push=(1.0,1.10)), accents=dict(flash_in=0.35)),
@@ -195,6 +195,72 @@ class BrickBurst:
             im.alpha_composite(br, (int(x-br.width/2), int(y-br.height/2)))
         return fx.from_img(im)
 
+# ----------------------------------------------------------------- cine atmosphere
+_FOG = None
+def _fog_tex():
+    global _FOG
+    if _FOG is None:
+        rng = np.random.default_rng(3)
+        small = rng.random((24, 14)).astype(np.float32)
+        im = fx.to_img(np.repeat(small[..., None]*255, 3, axis=2)).resize((W+200, H), Image.BICUBIC)
+        _FOG = fx.from_img(im)[..., 0] / 255.0
+    return _FOG
+
+_MOTES = None
+def _motes():
+    global _MOTES
+    if _MOTES is None:
+        rng = np.random.default_rng(7)
+        _MOTES = [dict(x=rng.uniform(0,W), y=rng.uniform(0,H),
+                       r=rng.uniform(1.5,4.5), sp=rng.uniform(8,34),
+                       sway=rng.uniform(10,40), ph=rng.uniform(0,6.28),
+                       br=rng.uniform(40,120)) for _ in range(46)]
+    return _MOTES
+
+_BARS = None
+def cine_bars(a):
+    """Soft cinematic letterbox bars (dark charcoal, feathered, faint cyan hairline).
+    Hides residual burned-in UI in the movie world and reads as a film trailer."""
+    global _BARS
+    if _BARS is None:
+        th = int(0.122*H); bh = int(0.078*H); feint = 22
+        mask = np.ones((H,1),np.float32)
+        mask[:th,0] = 0.0; mask[H-bh:,0] = 0.0
+        # feather inner edges
+        for k in range(feint):
+            w = k/feint
+            mask[th+k,0] = max(mask[th+k,0], w)
+            mask[H-bh-1-k,0] = max(mask[H-bh-1-k,0], w)
+        bar_rgb = np.array([8,11,16],np.float32)
+        line = np.zeros((H,1),np.float32)
+        line[th:th+2,0]=1.0; line[H-bh-2:H-bh,0]=1.0
+        _BARS = (mask[...,None], bar_rgb, line[...,None])
+    mask, bar_rgb, line = _BARS
+    out = a*mask + bar_rgb*(1-mask)
+    out = out + line*np.array([70,150,190],np.float32)
+    return out
+
+def cine_atmosphere(a, t, seed=0):
+    # drifting volumetric fog (subtle), stronger low in frame
+    fog = _fog_tex()
+    sx = int((t*18) % 200)
+    f = fog[:, sx:sx+W]
+    falloff = np.clip((fx._YY/H - 0.25)/0.75, 0, 1)[..., None]
+    a = a + (f[..., None]-0.5) * 26.0 * falloff
+    # floating dust motes with parallax + twinkle
+    for m in _motes():
+        y = (m["y"] - t*m["sp"]) % H
+        x = (m["x"] + math.sin(t*0.6 + m["ph"])*m["sway"]) % W
+        tw = 0.55 + 0.45*math.sin(t*2.3 + m["ph"])
+        rr = int(m["r"]*3)
+        x0,x1 = int(max(0,x-rr)), int(min(W,x+rr))
+        y0,y1 = int(max(0,y-rr)), int(min(H,y+rr))
+        if x1<=x0 or y1<=y0: continue
+        yy,xx = np.mgrid[y0:y1, x0:x1]
+        g = np.exp(-(((xx-x)**2+(yy-y)**2)/(2*(m["r"]**2))))[...,None]
+        a[y0:y1, x0:x1] += g * m["br"] * tw
+    return a
+
 # ----------------------------------------------------------------- look dispatch
 def apply_world(a, world, idx, seed):
     if world == "cine": return fx.grade_cinematic(a, seed=seed)
@@ -213,6 +279,8 @@ def render_trans1(frames, s):
         a = fx.load(frames[i])
         a = cam_zoom(a, lerp(*s["cam"]["push"], ease(p)))
         cine = fx.grade_cinematic(a.copy(), vig=0.6, tb=0.55, seed=i)
+        cine = cine_atmosphere(cine, 8.0+p, seed=3)
+        cine = cine_bars(cine)       # bars shatter as reality fractures into LEGO
         lego = fx.legoize(a.copy(), cell=16)
         # dissolve from centre outward, growing with p
         m = fx.dissolve_mask(ease(p)*1.15, scale=70, seed=7, center_bias=0.45, soft=0.14)
@@ -304,6 +372,9 @@ def render_world(frames, s, gidx0):
             dx=rng.uniform(-1,1)*cam["shake"]; dy=rng.uniform(-1,1)*cam["shake"]
         a=cam_zoom(a,z,dx,dy)
         frame=apply_world(a, s["world"], i, seed=gidx0*13+i)
+        if s["world"]=="cine":
+            frame=cine_atmosphere(frame, (gidx0+i)/FPS, seed=gidx0)
+            frame=cine_bars(frame)
         # whip-in (slide + blur reveal)
         if acc.get("whip_in") and p < acc["whip_in"]:
             q=p/acc["whip_in"]
@@ -354,24 +425,35 @@ def draw_title(a,p):
     return fx.from_img(im)
 
 # ----------------------------------------------------------------- video assembly
-def video():
-    total=sum(round(s["outdur"]*FPS) for s in SEGMENTS)
-    print(f"  rendering {total} frames ({total/FPS:.1f}s) ...")
-    ff=subprocess.Popen(["ffmpeg","-nostdin","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24",
-        "-s",f"{W}x{H}","-r",str(FPS),"-i","pipe:0","-an","-c:v","libx264","-preset","medium",
-        "-crf","17","-pix_fmt","yuv420p","-movflags","+faststart",OUT_VIDEO_SILENT], stdin=subprocess.PIPE)
+CLIPS = os.path.join(WORK, "clips")
+
+def render_segment(s, gidx):
+    frames=seg_frames(s)
+    if s["world"]=="trans1": outs=render_trans1(frames,s)
+    elif s["world"]=="trans2": outs=render_trans2(frames,s)
+    else: outs=render_world(frames,s,gidx)
+    return outs
+
+def video(force=None):
+    force = force or set()
+    os.makedirs(CLIPS, exist_ok=True)
     gidx=0
     for s in SEGMENTS:
-        frames=seg_frames(s)
-        if s["world"]=="trans1": outs=render_trans1(frames,s)
-        elif s["world"]=="trans2": outs=render_trans2(frames,s)
-        else: outs=render_world(frames,s,gidx)
-        for fr in outs:
-            ff.stdin.write(fx.clamp8(fr).tobytes())
-        gidx+=len(outs)
-        print(f'    {s["name"]:11s} -> {len(outs):3d} frames')
-    ff.stdin.close(); ff.wait()
-    print("  video_silent.mp4 done")
+        clip=os.path.join(CLIPS, s["name"]+".mp4")
+        n=max(1, round(s["outdur"]*FPS))
+        if os.path.exists(clip) and s["name"] not in force and "ALL" not in force:
+            print(f'    {s["name"]:11s} cached'); gidx+=n; continue
+        ff=subprocess.Popen(["ffmpeg","-nostdin","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24",
+            "-s",f"{W}x{H}","-r",str(FPS),"-i","pipe:0","-an","-c:v","libx264","-preset","medium",
+            "-crf","18","-pix_fmt","yuv420p",clip], stdin=subprocess.PIPE)
+        outs=render_segment(s, gidx)
+        for fr in outs: ff.stdin.write(fx.clamp8(fr).tobytes())
+        ff.stdin.close(); ff.wait(); gidx+=len(outs)
+        print(f'    {s["name"]:11s} -> {len(outs):3d} frames  rendered')
+    # concat list
+    with open(os.path.join(CLIPS,"list.txt"),"w") as fp:
+        for s in SEGMENTS: fp.write(f"file '{s['name']}.mp4'\n")
+    print("  per-segment clips ready")
 
 # ----------------------------------------------------------------- audio build
 def seg_start_times():
@@ -428,17 +510,26 @@ def build_audio():
 
 # ----------------------------------------------------------------- mux
 def mux():
-    subprocess.run(["ffmpeg","-nostdin","-v","error","-y","-i",OUT_VIDEO_SILENT,"-i",OUT_SFX,
+    # concat per-segment clips (re-encode to final size) + synced SFX (loudnorm, no music)
+    listf=os.path.join(CLIPS,"list.txt")
+    subprocess.run(["ffmpeg","-nostdin","-v","error","-y","-f","concat","-safe","0","-i",listf,
+        "-i",OUT_SFX,
         "-filter_complex","[1:a]loudnorm=I=-14:TP=-1.5:LRA=11[a]",
-        "-map","0:v","-map","[a]","-c:v","copy","-c:a","aac","-b:a","192k","-ar","48000",
+        "-map","0:v","-map","[a]",
+        "-c:v","libx264","-preset","slow","-crf","22","-maxrate","12M","-bufsize","20M",
+        "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-ar","48000",
         "-shortest","-movflags","+faststart",OUT_FINAL], check=True)
     print(f"  {OUT_FINAL}")
 
 if __name__=="__main__":
-    stage = sys.argv[1] if len(sys.argv)>1 else "all"
+    args=sys.argv[1:]
+    stage = args[0] if args else "all"
+    force=set()
+    for a in args[1:]:
+        if a.startswith("force="): force=set(a.split("=",1)[1].split(","))
     os.makedirs(os.path.join(ROOT,"assets"), exist_ok=True)
     if stage in ("extract","all"): print("[extract]"); extract()
-    if stage in ("video","all"):   print("[video]");   video()
+    if stage in ("video","all"):   print("[video]");   video(force)
     if stage in ("audio","all"):   print("[audio]");   build_audio()
     if stage in ("mux","all"):     print("[mux]");     mux()
     print("done:", stage)
