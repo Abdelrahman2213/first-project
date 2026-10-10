@@ -19,6 +19,9 @@ SRC_TIME   = os.path.join(ROOT, "source", "timeline.mp4")
 WORK = os.path.join(ROOT, "work")
 OUT_VIDEO_SILENT = os.path.join(WORK, "video_silent.mp4")
 OUT_SFX = os.path.join(ROOT, "assets", "sfx_trailer.wav")
+OUT_VO  = os.path.join(ROOT, "assets", "voiceover.wav")
+OUT_MIX = os.path.join(ROOT, "assets", "mix_trailer.wav")
+VO_DIR  = os.path.join(ROOT, "assets", "vo")
 OUT_FINAL = os.path.join(ROOT, "fortnite_multiverse_action_trailer.mp4")
 
 # ----------------------------------------------------------------- timeline
@@ -77,9 +80,12 @@ SEGMENTS = [
       cam=dict(impact=(1.18,1.02), shake=0.006), accents=dict(speedcut=True)),
   seg("g_victory", SRC_SCRIMS,32.75, 1.55, 1.70, (900,1600,90,180), "game",
       cam=dict(push=(1.08,1.0)), accents=dict(flash_in=0.8, shake=0.010)),
-  # ---------------- OUTRO : clean cinematic hero callback (32.5 - 34.4) ----
-  seg("outro",     SRC_TIME,   6.35, 1.20, 1.90, (760,1351,210,200), "cine",
-      cam=dict(push=(1.0,1.08)), accents=dict(title=True, fade_out=0.6)),
+  # ---------------- OUTRO : clean cinematic hero callback ----
+  seg("outro",     SRC_TIME,   6.35, 1.10, 1.60, (760,1351,210,200), "cine",
+      cam=dict(push=(1.0,1.08)), accents=dict(title=True)),
+  # ---------------- END CARD : map code + CTA ----
+  seg("endcard",   SRC_TIME,  13.55, 0.20, 7.00, (900,1600,90,180), "endcard",
+      cam=dict(push=(1.0,1.06)), accents=dict(freeze=True, fade_out=0.7)),
 ]
 
 # ----------------------------------------------------------------- extraction
@@ -414,6 +420,110 @@ def title_img():
         ctext(250,"ONE LEGEND  /  THREE WORLDS",f2,(120,220,255,255))
         _TITLE_IMG=im
     return _TITLE_IMG
+MAP_CODE_GROUPS = ["0674", "0917", "0977"]
+_ECFONTS=None
+def _ec_fonts():
+    global _ECFONTS
+    if _ECFONTS is None:
+        from PIL import ImageFont
+        anton=os.path.join(ROOT,"..","realistic_scrims_trailer","assets","fonts","Anton-Regular.ttf")
+        try:
+            _ECFONTS=dict(
+                code=ImageFont.truetype(anton,132),
+                label=ImageFont.truetype("/usr/share/fonts/opentype/inter/InterDisplay-Black.otf",50),
+                cta=ImageFont.truetype(anton,66),
+                tag=ImageFont.truetype("/usr/share/fonts/opentype/inter/InterDisplay-Bold.otf",34))
+        except Exception:
+            from PIL import ImageFont as F
+            d=F.load_default(); _ECFONTS=dict(code=d,label=d,cta=d,tag=d)
+    return _ECFONTS
+
+def draw_endcard(a, p, t_local):
+    """Dim cinematic backdrop + animated map-code card. Code groups light up as
+    the voice-over reads them."""
+    f=_ec_fonts()
+    im=fx.to_img(a).convert("RGBA")
+    dr=ImageDraw.Draw(im)
+    cyan=(120,225,255)
+    def center(txt,font,y,fill,a_=255,glow=0,scale=1.0,shadow=True):
+        w=dr.textlength(txt,font=font)
+        x=(W-w)/2
+        if glow>0:
+            gl=Image.new("RGBA",(W,H),(0,0,0,0)); gd=ImageDraw.Draw(gl)
+            gd.text((x,y),txt,font=font,fill=(cyan[0],cyan[1],cyan[2],int(190*a_/255)))
+            gl=gl.filter(ImageFilter.GaussianBlur(glow))
+            im.alpha_composite(gl)
+        if shadow:
+            dr.text((x+3,y+4),txt,font=font,fill=(0,0,0,int(170*a_/255)))
+        dr.text((x,y),txt,font=font,fill=(fill[0],fill[1],fill[2],int(a_)))
+        return x,w
+    # REALISTIC SCRIMS label
+    la=ease(np.clip((p-0.05)/0.14,0,1))
+    center("REALISTIC SCRIMS", f["label"], H*0.30, (255,255,255), a_=255*la)
+    # MAP CODE tag
+    center("MAP CODE", f["tag"], H*0.405, cyan, a_=220*ease(np.clip((p-0.12)/0.12,0,1)))
+    # Big code with per-group highlight synced to VO (l9 reads groups ~t 1.9/3.2/4.5)
+    ca=ease(np.clip((p-0.14)/0.16,0,1))
+    if ca>0:
+        yc=H*0.455
+        groups=MAP_CODE_GROUPS
+        # measure total width (groups + dashes)
+        dash=" - "
+        parts=[]
+        for i,g in enumerate(groups):
+            parts.append((g,True,i));
+            if i<len(groups)-1: parts.append((dash,False,-1))
+        tw=sum(dr.textlength(s,font=f["code"]) for s,_,_ in parts)
+        x=(W-tw)/2
+        windows=[(1.8,3.1),(3.3,4.6),(4.8,6.1)]  # endcard-local seconds per group (synced to l9 VO)
+        for s,isg,gi in parts:
+            w=dr.textlength(s,font=f["code"])
+            if isg:
+                lo,hi=windows[gi]; active=lo<=t_local<=hi
+                col=(255,240,170) if active else (255,255,255)
+                if active:  # glow pop on the group being spoken
+                    gl=Image.new("RGBA",(W,H),(0,0,0,0)); gd=ImageDraw.Draw(gl)
+                    gd.text((x,yc),s,font=f["code"],fill=(255,220,120,230))
+                    im.alpha_composite(gl.filter(ImageFilter.GaussianBlur(16)))
+                dr.text((x+3,yc+5),s,font=f["code"],fill=(0,0,0,int(170*ca)))
+                dr.text((x,yc),s,font=f["code"],fill=(col[0],col[1],col[2],int(255*ca)))
+            else:
+                dr.text((x,yc),s,font=f["code"],fill=(cyan[0],cyan[1],cyan[2],int(220*ca)))
+            x+=w
+        # underline accent bar
+        bw=tw*ease(np.clip((p-0.18)/0.2,0,1))
+        dr.rectangle([(W-bw)/2, yc+150, (W+bw)/2, yc+156], fill=(cyan[0],cyan[1],cyan[2],int(230*ca)))
+    # DROP IN / PLAY NOW CTA pill
+    cta_a=ease(np.clip((p-0.6)/0.14,0,1))
+    if cta_a>0:
+        txt="DROP IN  -  PLAY NOW"
+        w=dr.textlength(txt,font=f["cta"]); x=(W-w)/2; y=H*0.60
+        pulse=0.5+0.5*math.sin(t_local*4.5)
+        dr.rounded_rectangle([x-46,y-14,x+w+46,y+92], radius=48,
+            outline=(cyan[0],cyan[1],cyan[2],int(255*cta_a)), width=4,
+            fill=(10,16,24,int(150*cta_a)))
+        center("DROP IN  -  PLAY NOW", f["cta"], y, (255,255,255), a_=255*cta_a, glow=10*pulse)
+    return fx.from_img(im)
+
+def render_endcard(frames, s, gidx0):
+    n=len(frames); out=[]; acc=s.get("accents",{}); cam=s.get("cam",{})
+    base=fx.load(frames[0])
+    base=cam_zoom(base, 1.04)
+    # dim, blurred cinematic backdrop
+    bg=fx.grade_cinematic(base.copy(), vig=0.8, tb=0.7, bloom=0.3, seed=1)
+    bg=fx.from_img(fx.to_img(bg).filter(ImageFilter.GaussianBlur(16)))*0.55
+    for i in range(n):
+        p=i/(n-1) if n>1 else 1.0; t=i/FPS
+        z=lerp(*cam.get("push",(1.0,1.0)), ease(p))
+        frame=cam_zoom(bg.copy(), z)
+        frame=cine_atmosphere(frame, 40+t, seed=9)
+        frame=cine_bars(frame)
+        frame=draw_endcard(frame, p, t)
+        fo=acc.get("fade_out",0.0)/s["outdur"]
+        if fo and p>1-fo: frame=frame*(1-(p-(1-fo))/fo)
+        out.append(frame)
+    return out
+
 def draw_title(a,p):
     ti=title_img()
     al=ease(np.clip((p-0.2)/0.3,0,1))*np.clip(1-(p-0.85)/0.15,0,1)
@@ -431,6 +541,7 @@ def render_segment(s, gidx):
     frames=seg_frames(s)
     if s["world"]=="trans1": outs=render_trans1(frames,s)
     elif s["world"]=="trans2": outs=render_trans2(frames,s)
+    elif s["world"]=="endcard": outs=render_endcard(frames,s,gidx)
     else: outs=render_world(frames,s,gidx)
     return outs
 
@@ -462,9 +573,53 @@ def seg_start_times():
         d[s["name"]]=t; t+=round(s["outdur"]*FPS)/FPS
     return d, t
 
+# voice-over script: (line file, segment, offset-in-seg) ; am_fenrir65/puck35 blend
+VO_PLAN = [
+  ("l1_onelegend","w1_hook",0.6),
+  ("l2_loaded",   "w1_weapon",0.9),
+  ("l3_rebuilt",  "w2_walk",0.5),
+  ("l4_newworld", "w2_gun",0.15),
+  ("l5_getsreal", "t2",1.55),            # lands on the Fortnite reveal
+  ("l6_dominate", "g_rocket",0.0),
+  ("l7_prove",    "g_elim2",0.2),
+  ("l8_scrims",   "endcard",0.45),
+  ("l9_code",     "endcard",1.20),       # groups spoken ~1.8/3.3/4.8 local
+  ("l10_dropin",  "endcard",6.35),
+]
+
+def _load_vo_48k(name):
+    import soundfile as sf
+    a,sr=sf.read(os.path.join(VO_DIR,name+".wav"))
+    if a.ndim>1: a=a.mean(1)
+    a=a.astype(np.float32)
+    if sr!=A.SR:  # linear resample to 48k
+        x=np.arange(len(a)); xi=np.linspace(0,len(a)-1,int(len(a)*A.SR/sr))
+        a=np.interp(xi,x,a).astype(np.float32)
+    # light speech polish: gentle high-pass-ish + soft limit
+    a=a-np.convolve(a,np.ones(400)/400,mode="same")*0.6
+    pk=np.max(np.abs(a))+1e-6
+    return (a/pk*0.85).astype(np.float32)
+
 def build_audio():
     st,total=seg_start_times()
-    tl=A.Timeline(total+0.3)
+    end=total+0.4
+    # ---- voice-over bus (stereo, centre) ----
+    vo=np.zeros((int(end*A.SR),2),np.float32)
+    vo_env=np.zeros(int(end*A.SR),np.float32)   # 1 where VO active (for ducking)
+    for name,segname,off in VO_PLAN:
+        if segname not in st: continue
+        a=_load_vo_48k(name)
+        s0=int((st[segname]+off)*A.SR); e0=min(len(vo),s0+len(a))
+        vo[s0:e0,0]+=a[:e0-s0]; vo[s0:e0,1]+=a[:e0-s0]
+        # ducking envelope with 120ms attack / 300ms release
+        env=np.zeros(e0-s0+1,np.float32); env[:]=1.0
+        vo_env[s0:e0]=np.maximum(vo_env[s0:e0], env[:e0-s0])
+    # smooth the duck envelope (attack/release)
+    k=np.ones(int(0.18*A.SR))/int(0.18*A.SR)
+    vo_env=np.convolve(vo_env,k,mode="same")
+    vo_env=np.clip(vo_env,0,1)
+
+    tl=A.Timeline(end)
     def at(name,off=0.0): return st[name]+off
     # --- World 1: cinematic bed - low drone impacts + sparse metallic + air
     tl.place(A.impact(1.4,80,30,seed=20,body=1.2), at("w1_hook",0.0), 0.5)
@@ -505,15 +660,35 @@ def build_audio():
     # --- Outro: clean low impact + long tail
     tl.place(A.impact(1.6,70,26,seed=95,body=1.3), at("outro",0.1), 0.6)
     tl.place(A.metallic(1.0,520,seed=96), at("outro",0.2), 0.3)
-    tl.render(OUT_SFX)
-    print(f"  {OUT_SFX}  ({total:.2f}s)")
+    # --- End card: riser into code, soft tick per code group, final CTA hit
+    tl.place(A.riser(1.2,180,1400,seed=97), at("endcard",0.1), 0.35)
+    tl.place(A.impact(1.0,120,34,seed=98,body=0.9), at("endcard",0.7), 0.5)  # code reveal
+    for i,gt in enumerate([1.9,3.4,4.9]):
+        tl.place(A.click(0.06,1600+i*200,seed=100+i), at("endcard",gt), 0.4)
+        tl.place(A.whoosh(0.3,seed=110+i,bright=1800), at("endcard",gt-0.1), 0.2, pan=(-1)**i*0.3)
+    tl.place(A.transform_hit(seed=120,big=1.1), at("endcard",6.2), 0.8)      # on "Drop in"
+
+    # ---- write SFX-only stem, VO stem, and the ducked mix (NO MUSIC) ----
+    sfx=tl.buf.copy()
+    duck=(1.0 - 0.72*vo_env)[:len(sfx),None]        # pull SFX ~ -11 dB under VO
+    mix=sfx*duck + vo[:len(sfx)]*1.18
+    # gentle bus reverb on the whole thing + soft limit
+    mix=A._reverb(mix, decay=0.3, mix=0.08)
+    pk=np.max(np.abs(mix))+1e-6
+    mix=np.tanh(mix/max(pk,1.0)*1.05)*0.95
+    def _write(buf,path):
+        raw=buf.astype('<f4').tobytes()
+        subprocess.run(["ffmpeg","-nostdin","-v","error","-y","-f","f32le","-ar",str(A.SR),
+            "-ac","2","-i","pipe:0","-c:a","pcm_s24le",path], input=raw, check=True)
+    _write(sfx, OUT_SFX); _write(vo[:len(sfx)], OUT_VO); _write(mix, OUT_MIX)
+    print(f"  SFX {OUT_SFX} | VO {OUT_VO} | MIX {OUT_MIX}  ({end:.2f}s)")
 
 # ----------------------------------------------------------------- mux
 def mux():
     # concat per-segment clips (re-encode to final size) + synced SFX (loudnorm, no music)
     listf=os.path.join(CLIPS,"list.txt")
     subprocess.run(["ffmpeg","-nostdin","-v","error","-y","-f","concat","-safe","0","-i",listf,
-        "-i",OUT_SFX,
+        "-i",OUT_MIX,
         "-filter_complex","[1:a]loudnorm=I=-14:TP=-1.5:LRA=11[a]",
         "-map","0:v","-map","[a]",
         "-c:v","libx264","-preset","slow","-crf","22","-maxrate","12M","-bufsize","20M",

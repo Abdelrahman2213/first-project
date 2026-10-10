@@ -7,8 +7,8 @@ CONTAINER / STREAMS
 -------------------
   Video:   H.264 (High), 1080x1920 (9:16 vertical), 30 fps, yuv420p, +faststart
   Audio:   AAC-LC, 48 kHz, stereo
-  Duration: 30.77 s   (target "approx 30-40 s" -> PASS)
-  Size:     ~34 MB    (~8.9 Mbps; CRF 22, 12M maxrate cap)
+  Duration: 37.47 s   (target "approx 30-40 s" -> PASS)
+  Size:     ~35 MB    (CRF 22, 12M maxrate cap)
 
 AUTOMATED CHECKS
 ----------------
@@ -16,11 +16,15 @@ AUTOMATED CHECKS
      (the only black is the intentional < 0.067 s fade-in at 0.0 s)
   Freeze detect (freezedetect):                   no unintended freezes
      (the 0.7 s "impact freeze" beat carries grain/particles, by design)
-  Loudness (EBU R128):   Integrated I = -14.7 LUFS   LRA = 13.4 LU
-     -> on-target for social delivery; wide LRA = strong loud/quiet contrast
-  Peak (volumedetect):   max_volume = -0.8 dBFS   mean = -16.7 dB
-     -> no audible clipping (2 / 2,949,120 samples at 0 dB); TP-limited in mux
-  Background music:      NONE  (source audio muted; 100% synthesized SFX)  -> PASS
+  Loudness (EBU R128):   Integrated I = -14.9 LUFS   LRA = 6.8 LU
+     -> on-target for social delivery
+  Peak (volumedetect):   max_volume = -0.7 dBFS   -> no clipping (TP-limited in mux)
+  Background music:      NONE  (source audio muted; synthesized SFX + Kokoro VO)  -> PASS
+  Voice-over presence:   VO speech windows sit at -16..-20 dBFS while the ducked
+     SFX bed sits ~ -35 dBFS during speech -> VO is clearly on top (~15-18 dB).
+     Kokoro TTS, am_fenrir 65% / am_puck 35% blend (per brief).
+  Map code:              "0674-0917-0977" DISPLAYED on the end card (groups light
+     up in sync) AND SPOKEN in the closing voice-over  -> PASS (last scene)
 
 CREATIVE / BRIEF CHECKLIST
 --------------------------
@@ -58,6 +62,9 @@ SCOPE / LIMITATIONS (stated honestly)
     the World-1 cinematic letterbox bars; in the LEGO world it is dissolved
     into bricks. A little authentic gameplay HUD text remains in the montage
     on purpose (it reads as real gameplay).
-  - No voice-over: the referenced promo/config.json (Kokoro am_fenrir/am_puck)
-    does not exist in this repo, and no TTS engine was installed. The brief's
-    "sound-effects only" is fully satisfied by the synthesized SFX mix.
+  - Voice-over: added on request using Kokoro TTS (am_fenrir 65% / am_puck 35%
+    blend, matching the brief's named voices). The referenced promo/config.json
+    did not exist, so the voice identity was reconstructed from those Kokoro
+    voices rather than "preserved" from a prior VO (there was none).
+  - Audio deliberately uses brief moments of near-silence between SFX hits
+    (per the brief's "contrast between loud impacts and silence").

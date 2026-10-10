@@ -1,12 +1,12 @@
 # FORTNITE MULTIVERSE — Action Transformation Trailer
 
-**Output:** `fortnite_multiverse_action_trailer.mp4` — 1080×1920 (9:16), 30 fps, H.264 (yuv420p) + AAC 48 kHz, ~30.8 s, **sound‑effects only (no music)**.
+**Output:** `fortnite_multiverse_action_trailer.mp4` — 1080×1920 (9:16), 30 fps, H.264 (yuv420p) + AAC 48 kHz, ~37.5 s, **voice‑over + sound effects, no music**.
 
 One recognizable Fortnite character travels through **three visual worlds** as one continuous cinematic experience:
 
 1. **CINEMATIC MOVIE** (0–7.2 s) — the character revealed like an action‑film protagonist: filmic teal/orange grade, cinematic letterbox bars, volumetric fog, floating dust, slow push‑ins, a gold‑weapon hero reveal.
 2. **LEGO UNIVERSE** (8.5–15.1 s) — the *same* character, rebuilt as a studded LEGO minifig in a brick world.
-3. **FORTNITE GAMEPLAY** (17–30.8 s) — the real character erupts into an aggressive real‑footage montage, landing on a VICTORY payoff and a `MULTIVERSE` end title.
+3. **FORTNITE GAMEPLAY** (17–28.8 s) — the real character erupts into an aggressive real‑footage montage, landing on a VICTORY payoff, a `MULTIVERSE` title, and an **end card with the map code `0674‑0917‑0977`** (spoken and displayed, groups lighting up as the voice reads them).
 
 The two **on‑screen transformations are the centerpiece**:
 - **Movie → LEGO** (~7.2–8.5 s): energy pulse ring → particle disintegration dissolve → bricks assemble → LEGO, with a glowing dissolve front, micro‑glitch and a white impact flash.
@@ -45,8 +45,10 @@ Pipeline (`build.py`, stages `extract | video | audio | mux`):
 - `grade_game` — punchy, readable gameplay grade.
 - transition primitives — organic dissolve masks, radial wipes, RGB split, glitch, impact flash.
 
-### Audio (`audio.py`) — **no music, by design**
-Procedurally synthesized: deep impacts, sub‑bass drops, risers, reverse sweeps, whooshes, metallic accents, LEGO plastic clicks and brick‑scatter, and layered "transformation hits." Mixed with a light early‑reflection reverb, soft‑limited, and normalized to ‑14 LUFS (TP ≈ ‑1 dBFS). The source clips' own audio is **muted** — they are dominated by the creator's voice narration, which would fight a clean SFX mix.
+### Audio (`audio.py` + Kokoro VO) — **no music, by design**
+- **SFX:** procedurally synthesized — deep impacts, sub‑bass drops, risers, reverse sweeps, whooshes, metallic accents, LEGO plastic clicks and brick‑scatter, layered "transformation hits," and end‑card code ticks.
+- **Voice‑over:** generated with **Kokoro** TTS (`kokoro-onnx`), using the **`am_fenrir` 65 % / `am_puck` 35 %` blend** the brief specified (the two voice style vectors are mixed and fed to the model as one voice). Ten short trailer lines land on the beats: *"One legend." → "Locked, and loaded." → "Rebuilt… brick by brick." → "A whole new world." → "Then it gets real." → "Build. Aim. Dominate." → "Prove yourself." → "Realistic Scrims. Code: 0674‑0917‑0977. Drop in."*
+- **Mix:** the SFX bed is **side‑chain ducked ~11 dB under the voice**, VO added on top, light bus reverb, soft‑limited, two‑pass EBU‑R128 to ‑14 LUFS (TP ≈ ‑1 dBFS). The source clips' own audio is **muted** (it is dominated by the creator's own narration). No music anywhere.
 
 ---
 
@@ -59,8 +61,12 @@ Procedurally synthesized: deep impacts, sub‑bass drops, risers, reverse sweeps
 | `fx.py` | per‑frame look & transition engine (grade / LEGO / FX) |
 | `audio.py` | synthesized cinematic SFX engine (no music) |
 | `assets/sfx_trailer.wav` | the rendered SFX soundscape (24‑bit / 48 kHz stereo) |
+| `assets/voiceover.wav` | the aligned Kokoro voice‑over stem (24‑bit / 48 kHz) |
+| `assets/vo/*.wav` | the individual VO lines (am_fenrir/am_puck blend) |
 | `quality_check.txt` | technical QA report of the rendered file |
 | `README.md` | this file |
+
+The Kokoro model (`models/kokoro.onnx` ≈ 325 MB) and voice vectors are **git‑ignored**. To regenerate the VO, `pip install kokoro-onnx soundfile` and fetch from the `onnx-community/Kokoro-82M-v1.0-ONNX` HuggingFace repo: `onnx/model.onnx` → `models/kokoro.onnx`, and `voices/am_fenrir.bin` + `voices/am_puck.bin` (reshape each `510×1×256`, blend 0.65/0.35, save as `models/voices.npz`).
 
 **Not included** (git‑ignored): `source/` (the two creator clips, owned by the creator, too large, never modified), and `work/` / `proto/` / `qa/` intermediates. No Blender project files exist because Blender was not available; all 3‑D‑looking effects are 2‑D composites. No separate image assets are shipped because all graphics (LEGO bricks, studs, particles, title, fog, dust) are generated procedurally at render time.
 
@@ -85,6 +91,12 @@ Dependencies: `ffmpeg`/`ffprobe` (libx264, aac, loudnorm), Python 3 with `numpy`
 7.2–8.5   TRANSFORM  MOVIE -> LEGO (pulse / disintegrate / bricks / flash)
 8.5–15.1  LEGO       brick-world action: walk, slide, gold-gun, elim pose (+brick particles)
 15.1–17.0 TRANSFORM  LEGO -> FORTNITE (brick explosion / shockwave / RGB / reveal)   <- centrepiece
-17.0–28.9 MONTAGE    elim -> fight -> rocket -> freeze -> builds -> boom -> speed-ramp elim
-28.9–30.8 PAYOFF     VICTORY (round 8) + MULTIVERSE / ONE LEGEND · THREE WORLDS end title
+17.0–27.1 MONTAGE    elim -> fight -> rocket -> freeze -> builds -> boom -> speed-ramp elim
+27.1–28.8 PAYOFF     VICTORY (round 8)
+28.8–30.4 OUTRO      hero callback + MULTIVERSE / ONE LEGEND · THREE WORLDS title
+30.4–37.4 END CARD   REALISTIC SCRIMS / MAP CODE 0674-0917-0977 / DROP IN · PLAY NOW
+                     (code groups light up in sync with the spoken code)
 ```
+
+The voice-over lines are generated by `audio.py`'s `build_audio()` from `assets/vo/`;
+regenerate those WAVs with Kokoro (see the model note above) before `build.py audio`.

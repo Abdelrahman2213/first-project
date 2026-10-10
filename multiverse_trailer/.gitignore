@@ -8,3 +8,5 @@ proto/
 __pycache__/
 *.pyc
 qa/
+models/
+assets/mix_trailer.wav
