@@ -65,7 +65,7 @@ SEGMENTS = [
   seg("g_elim1",   SRC_TIME,  15.05, 1.45, 1.55, (820,1458,150,230), "game",
       cam=dict(push=(1.12,1.0)), accents=dict(flash_in=0.6, shake=0.006)),
   seg("g_fight",   SRC_SCRIMS,16.45, 1.55, 1.45, C, "game",
-      cam=dict(push=(1.0,1.08), shake=0.004), accents=dict(whip_in=0.18)),
+      cam=dict(push=(1.0,1.08), shake=0.004), accents=dict(whip_in=0.18, speed=16)),
   seg("g_rocket",  SRC_SCRIMS,19.20, 0.95, 0.95, (700,1245,200,210), "game",
       cam=dict(impact=(1.22,1.0)), accents=dict(flash_in=0.4)),
   seg("g_freeze",  SRC_SCRIMS,16.60, 0.20, 0.70, C, "game",
@@ -77,9 +77,9 @@ SEGMENTS = [
   seg("g_boom",    SRC_TIME,  26.80, 1.30, 1.25, C, "game",
       cam=dict(push=(1.0,1.10)), accents=dict(flash_in=0.3)),
   seg("g_elim2",   SRC_SCRIMS,29.80, 0.95, 1.45, (760,1351,160,210), "game",
-      cam=dict(impact=(1.18,1.02), shake=0.006), accents=dict(speedcut=True)),
+      cam=dict(impact=(1.18,1.02), shake=0.006), accents=dict(speedcut=True, speed=20)),
   seg("g_victory", SRC_SCRIMS,32.75, 1.55, 1.70, (900,1600,90,180), "game",
-      cam=dict(push=(1.08,1.0)), accents=dict(flash_in=0.8, shake=0.010)),
+      cam=dict(push=(1.08,1.0)), accents=dict(flash_in=0.8, shake=0.010, speed=24)),
   # ---------------- OUTRO : clean cinematic hero callback ----
   seg("outro",     SRC_TIME,   6.35, 1.10, 1.60, (760,1351,210,200), "cine",
       cam=dict(push=(1.0,1.08)), accents=dict(title=True)),
@@ -128,6 +128,19 @@ def cam_zoom(a, zoom, dx=0.0, dy=0.0):
     x0 = min(max(x0,0), W-cw); y0 = min(max(y0,0), H-ch)
     im = fx.to_img(a).crop((x0,y0,x0+cw,y0+ch)).resize((W,H), Image.LANCZOS)
     return fx.from_img(im)
+
+_ANG = np.arctan2(fx._YY - fx._CY, fx._XX - fx._CX)
+def speed_lines(a, amount, phase=0.0, color=(235,250,255)):
+    """Radial motion streaks emanating from centre (outer region only, keeps
+    the subject clear). Adds kinetic energy to the hardest beats."""
+    if amount <= 0: return a
+    s = (np.sin(_ANG*84 + phase*5.0) + 0.6*np.sin(_ANG*131 + 1.7)
+         + 0.4*np.sin(_ANG*53 - 0.6*phase))
+    streak = np.clip((s - 1.15)/0.7, 0, 1)
+    r = fx._R/1.42
+    falloff = np.clip((r - 0.52)/0.48, 0, 1)**1.6
+    add = (streak*falloff)[..., None] * np.array(color, np.float32) * amount
+    return a + add
 
 def hmotion_blur(a, px):
     px = int(px)
@@ -394,6 +407,9 @@ def render_world(frames, s, gidx0):
         if acc.get("fade_out"):
             fo=acc["fade_out"]/s["outdur"]
             if p>1-fo: frame=frame*(1-(p-(1-fo))/fo)
+        if acc.get("speed"):
+            env=math.sin(np.clip(p,0,1)*math.pi)**0.8   # swell in/out across the shot
+            frame=speed_lines(frame, acc["speed"]*env, phase=(gidx0+i)*0.25)
         if bricks is not None:
             frame=bricks.composite(frame, p, fade_in=0.1, fade_out=0.7)
         if acc.get("title"):
@@ -526,12 +542,31 @@ def render_endcard(frames, s, gidx0):
 
 def draw_title(a,p):
     ti=title_img()
-    al=ease(np.clip((p-0.2)/0.3,0,1))*np.clip(1-(p-0.85)/0.15,0,1)
+    al=ease(np.clip((p-0.2)/0.3,0,1))*np.clip(1-(p-0.88)/0.12,0,1)
     if al<=0: return a
     im=fx.to_img(a).convert("RGBA")
-    t2=ti.copy(); t2.putalpha(t2.split()[3].point(lambda v:int(v*al)))
-    y=int(H*0.60 - 20*ease(np.clip((p-0.2)/0.3,0,1)))
+    y=int(H*0.60 - 22*ease(np.clip((p-0.2)/0.3,0,1)))
+    # cyan under-glow for a premium reveal
+    alpha=ti.split()[3]
+    glow=Image.new("RGBA",ti.size,(0,0,0,0))
+    glow.paste((90,205,255,255),(0,0),alpha)
+    glow=glow.filter(ImageFilter.GaussianBlur(18))
+    glow.putalpha(glow.split()[3].point(lambda v:int(v*al*0.8)))
+    im.alpha_composite(glow,(0,y))
+    # title
+    t2=ti.copy(); t2.putalpha(alpha.point(lambda v:int(v*al)))
     im.alpha_composite(t2,(0,y))
+    # animated light sweep across the letters
+    sweep=np.clip((p-0.25)/0.4,0,1)
+    if 0<sweep<1:
+        band=Image.new("L",ti.size,0); bd=ImageDraw.Draw(band)
+        cx=int(sweep*(ti.width+300)-150)
+        for dx in range(-90,90):
+            v=int(200*math.exp(-(dx/38)**2))
+            bd.line([(cx+dx-40,0),(cx+dx+40,ti.height)],fill=v,width=2)
+        hi=Image.new("RGBA",ti.size,(255,255,255,0))
+        hi.putalpha(Image.composite(band,Image.new("L",ti.size,0),alpha).point(lambda v:int(v*al)))
+        im.alpha_composite(hi,(0,y))
     return fx.from_img(im)
 
 # ----------------------------------------------------------------- video assembly
@@ -556,7 +591,7 @@ def video(force=None):
             print(f'    {s["name"]:11s} cached'); gidx+=n; continue
         ff=subprocess.Popen(["ffmpeg","-nostdin","-v","error","-y","-f","rawvideo","-pix_fmt","rgb24",
             "-s",f"{W}x{H}","-r",str(FPS),"-i","pipe:0","-an","-c:v","libx264","-preset","medium",
-            "-crf","18","-pix_fmt","yuv420p",clip], stdin=subprocess.PIPE)
+            "-crf","16","-pix_fmt","yuv420p",clip], stdin=subprocess.PIPE)
         outs=render_segment(s, gidx)
         for fr in outs: ff.stdin.write(fx.clamp8(fr).tobytes())
         ff.stdin.close(); ff.wait(); gidx+=len(outs)
@@ -595,10 +630,12 @@ def _load_vo_48k(name):
     if sr!=A.SR:  # linear resample to 48k
         x=np.arange(len(a)); xi=np.linspace(0,len(a)-1,int(len(a)*A.SR/sr))
         a=np.interp(xi,x,a).astype(np.float32)
-    # light speech polish: gentle high-pass-ish + soft limit
-    a=a-np.convolve(a,np.ones(400)/400,mode="same")*0.6
+    # speech polish: gentle high-pass (remove rumble) + presence + compression
+    a=a-np.convolve(a,np.ones(400)/400,mode="same")*0.65
+    a=a+(a-np.convolve(a,np.ones(6)/6,mode="same"))*0.5   # presence/air lift
+    a=A.compress(a, thresh=0.22, ratio=4.0, makeup=1.6)   # even, forward VO
     pk=np.max(np.abs(a))+1e-6
-    return (a/pk*0.85).astype(np.float32)
+    return (a/pk*0.9).astype(np.float32)
 
 def build_audio():
     st,total=seg_start_times()
@@ -671,7 +708,10 @@ def build_audio():
     # ---- write SFX-only stem, VO stem, and the ducked mix (NO MUSIC) ----
     sfx=tl.buf.copy()
     duck=(1.0 - 0.72*vo_env)[:len(sfx),None]        # pull SFX ~ -11 dB under VO
-    mix=sfx*duck + vo[:len(sfx)]*1.18
+    # continuous cinematic air/rumble bed (ambience, not music) - no dead silence
+    air=A.air_bed(len(sfx)/A.SR, seed=5)[:len(sfx)]
+    air_st=np.stack([air, np.roll(air, 1200)], 1)    # slight stereo width
+    mix=sfx*duck + vo[:len(sfx)]*1.22 + air_st[:len(sfx)]*0.6
     # gentle bus reverb on the whole thing + soft limit
     mix=A._reverb(mix, decay=0.3, mix=0.08)
     pk=np.max(np.abs(mix))+1e-6
@@ -691,7 +731,7 @@ def mux():
         "-i",OUT_MIX,
         "-filter_complex","[1:a]loudnorm=I=-14:TP=-1.5:LRA=11[a]",
         "-map","0:v","-map","[a]",
-        "-c:v","libx264","-preset","slow","-crf","22","-maxrate","12M","-bufsize","20M",
+        "-c:v","libx264","-preset","slow","-crf","20","-maxrate","16M","-bufsize","24M",
         "-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-ar","48000",
         "-shortest","-movflags","+faststart",OUT_FINAL], check=True)
     print(f"  {OUT_FINAL}")

@@ -79,6 +79,26 @@ def soft_bloom(a, thresh=186.0, blur=14, gain=0.5):
     b = from_img(to_img(bright).filter(ImageFilter.GaussianBlur(blur)))
     return a + b * gain
 
+def sharpen(a, amt=0.55, radius=1.6):
+    """Unsharp mask - restores crispness lost to punch-in upscaling."""
+    blur = from_img(to_img(a).filter(ImageFilter.GaussianBlur(radius)))
+    return a + (a - blur) * amt
+
+def halation(a, thresh=205.0, blur=22, warmth=(1.0, 0.55, 0.28), gain=0.42):
+    """Warm highlight bleed - the organic glow of film around bright areas."""
+    l = _luma(a)
+    mask = np.clip((l - thresh) / (255.0 - thresh), 0, 1)[..., None]
+    halo = from_img(to_img(a * mask).filter(ImageFilter.GaussianBlur(blur)))
+    tint = np.array(warmth, np.float32)
+    return a + halo * tint * gain
+
+def curve_filmic(a):
+    """Gentle S-curve + toe for filmic contrast without crushing detail."""
+    x = np.clip(a / 255.0, 0, 1)
+    y = x * x * (3 - 2 * x)          # smoothstep S
+    y = 0.82 * y + 0.18 * x          # keep some linearity (shadow detail)
+    return y * 255.0
+
 def tint_shadows_highlights(a, shadow=(-8, 2, 18), highlight=(16, 8, -12)):
     l = (_luma(a) / 255.0)[..., None]
     sh = np.array(shadow, np.float32)
@@ -102,12 +122,15 @@ def _scrim(top_h=0.16, bot_h=0.13, top_dark=0.92, bot_dark=0.86):
     _SCRIM = g
     return _SCRIM
 
-def grade_cinematic(a, vig=0.62, tb=0.6, grain=4.0, chroma=2.0, bloom=0.55, seed=0, scrim=True):
-    a = contrast(a, 1.14)
-    a = saturate(a, 0.92)
-    a = tint_shadows_highlights(a, shadow=(-10, 0, 22), highlight=(20, 10, -14))  # teal shadows / warm highs
-    a = gamma(a, 1.04)
-    a = soft_bloom(a, thresh=180, blur=16, gain=bloom)
+def grade_cinematic(a, vig=0.62, tb=0.6, grain=4.0, chroma=2.0, bloom=0.5, seed=0, scrim=True):
+    a = sharpen(a, 0.5, 1.5)
+    a = curve_filmic(a)
+    a = contrast(a, 1.12)
+    a = saturate(a, 0.95)
+    a = tint_shadows_highlights(a, shadow=(-12, 0, 26), highlight=(24, 12, -16))  # teal shadows / warm highs
+    a = gamma(a, 1.03)
+    a = halation(a, thresh=200, blur=22, gain=0.4)
+    a = soft_bloom(a, thresh=182, blur=16, gain=bloom)
     a = vignette(a, strength=vig, top_bottom=tb)
     if scrim:
         a = a * _scrim()
@@ -117,11 +140,14 @@ def grade_cinematic(a, vig=0.62, tb=0.6, grain=4.0, chroma=2.0, bloom=0.55, seed
     return a
 
 # ---------------------------------------------------------------- World 3: gameplay
-def grade_game(a, vig=0.42, tb=0.35, grain=3.0, seed=0):
-    a = contrast(a, 1.16)
-    a = saturate(a, 1.18)
-    a = gamma(a, 0.97)
-    a = soft_bloom(a, thresh=198, blur=10, gain=0.35)
+def grade_game(a, vig=0.42, tb=0.35, grain=2.6, seed=0):
+    a = sharpen(a, 0.7, 1.4)           # crisp, punchy gameplay
+    a = contrast(a, 1.18)
+    a = saturate(a, 1.22)
+    a = gamma(a, 0.96)
+    a = tint_shadows_highlights(a, shadow=(-6, 0, 10), highlight=(12, 6, -8))
+    a = halation(a, thresh=212, blur=16, gain=0.3)
+    a = soft_bloom(a, thresh=200, blur=10, gain=0.38)
     a = vignette(a, strength=vig, top_bottom=tb)
     a = add_grain(a, grain, seed)
     return a
@@ -141,7 +167,7 @@ def _stud_bevel_overlays(cell):
     disc = np.clip((rad - d) / 2.0 + 0.5, 0, 1)            # 1 inside stud, 0 outside
     # directional light: top-left bright, bottom-right dark
     lightdir = ((cx - xx) + (cy - yy)) / (cell * 1.4)
-    shade = 1.0 + disc * (0.44 * np.tanh(lightdir * 2.2))  # mult on stud, 1.0 flat
+    shade = 1.0 + disc * (0.54 * np.tanh(lightdir * 2.4))  # mult on stud, 1.0 flat
     # subtle ring edge
     ring = np.clip(1.0 - np.abs(d - rad) / 1.5, 0, 1)
     shade = shade * (1.0 - 0.18 * ring * (1 - disc * 0))
@@ -206,10 +232,12 @@ def legoize(a, cell=17, sat=1.1, plate_light=0.22):
     plas = _up(small, (W, H))
     stud_mult, bevel = _stud_bevel_overlays(cell)
     out = plas * stud_mult + bevel
+    out = contrast(out, 1.06, pivot=120.0)          # a touch more moulded depth
     # gentle glossy top sheen
     sheen = np.clip(1.0 - _YY / H, 0, 1)[..., None] * plate_light * 12.0
     out = out + sheen
-    out = soft_bloom(out, thresh=228, blur=5, gain=0.20)
+    out = soft_bloom(out, thresh=224, blur=5, gain=0.24)
+    out = sharpen(out, 0.35, 1.2)                    # crisp brick edges
     return out
 
 # ---------------------------------------------------------------- transitions

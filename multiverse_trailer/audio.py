@@ -41,12 +41,38 @@ def impact(dur=0.9, f0=120, f1=38, seed=1, click=1.0, body=1.0):
     f = f1 + (f0-f1)*np.exp(-t*7)
     phase = 2*np.pi*np.cumsum(f)/SR
     sub = np.sin(phase) * _env(n, 0.001, 0.05, 0, dur*0.9, 1.0) * body
+    sub = np.tanh(sub*1.3)              # saturate for punch/harmonics
+    sub2 = np.sin(phase*0.5) * _env(n, 0.002, 0.08, 0, dur*0.9, 1.0) * body * 0.6  # octave down weight
     # click transient
-    ck = _noise(n, seed) * np.exp(-t*90) * 0.6 * click
+    ck = _noise(n, seed) * np.exp(-t*90) * 0.65 * click
     # low rumble noise
     rum = _lp(_noise(n, seed+1), 180) * np.exp(-t*5) * 0.5 * body
-    x = sub*1.0 + ck + rum
+    x = sub*1.0 + sub2 + ck + rum
     return x.astype(np.float32)
+
+def _ma(x, k):  # vectorized moving-average lowpass
+    k = max(1, int(k)); c = np.cumsum(np.insert(x, 0, 0.0))
+    y = (c[k:] - c[:-k]) / k
+    return np.pad(y, (k//2, len(x)-len(y)-k//2), mode="edge")
+
+def air_bed(dur, seed=0):
+    """Continuous cinematic ambience (NOT music): band-limited low rumble + airy
+    hiss at very low level, slowly evolving - so the track is never dead-silent."""
+    n = int(dur*SR); t = np.arange(n)/SR
+    nz = _noise(n, seed)
+    rumble = _ma(nz, 340)                       # ~sub rumble
+    rumble *= 0.55 + 0.45*np.sin(2*np.pi*0.045*t)
+    nz2 = _noise(n, seed+1)
+    air = nz2 - _ma(nz2, 16)                     # airy top (highpass)
+    air *= 0.5 + 0.5*np.sin(2*np.pi*0.07*t + 1.3)
+    return (rumble*0.5 + air*0.03).astype(np.float32)
+
+def compress(x, thresh=0.3, ratio=3.5, makeup=1.5):
+    """Simple soft downward compressor for VO presence."""
+    a = np.abs(x); out = x.copy()
+    over = a > thresh
+    out[over] = np.sign(x[over]) * (thresh + (a[over]-thresh)/ratio)
+    return (out*makeup).astype(np.float32)
 
 def subdrop(dur=1.2, f0=90, f1=28, seed=2):
     n=int(dur*SR); t=np.arange(n)/SR
