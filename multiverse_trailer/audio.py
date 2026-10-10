@@ -41,14 +41,27 @@ def impact(dur=0.9, f0=120, f1=38, seed=1, click=1.0, body=1.0):
     f = f1 + (f0-f1)*np.exp(-t*7)
     phase = 2*np.pi*np.cumsum(f)/SR
     sub = np.sin(phase) * _env(n, 0.001, 0.05, 0, dur*0.9, 1.0) * body
-    sub = np.tanh(sub*1.3)              # saturate for punch/harmonics
-    sub2 = np.sin(phase*0.5) * _env(n, 0.002, 0.08, 0, dur*0.9, 1.0) * body * 0.6  # octave down weight
-    # click transient
-    ck = _noise(n, seed) * np.exp(-t*90) * 0.65 * click
-    # low rumble noise
-    rum = _lp(_noise(n, seed+1), 180) * np.exp(-t*5) * 0.5 * body
-    x = sub*1.0 + sub2 + ck + rum
+    sub = np.tanh(sub*1.35)                                   # saturate for punch/harmonics
+    sub2 = np.sin(phase*0.5) * _env(n, 0.002, 0.08, 0, dur*0.9, 1.0) * body * 0.65  # octave down weight
+    # layered transient: bright tick + mid crack
+    nz = _noise(n, seed)
+    tick = nz * np.exp(-t*240) * 0.8 * click                  # snap
+    crack = (nz - _ma(nz, 24)) * np.exp(-t*60) * 0.5 * click  # bandpassed body of the hit
+    # decaying filtered-noise tail for weight/room
+    tail = _ma(_noise(n, seed+1), 60) * np.exp(-t*3.2) * 0.45 * body
+    x = sub*1.0 + sub2 + tick + crack + tail
     return x.astype(np.float32)
+
+def shimmer(dur=0.8, seed=12, f0=2200, f1=6500):
+    """Bright rising sparkle - magical transformation sweetener."""
+    n=int(dur*SR); t=np.arange(n)/SR
+    rng=np.random.default_rng(seed); x=np.zeros(n,np.float32)
+    for k in range(7):
+        f=f0*(f1/f0)**(t/dur)*rng.uniform(0.85,1.25)
+        ph=2*np.pi*np.cumsum(f)/SR
+        x+=np.sin(ph)*np.exp(-((t-rng.uniform(0,dur*0.7))**2)/(2*0.08**2))/ (k+1)
+    x*=(t/dur)**0.5
+    return (x*0.25).astype(np.float32)
 
 def _ma(x, k):  # vectorized moving-average lowpass
     k = max(1, int(k)); c = np.cumsum(np.insert(x, 0, 0.0))
@@ -86,12 +99,20 @@ def riser(dur=1.4, f0=180, f1=1800, seed=3, noisy=0.6):
     f=f0*(f1/f0)**(t/dur)
     ph=2*np.pi*np.cumsum(f)/SR
     tone=np.sin(ph)
-    nz=_hp(_noise(n,seed),800)*noisy
-    amp=(t/dur)**2.0
-    x=(tone*0.5+nz)*amp
-    # tremolo accel
-    trem=1+0.5*np.sin(2*np.pi*(2+18*(t/dur))*t)
-    return (x*trem*0.5).astype(np.float32)
+    nz2=_noise(n,seed)
+    nz=(nz2 - _ma(nz2,24))*noisy                              # airy rising noise
+    amp=(t/dur)**1.8
+    x=(tone*0.45+nz)*amp
+    # accelerating tick train (builds tension into the hit)
+    rng=np.random.default_rng(seed+5)
+    ticks=np.zeros(n,np.float32); tt=0.0
+    while tt<dur:
+        s=int(tt*SR)
+        if s<n:
+            c=click(0.03,rng.uniform(1800,3400),seed+int(tt*50)+1,sharp=200)
+            e=min(n,s+len(c)); ticks[s:e]+=c[:e-s]*(0.3+0.7*(tt/dur))
+        tt+=0.16*(1-0.82*(tt/dur))                            # interval shrinks -> accelerando
+    return ((x*0.7 + ticks*0.65)*1.45).astype(np.float32)
 
 def reverse_sweep(dur=1.0, seed=4):
     n=int(dur*SR); t=np.arange(n)/SR
@@ -106,9 +127,11 @@ def reverse_sweep(dur=1.0, seed=4):
 def whoosh(dur=0.5, seed=5, pan=0.0, bright=1200):
     n=int(dur*SR); t=np.arange(n)/SR
     nz=_noise(n,seed)
-    band=_lp(_hp(nz,300), bright)
-    amp=np.sin(np.pi*np.clip(t/dur,0,1))**1.3
-    x=band*amp
+    k=max(2,int(SR/bright))
+    band=_ma(nz,k) - _ma(nz, k*5)                            # band-limited air
+    amp=np.sin(np.pi*np.clip(t/dur,0,1))**1.4                # smooth swell bell
+    swell=0.6+0.4*(t/dur)                                    # brightens as it passes
+    x=band*amp*swell*9.0
     return (x*0.7).astype(np.float32)
 
 def click(dur=0.05, f=2200, seed=6, sharp=120):
@@ -149,15 +172,16 @@ def metallic(dur=0.6, f=520, seed=9):
     return (x*_env(n,0.001,0.1,0,dur,0.5)*0.4).astype(np.float32)
 
 def transform_hit(seed=11, big=1.0):
-    # layered: reverse->impact->metallic shimmer
-    parts=[]
-    parts.append(("r", reverse_sweep(0.5,seed), -0.5))
-    parts.append(("i", impact(1.1, 150, 34, seed+1, click=1.2, body=1.3*big), 0.0))
-    parts.append(("m", metallic(0.7, 680, seed+2), 0.02))
-    total=int(1.6*SR); out=np.zeros(total,np.float32)
-    for _,sig,off in parts:
-        s=int((0.5+off)*SR); s=max(0,s); e=min(total,s+len(sig))
-        out[s:e]+=sig[:e-s]
+    """Designed cinematic transformation hit: reverse swell -> deep boom +
+    sub drop -> metallic ring + rising shimmer tail."""
+    total=int(2.0*SR); out=np.zeros(total,np.float32)
+    def add(sig, at):
+        s=max(0,int(at*SR)); e=min(total,s+len(sig)); out[s:e]+=sig[:e-s]
+    add(reverse_sweep(0.6,seed)*1.1, 0.0)          # suck-in before the hit (lands at ~0.6)
+    add(impact(1.3, 170, 32, seed+1, click=1.3, body=1.4*big), 0.55)   # the boom
+    add(subdrop(1.1, 95, 24, seed+2)*big, 0.57)    # sub weight under it
+    add(metallic(0.8, 680, seed+3)*0.8, 0.60)      # metallic ring
+    add(shimmer(1.0, seed+4, 2400, 7200)*1.1, 0.62)# rising sparkle tail
     return out
 
 # ---------------- stereo placement + simple reverb tail ----------------
@@ -166,17 +190,29 @@ def _stereo(mono, pan=0.0):
     lg=np.sqrt(0.5*(1-pan)); rg=np.sqrt(0.5*(1+pan))
     return np.stack([mono*lg, mono*rg],1)
 
+def _fftconv(x, h):
+    n=len(x)+len(h)-1
+    N=1<<int(np.ceil(np.log2(n)))
+    y=np.fft.irfft(np.fft.rfft(x,N)*np.fft.rfft(h,N),N)[:len(x)]
+    return y.astype(np.float32)
+
+def _make_ir(decay, seed):
+    """Diffuse decaying reverb impulse response (early reflections + dark tail)."""
+    L=max(8,int(decay*SR)); t=np.arange(L)/SR
+    rng=np.random.default_rng(seed)
+    tail=rng.standard_normal(L).astype(np.float32)*np.exp(-t/(decay*0.42))
+    tail=np.convolve(tail,np.ones(9)/9,mode="same")          # darken (lowpass)
+    for d,g in [(0.009,0.55),(0.017,0.45),(0.027,0.36),(0.041,0.28),(0.059,0.2),(0.083,0.14)]:
+        i=int(d*SR)
+        if i<L: tail[i]+=g
+    return tail
+
 def _reverb(stereo, decay=0.3, mix=0.18):
-    n=len(stereo)
-    ir_len=int(decay*SR)
-    rng=np.random.default_rng(99)
-    ir=rng.standard_normal((ir_len,2)).astype(np.float32)*np.exp(-np.arange(ir_len)[:,None]/(decay*SR*0.4))
-    wet=np.zeros_like(stereo)
-    # sparse early reflections (cheap convolution via a few taps)
-    taps=[(int(0.011*SR),0.5),(int(0.023*SR),0.4),(int(0.037*SR),0.3),(int(0.053*SR),0.22),(int(0.079*SR),0.16)]
-    for d,g in taps:
-        if d<n:
-            wet[d:]+=stereo[:n-d]*g
+    """Lush algorithmic reverb via FFT convolution with a generated IR (stereo-decorrelated)."""
+    irL=_make_ir(decay,101); irR=_make_ir(decay,202)
+    wet=np.stack([_fftconv(stereo[:,0],irL), _fftconv(stereo[:,1],irR)],1)
+    wp=np.max(np.abs(wet))+1e-6; sp=np.max(np.abs(stereo))+1e-6
+    wet*= sp/wp                                               # match level
     return stereo*(1-mix)+wet*mix
 
 class Timeline:
