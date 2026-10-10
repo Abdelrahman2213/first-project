@@ -14,6 +14,9 @@ The two **on‑screen transformations are the centerpiece**:
 
 Unofficial fan/creator edit. Not affiliated with or endorsed by Epic Games.
 
+> **Quality pass:** unsharp masking (counters punch-in softness), warm halation and a filmic S-curve in the grade; stronger LEGO studs/gloss/edges; radial speed-lines on the hardest beats; a cyan under-glow + light-sweep on the MULTIVERSE title; and a reworked SFX engine (FFT impulse-response reverb, saturated layered impacts, accelerating-tick risers, designed transform hits with shimmer, plus a continuous non-tonal air/rumble bed so the track is never dead-silent). Voice-over compressed for announcer presence.
+
+
 ---
 
 ## Character continuity

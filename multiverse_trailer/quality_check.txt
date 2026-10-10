@@ -8,7 +8,7 @@ CONTAINER / STREAMS
   Video:   H.264 (High), 1080x1920 (9:16 vertical), 30 fps, yuv420p, +faststart
   Audio:   AAC-LC, 48 kHz, stereo
   Duration: 37.47 s   (target "approx 30-40 s" -> PASS)
-  Size:     ~35 MB    (CRF 22, 12M maxrate cap)
+  Size:     ~55 MB    (CRF 20, 16M maxrate cap; higher-quality master)
 
 AUTOMATED CHECKS
 ----------------
@@ -16,9 +16,9 @@ AUTOMATED CHECKS
      (the only black is the intentional < 0.067 s fade-in at 0.0 s)
   Freeze detect (freezedetect):                   no unintended freezes
      (the 0.7 s "impact freeze" beat carries grain/particles, by design)
-  Loudness (EBU R128):   Integrated I = -14.9 LUFS   LRA = 6.8 LU
+  Loudness (EBU R128):   Integrated I = -14.2 LUFS   LRA = 5.5 LU
      -> on-target for social delivery
-  Peak (volumedetect):   max_volume = -0.7 dBFS   -> no clipping (TP-limited in mux)
+  Peak (volumedetect):   max_volume = -1.2 dBFS   -> no clipping (TP-limited in mux)
   Background music:      NONE  (source audio muted; synthesized SFX + Kokoro VO)  -> PASS
   Voice-over presence:   VO speech windows sit at -16..-20 dBFS while the ducked
      SFX bed sits ~ -35 dBFS during speech -> VO is clearly on top (~15-18 dB).
