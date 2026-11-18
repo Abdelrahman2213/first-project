@@ -1,0 +1,592 @@
+[
+{
+"id": "basit",
+"ar": "عبد الباسط عبد الصمد",
+"en": "Abdul Basit Abdus Samad",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abdulbasit_Abdusamad_1_-_Egypt_%28%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%B7_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%B5%D9%85%D8%AF_-_%D9%85%D8%B5%D8%B1%29.mp3",
+"fajr": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_abd_albaset.mp3"
+},
+{
+"id": "refaat",
+"ar": "محمد رفعت",
+"en": "Mohamed Refaat",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Muhammad_Refaat_-_Cairo_%28%D9%85%D8%AD%D9%85%D8%AF_%D8%B1%D9%81%D8%B9%D8%AA_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "husary",
+"ar": "محمود خليل الحصري",
+"en": "Mahmoud Khalil Al-Husary",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmoud_Khalil_Al_Hussary_-_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%AE%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%AD%D8%B5%D8%B1%D9%8A_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "minshawi",
+"ar": "محمد صديق المنشاوي",
+"en": "Mohamed Siddiq Al-Minshawi",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mohamed_Siddiq_El-Minshawi_-_Egypt_1_%28%D9%85%D8%AD%D9%85%D8%AF_%D8%B5%D8%AF%D9%8A%D9%82_%D8%A7%D9%84%D9%85%D9%86%D8%B4%D8%A7%D9%88%D9%8A_-_%D9%85%D8%B5%D8%B1%29.mp3",
+"fajr": null
+},
+{
+"id": "mustafa_ismail",
+"ar": "مصطفى إسماعيل",
+"en": "Mustafa Ismail",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mustafa_Ismail_-_Egypt_%28%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84_-_%D9%85%D8%B5%D8%B1%29.mp3",
+"fajr": null
+},
+{
+"id": "banna",
+"ar": "محمود علي البنا",
+"en": "Mahmoud Ali Al-Banna",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmoud_Ali_Al_Banna_-_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%B9%D9%84%D9%8A_%D8%A7%D9%84%D8%A8%D9%86%D8%A7_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "tablawi",
+"ar": "محمد محمود الطبلاوي",
+"en": "Mohamed Mahmoud Al-Tablawi",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/muhammed_altablawy.mp3",
+"fajr": null
+},
+{
+"id": "shuaisha",
+"ar": "أبو العينين شعيشع",
+"en": "Abul Ainain Shuaisha",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abul_Ainain_Shuaisha_-_Cairo_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D8%B9%D9%8A%D9%86%D9%8A%D9%86_%D8%B4%D8%B9%D9%8A%D8%B4%D8%B9_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "naqshbandi",
+"ar": "سيد النقشبندي",
+"en": "Sayed Al-Naqshbandi",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Sheikh_Al_Naqshbandi_%28%D8%A7%D9%84%D8%B4%D9%8A%D8%AE_%D8%A7%D9%84%D9%86%D9%82%D8%B4%D8%A8%D9%86%D8%AF%D9%89%29.mp3",
+"fajr": null
+},
+{
+"id": "toubar",
+"ar": "نصر الدين طوبار",
+"en": "Nasr El-Din Tobar",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/nasr_eldeen_toubar.mp3",
+"fajr": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/nasr_aldeen_tobar_fajr.mp3"
+},
+{
+"id": "omran",
+"ar": "محمد عمران",
+"en": "Mohamed Omran",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mohamed_omran.mp3",
+"fajr": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mohamed_omran_fajr.mp3"
+},
+{
+"id": "nuinaa",
+"ar": "أحمد نعينع",
+"en": "Ahmed Nuinaa",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmed_Nuinaa_1_-_Egypt_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D8%B9%D9%8A%D9%86%D8%B9_-_%D9%85%D8%B5%D8%B1%29.mp3",
+"fajr": null
+},
+{
+"id": "ali_mahmoud",
+"ar": "علي محمود",
+"en": "Ali Mahmoud",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/aly_mahmoud.mp3",
+"fajr": null
+},
+{
+"id": "ghalwash",
+"ar": "راغب مصطفى غلوش",
+"en": "Ragheb Mustafa Ghalwash",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/ragheb_ghalosh.mp3",
+"fajr": null
+},
+{
+"id": "sayad",
+"ar": "شعبان الصياد",
+"en": "Shaaban Al-Sayad",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/shaaban_alsayad.mp3",
+"fajr": null
+},
+{
+"id": "fashni",
+"ar": "طه الفشني",
+"en": "Taha Al-Fashni",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/taha_alfashn_1.mp3",
+"fajr": null
+},
+{
+"id": "bahtimi",
+"ar": "كامل يوسف البهتيمي",
+"en": "Kamel Youssef Al-Bahtimi",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/kamel_youssef_albahtemy.mp3",
+"fajr": null
+},
+{
+"id": "zaher",
+"ar": "عبد العظيم زاهر",
+"en": "Abdel Azim Zaher",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/abdel_azem_zaher.mp3",
+"fajr": null
+},
+{
+"id": "harak",
+"ar": "عبد الناصر حرك",
+"en": "Abdel Nasser Harak",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/abdel_nasser_hark.mp3",
+"fajr": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_abdel_nasser_harak.mp3"
+},
+{
+"id": "tawakh",
+"ar": "محمود الطوخي",
+"en": "Mahmoud Al-Tukhi",
+"oar": "مسجد الرفاعي، القاهرة",
+"oen": "Al-Rifai Mosque, Cairo",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmud_Al_Tawakh_2_-_Masjid_Al_Rifai_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%A7%D9%84%D8%B7%D9%88%D8%A7%D8%AE_-_%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%B1%D9%81%D8%A7%D8%B9%D9%8A_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "islam_sobhi",
+"ar": "إسلام صبحي",
+"en": "Islam Sobhi",
+"oar": "مصر",
+"oen": "Egypt",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/islam_sobhey.mp3",
+"fajr": null
+},
+{
+"id": "cairo",
+"ar": "أذان القاهرة",
+"en": "Cairo adhan",
+"oar": "القاهرة",
+"oen": "Cairo",
+"region": "EGYPT",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/adhan_egypt.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Cairo_Egypt_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9_%D9%85%D8%B5%D8%B1%29.mp3"
+},
+{
+"id": "makkah",
+"ar": "أذان الحرم المكي",
+"en": "Masjid al-Haram adhan",
+"oar": "مكة المكرمة",
+"oen": "Makkah",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/adhan_makkah.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Al_Haram_Al_Maki_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3"
+},
+{
+"id": "madinah",
+"ar": "أذان المسجد النبوي",
+"en": "Masjid an-Nabawi adhan",
+"oar": "المدينة المنورة",
+"oen": "Madinah",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Al_Haram_Al_Madani_-_Al_Madinah_1_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A_-_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Al_Haram_Al_Madani_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%29.mp3"
+},
+{
+"id": "mulla",
+"ar": "علي أحمد ملا",
+"en": "Ali Ahmed Mulla",
+"oar": "الحرم المكي",
+"oen": "Masjid al-Haram",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ali_Ibn_Ahmad_Mala_1_-_Al_Haram_Al_Maki_%28%D8%B9%D9%84%D9%8A_%D8%A8%D9%86_%D8%A3%D8%AD%D9%85%D8%AF_%D9%85%D9%84%D8%A7_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "hadrawi",
+"ar": "فاروق حضراوي",
+"en": "Farouk Hadrawi",
+"oar": "الحرم المكي",
+"oen": "Masjid al-Haram",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Faruq_Abdul_Rahman_Hadrawe_-_Al_Haram_Al_Maki_%28%D9%81%D8%A7%D8%B1%D9%88%D9%82_%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86_%D8%AD%D8%B6%D8%B1%D8%A7%D9%88%D9%8A_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "bukhari",
+"ar": "عصام بخاري",
+"en": "Essam Bukhari",
+"oar": "الحرم المكي",
+"oen": "Masjid al-Haram",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Assem_Bukhrare_-_Al_Haram_Al_Maki_%28%D8%B9%D8%A7%D8%B5%D9%85_%D8%A8%D8%AE%D8%B1%D8%A7%D8%B1%D9%8A_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "nayef_fida",
+"ar": "نايف فيدة",
+"en": "Nayef Fida",
+"oar": "الحرم المكي",
+"oen": "Masjid al-Haram",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Nayf_Fedah_-_Al_Haram_Al_Maki_%28%D9%86%D8%A7%D9%8A%D9%81_%D9%81%D8%AF%D8%A7%D8%AD_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "surehi",
+"ar": "عبد المجيد السريحي",
+"en": "Abdulmajeed Al-Surehi",
+"oar": "المسجد النبوي",
+"oen": "Masjid an-Nabawi",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abdul_Majid_Al_Surehi_1_%28%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%85%D8%AC%D9%8A%D8%AF_%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%AD%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "aqsa",
+"ar": "أذان المسجد الأقصى",
+"en": "Al-Aqsa adhan",
+"oar": "القدس",
+"oen": "Jerusalem",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Al_Aqsa_-_Jerusalem_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89_-_%D8%A7%D9%84%D9%82%D8%AF%D8%B3%29.mp3",
+"fajr": null
+},
+{
+"id": "qazzaz",
+"ar": "ناجي قزاز",
+"en": "Naji Qazzaz",
+"oar": "المسجد الأقصى",
+"oen": "Al-Aqsa Mosque",
+"region": "HARAMAIN",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Najee_Qazaz_-_Al_Aqsa_Jerusalem_%28%D9%86%D8%A7%D8%AC%D9%8A_%D9%82%D8%B2%D8%A7%D8%B2_-_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89_%D8%A7%D9%84%D9%82%D8%AF%D8%B3%29.mp3",
+"fajr": null
+},
+{
+"id": "afasy",
+"ar": "مشاري راشد العفاسي",
+"en": "Mishary Rashid Alafasy",
+"oar": "الكويت",
+"oen": "Kuwait",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mishary_Rashid_Alafasy_1_-_Kuwait_%28%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%B1%D8%A7%D8%B4%D8%AF_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A_-_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mishary_Rashid_Alafasy_3_-_Fajr_Kuwait_%28%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%B1%D8%A7%D8%B4%D8%AF_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3"
+},
+{
+"id": "qatami",
+"ar": "ناصر القطامي",
+"en": "Nasser Al-Qatami",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Nasser_Al_Qatami_1_-_Saudi_Arabia_%28%D9%86%D8%A7%D8%B5%D8%B1_%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D9%85%D9%8A_-_%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "zahrani",
+"ar": "منصور الزهراني",
+"en": "Mansour Az-Zahrani",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mansur_Al_Zahrane_%28%D9%85%D9%86%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D8%B2%D9%87%D8%B1%D8%A7%D9%86%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "dosari",
+"ar": "ياسر الدوسري",
+"en": "Yasser Al-Dosari",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/yasser_aldosary.mp3",
+"fajr": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/yasser_aldosary_fajr.mp3"
+},
+{
+"id": "abkar",
+"ar": "إدريس أبكر",
+"en": "Idris Abkar",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/edres_abkar.mp3",
+"fajr": null
+},
+{
+"id": "ghamdi",
+"ar": "سعد الغامدي",
+"en": "Saad Al-Ghamdi",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/saad_alghamdy.mp3",
+"fajr": null
+},
+{
+"id": "ajmi",
+"ar": "أحمد بن علي العجمي",
+"en": "Ahmed Al-Ajmi",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/ahmed_alagamy.mp3",
+"fajr": null
+},
+{
+"id": "nufais",
+"ar": "أحمد النفيس",
+"en": "Ahmed Al-Nufais",
+"oar": "الكويت",
+"oen": "Kuwait",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Al_Nafees_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%86%D9%81%D9%8A%D8%B3%29.mp3",
+"fajr": null
+},
+{
+"id": "abbad",
+"ar": "فارس عباد",
+"en": "Fares Abbad",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fares_abbad.mp3",
+"fajr": null
+},
+{
+"id": "baloushi",
+"ar": "هزاع البلوشي",
+"en": "Hazza Al-Balushi",
+"oar": "الإمارات",
+"oen": "UAE",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/hazzaa_albaloshy.mp3",
+"fajr": null
+},
+{
+"id": "deghreri",
+"ar": "حمد الدغريري",
+"en": "Hamad Al-Deghreri",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Hamad_Al_Daghriri_%28%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AF%D8%BA%D8%B1%D9%8A%D8%B1%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "malki",
+"ar": "حمدان المالكي",
+"en": "Hamdan Al-Malki",
+"oar": "نجران، السعودية",
+"oen": "Najran, Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Hamdan_Al_Maleke_-_Najran_Saudi_Arabia_%28%D8%AD%D9%85%D8%AF%D8%A7%D9%86_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A_-_%D9%86%D8%AC%D8%B1%D8%A7%D9%86_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%29.mp3",
+"fajr": null
+},
+{
+"id": "hamathani",
+"ar": "ماجد الهمداني",
+"en": "Majed Al-Hamathani",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Majed%20Al-hamathani.mp3",
+"fajr": null
+},
+{
+"id": "arkani",
+"ar": "إبراهيم الأركاني",
+"en": "Ibrahim Al-Arkani",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Ibrahim%20Al-Arkani.mp3",
+"fajr": null
+},
+{
+"id": "yamani",
+"ar": "وديع اليمني",
+"en": "Wadee Al-Yamani",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Wadi_Hamad_Al-Yamani_%28%D9%88%D8%A7%D8%AF%D9%8A_%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%8A%D9%85%D8%A7%D9%86%D9%8A%29.mp3",
+"fajr": null
+},
+{
+"id": "jehaim",
+"ar": "خالد الجهيم",
+"en": "Khaled Al-Juhaim",
+"oar": "السعودية",
+"oen": "Saudi Arabia",
+"region": "GULF",
+"url": null,
+"fajr": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_khaled_aljohaim.mp3"
+},
+{
+"id": "tarablsi",
+"ar": "أحمد الطرابلسي",
+"en": "Ahmed Al-Tarabulsi",
+"oar": "الكويت",
+"oen": "Kuwait",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmd_At-Trablsy_1_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D9%8A%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmd_At-Trablsy_-_Fajr_Kuwait_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D9%8A_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3"
+},
+{
+"id": "mejlad",
+"ar": "أحمد نواف المجلاد",
+"en": "Ahmad Nawaf Al-Mejlad",
+"oar": "الكويت",
+"oen": "Kuwait",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Nawaf_Al_Mejlad_1_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D9%88%D8%A7%D9%81_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%AF%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Nawaf_Al_Mejlad_2_-_Fajr_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D9%88%D8%A7%D9%81_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%AF_-_%D8%A7%D9%84%D9%81%D8%AC%D8%B1%29.mp3"
+},
+{
+"id": "kuwait",
+"ar": "أذان الكويت",
+"en": "Kuwait adhan",
+"oar": "الكويت",
+"oen": "Kuwait",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Kuwait_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Kuwait_1_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3"
+},
+{
+"id": "dubai",
+"ar": "أذان دبي",
+"en": "Dubai adhan",
+"oar": "الإمارات",
+"oen": "UAE",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Dubai_UAE_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%AF%D8%A8%D9%8A_%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%29.mp3",
+"fajr": null
+},
+{
+"id": "emadi",
+"ar": "أحمد العمادي",
+"en": "Ahmad Al-Emadi",
+"oar": "قطر",
+"oen": "Qatar",
+"region": "GULF",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Al_Amade_1_-_Qatar_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D8%AF%D9%8A_-_%D9%82%D8%B7%D8%B1%29.mp3",
+"fajr": null
+},
+{
+"id": "yaseen",
+"ar": "ياسين العساف",
+"en": "Yaseen Al-Assaf",
+"oar": "العراق",
+"oen": "Iraq",
+"region": "OTHER",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Yaseen_Al_Aassaf_1_%28%D9%8A%D8%A7%D8%B3%D9%8A%D9%86_%D8%A7%D9%84%D8%A3%D8%B3%D9%81%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Yaseen_Al_Aassaf_2_-_Fajr_Iraq_%28%D9%8A%D8%A7%D8%B3%D9%8A%D9%86_%D8%A7%D9%84%D8%A3%D8%B3%D9%81_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%29.mp3"
+},
+{
+"id": "jabr",
+"ar": "إبراهيم جبر أبو رهق",
+"en": "Ibrahim Jabr Abu Rahaq",
+"oar": "",
+"oen": "",
+"region": "OTHER",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ibraheem_Jabr_Abu_Raheq_%28%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85_%D8%AC%D8%A8%D8%B1_%D8%A3%D8%A8%D9%88_%D8%B1%D8%AD%D9%8A%D9%82%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ibraheem_Jabr_Abu_Raheq_-_Fajr_%28%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85_%D8%AC%D8%A8%D8%B1_%D8%A3%D8%A8%D9%88_%D8%B1%D8%AD%D9%8A%D9%82_-_%D8%A7%D9%84%D9%81%D8%AC%D8%B1%29.mp3"
+},
+{
+"id": "algeria",
+"ar": "أذان الجزائر",
+"en": "Algeria adhan",
+"oar": "الجزائر",
+"oen": "Algeria",
+"region": "OTHER",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Riad_Al_Djazairi_-_Algeria_%28%D8%B1%D9%8A%D8%A7%D8%B6_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A_-_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%29.mp3",
+"fajr": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Algeria_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%29.mp3"
+},
+{
+"id": "morocco",
+"ar": "كمال المروش",
+"en": "Kamal Al-Marush",
+"oar": "المغرب",
+"oen": "Morocco",
+"region": "OTHER",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Kamal_Muhammad_Al_Marush_2_-_Morocco_%28%D9%83%D9%85%D8%A7%D9%84_%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%85%D8%B1%D8%B9%D9%88%D8%B4_-_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%29.mp3",
+"fajr": null
+},
+{
+"id": "syria",
+"ar": "أذان سوريا",
+"en": "Syria adhan",
+"oar": "سوريا",
+"oen": "Syria",
+"region": "OTHER",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Syria_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%B3%D9%88%D8%B1%D9%8A%D8%A7%29.mp3",
+"fajr": null
+},
+{
+"id": "turkey",
+"ar": "أذان تركيا",
+"en": "Turkey adhan",
+"oar": "تركيا",
+"oen": "Turkey",
+"region": "OTHER",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Turkey_1_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%AA%D8%B1%D9%83%D9%8A%D8%A7%29.mp3",
+"fajr": null
+},
+{
+"id": "chebae",
+"ar": "مالك شيبة",
+"en": "Malek Chebae",
+"oar": "",
+"oen": "",
+"region": "OTHER",
+"url": null,
+"fajr": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Al-fajer%20-%20Malek%20chebae.mp3"
+}
+]
