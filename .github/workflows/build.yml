@@ -97,6 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: rm -rf dist/test
       - uses: actions/download-artifact@v4
         with:
           name: apks
@@ -118,6 +119,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
           git rm -rq --cached dist 2>/dev/null || true
+          rm -rf dist/test/*.png.old
           git add -f dist
           git commit -m "Build ${{ github.run_number }}: APK and test results [skip ci]"
           git push

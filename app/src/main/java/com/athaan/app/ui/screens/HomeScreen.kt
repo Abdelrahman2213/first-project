@@ -244,15 +244,14 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
 @Composable
 private fun RollingText(text: String, size: TextUnit) {
     val density = androidx.compose.ui.platform.LocalDensity.current
-    val digitW = with(density) { (size * 0.6f).toDp() }
-    val colonW = with(density) { (size * 0.3f).toDp() }
-    val cellH = with(density) { (size * 1.3f).toDp() }
+    val digitW = with(density) { (size * 0.62f).toDp() }
+    val colonW = with(density) { (size * 0.32f).toDp() }
     // Digits always read left-to-right, even in the Arabic layout.
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             text.forEachIndexed { i, ch ->
                 val w = if (ch.isDigit()) digitW else colonW
-                Box(Modifier.width(w).height(cellH).clipToBounds(), contentAlignment = Alignment.Center) {
+                Box(Modifier.width(w).clipToBounds(), contentAlignment = Alignment.Center) {
                     AnimatedContent(
                         targetState = ch,
                         transitionSpec = {
@@ -261,7 +260,13 @@ private fun RollingText(text: String, size: TextUnit) {
                         },
                         contentAlignment = Alignment.Center,
                         label = "digit$i",
-                    ) { c -> T(c.toString(), size, FontWeight.SemiBold, lineHeight = size * 1.2f) }
+                    ) { c ->
+                        // No ellipsis and no wrapping: a single glyph must always be drawn in full.
+                        androidx.compose.material3.Text(
+                            c.toString(), fontSize = size, fontWeight = FontWeight.SemiBold, fontFamily = com.athaan.app.ui.theme.Plex,
+                            color = AC.Text, maxLines = 1, softWrap = false, overflow = androidx.compose.ui.text.style.TextOverflow.Visible,
+                        )
+                    }
                 }
             }
         }
