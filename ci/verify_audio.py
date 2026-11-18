@@ -4,12 +4,7 @@ import json, os, re, sys, subprocess, urllib.request
 from faster_whisper import WhisperModel
 
 shard, shards, out = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]
-cat = json.load(open("ci/catalog.json"))
-items = []
-for e in cat:
-    for kind in ("url", "fajr"):
-        if e[kind]:
-            items.append((e["id"], "fajr" if kind == "fajr" else "regular", e[kind]))
+items = [(c["id"], c["kind"], c["url"]) for c in json.load(open("ci/candidates.json"))]
 items = items[shard::shards]
 
 def norm(s):
@@ -29,7 +24,7 @@ for mid, kind, url in items:
         text = f"ERROR {ex}"
     n = norm(text)
     r = dict(id=mid, kind=kind, url=url,
-             fajr_phrase=("النوم" in n or "نوم" in n),
+             fajr_phrase=bool(re.search(r"خير م|خيرم|خم من|من النو|من النع|الصلاه خ", n)),
              has_falah=("فلاح" in n),
              has_hayya=("حي علي" in n or "حي على" in n),
              text=text[:1500])

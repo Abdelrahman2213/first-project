@@ -1,0 +1,127 @@
+[
+{
+"id": "nuinaa",
+"kind": "cand_k2",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmed_Nuinaa_2_-_Cairo_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D8%B9%D9%8A%D9%86%D8%B9_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3"
+},
+{
+"id": "nuinaa",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/ahmed_neenaa.mp3"
+},
+{
+"id": "zahrani",
+"kind": "cand_khq",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mansur_Al_Zahrane_-_HQ_%28%D9%85%D9%86%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D8%B2%D9%87%D8%B1%D8%A7%D9%86%D9%8A%29.mp3"
+},
+{
+"id": "zahrani",
+"kind": "cand_b1",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mansour_zahrani.mp3"
+},
+{
+"id": "zahrani",
+"kind": "cand_b2",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mansour_alzahrany.mp3"
+},
+{
+"id": "zahrani",
+"kind": "cand_abode",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Mansoor%20Az-Zahrani.mp3"
+},
+{
+"id": "hadrawi",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/faroq_hadrawy.mp3"
+},
+{
+"id": "minshawi",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mnshawi.mp3"
+},
+{
+"id": "minshawi",
+"kind": "cand_k2",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mohamed_Siddiq_El-Minshawi_-_Egypt_2_%28%D9%85%D8%AD%D9%85%D8%AF_%D8%B5%D8%AF%D9%8A%D9%82_%D8%A7%D9%84%D9%85%D9%86%D8%B4%D8%A7%D9%88%D9%8A_-_%D9%85%D8%B5%D8%B1%29.mp3"
+},
+{
+"id": "minshawi",
+"kind": "cand_abode",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Mohammad%20Almenshawy.mp3"
+},
+{
+"id": "refaat",
+"kind": "cand_b2",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mohamed_refaat_2.mp3"
+},
+{
+"id": "refaat",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mohamed_refaat.mp3"
+},
+{
+"id": "mulla",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mecca_ali_mulla.mp3"
+},
+{
+"id": "husary",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/alhusary.mp3"
+},
+{
+"id": "basit",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/abdel_basit.mp3"
+},
+{
+"id": "jabr",
+"kind": "cand_k1",
+"url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ibraheem_Jabar_1_%28%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85_%D8%AC%D8%A7%D8%A8%D8%B1%29.mp3"
+},
+{
+"id": "surehi",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/abdul_majed_sarehy.mp3"
+},
+{
+"id": "qatami",
+"kind": "cand_abode",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Nasser%20Alqatami.mp3"
+},
+{
+"id": "afasy_old",
+"kind": "cand_abode",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Mishary%20Alafasi.mp3"
+},
+{
+"id": "makkah",
+"kind": "cand_abode",
+"url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Makkah.mp3"
+},
+{
+"id": "deghreri",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/hamad_aldghriry.mp3"
+},
+{
+"id": "mustafa_ismail",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mostafa_ismaeel.mp3"
+},
+{
+"id": "nufais",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/ahmed_alnufais.mp3"
+},
+{
+"id": "madinah",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/almadena_almonawra.mp3"
+},
+{
+"id": "aqsa",
+"kind": "cand_b",
+"url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/adhan_alaqsa.mp3"
+}
+]
