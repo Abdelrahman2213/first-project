@@ -1,22 +1,26 @@
 Installed apks/debug/app-debug.apk
-PASS first screen asks for location — English | الوضع الفاتح | أذان | ATHAAN | نحتاج موقعك لنحسب
-مواقيت الصلاة بدقة | الموقع يُستخدم على جهازك فقط لتحديد مدينتك ومواقيت الصلاة. | السماح بالوصول للموقع | اختيار الدولة والمدينة يدويًا
+FAIL first screen asks for location — Pixel Launcher isn't responding | Close app | Wait
      screenshot 01_onboarding_arabic_dark.png
-PASS language switch to English
+     (could not find ('English',))
+FAIL language switch to English
      screenshot 02_onboarding_english.png
-PASS back to Arabic
-PASS theme switch to light
+     (could not find ('العربية',))
+FAIL back to Arabic
+     (could not find ('الوضع الفاتح',))
+FAIL theme switch to light
      screenshot 03_onboarding_light.png
+     (could not find ('الوضع الليلي',))
+     (could not find ('السماح بالوصول للموقع',))
      screenshot 04_permission_dialog.png
-PASS permission dialog shown and accepted
+     (could not find ('While using the app', 'أثناء استخدام التطبيق', 'Only this time'))
+FAIL permission dialog shown and accepted
      (could not find ('Turn on', 'OK', 'تشغيل'))
-FAIL location found and home screen opened — Allow ‎‫أذان‬‎ to send you notifications? | Allow | Don’t allow
+FAIL location found and home screen opened — Pixel Launcher isn't responding | Close app | Wait
      screenshot 05_home_dark.png
-FAIL home shows the five prayers — Allow ‎‫أذان‬‎ to send you notifications? | Allow | Don’t allow
-FAIL home shows a place name — Allow ‎‫أذان‬‎ to send you notifications? | Allow | Don’t allow
-     --------- beginning of main
-     11-18 16:24:38.421  2462  2462 I AthaanSchedule: next adhan FAJR at 1795056780000 exact=true
-PASS next adhan scheduled
+FAIL home shows the five prayers — Pixel Launcher isn't responding | Close app | Wait
+FAIL home shows a place name — Pixel Launcher isn't responding | Close app | Wait
+     
+FAIL next adhan scheduled
      (could not find ('الوضع الفاتح',))
 FAIL light theme on home
      screenshot 06_home_light.png
@@ -24,7 +28,7 @@ FAIL light theme on home
      (could not find ('المؤذنين',))
 FAIL library tab
      screenshot 07_library.png
-FAIL library lists many muezzins — Allow ‎‫أذان‬‎ to send you notifications? | Allow | Don’t allow
+FAIL library lists many muezzins — Pixel Launcher isn't responding | Close app | Wait
      (could not find ('معاينة',))
      (could not find ('أذان الفجر',))
      screenshot 08_library_fajr_filter.png
@@ -36,43 +40,48 @@ FAIL adhan tab
 FAIL settings tab
      screenshot 10_settings_top.png
      screenshot 11_settings_bottom.png
-PASS fajr picker opened
+FAIL fajr picker opened
      screenshot 12_pick_fajr.png
-PASS fajr picker hides muezzins without a Fajr recording — رجوع | اختر مؤذن الفجر | تسجيلات أذان الفجر فقط (فيها «الصلاة خير من النوم») | الكل | مصر | الحرمين والأقصى | الخليج | أخرى | ع | عبد الباسط عبد الصمد | مصر | محمّل | + أذان الفجر | مختار لـالفجر | معاينة | ن | نصر الدين طوبار | مصر | + أذان الفجر | معاينة | م | محمد عمران | مصر | + أذان الفجر | معا
-PASS muezzin page
-     screenshot 13_muezzin_afasy.png
-PASS country list
-     screenshot 14_countries.png
-     (could not find ('ابحث عن دولة',))
-     screenshot 15_countries_search.png
+PASS fajr picker hides muezzins without a Fajr recording — Pixel Launcher isn't responding | Close app | Wait
+FAIL muezzin page
+     screenshot 13_muezzin_dosari.png
+FAIL add-muezzin screen
+     screenshot 14_add_muezzin.png
+PASS custom muezzin added
+     (could not find ('أصواتي',))
+FAIL custom muezzin in library
+     screenshot 15_library_custom.png
+PASS Dhuhr plays the user's recording — --------- beginning of main
+11-18 17:00:11.787  3581  3581 I AthaanAdhan: adhan DHUHR muezzin=custom_a2db7ec5 fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_a2db7ec5.mp3
+
+FAIL country list
+     screenshot 16_countries.png
+     (no text field found)
+     screenshot 17_countries_search.png
      (could not find ('مصر',))
 FAIL country search
 FAIL city list for Egypt
-     screenshot 16_cities_egypt.png
-     (could not find ('ابحث عن مدينة',))
-     screenshot 17_cities_search.png
+     screenshot 18_cities_egypt.png
+     (no text field found)
+     screenshot 19_cities_search.png
      (could not find ('الإسكندرية',))
 FAIL choose Alexandria
-FAIL home shows Alexandria — رجوع | English | اختر دولتك | بعدها تختار مدينتك · مفيد لو مسافر أو الـGPS مقفول | استخدام موقعي الحالي | دولتك | 🇺🇸 | الولايات المتحدة | 17338 مدينة | كل الدول | 🇮🇸 | آيسلندا | 35 مدينة | 🇪🇹 | إثيوبي
-     screenshot 18_home_alexandria.png
-PASS playing screen
-     screenshot 19_playing_fajr.png
+FAIL home shows Alexandria — Pixel Launcher isn't responding | Close app | Wait
+     screenshot 20_home_alexandria.png
+FAIL playing screen
+     screenshot 21_playing_fajr.png
      --------- beginning of main
-11-18 16:31:22.242  2462  2462 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
+11-18 17:03:08.435  3581  3581 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
 PASS Fajr uses the Fajr recording — --------- beginning of main
-11-18 16:31:22.242  2462  2462 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
+11-18 17:03:08.435  3581  3581 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
 
 PASS no player error
-FAIL adhan stops
-     screenshot 20_home_english_light.png
-     screenshot 21_library_english_light.png
-     screenshot 22_settings_english_light.png
-     clock moved to 20 s before FAJR adhan (1795056780000)
-     --------- beginning of main
-11-19 02:53:00.007  2462  2462 I AthaanAlarm: alarm com.athaan.app.ACTION_ADHAN prayer=FAJR
-11-19 02:53:00.032  2462  2462 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
-PASS alarm fired and the FAJR adhan started by itself
-     screenshot 23_alarm_fired.png
+     (could not find ('إيقاف الأذان',))
+PASS adhan stops — Pixel Launcher isn't responding | Close app | Wait
+     screenshot 22_home_english_light.png
+     screenshot 23_library_english_light.png
+     screenshot 24_settings_english_light.png
+FAIL found next adhan time in log
 PASS no crash
 
-FAILED: location found and home screen opened, home shows the five prayers, home shows a place name, light theme on home, library tab, library lists many muezzins, adhan tab, settings tab, country search, city list for Egypt, choose Alexandria, home shows Alexandria, adhan stops
+FAILED: first screen asks for location, language switch to English, back to Arabic, theme switch to light, permission dialog shown and accepted, location found and home screen opened, home shows the five prayers, home shows a place name, next adhan scheduled, light theme on home, library tab, library lists many muezzins, adhan tab, settings tab, fajr picker opened, muezzin page, add-muezzin screen, custom muezzin in library, country list, country search, city list for Egypt, choose Alexandria, home shows Alexandria, playing screen, found next adhan time in log
