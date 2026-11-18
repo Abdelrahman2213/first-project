@@ -1,87 +1,78 @@
 Installed apks/debug/app-debug.apk
-FAIL first screen asks for location — Pixel Launcher isn't responding | Close app | Wait
+PASS first screen asks for location — English | الوضع الفاتح | أذان | ATHAAN | نحتاج موقعك لنحسب
+مواقيت الصلاة بدقة | الموقع يُستخدم على جهازك فقط لتحديد مدينتك ومواقيت الصلاة. | السماح بالوصول للموقع | اختيار الدولة والمدينة يدويًا
      screenshot 01_onboarding_arabic_dark.png
-     (could not find ('English',))
-FAIL language switch to English
+PASS language switch to English
      screenshot 02_onboarding_english.png
-     (could not find ('العربية',))
-FAIL back to Arabic
-     (could not find ('الوضع الفاتح',))
-FAIL theme switch to light
+PASS back to Arabic
+PASS theme switch to light
      screenshot 03_onboarding_light.png
-     (could not find ('الوضع الليلي',))
-     (could not find ('السماح بالوصول للموقع',))
      screenshot 04_permission_dialog.png
-     (could not find ('While using the app', 'أثناء استخدام التطبيق', 'Only this time'))
-FAIL permission dialog shown and accepted
+PASS permission dialog shown and accepted
      (could not find ('Turn on', 'OK', 'تشغيل'))
-FAIL location found and home screen opened — Pixel Launcher isn't responding | Close app | Wait
+PASS location found and home screen opened — القاهرة، مصر | أذان | الوضع الفاتح | الأربعاء · 18 نوفمبر | 8 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:53 ص | باقي | 0 | 9 | : | 3 | 7 | : | 2 | 3 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد ال
      screenshot 05_home_dark.png
-FAIL home shows the five prayers — Pixel Launcher isn't responding | Close app | Wait
-FAIL home shows a place name — Pixel Launcher isn't responding | Close app | Wait
-     
-FAIL next adhan scheduled
-     (could not find ('الوضع الفاتح',))
-FAIL light theme on home
+PASS home shows the five prayers — القاهرة، مصر | أذان | الوضع الفاتح | الأربعاء · 18 نوفمبر | 8 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:53 ص | باقي | 0 | 9 | : | 3 | 7 | : | 1 | 4 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد ال
+PASS home shows a place name — القاهرة، مصر | أذان | الوضع الفاتح | الأربعاء · 18 نوفمبر | 8 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:53 ص | باقي | 0 | 9 | : | 3 | 7 | : | 1 | 4 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الب
+     --------- beginning of main
+     11-18 17:14:57.733  4562  4562 I AthaanSchedule: next adhan FAJR at 1795056780000 exact=true
+     11-18 17:15:11.142  4562  4562 I AthaanSchedule: next adhan FAJR at 1795056780000 exact=true
+PASS next adhan scheduled
+PASS light theme on home
      screenshot 06_home_light.png
-     (could not find ('الوضع الليلي',))
-     (could not find ('المؤذنين',))
-FAIL library tab
+PASS library tab
      screenshot 07_library.png
-FAIL library lists many muezzins — Pixel Launcher isn't responding | Close app | Wait
-     (could not find ('معاينة',))
-     (could not find ('أذان الفجر',))
-     screenshot 08_library_fajr_filter.png
-     (could not find ('الكل',))
-     (could not find ('الأذان',))
-FAIL adhan tab
-     screenshot 09_per_prayer.png
-     (could not find ('الإعدادات',))
-FAIL settings tab
-     screenshot 10_settings_top.png
-     screenshot 11_settings_bottom.png
-FAIL fajr picker opened
-     screenshot 12_pick_fajr.png
-PASS fajr picker hides muezzins without a Fajr recording — Pixel Launcher isn't responding | Close app | Wait
-FAIL muezzin page
-     screenshot 13_muezzin_dosari.png
-FAIL add-muezzin screen
-     screenshot 14_add_muezzin.png
+PASS library lists many muezzins — مكتبة المؤذنين | 58 مؤذن · استمع، اختر، وحمّل للاستماع بدون إنترنت | الكل | أذان الفجر | مصر | الحرمين والأقصى | الخليج | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | ع | عبد الباسط عبد الصمد | مصر | + أذان الفجر | مختار لـالفجر | معاينة | م | محمد رفعت | مصر | معاينة | م | 
+     screenshot 08_library_preview_playing.png
+PASS preview mini player
+     screenshot 09_library_fajr_filter.png
+PASS adhan tab
+     screenshot 10_per_prayer.png
+PASS settings tab
+     screenshot 11_settings_top.png
+     screenshot 12_settings_bottom.png
+PASS fajr picker opened
+     screenshot 13_pick_fajr.png
+PASS fajr picker hides muezzins without a Fajr recording — رجوع | اختر مؤذن الفجر | تسجيلات أذان الفجر فقط (فيها «الصلاة خير من النوم») | الكل | مصر | الحرمين والأقصى | الخليج | أخرى | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | ع | عبد الباسط عبد الصمد | مصر | محمّل | + أذان الفجر | مختار لـالفجر | معاينة | ن | نصر الدين طوبار | م
+PASS muezzin page
+     screenshot 14_muezzin_dosari.png
+PASS add-muezzin screen
+     screenshot 15_add_muezzin.png
 PASS custom muezzin added
      (could not find ('أصواتي',))
 FAIL custom muezzin in library
-     screenshot 15_library_custom.png
+     screenshot 16_library_custom.png
 PASS Dhuhr plays the user's recording — --------- beginning of main
-11-18 17:00:11.787  3581  3581 I AthaanAdhan: adhan DHUHR muezzin=custom_a2db7ec5 fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_a2db7ec5.mp3
+11-18 17:18:43.212  4562  4562 I AthaanAdhan: adhan DHUHR muezzin=custom_e3ac2c23 fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_e3ac2c23.mp3
 
-FAIL country list
-     screenshot 16_countries.png
-     (no text field found)
-     screenshot 17_countries_search.png
-     (could not find ('مصر',))
-FAIL country search
-FAIL city list for Egypt
-     screenshot 18_cities_egypt.png
-     (no text field found)
-     screenshot 19_cities_search.png
-     (could not find ('الإسكندرية',))
-FAIL choose Alexandria
-FAIL home shows Alexandria — Pixel Launcher isn't responding | Close app | Wait
-     screenshot 20_home_alexandria.png
-FAIL playing screen
-     screenshot 21_playing_fajr.png
+PASS country list
+     screenshot 17_countries.png
+     screenshot 18_countries_search.png
+PASS country search
+PASS city list for Egypt
+     screenshot 19_cities_egypt.png
+     screenshot 20_cities_search.png
+PASS choose Alexandria
+FAIL home shows Alexandria — مكتبة المؤذنين | 59 مؤذن · استمع، اختر، وحمّل للاستماع بدون إنترنت | الكل | أذان الفجر | مصر | الحرمين والأقصى | الخليج | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | ع | عبد 
+     screenshot 21_home_alexandria.png
+PASS playing screen
+     screenshot 22_playing_fajr.png
      --------- beginning of main
-11-18 17:03:08.435  3581  3581 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
+11-18 17:19:39.462  4562  4562 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 PASS Fajr uses the Fajr recording — --------- beginning of main
-11-18 17:03:08.435  3581  3581 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
+11-18 17:19:39.462  4562  4562 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 
 PASS no player error
-     (could not find ('إيقاف الأذان',))
-PASS adhan stops — Pixel Launcher isn't responding | Close app | Wait
-     screenshot 22_home_english_light.png
-     screenshot 23_library_english_light.png
-     screenshot 24_settings_english_light.png
-FAIL found next adhan time in log
+PASS adhan stops — مكتبة المؤذنين | 59 مؤذن · استمع، اختر، وحمّل للاستماع بدون إنترنت | الكل | أذان الفجر | مصر | الحرمين والأقصى | الخليج | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | ع | عبد 
+     screenshot 23_home_english_light.png
+     screenshot 24_library_english_light.png
+     screenshot 25_settings_english_light.png
+     clock moved to 20 s before FAJR adhan (1795057140000)
+     --------- beginning of main
+11-19 02:59:00.004  4562  4562 I AthaanAlarm: alarm com.athaan.app.ACTION_ADHAN prayer=FAJR
+11-19 02:59:00.075  4562  4562 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
+PASS alarm fired and the FAJR adhan started by itself
+     screenshot 26_alarm_fired.png
 PASS no crash
 
-FAILED: first screen asks for location, language switch to English, back to Arabic, theme switch to light, permission dialog shown and accepted, location found and home screen opened, home shows the five prayers, home shows a place name, next adhan scheduled, light theme on home, library tab, library lists many muezzins, adhan tab, settings tab, fajr picker opened, muezzin page, add-muezzin screen, custom muezzin in library, country list, country search, city list for Egypt, choose Alexandria, home shows Alexandria, playing screen, found next adhan time in log
+FAILED: custom muezzin in library, home shows Alexandria
