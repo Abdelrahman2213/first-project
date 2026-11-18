@@ -4,6 +4,7 @@ import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.util.Log
+import com.athaan.app.data.CustomMuezzins
 import com.athaan.app.data.Muezzins
 import com.athaan.app.data.Track
 import kotlinx.coroutines.CoroutineScope
@@ -49,6 +50,22 @@ class AudioRepository private constructor(context: Context) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     private val dir = File(appContext.filesDir, "adhans").apply { mkdirs() }
 
+    init {
+        // Remove offline copies that no longer match any recording (e.g. from older versions).
+        scope.launch(Dispatchers.IO) {
+            val keep = HashSet<String>()
+            Muezzins.all.forEach { m ->
+                if (m.hasRegular) keep += localFile(Track(m, false)).name
+                if (m.hasFajr) keep += localFile(Track(m, true)).name
+            }
+            dir.listFiles()?.forEach { f ->
+                if (f.name !in keep && !f.name.startsWith("custom_") && !f.name.endsWith(".part")) {
+                    Log.i(TAG, "removing stale ${f.name}"); f.delete()
+                }
+            }
+        }
+    }
+
     private val _downloads = MutableStateFlow(initialDownloads())
     val downloads: StateFlow<Map<String, DownloadState>> = _downloads.asStateFlow()
 
@@ -58,7 +75,14 @@ class AudioRepository private constructor(context: Context) {
     private var player: MediaPlayer? = null
     private var ticker: Job? = null
 
-    fun localFile(t: Track): File = File(dir, "${t.key}.mp3")
+    /**
+     * Offline copy of a recording. The file name carries a hash of the source URL, so if a
+     * recording is ever replaced in the catalog the old copy is never played again.
+     * The user's own recordings ("custom:") keep their plain names.
+     */
+    fun localFile(t: Track): File =
+        if (t.url.startsWith(CustomMuezzins.SCHEME)) File(dir, "${t.key}.mp3")
+        else File(dir, "${t.key}_${Integer.toHexString(t.url.hashCode())}.mp3")
     fun isDownloaded(t: Track): Boolean = localFile(t).let { it.exists() && it.length() > 10_000 }
 
     /** Local file path if downloaded, otherwise the online URL. */
@@ -93,6 +117,7 @@ class AudioRepository private constructor(context: Context) {
     /** Synchronous download, safe to call from a background thread. */
     fun downloadBlocking(t: Track, onProgress: (Float) -> Unit = {}): Boolean {
         val tmp = File(dir, "${t.key}.part")
+        if (t.url.startsWith(CustomMuezzins.SCHEME)) return isDownloaded(t)
         return try {
             var url = URL(t.url)
             var conn: HttpURLConnection

@@ -69,9 +69,20 @@ def dump():
     return None
 
 
-def nodes():
+def nodes(_depth=0):
     root = dump()
-    return [] if root is None else list(root.iter("node"))
+    ns = [] if root is None else list(root.iter("node"))
+    # The emulator is slow on CI: dismiss "X isn't responding" dialogs whenever they appear.
+    if _depth == 0:
+        for n in ns:
+            if "isn't responding" in (n.get("text") or ""):
+                for b in ns:
+                    if (b.get("text") or "") == "Wait":
+                        x, y = center(b)
+                        sh(f"input tap {x} {y}")
+                        time.sleep(2)
+                        return nodes(1)
+    return ns
 
 
 def find(*labels, exact=False):
@@ -160,6 +171,14 @@ def scroll_down():
 
 # ------------------------------------------------------------------ setup
 adb("wait-for-device")
+# Let the freshly booted emulator settle before driving the UI.
+for _ in range(60):
+    if sh("getprop sys.boot_completed").strip() == "1":
+        break
+    time.sleep(2)
+time.sleep(20)
+sh("input keyevent KEYCODE_HOME")
+time.sleep(5)
 sh("settings put global window_animation_scale 1")
 sh("cmd location set-location-enabled true")
 adb("emu", "geo", "fix", "31.2357", "30.0444")  # Cairo (lng lat)
