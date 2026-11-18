@@ -1,0 +1,2817 @@
+Toronto	تورنتو	43.7064	-79.3986	America/Toronto
+Montréal	مونترآل	45.5088	-73.5878	America/Toronto
+Calgary	كالغاري	51.0501	-114.0853	America/Edmonton
+Ottawa	أوتاوا	45.4112	-75.6981	America/Toronto
+Edmonton	إدمونتون	53.5501	-113.4687	America/Edmonton
+Winnipeg	وينيبيغ	49.8844	-97.1470	America/Winnipeg
+Mississauga	ميسيساغا	43.5789	-79.6583	America/Toronto
+Vancouver	فانكوفر	49.2497	-123.1193	America/Vancouver
+Brampton	برامبتون	43.6834	-79.7663	America/Toronto
+Hamilton	هاميلتون	43.2501	-79.8496	America/Toronto
+Surrey		49.1063	-122.8251	America/Vancouver
+Québec	مدينة كيبك	46.8123	-71.2145	America/Toronto
+Halifax	هاليفاكس	44.6427	-63.5769	America/Halifax
+Laval	لافال	45.5699	-73.6920	America/Toronto
+London	لندن	42.9834	-81.2330	America/Toronto
+Etobicoke		43.6442	-79.5699	America/Toronto
+Markham	ماركام	43.8668	-79.2663	America/Toronto
+Vaughan	فاوجان	43.8361	-79.4983	America/Toronto
+Gatineau	غاتينو	45.4772	-75.7016	America/Toronto
+Victoria	فكتوريا	48.4359	-123.3516	America/Vancouver
+Saskatoon	ساسكاتون	52.1324	-106.6689	America/Regina
+Kitchener	كيتشنر	43.4254	-80.5112	America/Toronto
+Burnaby	بورنبي	49.2664	-122.9526	America/Vancouver
+Windsor	وندسور	42.3001	-83.0165	America/Toronto
+Longueuil	لونغوي	45.5152	-73.4682	America/Toronto
+Regina	ريجاينا	50.4501	-104.6178	America/Regina
+Oakville	أوكفيل	43.4501	-79.6829	America/Toronto
+Richmond	ريتشموند	49.1700	-123.1368	America/Vancouver
+Richmond Hill	ريتشموند هيل	43.8711	-79.4373	America/Toronto
+Burlington	بيرلينجتون	43.3862	-79.8371	America/Toronto
+Nepean		45.3362	-75.7225	America/Toronto
+Oshawa	أوشاوا	43.9001	-78.8496	America/Toronto
+Greater Sudbury	غريتر سودبوري	46.4900	-80.9900	America/Toronto
+Newton		49.1333	-122.8500	America/Vancouver
+Gloucester		45.3500	-75.6333	America/Toronto
+Saguenay	ساغينيه	48.4168	-71.0657	America/Toronto
+Coquitlam	كوكويتلام	49.2846	-122.7822	America/Vancouver
+Barrie	باري	44.4001	-79.6663	America/Toronto
+Rosemont–La Petite-Patrie		45.5366	-73.6069	America/Toronto
+Villeray–Saint-Michel–Parc-Extension		45.5587	-73.6054	America/Toronto
+Kelowna	كيلونا	49.8831	-119.4857	America/Vancouver
+Trois-Rivières	تروا ريفيير	46.3451	-72.5477	America/Toronto
+Guelph	غويلف	43.5459	-80.2560	America/Toronto
+Lévis	ليفيس	46.8033	-71.1779	America/Toronto
+Mercier–Hochelaga-Maisonneuve		45.5719	-73.5463	America/Toronto
+Abbotsford	أبوتسفورد	49.0580	-122.2526	America/Vancouver
+Whitby	ويتبي	43.8834	-78.9329	America/Toronto
+St. Catharines	سانت كاثرينز	43.1713	-79.2427	America/Toronto
+Ahuntsic-Cartierville		45.5667	-73.6667	America/Toronto
+Le Vieux-Longueuil		45.5372	-73.5077	America/Toronto
+Milton	ميلتون	43.5168	-79.8829	America/Toronto
+Langley		49.1011	-122.6588	America/Vancouver
+Kingston	كينغستون	44.2298	-76.4810	America/Toronto
+Cambridge	كامبريدج	43.3601	-80.3127	America/Toronto
+Sherbrooke	شيربروك	45.4001	-71.8991	America/Toronto
+Orléans		45.4573	-75.5043	America/Toronto
+Ottawa South		45.3921	-75.6873	America/Toronto
+Saint-Louis-de-Terrebonne		45.7020	-73.7867	America/Toronto
+Ajax	أجاكس	43.8501	-79.0329	America/Toronto
+Saanich	سانيتش	48.5496	-123.3693	America/Vancouver
+Rivière-des-Prairies–Pointe-aux-Trembles		45.6406	-73.5846	America/Toronto
+Terrebonne	تيربون	45.7000	-73.6473	America/Toronto
+Sainte-Foy		46.7814	-71.2922	America/Toronto
+St. John's	سانت جونز	47.5649	-52.7093	America/St_Johns
+Thunder Bay	ثاندر باي	48.3820	-89.2502	America/Toronto
+La Cité-Limoilou		46.8289	-71.2264	America/Toronto
+Sydney	سيدنى	46.1351	-60.1831	America/Glace_Bay
+Le Plateau-Mont-Royal		45.5283	-73.5808	America/Toronto
+Waterloo	واترلو	43.4668	-80.5164	America/Toronto
+Ville-Marie		45.4990	-73.5705	America/Toronto
+Brantford	برانتفورد	43.1334	-80.2664	America/Toronto
+Kamloops	كاملوبس	50.6665	-120.3192	America/Vancouver
+Lethbridge	ليثبريدج	49.7000	-112.8186	America/Edmonton
+Whalley		49.1792	-122.8667	America/Vancouver
+Delta	ديلتا	49.0892	-123.0532	America/Vancouver
+Chilliwack		49.1664	-121.9526	America/Vancouver
+Dartmouth	دارتموث	44.6713	-63.5772	America/Halifax
+Red Deer	رد دير	52.2668	-113.8020	America/Edmonton
+Niagara Falls	نياجارا فولز	43.1001	-79.0663	America/Toronto
+Saint-Laurent		45.5001	-73.6659	America/Toronto
+Saint-Jean-sur-Richelieu	سان جان سور ريشليو	45.3071	-73.2626	America/Toronto
+Chomedey		45.5333	-73.7500	America/Toronto
+Pickering	بيكرينغ	43.9001	-79.1329	America/Toronto
+Newmarket	نيوماركت	44.0501	-79.4663	America/Toronto
+Nanaimo	نانيامو إي	49.1664	-123.9400	America/Vancouver
+Airdrie	إيردراي	51.3001	-114.0353	America/Edmonton
+Kanata		45.3001	-75.9161	America/Toronto
+La Haute-Saint-Charles		46.8903	-71.3722	America/Toronto
+North Vancouver		49.3164	-123.0693	America/Vancouver
+Montréal-Nord		45.6016	-73.6306	America/Toronto
+Le Sud-Ouest		45.4719	-73.5899	America/Toronto
+Moncton	مونكتون	46.0945	-64.7965	America/Moncton
+Peterborough	بيتيربوروغ	44.3001	-78.3162	America/Toronto
+Repentigny	ريبنتينيي	45.7422	-73.4501	America/Toronto
+Charlesbourg	شارل سبورغ	46.8990	-71.3050	America/Toronto
+Saint-Hubert		45.5001	-73.4158	America/Toronto
+Maple Ridge	مابل ريدج	49.2194	-122.6019	America/Vancouver
+Beauport		46.8588	-71.1920	America/Toronto
+East Hastings		49.2717	-123.0619	America/Vancouver
+Saint-Léonard		45.5877	-73.5950	America/Toronto
+Willowdale		43.7667	-79.3991	America/Toronto
+Prince George	برينس جورج	53.9166	-122.7530	America/Vancouver
+New Westminster	نيو ويستمينيستر	49.2068	-122.9109	America/Vancouver
+South Surrey		49.0500	-122.7917	America/Vancouver
+Les Rivières		46.8185	-71.2720	America/Toronto
+Caledon	كاليدون	43.8654	-79.9932	America/Toronto
+Stoney Creek		43.2168	-79.7663	America/Toronto
+Cloverdale		49.1080	-122.7276	America/Vancouver
+Pierrefonds-Roxboro		45.5019	-73.8417	America/Toronto
+Nutana Sector		52.1000	-106.6371	America/Regina
+Sarnia	سارنيا	42.9787	-82.4041	America/Toronto
+Sault Ste. Marie	سو ساينت ماري	46.5168	-84.3333	America/Toronto
+Saint John	سنت جان	45.2708	-66.0562	America/Moncton
+Sherwood Park	شيروود بارك	53.5168	-113.3187	America/Edmonton
+Grande Prairie	غراند براري	55.1667	-118.8027	America/Edmonton
+Confederation		52.1391	-106.7036	America/Regina
+Brossard	بروسار	45.4501	-73.4658	America/Toronto
+Verdun		45.4601	-73.5706	America/Toronto
+Chicoutimi		48.4196	-71.0637	America/Toronto
+Notre-Dame-de-Grâce		45.4768	-73.6143	America/Toronto
+Fort McMurray	فورت ماكموراي	56.7268	-111.3810	America/Edmonton
+Granby	غرانبي	45.4001	-72.7324	America/Toronto
+Waterfront Communities-The Island		43.6339	-79.3772	America/Toronto
+Fleetwood		49.1667	-122.8000	America/Vancouver
+Fort Garry South		49.7923	-97.1636	America/Winnipeg
+Guildford		49.1917	-122.8000	America/Vancouver
+Hull		45.4276	-75.7106	America/Toronto
+Medicine Hat	مدسين هات	50.0393	-110.6766	America/Edmonton
+Fredericton	فريدريكتن	45.9454	-66.6656	America/Moncton
+Halton Hills		43.6403	-79.9315	America/Toronto
+Brighouse-City Centre		49.1667	-123.1333	America/Vancouver
+Downtown Vancouver		49.2828	-123.1193	America/Vancouver
+Norfolk County		42.8334	-80.3830	America/Toronto
+North Delta		49.1667	-122.9167	America/Vancouver
+Drummondville	درومونفيل	45.8834	-72.4824	America/Toronto
+Pierrefonds		45.4599	-73.8928	America/Toronto
+Port Coquitlam	بورت كوكويتلام	49.2664	-122.7693	America/Vancouver
+St. Albert	سانت ألبرت	53.6334	-113.6353	America/Edmonton
+Aylmer		45.4002	-75.8064	America/Toronto
+Saint-Michel		45.5676	-73.6217	America/Toronto
+Aurora	أورورا	44.0001	-79.4663	America/Toronto
+Saint-Jérôme	سان جيروم	45.7804	-74.0036	America/Toronto
+Jonquière		48.4165	-71.2488	America/Toronto
+Woburn		43.7666	-79.2277	America/Toronto
+Metrotown		49.2250	-123.0000	America/Vancouver
+Welland	ويلاند	42.9834	-79.2496	America/Toronto
+University Heights		52.1443	-106.5787	America/Regina
+Lower Sackville		44.7760	-63.6786	America/Halifax
+Renfrew-Collingwood		49.2450	-123.0376	America/Vancouver
+Lakewood		52.1085	-106.5903	America/Regina
+Belleville	بيلفي	44.1668	-77.3828	America/Toronto
+Willowdale East		43.7706	-79.4015	America/Toronto
+North Bay	نورث باي	46.3168	-79.4663	America/Toronto
+Saint-Hyacinthe		45.6308	-72.9570	America/Toronto
+Whitchurch-Stouffville		44.0001	-79.3163	America/Toronto
+Kensington-Cedar Cottage		49.2500	-123.0667	America/Vancouver
+Dollard-Des Ormeaux	دولار-ده-اورمو	45.4945	-73.8242	America/Toronto
+Brandon		49.8469	-99.9531	America/Winnipeg
+Cornwall	كورنوال	45.0181	-74.7281	America/Toronto
+West End		49.2833	-123.1333	America/Vancouver
+Langford	لانغفورد	48.4496	-123.5026	America/Vancouver
+Rouge		43.8041	-79.1657	America/Toronto
+Blainville		45.6668	-73.8825	America/Toronto
+Victoria-Downtown		48.4277	-123.3610	America/Vancouver
+West Vancouver	فانكوفر الغربية	49.3286	-123.1602	America/Vancouver
+Georgetown		43.6501	-79.9163	America/Toronto
+L'Amoreaux		43.7957	-79.3141	America/Toronto
+Islington-City Centre West		43.6335	-79.5433	America/Toronto
+Malvern		43.8094	-79.2234	America/Toronto
+Quinte West	قوينت ويست	44.1834	-77.5662	America/Toronto
+Chatham		42.4122	-82.1849	America/Toronto
+Innisfil		44.3001	-79.6496	America/Toronto
+Kitsilano		49.2667	-123.1667	America/Vancouver
+Salaberry-de-Valleyfield	سالبيري دي فاليفيلد	45.2501	-74.1325	America/Toronto
+Châteauguay		45.3834	-73.7492	America/Toronto
+Rimouski	ريموسكي	48.4488	-68.5240	America/Toronto
+Saint-Eustache	سانت أوستاش	45.5650	-73.9055	America/Toronto
+Timmins	تيمينز	48.4669	-81.3331	America/Toronto
+Sorel-Tracy		46.0418	-73.1136	America/Toronto
+Mission	ميشن	49.1330	-122.3026	America/Vancouver
+Strawberry Hill		49.1333	-122.8833	America/Vancouver
+Val-des-Arbres		45.5984	-73.6754	America/Toronto
+Stittsville		45.2501	-75.9161	America/Toronto
+Ancaster		43.2181	-79.9872	America/Toronto
+Woodstock	وودستوك	43.1334	-80.7497	America/Toronto
+Vernon	فيرنون	50.2673	-119.2734	America/Vancouver
+Bowmanville		43.9168	-78.6829	America/Toronto
+Boucherville		45.5910	-73.4360	America/Toronto
+Spruce Grove	سبروس غرووف	53.5334	-113.9187	America/Edmonton
+St. Thomas	سانت توماس	42.7736	-81.1804	America/Toronto
+Charlottetown	تشارلوت تاون	46.2346	-63.1256	America/Halifax
+Okanagan Mission		49.8167	-119.4833	America/Vancouver
+Shawinigan	شاوينيغان	46.5667	-72.7491	America/Toronto
+Neufchâtel-Est–Lebourgneuf		46.8544	-71.3419	America/Toronto
+Duvernay		45.5833	-73.6667	America/Toronto
+Laval-des-Rapides		45.5564	-73.7001	America/Toronto
+Stouffville		43.9668	-79.2496	America/Toronto
+Dovercourt-Wallace Emerson-Junction		43.6657	-79.4385	America/Toronto
+Sunset		49.2210	-123.0955	America/Vancouver
+Core Neighbourhoods		52.1304	-106.6723	America/Regina
+Leamington	ليمينغتون	42.0501	-82.5998	America/Toronto
+Rock Forest		45.3570	-71.9968	America/Toronto
+Prince Albert	برينس ألبرت	53.2001	-105.7677	America/Regina
+Downsview-Roding-CFB		43.7333	-79.4905	America/Toronto
+Parkwoods-Donalda		43.7550	-79.3302	America/Toronto
+Rutland		49.8998	-119.3857	America/Vancouver
+Joliette		46.0164	-73.4236	America/Toronto
+Cartierville		45.5312	-73.7036	America/Toronto
+Mascouche		45.7497	-73.5996	America/Toronto
+Mirabel		45.6501	-74.0825	America/Toronto
+Lawson		52.1643	-106.6388	America/Regina
+Hastings-Sunrise		49.2833	-123.0333	America/Vancouver
+Victoriaville	فيكتوريا فيل	46.0501	-71.9658	America/Toronto
+Brant		43.1334	-80.3497	America/Toronto
+Mimico		43.6162	-79.5127	America/Toronto
+Moose Jaw	موسجاو	50.4001	-105.5345	America/Regina
+Parc-Extension		45.5295	-73.6318	America/Toronto
+Penticton	بينتيكتون	49.4806	-119.5858	America/Vancouver
+Arcola East		50.4331	-104.5360	America/Regina
+Fairview		49.2630	-123.1321	America/Vancouver
+Surrey City Centre		49.1854	-122.8466	America/Vancouver
+Campbell River	كامبل ريفر	50.0163	-125.2446	America/Vancouver
+West Humber-Clairville		43.7162	-79.5964	America/Toronto
+Mount Pleasant		49.2667	-123.1000	America/Vancouver
+Mt Pleasant		49.2624	-123.1002	America/Vancouver
+Mount Olive-Silverstone-Jamestown		43.7469	-79.5873	America/Toronto
+LaSalle	لاسال	42.2448	-83.0610	America/Toronto
+Chestermere		51.0334	-113.8187	America/Edmonton
+Cochrane		51.1834	-114.4687	America/Edmonton
+Snowdon		45.4859	-73.6310	America/Toronto
+Lloydminster	لويدمنستر	53.2724	-110.0226	America/Edmonton
+Stratford	ستارتفورد	43.3668	-80.9497	America/Toronto
+Chilliwack-Downtown		49.1643	-121.9591	America/Vancouver
+Côte-Saint-Luc		45.4654	-73.6659	America/Toronto
+Church-Yonge Corridor		43.6596	-79.3790	America/Toronto
+Willoughby		49.1262	-122.6800	America/Vancouver
+Niagara		43.6446	-79.4071	America/Toronto
+Saint-Georges		46.1135	-70.6653	America/Toronto
+Orillia	أوريليا	44.6087	-79.4207	America/Toronto
+Victoria-Fraserview		49.2167	-123.0667	America/Vancouver
+Orangeville		43.9168	-80.0997	America/Toronto
+Fort Erie	فورت إيري	42.9001	-78.9329	America/Toronto
+Annex		43.6716	-79.4040	America/Toronto
+Glenfield-Jane Heights		43.7456	-79.5135	America/Toronto
+Ville-Émard		45.4498	-73.6015	America/Toronto
+Okotoks		50.7289	-113.9828	America/Edmonton
+Pointe-Claire	بوينت كلير	45.4487	-73.8167	America/Toronto
+Bendale		43.7668	-79.2533	America/Toronto
+Desmarchais-Crawford		45.4455	-73.5816	America/Toronto
+North Cowichan	كاويتشان الشمالية	48.8413	-123.6860	America/Vancouver
+Mount Pleasant West		43.7044	-79.3934	America/Toronto
+Alma	آلما	48.5501	-71.6491	America/Toronto
+Killarney		49.2259	-123.0428	America/Vancouver
+Grandview-Woodlands		49.2774	-123.0708	America/Vancouver
+Agincourt North		43.8042	-79.2753	America/Toronto
+Sainte-Julie	سانت جولي	45.5834	-73.3325	America/Toronto
+West Kelowna		49.8625	-119.5833	America/Vancouver
+Sept-Îles	سات إيل	50.2001	-66.3821	America/Toronto
+Courtenay	كورتيناي	49.6866	-124.9936	America/Vancouver
+Whitehorse	وايت هورس	60.7161	-135.0538	America/Whitehorse
+Fredericton Northside		45.9759	-66.6412	America/Moncton
+Wexford/Maryvale		43.7486	-79.2986	America/Toronto
+South Riverdale		43.6493	-79.3357	America/Toronto
+Marpole		49.2136	-123.1298	America/Vancouver
+St. James-Assiniboia East		49.8899	-97.2265	America/Winnipeg
+Banbury-Don Mills		43.7377	-79.3497	America/Toronto
+York University Heights		43.7657	-79.4889	America/Toronto
+Port Moody	بورت مودي	49.2812	-122.8246	America/Vancouver
+Tam O'Shanter-Sullivan		43.7798	-79.2950	America/Toronto
+West Hill		43.7674	-79.1795	America/Toronto
+Saint-Constant	سان كونستانت	45.3668	-73.5659	America/Toronto
+Grimsby	غريمسبي	43.2001	-79.5663	America/Toronto
+Dieppe		46.0784	-64.6873	America/Moncton
+Conception Bay South		47.4999	-52.9981	America/St_Johns
+Don Valley Village		43.7833	-79.3536	America/Toronto
+Clairlea-Birchmount		43.7136	-79.2814	America/Toronto
+Bolton		43.8795	-79.7379	America/Toronto
+Milliken		43.8250	-79.2987	America/Toronto
+Boisbriand		45.6168	-73.8325	America/Toronto
+Westminster-Branson		43.7788	-79.4524	America/Toronto
+Beltline		51.0395	-114.0709	America/Edmonton
+Bay Street Corridor		43.6575	-79.3857	America/Toronto
+Vaudreuil-Dorion	فودرويدوريون	45.4001	-74.0325	America/Toronto
+Thetford-Mines		46.0937	-71.3054	America/Toronto
+Centretown		45.4153	-75.6964	America/Toronto
+Walnut Grove		49.1647	-122.6404	America/Vancouver
+Coquitlam West		49.2570	-122.8788	America/Vancouver
+Downtown Halifax		44.6483	-63.5776	America/Halifax
+Val-d'Or	وال-دور	48.0974	-77.7974	America/Toronto
+Panorama Hills		51.1529	-114.0810	America/Edmonton
+Prince Edward		44.0001	-77.2495	America/Toronto
+Sainte-Thérèse		45.6392	-73.8276	America/Toronto
+Steveston		49.1271	-123.1814	America/Vancouver
+Stonegate-Queensway		43.6355	-79.5011	America/Toronto
+Dorset Park		43.7539	-79.2822	America/Toronto
+Brooklin		43.9583	-78.9597	America/Toronto
+Fraser Heights		49.2000	-122.7833	America/Vancouver
+Fallingbrook		45.4756	-75.4840	America/Toronto
+South Granville		49.2602	-123.1395	America/Vancouver
+Alta Vista		45.3864	-75.6581	America/Toronto
+Steeles		43.8120	-79.3308	America/Toronto
+Bridlewood		45.2852	-75.8569	America/Toronto
+Waterdown		43.3334	-79.8829	America/Toronto
+Saint-Bruno-de-Montarville	سان برونو دي مونترافلي	45.5334	-73.3492	America/Toronto
+Saddle Ridge		51.1326	-113.9468	America/Edmonton
+Midland	ميدلاند	44.7501	-79.8830	America/Toronto
+Coquitlam Town Centre		49.2770	-122.7967	America/Vancouver
+Chinatown		49.2800	-123.1056	America/Vancouver
+East Gwillimbury	ايست ويليمباري	44.1009	-79.4378	America/Toronto
+Mile End		45.5237	-73.5963	America/Toronto
+Outremont		45.5156	-73.6086	America/Toronto
+High Park-Swansea		43.6451	-79.4679	America/Toronto
+Brockville	بروكفيل	44.5913	-75.6870	America/Toronto
+Strathroy		42.9551	-81.6223	America/Toronto
+Newtonbrook West		43.7858	-79.4314	America/Toronto
+Squamish	سكواميش	49.6992	-123.1563	America/Vancouver
+Agincourt South-Malvern West		43.7887	-79.2656	America/Toronto
+White Rock	وايت روك	49.0205	-122.7951	America/Vancouver
+Rouyn-Noranda	رووان نوراندا	48.2366	-79.0231	America/Toronto
+La Prairie	لا بريري	45.4168	-73.4992	America/Toronto
+Bedford Park-Nortown		43.7315	-79.4202	America/Toronto
+Tecumseh	تيكومسه	42.3160	-82.8840	America/Toronto
+Broadmoor		49.1500	-123.1333	America/Vancouver
+Ladner		49.0894	-123.0824	America/Vancouver
+Paradise		47.5291	-52.8814	America/St_Johns
+Cariboo		49.2500	-122.8833	America/Vancouver
+Eglinton East		43.7392	-79.2458	America/Toronto
+Halifax West End		44.6486	-63.6195	America/Halifax
+Vedder Crossing		49.1000	-121.9667	America/Vancouver
+Chambly		45.4501	-73.2825	America/Toronto
+Riley Park		49.2430	-123.0932	America/Vancouver
+Mount Pearl		47.5166	-52.7814	America/St_Johns
+Englemount-Lawrence		43.7204	-79.4374	America/Toronto
+Edmonds		49.2139	-122.9399	America/Vancouver
+Birchcliffe-Cliffside		43.6947	-79.2651	America/Toronto
+Rockcliffe-Smythe		43.6748	-79.4944	America/Toronto
+Duncan		48.7829	-123.7027	America/Vancouver
+High Park North		43.6563	-79.4745	America/Toronto
+Willowridge-Martingrove-Richview		43.6836	-79.5542	America/Toronto
+Kingsville	كينغسفيل	42.1001	-82.7331	America/Toronto
+Kingsview Village-The Westway		43.6990	-79.5479	America/Toronto
+Flemingdon Park		43.7181	-79.3322	America/Toronto
+South Parkdale		43.6367	-79.4393	America/Toronto
+Collingwood	كولينجوود	44.4834	-80.2164	America/Toronto
+Black Creek		43.7649	-79.5220	America/Toronto
+Tsawwassen		49.0167	-123.0833	America/Vancouver
+The Beaches		43.6737	-79.2954	America/Toronto
+Baie-Comeau		49.2168	-68.1489	America/Toronto
+Bedford		44.7255	-63.6673	America/Halifax
+Fort St. John	فورت سانت جون	56.2499	-120.8529	America/Dawson_Creek
+Bayview Village		43.7764	-79.3803	America/Toronto
+East End-Danforth		43.6842	-79.2994	America/Toronto
+Owen Sound	أوين ساوند	44.5672	-80.9435	America/Toronto
+Gordon Head		48.4833	-123.3167	America/Vancouver
+Dunbar-Southlands		49.2422	-123.1884	America/Vancouver
+Oakwood Village		43.6828	-79.4383	America/Toronto
+Uxbridge	يوكسبريدج	44.1001	-79.1163	America/Toronto
+Thorncliffe Park		43.7077	-79.3500	America/Toronto
+Townline		49.0621	-122.3601	America/Vancouver
+Haney		49.2167	-122.6000	America/Vancouver
+Keswick		44.2501	-79.4663	America/Toronto
+Varennes		45.6834	-73.4325	America/Toronto
+Rosedale-Moore Park		43.6828	-79.3797	America/Toronto
+Cranston		50.8885	-113.9814	America/Edmonton
+Clarence-Rockland		45.5501	-75.2910	America/Toronto
+Evergreen		50.9292	-114.1000	America/Edmonton
+Fergus		43.7060	-80.3776	America/Toronto
+Port Alberni	بورت ألبيرني	49.2413	-124.8028	America/Vancouver
+Wasaga Beach		44.5168	-80.0164	America/Toronto
+Riverview		46.0545	-64.8160	America/Moncton
+Renfrew Heights		49.2545	-123.0316	America/Vancouver
+Moss Park		43.6550	-79.3715	America/Toronto
+Westmount	ويسماونت	45.4834	-73.5992	America/Toronto
+Kirkland		45.4501	-73.8659	America/Toronto
+Ile-des-Soeurs		45.4603	-73.5482	America/Toronto
+Camrose	كامروز	53.0168	-112.8353	America/Edmonton
+Lindsay		44.3501	-78.7329	America/Toronto
+Yellowknife	يلو نايف	62.4541	-114.3725	America/Edmonton
+Cranbrook	كرانبروك	49.4999	-115.7688	America/Edmonton
+Templeton-Est		45.4939	-75.5883	America/Toronto
+Woodlawn		44.6775	-63.5273	America/Halifax
+Halifax South End		44.6293	-63.5765	America/Halifax
+Saint-Lazare		45.4001	-74.1326	America/Toronto
+L'Île-Bizard–Sainte-Geneviève		45.4939	-73.8956	America/Toronto
+Huntsville	هانتسفيل	45.3334	-79.2163	America/Toronto
+Westwood Plateau		49.3046	-122.7934	America/Vancouver
+Lower Lonsdale		49.3141	-123.0725	America/Vancouver
+Tuscany		51.1243	-114.2449	America/Edmonton
+Maywood		49.2222	-123.0059	America/Vancouver
+Terrace	تيراس	54.5163	-128.6035	America/Vancouver
+North Battleford	نورث باتلفورد	52.7797	-108.2967	America/Regina
+Salmon Arm	سالمن آرم	50.6998	-119.2691	America/Vancouver
+Corner Brook	كورنر بروك	48.9500	-57.9520	America/St_Johns
+Beaconsfield	بيكونسفيلد	45.4334	-73.8659	America/Toronto
+Cole Harbour		44.6724	-63.4751	America/Halifax
+Dorval	دوروال	45.4473	-73.7533	America/Toronto
+Mont-Royal	مونت رويال	45.5168	-73.6492	America/Toronto
+Beloeil	بلوئل	45.5684	-73.2057	America/Toronto
+Alliston		44.1501	-79.8663	America/Toronto
+Thorold	ثورولد	43.1168	-79.1996	America/Toronto
+Quispamsis		45.4213	-65.9513	America/Moncton
+Dewdney East		50.4543	-104.5467	America/Regina
+Evanston		51.1640	-114.1230	America/Edmonton
+O'Connor-Parkview		43.7068	-79.3122	America/Toronto
+New Glasgow		45.5834	-62.6486	America/Halifax
+Tillsonburg	تيلسونبيرج	42.8599	-80.7262	America/Toronto
+North St.James Town		43.6696	-79.3752	America/Toronto
+Eringate-Centennial-West Deane		43.6580	-79.5804	America/Toronto
+Rivière-du-Loup	ريفري دو لوب	47.8270	-69.5424	America/Toronto
+Pitt Meadows	بيت ميدوز	49.2212	-122.6897	America/Vancouver
+Central Lonsdale		49.3257	-123.0723	America/Vancouver
+Downtown Eastside		49.2818	-123.0935	America/Vancouver
+Hespeler		43.4334	-80.3164	America/Toronto
+Carey		48.4721	-123.3948	America/Vancouver
+Port Colborne	بورت كولبورن	42.9001	-79.2329	America/Toronto
+Wîhkwêntôwin		53.5431	-113.5222	America/Edmonton
+Cobourg	كوبورغ	43.9598	-78.1651	America/Toronto
+Auburn Bay		50.8879	-113.9593	America/Edmonton
+Blundell		49.1553	-123.1571	America/Vancouver
+Oak Bay	أوك باي	48.4496	-123.3026	America/Vancouver
+Stony Plain		53.5334	-114.0020	America/Edmonton
+Weston		43.7036	-79.5151	America/Toronto
+Kensington-Chinatown		43.6536	-79.3972	America/Toronto
+Amos	اموس	48.5669	-78.1162	America/Toronto
+St. Andrew-Windfields		43.7563	-79.3790	America/Toronto
+Brookhaven-Amesbury		43.7013	-79.4856	America/Toronto
+Esquimalt	إيسكويمالت	48.4357	-123.4117	America/Vancouver
+Taradale		51.1183	-113.9368	America/Edmonton
+Fiddlesticks		43.3948	-80.2874	America/Toronto
+Miramichi		47.0290	-65.5019	America/Moncton
+Niagara-on-the-Lake	نياجارا-أون-ذا-ليك	43.2565	-79.0853	America/Toronto
+Victoria Village		43.7285	-79.3149	America/Toronto
+McKenzie Towne		50.9134	-113.9674	America/Edmonton
+Laflèche		45.5001	-73.4659	America/Toronto
+Sylvan Lake		52.3110	-114.0837	America/Edmonton
+Saint-Lin-Laurentides		45.8501	-73.7659	America/Toronto
+Morningside		43.7873	-79.2064	America/Toronto
+Valley East		46.6450	-80.9973	America/Toronto
+Deux-Montagnes		45.5346	-73.9017	America/Toronto
+Les Coteaux	ليس كوتياكس	45.2834	-74.2325	America/Toronto
+Central Saanich		48.5663	-123.4193	America/Vancouver
+Coventry Hills		51.1687	-114.0590	America/Edmonton
+Saint-Augustin-de-Desmaures	سان أوغوستن دي ديماروس	46.7406	-71.4513	America/Toronto
+Petawawa		45.8945	-77.2801	America/Toronto
+Danforth East York		43.6895	-79.3314	America/Toronto
+Kennedy Park		43.7227	-79.2605	America/Toronto
+Vanier	فانير	45.4399	-75.6650	America/Toronto
+Willowdale West		43.7712	-79.4276	America/Toronto
+Hillcrest Village		43.8049	-79.3544	America/Toronto
+University Endowment Lands		49.2642	-123.2390	America/Vancouver
+Glace Bay		46.1970	-59.9570	America/Glace_Bay
+Colwood	كولوود	48.4329	-123.4859	America/Vancouver
+Leaside-Bennington		43.7038	-79.3661	America/Toronto
+Mount Pleasant East		43.7049	-79.3849	America/Toronto
+Sainte-Catherine	سانت كاثرين	45.4001	-73.5825	America/Toronto
+Greenfield Park		45.4865	-73.4622	America/Toronto
+Scarborough Village		43.7390	-79.2212	America/Toronto
+Brocklehurst		50.7082	-120.4134	America/Vancouver
+Buckingham		45.5856	-75.4208	America/Toronto
+Swift Current	سويفت كورنت	50.2834	-107.8013	America/Swift_Current
+Edmundston		47.3737	-68.3251	America/Moncton
+Trinity-Bellwoods		43.6479	-79.4085	America/Toronto
+Clayton Park West		44.6576	-63.6689	America/Halifax
+L'Ancienne-Lorette		46.7939	-71.3519	America/Toronto
+Armdale		44.6359	-63.6264	America/Halifax
+Clanton Park		43.7420	-79.4463	America/Toronto
+Stonebridge		52.0845	-106.6227	America/Regina
+Yorkton	يوركتن	51.2167	-102.4677	America/Regina
+Lutes Mountain		46.1354	-64.9050	America/Moncton
+Sainte-Catherine		46.3184	-72.5663	America/Toronto
+Lansing-Westgate		43.7543	-79.4248	America/Toronto
+Newtonbrook East		43.7915	-79.4059	America/Toronto
+Seafair		49.1500	-123.1833	America/Vancouver
+Bracebridge	بريسبريدج	45.0334	-79.3163	America/Toronto
+Candiac		45.3834	-73.5159	America/Toronto
+Cliffcrest		43.7219	-79.2309	America/Toronto
+L'Assomption		45.8232	-73.4294	America/Toronto
+Greater Napanee		44.2501	-76.9494	America/Toronto
+Bathurst Manor		43.7648	-79.4561	America/Toronto
+Maillardville		49.2384	-122.8668	America/Vancouver
+Steinbach	ستاينباك	49.5258	-96.6845	America/Winnipeg
+Pleasant View		43.7861	-79.3350	America/Toronto
+Lake Country		50.0088	-119.3967	America/Vancouver
+Saint-Henri		45.4676	-73.6006	America/Toronto
+Henry Farm		43.7695	-79.3524	America/Toronto
+Mont-Saint-Hilaire	مونت سان هيلير	45.5652	-73.1868	America/Toronto
+Taylor-Massey		43.6950	-79.2959	America/Toronto
+Saint-Basile-le-Grand	سان باسيلي لي جراند	45.5334	-73.2825	America/Toronto
+Forest Heights		43.4194	-80.5233	America/Toronto
+Leduc	ليدوك	53.2668	-113.5520	America/Edmonton
+Little Portugal		43.6466	-79.4296	America/Toronto
+Magog		45.2668	-72.1491	America/Toronto
+Humbermede		43.7525	-79.5442	America/Toronto
+Edenbridge-Humber Valley		43.6709	-79.5225	America/Toronto
+Central Coquitlam		49.2603	-122.8381	America/Vancouver
+Christopher-Champlain		43.3473	-80.3019	America/Toronto
+Lougheed		49.2481	-122.8924	America/Vancouver
+Arbutus Ridge		49.2497	-123.1693	America/Vancouver
+Saint-Charles-Borromée		46.0501	-73.4659	America/Toronto
+Saint John West		45.2594	-66.0778	America/Moncton
+Vanier		43.4267	-80.4515	America/Toronto
+Edgemont		51.1256	-114.1488	America/Edmonton
+Saint-Vincent-de-Paul		45.6168	-73.6492	America/Toronto
+Lawrence Park South		43.7172	-79.4060	America/Toronto
+Kenora	كينورا	49.7674	-94.4899	America/Winnipeg
+Sooke		48.3746	-123.7276	America/Vancouver
+Le Plateau		45.4351	-75.7803	America/Toronto
+East Clayton		49.1249	-122.7017	America/Vancouver
+Roncesvalles		43.6489	-79.4502	America/Toronto
+Fort Saskatchewan	فورت ساسكاتشوان	53.6981	-113.2138	America/Edmonton
+Thompson		49.1667	-123.1667	America/Vancouver
+Burquitlam		49.2667	-122.8833	America/Vancouver
+Halifax North End		44.6656	-63.6090	America/Halifax
+Summerside		46.3912	-63.7887	America/Halifax
+Gaspé	غاسبيه	48.8334	-64.4819	America/Toronto
+Matane	ماتان	48.8286	-67.5220	America/Toronto
+Comox	كوموكس	49.6829	-124.9361	America/Vancouver
+Yorkdale-Glen Park		43.7147	-79.4571	America/Toronto
+Mississippi Mills		45.2334	-76.1994	America/Toronto
+Prince Rupert	برينس روبيرت	54.3151	-130.3210	America/Vancouver
+Lawrence Park North		43.7301	-79.4040	America/Toronto
+West Nipissing		46.3716	-79.9245	America/Toronto
+Yaletown		49.2761	-123.1177	America/Vancouver
+Saint John East		45.2878	-66.0407	America/Moncton
+Rayside-Balfour		46.6087	-81.2076	America/Toronto
+Tantramar		45.9337	-64.3998	America/Moncton
+Martindale		51.1181	-113.9556	America/Edmonton
+Brooks		50.5834	-111.8851	America/Edmonton
+Greenwood-Coxwell		43.6803	-79.3266	America/Toronto
+Harbour Landing		50.4074	-104.6523	America/Regina
+Junction Area		43.6679	-79.4714	America/Toronto
+Humewood-Cedarvale		43.6914	-79.4277	America/Toronto
+Wychwood		43.6776	-79.4218	America/Toronto
+Belle-Baie		47.7653	-65.7450	America/Moncton
+High River		50.5834	-113.8687	America/Edmonton
+Lacombe	لاكومب	52.4668	-113.7353	America/Edmonton
+Briar Hill-Belgravia		43.6990	-79.4528	America/Toronto
+English Bay		49.2846	-123.1425	America/Vancouver
+Blossom Park		45.3489	-75.6267	America/Toronto
+Pont-Viau		45.5719	-73.6858	America/Toronto
+Rosemère	روزميري	45.6334	-73.7992	America/Toronto
+Marlborough		49.2295	-122.9899	America/Vancouver
+Williams Lake	ويليامز ليك	52.1415	-122.1445	America/Vancouver
+Sainte-Monique		48.7334	-71.8491	America/Toronto
+Greenway-Chaplin		43.3842	-80.3114	America/Toronto
+Corso Italia-Davenport		43.6777	-79.4475	America/Toronto
+Copperfield		50.9152	-113.9270	America/Edmonton
+Northwood		48.3891	-89.2752	America/Toronto
+Duvernay-Est		45.6548	-73.6051	America/Toronto
+Canmore		51.0834	-115.3521	America/Edmonton
+Kerrisdale		49.2344	-123.1551	America/Vancouver
+Simcoe		42.8334	-80.2997	America/Toronto
+Amherstburg		42.1001	-83.0999	America/Toronto
+Pembroke		45.8168	-77.1162	America/Toronto
+Mahogany		50.8961	-113.9249	America/Edmonton
+Grand Falls-Windsor		48.9332	-55.6649	America/St_Johns
+Oakridge		43.6969	-79.2803	America/Toronto
+Palmerston-Little Italy		43.6592	-79.4184	America/Toronto
+Davie Village		49.2805	-123.1312	America/Vancouver
+Parkton		46.0855	-64.7954	America/Moncton
+Pointe-Saint-Charles		45.4807	-73.5549	America/Toronto
+Ingersoll	إنجرسول	43.0334	-80.8830	America/Toronto
+Thompson	تومبسون	55.7435	-97.8558	America/Winnipeg
+Ionview		43.7369	-79.2733	America/Toronto
+Columbia		43.4847	-80.5335	America/Toronto
+New Hamburg		43.3834	-80.6997	America/Toronto
+Mount Dennis		43.6869	-79.4892	America/Toronto
+Strathmore		51.0501	-113.3852	America/Edmonton
+Sainte-Marie		46.4340	-71.0117	America/Toronto
+Sahali		50.6500	-120.3333	America/Vancouver
+Mont-Laurier	مونت لوريل	46.5501	-75.4993	America/Toronto
+Centennial Scarborough		43.7824	-79.1508	America/Toronto
+Brookswood		49.0667	-122.6667	America/Vancouver
+Portage la Prairie	بورتاج لابريرى	49.9728	-98.2926	America/Winnipeg
+McKenzie Lake		50.9083	-113.9806	America/Edmonton
+Powell River	بويل ريفر	49.8328	-124.5237	America/Vancouver
+Bayview Woods-Steeles		43.7968	-79.3821	America/Toronto
+North Perth	نورث بيرث	43.7251	-80.9672	America/Toronto
+Huntington Hills		51.1167	-114.0667	America/Edmonton
+West Clayton		49.1291	-122.7157	America/Vancouver
+Highland West		43.4315	-80.5443	America/Toronto
+West Point Grey		49.2667	-123.2000	America/Vancouver
+James Bay		48.4167	-123.3833	America/Vancouver
+The Glebe		45.4039	-75.6900	America/Toronto
+Walsh Acres-Lakeridge-Garden Ridge		50.4970	-104.6566	America/Regina
+Oakridge		49.2333	-123.1167	America/Vancouver
+Signal Hill		51.0236	-114.1736	America/Edmonton
+Truro		45.3668	-63.2654	America/Halifax
+Douglasdale		50.9389	-113.9931	America/Edmonton
+Dolbeau-Mistassini		48.8786	-72.2314	America/Toronto
+New Brighton		50.9205	-113.9450	America/Edmonton
+Skyview Ranch		51.1585	-113.9571	America/Edmonton
+Lowertown		45.4319	-75.6932	America/Toronto
+Forest Hill North		43.7042	-79.4281	America/Toronto
+South Slope		49.2167	-123.0000	America/Vancouver
+Laurentides		47.1334	-72.2824	America/Toronto
+Hammond		49.2193	-122.6533	America/Vancouver
+Cape Horn		49.2268	-122.8369	America/Vancouver
+Kanata-Lakes		45.3210	-75.9177	America/Toronto
+Winkler	وينكلر	49.1817	-97.9410	America/Winnipeg
+Central		43.4648	-80.5219	America/Toronto
+Kentville		45.0771	-64.4960	America/Halifax
+Wetaskiwin	وتاسكوين	52.9668	-113.3687	America/Edmonton
+Port Hope	بورت هوب	44.0168	-78.3995	America/Toronto
+Strathcona		49.2766	-123.0912	America/Vancouver
+Bridlewood		50.8998	-114.1081	America/Edmonton
+Woodbine Corridor		43.6784	-79.3157	America/Toronto
+Yonge-St.Clair		43.6879	-79.3979	America/Toronto
+Shelbourne		48.4530	-123.3290	America/Vancouver
+Elliot Lake	إليوت لايك	46.3834	-82.6332	America/Toronto
+Chaparral		50.8861	-114.0333	America/Edmonton
+Highland Creek		43.7907	-79.1756	America/Toronto
+Sandy Hill		45.4252	-75.6786	America/Toronto
+Albert Park		50.4073	-104.6311	America/Regina
+Willingdon Heights		49.2750	-123.0083	America/Vancouver
+Aberdeen		50.6500	-120.3667	America/Vancouver
+Albion		49.1875	-122.5569	America/Vancouver
+Downtown		53.5402	-113.4991	America/Edmonton
+Humber Summit		43.7579	-79.5750	America/Toronto
+Aldergrove		49.0580	-122.4709	America/Vancouver
+Sydney Mines		46.2367	-60.2177	America/Glace_Bay
+Dawson Creek	دوسن كريك	55.7598	-120.2403	America/Dawson_Creek
+Sidney	سيدني	48.6496	-123.4026	America/Vancouver
+Gravenhurst	جرافنهورست	44.9168	-79.3663	America/Toronto
+Paris		43.2000	-80.3833	America/Toronto
+Fort Richmond		49.7919	-97.1444	America/Winnipeg
+West Cambie		49.1829	-123.1169	America/Vancouver
+Cap-aux-Meules		47.3821	-61.8597	America/Halifax
+Central Business District		52.1303	-106.6623	America/Regina
+Burke Mountain		49.2936	-122.7561	America/Vancouver
+Alderwood		43.6035	-79.5460	America/Toronto
+Varsity		51.0917	-114.1556	America/Edmonton
+Parksville	باركسفيل	49.3195	-124.3157	America/Vancouver
+Queenswood Heights		45.4708	-75.5056	America/Toronto
+Ambleside		49.3278	-123.1437	America/Vancouver
+Erin	ايرين	43.7729	-80.0644	America/Toronto
+Rothesay		45.3805	-65.9674	America/Moncton
+Champlain Heights		49.2092	-123.0260	America/Vancouver
+Beauharnois		45.3134	-73.8725	America/Toronto
+North Riverdale		43.6720	-79.3513	America/Toronto
+Carleton Place	كارلتون بلاس	45.1334	-76.1494	America/Toronto
+Bathurst	باتحورست	47.6181	-65.6511	America/Moncton
+Gander		48.9562	-54.6165	America/St_Johns
+Etobicoke West Mall		43.6464	-79.5699	America/Toronto
+Cameron		49.2562	-122.9067	America/Vancouver
+Glen Cairn		45.2928	-75.8800	America/Toronto
+Promontory		49.1035	-121.9352	America/Vancouver
+Yonge-Eglinton		43.7047	-79.4036	America/Toronto
+Dufferin Grove		43.6577	-79.4279	America/Toronto
+Clayburn		49.0691	-122.2618	America/Vancouver
+Fairfield		48.4167	-123.3500	America/Vancouver
+Eastern Passage		44.6168	-63.4820	America/Halifax
+Montmagny		46.9804	-70.5549	America/Toronto
+Cabbagetown-South St.James Town		43.6677	-79.3661	America/Toronto
+Saint Romuald		46.7582	-71.2392	America/Toronto
+Summerland		49.5998	-119.6691	America/Vancouver
+Cold Lake	كولد لايك	54.4652	-110.1815	America/Edmonton
+Royal Oak		51.1435	-114.2224	America/Edmonton
+View Royal		48.4579	-123.4526	America/Vancouver
+West Springs		51.0611	-114.1981	America/Edmonton
+Hauterive		49.1957	-68.2581	America/Toronto
+Hidden Valley		51.1486	-114.1143	America/Edmonton
+Fall River		44.8169	-63.6154	America/Halifax
+Doon South		43.3782	-80.4309	America/Toronto
+Broadview North		43.6888	-79.3556	America/Toronto
+New Toronto		43.6002	-79.5053	America/Toronto
+Glenwood		49.2734	-122.7800	America/Vancouver
+Murrayville		49.0833	-122.6167	America/Vancouver
+Shellmont		49.1348	-123.0963	America/Vancouver
+Surrey Centre		49.1167	-122.7500	America/Vancouver
+Sainte-Marthe-sur-le-Lac		45.5334	-73.9325	America/Toronto
+Beddington Heights		51.1292	-114.0792	America/Edmonton
+Estevan	إستيفن	49.1334	-102.9842	America/Regina
+Farnham	فارنهام	45.2834	-72.9824	America/Toronto
+Pincourt		45.3834	-73.9825	America/Toronto
+Coldstream		50.2165	-119.2023	America/Vancouver
+Fairfield		49.0671	-122.3152	America/Vancouver
+Bécancour		46.3411	-72.4322	America/Toronto
+Saint-Raymond	سان ريموند	46.8901	-71.8341	America/Toronto
+Weston-Pellam Park		43.6740	-79.4602	America/Toronto
+North Saanich		48.6663	-123.4193	America/Vancouver
+Whitehorn		51.0833	-113.9667	America/Edmonton
+Keelesdale-Eglinton West		43.6857	-79.4714	America/Toronto
+Princess-Rosethorn		43.6660	-79.5446	America/Toronto
+Blackfalds		52.3834	-113.7853	America/Edmonton
+Eagle Ridge		49.2878	-122.8217	America/Vancouver
+La Tuque	لاتاك	47.4334	-72.7824	America/Toronto
+Queensborough		49.1833	-122.9333	America/Vancouver
+North Kamloops		50.6998	-120.3692	America/Vancouver
+Casa Loma		43.6835	-79.4125	America/Toronto
+Warman		52.3168	-106.5679	America/Regina
+Milton-Parc		45.5100	-73.5746	America/Toronto
+Humber Heights-Westmount		43.6922	-79.5224	America/Toronto
+Stratford		46.2179	-63.0795	America/Halifax
+Cowansville		45.2001	-72.7491	America/Toronto
+Weyburn	ويبرن	49.6668	-103.8511	America/Regina
+Regent Park		43.6604	-79.3615	America/Toronto
+Dover		51.0199	-113.9929	America/Edmonton
+Elmira		43.6001	-80.5497	America/Toronto
+East Cambie		49.1843	-123.0927	America/Vancouver
+Bowness		51.0834	-114.1687	America/Edmonton
+Forest Hill South		43.6945	-79.4143	America/Toronto
+Pelmo Park-Humberlea		43.7175	-79.5283	America/Toronto
+Silverwood Heights		52.1798	-106.6201	America/Regina
+Westsyde		50.7667	-120.3500	America/Vancouver
+Sainte-Anne-des-Plaines	سانت آن دي بلين	45.7647	-73.8116	America/Toronto
+Nelson	نيلسون	49.4999	-117.2855	America/Vancouver
+Saint-Canut		45.7150	-74.0838	America/Toronto
+Sainte-Adèle		45.9501	-74.1325	America/Toronto
+Lambton Shores	لمبتون شوريس	43.1668	-81.9331	America/Toronto
+Brow of the Hill		49.2021	-122.9202	America/Vancouver
+Laurentian Hills		43.4200	-80.4947	America/Toronto
+Markland Wood		43.6335	-79.5757	America/Toronto
+Rundle		51.0742	-113.9708	America/Edmonton
+Victoria Hills		43.4407	-80.5209	America/Toronto
+Rexdale-Kipling		43.7237	-79.5662	America/Toronto
+Temple		51.0881	-113.9471	America/Edmonton
+Brentwood Park		49.2750	-122.9917	America/Vancouver
+Evergreen		52.1669	-106.5672	America/Regina
+Monterey Park		51.0819	-113.9292	America/Edmonton
+Temiskaming Shores	تيميسكيمينج شورز	47.4938	-79.7153	America/Toronto
+Coal Harbour		49.2898	-123.1232	America/Vancouver
+Preston Centre		43.3944	-80.3594	America/Toronto
+Centreville Chicopee		43.4356	-80.4281	America/Toronto
+Cantley		45.5668	-75.7827	America/Toronto
+Hockaday		49.2968	-122.7703	America/Vancouver
+Thistletown-Beaumond Heights		43.7380	-79.5635	America/Toronto
+Arbour Lake		51.1347	-114.2028	America/Edmonton
+Falconridge		51.1028	-113.9417	America/Edmonton
+Wallaceburg		42.5930	-82.3885	America/Toronto
+Saint-Félicien	سان فيليسيان	48.6501	-72.4491	America/Toronto
+Selkirk	سيلكيرك	50.1436	-96.8845	America/Winnipeg
+Whatcom		49.0414	-122.2399	America/Vancouver
+Angus		44.3168	-79.8829	America/Toronto
+Hawkesbury	هاوكيسبيري	45.6001	-74.6159	America/Toronto
+Douglas-Gilpin		49.2444	-122.9822	America/Vancouver
+Roberval		48.5168	-72.2324	America/Toronto
+Sainte-Agathe-des-Monts	سانت أغاث دس مونتس	46.0501	-74.2825	America/Toronto
+Fernwood		48.4298	-123.3442	America/Vancouver
+Gastown		49.2851	-123.1117	America/Vancouver
+Citadel		51.1453	-114.1813	America/Edmonton
+Lake Bonavista		50.9420	-114.0542	America/Edmonton
+Prévost		45.8668	-74.0825	America/Toronto
+Mercier		45.3105	-73.7398	America/Toronto
+South Clearbrook		49.0406	-122.3279	America/Vancouver
+Spryfield		44.6116	-63.6177	America/Halifax
+Shuniah		48.4632	-89.2074	America/Toronto
+Maple Leaf		43.7156	-79.4808	America/Toronto
+Garden Village		49.2333	-123.0000	America/Vancouver
+Long Branch		43.5914	-79.5325	America/Toronto
+Tillicum		48.4500	-123.4000	America/Vancouver
+Rockingham		44.6734	-63.6449	America/Halifax
+Penetanguishene	بينيتانجويشين	44.7834	-79.9164	America/Toronto
+Runnymede-Bloor West Village		43.6593	-79.4857	America/Toronto
+Marshall-McCallum		49.0372	-122.3017	America/Vancouver
+Sardis		49.1333	-121.9500	America/Vancouver
+Hanceville		51.9192	-123.0446	America/Vancouver
+Petite-Bourgogne		45.4887	-73.5681	America/Toronto
+South Huron		43.3168	-81.5165	America/Toronto
+Caledonia-Fairbank		43.6886	-79.4552	America/Toronto
+Rustic		43.7116	-79.4981	America/Toronto
+L'Île-Perrot		45.3834	-73.9492	America/Toronto
+Guildwood		43.7526	-79.1949	America/Toronto
+Acadia		50.9717	-114.0569	America/Edmonton
+Historic Downtown		49.0514	-122.2934	America/Vancouver
+Sunshine Hills		49.1167	-122.9000	America/Vancouver
+Hinton		53.4001	-117.5857	America/Edmonton
+Notre-Dame-de-l'Île-Perrot		45.3668	-73.9325	America/Toronto
+Quesnel	كينيل	52.9784	-122.4931	America/Vancouver
+Pineridge		51.0744	-113.9461	America/Edmonton
+Morinville		53.8001	-113.6520	America/Edmonton
+Springbank Hill		51.0325	-114.1948	America/Edmonton
+Nashwaaksis		45.9801	-66.6579	America/Moncton
+Plantagenet		45.5326	-74.9937	America/Toronto
+Danforth		43.6840	-79.3298	America/Toronto
+Belle River		42.2926	-82.7119	America/Toronto
+Overbrook		45.4273	-75.6520	America/Toronto
+Grand River South		43.4504	-80.4043	America/Toronto
+Martensville		52.2834	-106.6679	America/Regina
+Lorraine		45.6834	-73.7825	America/Toronto
+Sundance		50.9000	-114.0389	America/Edmonton
+Lachute	لاشوت	45.6501	-74.3325	America/Toronto
+Port Perry		44.1068	-78.9444	America/Toronto
+Maple Hills		46.2133	-64.8695	America/Moncton
+Val-des-Monts		45.6501	-75.6660	America/Toronto
+Saint-Amable		45.6501	-73.2992	America/Toronto
+Garneau		53.5208	-113.5125	America/Edmonton
+Gunningsville		46.0739	-64.7730	America/Moncton
+Elms-Old Rexdale		43.7215	-79.5490	America/Toronto
+Aspen Woods		51.0428	-114.1928	America/Edmonton
+Downtown St. John's		47.5607	-52.7110	America/St_Johns
+Olympic Village		49.2700	-123.1119	America/Vancouver
+Little's Corners		43.3439	-80.2758	America/Toronto
+The Hamptons		53.4880	-113.6757	America/Edmonton
+Amherst	أمهرست	45.8334	-64.1987	America/Halifax
+The Blue Mountains		44.5584	-80.4580	America/Toronto
+Acton		43.6297	-80.0415	America/Toronto
+Sage Hill		51.1759	-114.1411	America/Edmonton
+Dorchester		42.9834	-81.0664	America/Toronto
+Qualicum Beach	شاطئ كواليكم	49.3478	-124.4423	America/Vancouver
+Blair Road		43.3711	-80.3345	America/Toronto
+Hampton Village		52.1542	-106.7175	America/Regina
+Uptown		49.2121	-122.9193	America/Vancouver
+Bells Corners		45.3159	-75.8301	America/Toronto
+Kingsway South		43.6535	-79.5106	America/Toronto
+Bridle Path-Sunnybrook-York Mills		43.7310	-79.3789	America/Toronto
+Huron East	هورن أيست	43.6168	-81.2998	America/Toronto
+Blairmore		52.1308	-106.7428	America/Regina
+McMillan		49.0449	-122.2666	America/Vancouver
+Old East York		43.6968	-79.3355	America/Toronto
+Olds		51.7834	-114.1020	America/Edmonton
+Riverbend		50.9750	-114.0139	America/Edmonton
+Saint-Sauveur		45.8869	-74.1794	America/Toronto
+Millview		44.7093	-63.6703	America/Halifax
+Carleton North		46.4990	-67.5575	America/Moncton
+Cap-Acadie		46.2014	-64.3242	America/Moncton
+Hawkwood		51.1312	-114.1735	America/Edmonton
+Pioneer Park		43.3927	-80.4410	America/Toronto
+North Central		50.4571	-104.6278	America/Regina
+Lewisville		46.1044	-64.7532	America/Moncton
+Shawnessy		50.9069	-114.0819	America/Edmonton
+Redstone		51.1705	-113.9578	America/Edmonton
+Greely		45.2614	-75.5611	America/Toronto
+Riverwood		49.2558	-122.7358	America/Vancouver
+Willowgrove		52.1468	-106.5547	America/Regina
+Kitimat	كيتيمات	54.0524	-128.6534	America/Vancouver
+Strathcona		53.5208	-113.4833	America/Edmonton
+Glen Cairn		46.1167	-64.8500	America/Moncton
+La Malbaie	لامالبائ	47.6540	-70.1527	America/Toronto
+Beechwood		43.4604	-80.5499	America/Toronto
+Marlborough		51.0592	-113.9681	America/Edmonton
+Mont-Tremblant		46.2127	-74.5844	America/Toronto
+Smiths Falls		44.9045	-76.0233	America/Toronto
+Royal Oak		48.4833	-123.3833	America/Vancouver
+Sechelt		49.4751	-123.7590	America/Vancouver
+Forest Hills		44.6801	-63.4882	America/Halifax
+Oromocto		45.8351	-66.4792	America/Moncton
+Binbrook		43.1213	-79.8110	America/Toronto
+Arnprior		45.4334	-76.3494	America/Toronto
+Bridgewater		44.3786	-64.5188	America/Halifax
+Harewood		49.1474	-123.9474	America/Vancouver
+Lincoln		43.4953	-80.5066	America/Toronto
+Whitecourt		54.1501	-115.6855	America/Edmonton
+Lavaltrie		45.8834	-73.2824	America/Toronto
+Rosemont-Mount Royal		50.4629	-104.6648	America/Regina
+Nolan Hill		51.1755	-114.1655	America/Edmonton
+Woodbine		50.9375	-114.1292	America/Edmonton
+Pont-Rouge		46.7547	-71.6957	America/Toronto
+Whistler		50.1182	-122.9540	America/Vancouver
+Thorncliffe		51.1028	-114.0667	America/Edmonton
+Embrun	امبرون	45.2757	-75.2727	America/Toronto
+Morden		49.1919	-98.1014	America/Winnipeg
+Beausoleil		46.2983	-64.6033	America/Moncton
+Fairview		44.6528	-63.6411	America/Halifax
+Silver Springs		51.1042	-114.1916	America/Edmonton
+Ladysmith	لايدي سميث	48.9902	-123.8170	America/Vancouver
+Lochdale		49.2737	-122.9648	America/Vancouver
+Dalhousie		51.1116	-114.1588	America/Edmonton
+Albro Lake		44.6841	-63.5813	America/Halifax
+New Horizons		49.2812	-122.7791	America/Vancouver
+Holmwood		52.1234	-106.5390	America/Regina
+Prairie View		50.4767	-104.6861	America/Regina
+Otterburn Park		45.5334	-73.2159	America/Toronto
+Dauphin	دوفان	51.1494	-100.0502	America/Winnipeg
+Drumheller		51.4617	-112.7101	America/Edmonton
+Shaughnessy		49.2500	-123.1333	America/Vancouver
+Clinton-Glenwood		49.2121	-122.9796	America/Vancouver
+Rutherford		53.4183	-113.5299	America/Edmonton
+King City		43.9286	-79.5269	America/Toronto
+Bois-des-Filion		45.6668	-73.7492	America/Toronto
+Victoria West		48.4319	-123.3821	America/Vancouver
+Woodside		44.6501	-63.5487	America/Halifax
+Castlegar	كاسلغار	49.3232	-117.6583	America/Vancouver
+Wildwood		52.1098	-106.5945	America/Regina
+Somerset		50.8958	-114.0861	America/Edmonton
+Ogden		50.9931	-114.0139	America/Edmonton
+Banff	بانف	51.1762	-115.5698	America/Edmonton
+Kapuskasing	كابوسكاسينغ	49.4169	-82.4331	America/Toronto
+Marlborough Park		51.0583	-113.9444	America/Edmonton
+Burnaby Heights		49.2833	-123.0000	America/Vancouver
+Westfort		48.3651	-89.2890	America/Toronto
+Concord		43.8001	-79.4829	America/Toronto
+Penbrooke Meadows		51.0500	-113.9333	America/Edmonton
+Silver Heights		43.4401	-80.3147	America/Toronto
+Essex		42.1751	-82.8248	America/Toronto
+Boischatel	بواشاتل	46.8943	-71.1448	America/Toronto
+Notre-Dame-des-Prairies		46.0501	-73.4325	America/Toronto
+Downtown Commercial Core		51.0472	-114.0700	America/Edmonton
+Renfrew		45.4668	-76.6827	America/Toronto
+Uptown Saint John		45.2728	-66.0594	America/Moncton
+Coaldale		49.7167	-112.6185	America/Edmonton
+Dryden		49.7833	-92.7503	America/Winnipeg
+Humphrey		46.1199	-64.7780	America/Moncton
+Rocky Ridge		51.1448	-114.2446	America/Edmonton
+Richmond West		49.7832	-97.1659	America/Winnipeg
+Blackburn Hamlet		45.4367	-75.5646	America/Toronto
+Taber		49.7870	-112.1460	America/Edmonton
+Colonial Acres		43.5011	-80.5177	America/Toronto
+Willowdale		43.4787	-80.5039	America/Toronto
+Shelburne		44.0787	-80.2041	America/Toronto
+Cordova Bay		48.5167	-123.3667	America/Vancouver
+Silver Berry		53.4579	-113.3817	America/Edmonton
+Saint-Hippolyte		45.9334	-74.0159	America/Toronto
+Cedar Valley		49.1617	-122.3105	America/Vancouver
+Woodwards		49.1467	-123.1549	America/Vancouver
+Wild Rose		53.4708	-113.3812	America/Edmonton
+Central Moncton		46.0970	-64.7962	America/Moncton
+Chelsea	تشلسي	45.5001	-75.7827	America/Toronto
+Legacy		50.8560	-114.0049	America/Edmonton
+Lakeview		52.0953	-106.5978	America/Regina
+Lambton Baby Point		43.6574	-79.4960	America/Toronto
+Summerside		53.4173	-113.4611	America/Edmonton
+Edson		53.5834	-116.4356	America/Edmonton
+Silverado		50.8848	-114.0717	America/Edmonton
+South Cambie		49.2500	-123.1167	America/Vancouver
+Saint-Apollinaire		46.6129	-71.5126	America/Toronto
+Kahnawake		45.4108	-73.6814	America/Toronto
+Ranch Park		49.2605	-122.8091	America/Vancouver
+Trail	ترايل	49.0998	-117.7022	America/Vancouver
+Chandler		48.3494	-64.6793	America/Toronto
+Al Ritchie		50.4425	-104.5850	America/Regina
+Popcorn House		43.4195	-80.2988	America/Toronto
+Three Rivers		46.1845	-62.5679	America/Halifax
+East Newton South		49.1294	-122.8090	America/Vancouver
+Douglas		49.1023	-122.6511	America/Vancouver
+Woodbine-Lumsden		43.6921	-79.3097	America/Toronto
+Port Elgin		44.4361	-81.3898	America/Toronto
+Hillside-Quadra		48.4447	-123.3560	America/Vancouver
+Membertou		46.1152	-60.1893	America/Glace_Bay
+Torbay		47.6666	-52.7313	America/St_Johns
+Scenic Acres		51.1181	-114.2222	America/Edmonton
+Saint-Sauveur-des-Monts		45.9001	-74.1659	America/Toronto
+Hintonburg		45.4038	-75.7283	America/Toronto
+Downtown Moncton		46.0923	-64.7853	America/Moncton
+Harvest Hills		51.1479	-114.0513	America/Edmonton
+Playter Estates-Danforth		43.6797	-79.3549	America/Toronto
+Elora		43.6834	-80.4330	America/Toronto
+Kirkland Lake	كيركلاند ليك	48.1446	-80.0377	America/Toronto
+Fort Frances	فورت فرانسيس	48.6167	-93.4003	America/Winnipeg
+Blake-Jones		43.6762	-79.3374	America/Toronto
+La Sarre	لا ساري	48.8002	-79.1996	America/Toronto
+Manor Park		44.6716	-63.5490	America/Halifax
+Centennial Place		46.0833	-64.8167	America/Moncton
+Hanover		44.1501	-81.0330	America/Toronto
+Innisfail		52.0269	-113.9507	America/Edmonton
+Acton Vale		45.6501	-72.5658	America/Toronto
+Walden		50.8697	-114.0258	America/Edmonton
+Goderich		43.7417	-81.7134	America/Toronto
+University		43.6625	-79.4012	America/Toronto
+Saint-Philippe		45.3760	-73.4811	America/Toronto
+Oaklands		48.4439	-123.3406	America/Vancouver
+Brentwood Bay		48.5829	-123.4526	America/Vancouver
+Rosewood		52.0927	-106.5542	America/Regina
+Happy Valley-Goose Bay		53.3038	-60.3258	America/Goose_Bay
+Confederation Park		52.1403	-106.7367	America/Regina
+Chibougamau	شيبوغامو	49.9168	-74.3659	America/Toronto
+Ct 0014		45.5575	-73.5432	America/Toronto
+Revelstoke	ريفيلستوك	50.9971	-118.1953	America/Vancouver
+Shediac		46.2198	-64.5411	America/Moncton
+South Pointe		49.7792	-97.1798	America/Winnipeg
+South Terwillegar		53.4401	-113.5789	America/Edmonton
+Listowel		43.7334	-80.9497	America/Toronto
+Canyon Springs		49.2915	-122.7954	America/Vancouver
+Lakeview		50.4314	-104.6233	America/Regina
+Pont Rouge		48.8833	-72.0825	America/Toronto
+Burnside		44.7017	-63.6005	America/Halifax
+Camlachie		43.0360	-82.1616	America/Toronto
+South Arm		49.1403	-123.1248	America/Vancouver
+Aylmer		42.7668	-80.9830	America/Toronto
+Ranchlands		51.1167	-114.1833	America/Edmonton
+Sunbury-York South		45.8378	-66.6098	America/Moncton
+Cascade Heights		49.2500	-123.0167	America/Vancouver
+Napanee		44.2501	-76.9494	America/Toronto
+Canyon Meadows		50.9428	-114.0809	America/Edmonton
+Iqaluit	إيكالويت	63.7470	-68.5173	America/Iqaluit
+Carignan	كارينيون	45.4501	-73.2992	America/Toronto
+Kimberley	كيمبيرلي	49.6707	-115.9776	America/Edmonton
+Brentwood		51.0981	-114.1332	America/Edmonton
+Sherwood		46.2682	-63.1284	America/Halifax
+College Park		49.2820	-122.8786	America/Vancouver
+St. Marys		43.2501	-81.1330	America/Toronto
+Kingsway-Beresford		49.2248	-122.9640	America/Vancouver
+Beaumont	بايومونت	53.3501	-113.4187	America/Edmonton
+Queen Mary Park		53.5548	-113.5172	America/Edmonton
+Hamptons		51.1436	-114.1485	America/Edmonton
+East Newton North		49.1435	-122.8139	America/Vancouver
+Lexington		43.4974	-80.4912	America/Toronto
+Eastern Charlotte		45.1030	-66.7948	America/Moncton
+Delson		45.3668	-73.5492	America/Toronto
+East Hespeler		43.4346	-80.2956	America/Toronto
+Altadore		51.0165	-114.1032	America/Edmonton
+Twin Lakes		50.5007	-104.6753	America/Regina
+Heritage Park		43.4564	-80.4442	America/Toronto
+Northeast Regina		50.4768	-104.6069	America/Regina
+Grand Centre		54.4163	-110.2130	America/Edmonton
+Cathedral		50.4451	-104.6312	America/Regina
+Glenbrook		51.0297	-114.1456	America/Edmonton
+Coronation Park		50.4784	-104.6256	America/Regina
+Inlet Centre		49.2761	-122.8454	America/Vancouver
+Forest Lawn		51.0375	-113.9722	America/Edmonton
+Quinpool District		44.6433	-63.5985	America/Halifax
+Labrador City		52.9463	-66.9114	America/Goose_Bay
+Mill Bay		48.6500	-123.5500	America/Vancouver
+Donnacona		46.6804	-71.7239	America/Toronto
+Stanley Park		43.4464	-80.4442	America/Toronto
+Cougar Ridge		51.0711	-114.2084	America/Edmonton
+Marpole South		49.2061	-123.1318	America/Vancouver
+Baie-Saint-Paul	بيه سان بول	47.4411	-70.4986	America/Toronto
+Merritt	ميريت	50.1123	-120.7942	America/Vancouver
+Columbia Hills		43.4699	-80.6008	America/Toronto
+Yennadon		49.2330	-122.5859	America/Vancouver
+Pointe-du-Lac		48.5001	-71.7824	America/Toronto
+Val-des-Sources		45.7668	-71.9324	America/Toronto
+Bluewater		43.4668	-81.5998	America/Toronto
+Coteau-du-Lac		45.3001	-74.1825	America/Toronto
+Kincora		51.1594	-114.1337	America/Edmonton
+Coaticook		45.1334	-71.7991	America/Toronto
+Hampstead		45.4808	-73.6467	America/Toronto
+Beechwood West		43.4582	-80.5661	America/Toronto
+King	كينغ	43.9651	-79.5901	America/Toronto
+Port Wallace		44.6988	-63.5477	America/Halifax
+Haysboro		50.9667	-114.0833	America/Edmonton
+Boyle Street		53.5500	-113.4792	America/Edmonton
+Sturgeon Falls		46.3668	-79.9164	America/Toronto
+Central York		46.0051	-66.9080	America/Moncton
+Saint-Rémi		45.2668	-73.6159	America/Toronto
+Campbellton		48.0075	-66.6727	America/Moncton
+Burnside-Gorge		48.4434	-123.3761	America/Vancouver
+Allard		53.4002	-113.5266	America/Edmonton
+Peace River		56.2371	-117.2918	America/Edmonton
+Eastbridge		43.5127	-80.5082	America/Toronto
+Slave Lake		55.2834	-114.7690	America/Edmonton
+Applewood Park		51.0431	-113.9250	America/Edmonton
+Yarmouth		43.8334	-66.1156	America/Halifax
+Gibsons		49.3954	-123.5055	America/Vancouver
+Erin Woods		51.0206	-113.9698	America/Edmonton
+Saint-Zotique		45.2501	-74.2492	America/Toronto
+Hillsdale		50.4200	-104.6089	America/Regina
+Saint-Anselme		46.0639	-64.7126	America/Moncton
+Albert Park/Radisson Heights		51.0429	-113.9958	America/Edmonton
+Westvale		43.4445	-80.5567	America/Toronto
+Kincardine	كينكاردين	44.1834	-81.6331	America/Toronto
+New Waterford		46.2501	-60.0817	America/Glace_Bay
+Beaubassin East		46.2092	-64.4180	America/Moncton
+Ct 0012		45.5786	-73.5377	America/Toronto
+Clarenville		48.1666	-53.9648	America/St_Johns
+Downtown Dieppe		46.0952	-64.7437	America/Moncton
+Hope	هوب	49.3830	-121.4414	America/Vancouver
+West St. Paul		50.0104	-97.1421	America/Winnipeg
+Plessisville		46.2186	-71.7620	America/Toronto
+Brownsburg-Chatham		45.6834	-74.4159	America/Toronto
+Ponoka		52.6768	-113.5815	America/Edmonton
+Harbourview		44.6772	-63.5854	America/Halifax
+Millrise		50.9167	-114.0847	America/Edmonton
+Kiniski Gardens		53.4750	-113.4012	America/Edmonton
+West Hillhurst		51.0541	-114.1208	America/Edmonton
+Port Haney		49.2123	-122.6047	America/Vancouver
+Terwillegar Towne		53.4498	-113.5784	America/Edmonton
+Lakeshore Village		43.4883	-80.5511	America/Toronto
+Country Hills West		43.4111	-80.4865	America/Toronto
+Whitmore Park		50.4042	-104.6067	America/Regina
+Ct 0003		45.6056	-73.5271	America/Toronto
+Enfield		44.9434	-63.5361	America/Halifax
+Alberta Avenue		53.5667	-113.4833	America/Edmonton
+Renfrew		51.0632	-114.0388	America/Edmonton
+Huron Park		43.4023	-80.4793	America/Toronto
+Beechborough-Greenbrook		43.6932	-79.4795	America/Toronto
+Glamorgan		51.0177	-114.1467	America/Edmonton
+Cornwall		46.2265	-63.2181	America/Halifax
+Mont-Joli	مونت جولي	48.5839	-68.1921	America/Toronto
+Pearlgate		47.5019	-52.8032	America/St_Johns
+Devon		53.3668	-113.7353	America/Edmonton
+Departure Bay		49.2021	-123.9762	America/Vancouver
+Stephenville	ستيفنفيل	48.5500	-58.5818	America/St_Johns
+Nanoose Bay		49.2724	-124.1933	America/Vancouver
+Millidgeville		45.3017	-66.1032	America/Moncton
+Rocky Mountain House		52.3668	-114.9188	America/Edmonton
+Sherwood		51.1595	-114.1532	America/Edmonton
+Port-Cartier	بورت كارتير	50.0334	-66.8654	America/Toronto
+Punjabi Market		49.2330	-123.1016	America/Vancouver
+Midnapore		50.9153	-114.0590	America/Edmonton
+Mundy Pond		47.5491	-52.7465	America/St_Johns
+Ct 0011		45.5836	-73.5353	America/Toronto
+Twin Brooks		53.4427	-113.5304	America/Edmonton
+Cumberland		53.6109	-113.5534	America/Edmonton
+Pointe-Calumet	بوينتي كالوميت	45.5001	-73.9659	America/Toronto
+Westmount		44.6473	-63.6108	America/Halifax
+Saint-Honoré		48.5334	-71.0824	America/Toronto
+Beauceville	بوسفيل	46.2178	-70.7787	America/Toronto
+Dunluce		53.6229	-113.5265	America/Edmonton
+Capitol Hill		49.2833	-122.9833	America/Vancouver
+Sapperton		49.2264	-122.8945	America/Vancouver
+Mount Pleasant		51.0732	-114.0770	America/Edmonton
+Parry Sound		45.3473	-80.0353	America/Toronto
+Agassiz		49.2330	-121.7693	America/Vancouver
+Downtown Dartmouth		44.6668	-63.5660	America/Halifax
+Nutana		52.1189	-106.6562	America/Regina
+Wainwright		52.8348	-110.8534	America/Edmonton
+Williams Lake		44.6178	-63.6090	America/Halifax
+Amqui	أمكي	48.4638	-67.4313	America/Toronto
+Inglewood		53.5620	-113.5360	America/Edmonton
+Hammonds Plains		44.7339	-63.7755	America/Halifax
+Crescent Heights		51.0628	-114.0683	America/Edmonton
+Forest Hills		43.4278	-80.5092	America/Toronto
+Ironwood		49.1261	-123.0951	America/Vancouver
+College Park		52.1214	-106.5948	America/Regina
+Saint-Joseph-du-Lac		45.5334	-73.9992	America/Toronto
+King Edward		49.8846	-97.2133	America/Winnipeg
+Ambleside		53.4299	-113.5992	America/Edmonton
+Beaurivage		46.6821	-64.9602	America/Moncton
+Oxford Heights		49.2811	-122.7601	America/Vancouver
+Clair Hills		43.4562	-80.5817	America/Toronto
+Hautes-Terres		47.6288	-65.0928	America/Moncton
+Russell		45.2501	-75.3660	America/Toronto
+Castleridge		51.1056	-113.9556	America/Edmonton
+Town Plat		45.9612	-66.6499	America/Moncton
+Fundy Albert		45.8027	-64.6598	America/Moncton
+Drayton Valley		53.2168	-114.9854	America/Edmonton
+Argyle Park		50.4903	-104.6283	America/Regina
+Southwood		50.9561	-114.0850	America/Edmonton
+Chippawa		43.0571	-79.0472	America/Toronto
+Mount Cashel		47.5888	-52.7096	America/St_Johns
+Glenrosa		49.8500	-119.6667	America/Vancouver
+Saint-Félix-de-Valois		46.1698	-73.4253	America/Toronto
+Stride Hill		49.2096	-122.9638	America/Vancouver
+Bay Roberts	باي روبرتس	47.5999	-53.2648	America/St_Johns
+Beaver Bank		44.8248	-63.6808	America/Halifax
+Ganges		48.8534	-123.5003	America/Vancouver
+Cedar Cove		49.2865	-123.0608	America/Vancouver
+Glastonbury		53.5033	-113.6698	America/Edmonton
+Dundonald		52.1484	-106.7284	America/Regina
+Forest Heights		51.0494	-113.9701	America/Edmonton
+Bonnyville		54.2668	-110.7351	America/Edmonton
+Saint-Césaire		45.4095	-73.0010	America/Toronto
+Forest Grove		52.1420	-106.5909	America/Regina
+Roxboro		45.5084	-73.8075	America/Toronto
+McMasterville	مك ماسترفيل	45.5501	-73.2659	America/Toronto
+Cedarbrae		50.9565	-114.1298	America/Edmonton
+Douglas		45.9783	-66.7311	America/Moncton
+Mayland Heights		51.0608	-114.0111	America/Edmonton
+Abbeydale		51.0593	-113.9286	America/Edmonton
+Lymburn		53.5075	-113.6422	America/Edmonton
+Dunnville	دانفيل	42.9001	-79.6163	America/Toronto
+Bridgeport		43.4834	-80.4830	America/Toronto
+Kilbride		47.5065	-52.7560	America/St_Johns
+Westmount		53.5546	-113.5417	America/Edmonton
+Garden City		49.1671	-123.1218	America/Vancouver
+Flin Flon	فلن فلون	54.7670	-101.8743	America/Winnipeg
+Ottewell		53.5277	-113.4305	America/Edmonton
+Sioux Lookout		50.0991	-91.9216	America/Winnipeg
+Woodlands		50.9417	-114.1083	America/Edmonton
+Louiseville	لويزفيل	46.2559	-72.9415	America/Toronto
+Sandstone Valley		51.1381	-114.0937	America/Edmonton
+Melfort		52.8667	-104.6177	America/Regina
+Norway House		53.9821	-97.8327	America/Winnipeg
+Lac-Mégantic	لاك مغانتيك	45.5834	-70.8823	America/Toronto
+Sutherland		52.1390	-106.6040	America/Regina
+St. Paul		53.9835	-111.2851	America/Edmonton
+Grand Lake		46.1126	-65.9568	America/Moncton
+Vegreville		53.5001	-112.0518	America/Edmonton
+Braeside		50.9542	-114.1054	America/Edmonton
+Rosedale		49.1833	-121.8000	America/Vancouver
+Kilkenny		53.6083	-113.4528	America/Edmonton
+North Sydney		46.2078	-60.2549	America/Glace_Bay
+Ct 0013		45.5692	-73.5442	America/Toronto
+Princeville		46.1716	-71.8746	America/Toronto
+Quilchena		49.2434	-123.1508	America/Vancouver
+Corunna		42.8834	-82.4331	America/Toronto
+La Ronge		55.1001	-105.2842	America/Regina
+Nicolet		46.2308	-72.6129	America/Toronto
+Second Street		49.2237	-122.9220	America/Vancouver
+Sherwood-McCarthy		50.4917	-104.6805	America/Regina
+Booth		49.8850	-97.2695	America/Winnipeg
+Ct 0007		45.5947	-73.5290	America/Toronto
+Evansdale		53.6103	-113.4811	America/Edmonton
+Lakeview		50.9967	-114.1195	America/Edmonton
+Petrolia		42.8820	-82.1520	America/Toronto
+Lac-Brome		45.2168	-72.5158	America/Toronto
+Timberlea		44.6624	-63.7463	America/Halifax
+Île-de-Lamèque		47.8466	-64.5961	America/Moncton
+Oakridge		50.9676	-114.1289	America/Edmonton
+MacEwan		53.4284	-113.5274	America/Edmonton
+Coral Springs		51.1014	-113.9306	America/Edmonton
+Rosemount		43.4569	-80.4636	America/Toronto
+Lively		46.4334	-81.1497	America/Toronto
+Sainte-Anne-des-Monts		49.1240	-66.4924	America/Toronto
+Chartersville		46.0849	-64.7334	America/Moncton
+Marieville		45.4334	-73.1659	America/Toronto
+Charlemagne		45.7168	-73.4825	America/Toronto
+Creston		49.0999	-116.5021	America/Creston
+Callingwood South		53.5000	-113.6250	America/Edmonton
+Convoy Place		44.6679	-63.6143	America/Halifax
+Redcliff		50.0834	-110.7849	America/Edmonton
+Perth		44.9001	-76.2494	America/Toronto
+Princeville		45.7668	-61.2985	America/Halifax
+Bearspaw		51.1334	-114.3020	America/Edmonton
+Idlewood		43.4500	-80.4277	America/Toronto
+Osoyoos		49.0331	-119.4524	America/Vancouver
+Woodstock		46.1580	-67.5838	America/Moncton
+Ellerslie		53.4288	-113.4564	America/Edmonton
+Vieux-Montréal		45.5062	-73.5416	America/Toronto
+Kensington		52.1335	-106.7596	America/Regina
+Willowdale		44.6508	-63.4778	America/Halifax
+Fairhaven		52.1214	-106.7284	America/Regina
+Heron Bay		48.0219	-66.3960	America/Moncton
+Montcalm		49.8119	-97.1533	America/Winnipeg
+Downtown Charlottetown		46.2325	-63.1273	America/Halifax
+The Pas		53.8216	-101.2449	America/Winnipeg
+Hamilton		49.1740	-122.9743	America/Vancouver
+Highway 11		49.0358	-122.2836	America/Vancouver
+Stettler		52.3168	-112.7186	America/Edmonton
+College Heights		48.4407	-89.2348	America/Toronto
+Hillhurst		51.0543	-114.0943	America/Edmonton
+Saanich Core		48.4548	-123.3745	America/Vancouver
+Gananoque		44.3334	-76.1661	America/Toronto
+Saint-Roch-de-l'Achigan		45.8592	-73.5896	America/Toronto
+Terra Nova		49.1697	-123.1890	America/Vancouver
+Saint-Pie		45.5028	-72.9089	America/Toronto
+Butternut Valley		45.8333	-65.5347	America/Moncton
+Parkridge		52.1242	-106.7512	America/Regina
+Viscount Alexander Park		45.4527	-75.6312	America/Toronto
+Windsor		45.5668	-71.9991	America/Toronto
+Silver Heights		49.8810	-97.2514	America/Winnipeg
+Chisasibi		53.7833	-78.9000	America/Toronto
+Cochrane		49.0669	-81.0331	America/Toronto
+North End		45.2702	-66.0814	America/Moncton
+Ayr		43.2834	-80.4497	America/Toronto
+Lyndhurst		49.2654	-122.8992	America/Vancouver
+Greenwood		44.9741	-64.9317	America/Halifax
+Rabbittown		47.5680	-52.7230	America/St_Johns
+Valley Ridge		51.0972	-114.2569	America/Edmonton
+Smithers	سميذرز	54.7804	-127.1743	America/Vancouver
+Dundarave		49.3362	-123.1876	America/Vancouver
+Lang's Farm		43.3978	-80.3356	America/Toronto
+Cookshire-Eaton		45.4168	-71.6324	America/Toronto
+Delhi		42.8501	-80.4997	America/Toronto
+Southlands		47.4931	-52.8238	America/St_Johns
+Hildegarde		46.1230	-64.8539	America/Moncton
+Armstrong		50.4498	-119.2023	America/Vancouver
+Deer Lake		49.1667	-57.4316	America/St_Johns
+Ormsby Place		53.4986	-113.6417	America/Edmonton
+Mount Royal		52.1359	-106.7006	America/Regina
+Aldergrove		53.5168	-113.6412	America/Edmonton
+Donovans		47.5218	-52.8364	America/St_Johns
+Sussex		45.7227	-65.5066	America/Moncton
+Briarwood		52.1111	-106.5591	America/Regina
+Bridgwater Forest		49.8048	-97.1829	America/Winnipeg
+Jubilee		48.4303	-123.3283	America/Vancouver
+Lawson Heights		52.1711	-106.6195	America/Regina
+Uplands		50.4934	-104.6058	America/Regina
+Baturyn		53.6333	-113.5014	America/Edmonton
+Southdale		43.4336	-80.4912	America/Toronto
+Meadow Lake		54.1335	-108.4347	America/Regina
+Richmond		51.0306	-114.1139	America/Edmonton
+Fernie		49.5000	-115.0687	America/Edmonton
+Arbor Creek		52.1315	-106.5718	America/Regina
+Fundy-St. Martins		45.4078	-65.4391	America/Moncton
+Grand Falls		47.0461	-67.7418	America/Moncton
+Val-David		46.0334	-74.2159	America/Toronto
+Richelieu		45.4434	-73.2460	America/Toronto
+Marystown		47.1666	-55.1483	America/St_Johns
+Clayton Park		44.6603	-63.6473	America/Halifax
+Belmont		53.5924	-113.3937	America/Edmonton
+Sainte-Anne-de-Bellevue		45.4062	-73.9456	America/Toronto
+Silverspring		52.1562	-106.5923	America/Regina
+Downtown Fredericton		45.9620	-66.6405	America/Moncton
+Lakeshore North-Conservation		43.4966	-80.5612	America/Toronto
+Hollick-Kenyon		53.6221	-113.4246	America/Edmonton
+Rawdon		46.0501	-73.7159	America/Toronto
+Montréal-Ouest		45.4529	-73.6492	America/Toronto
+Beaverbrook		45.3302	-75.9060	America/Toronto
+Brintnell		53.6208	-113.4076	America/Edmonton
+Empire Park		53.4847	-113.5014	America/Edmonton
+Pleasant Hill		52.1256	-106.6995	America/Regina
+Tuxedo Park		51.0746	-114.0602	America/Edmonton
+Grand Bay-Westfield		45.3619	-66.2417	America/Moncton
+Laurelwood		43.4687	-80.5800	America/Toronto
+Waverley Heights		49.8082	-97.1676	America/Winnipeg
+Tottenham		44.0244	-79.8055	America/Toronto
+Bankview		51.0333	-114.1000	America/Edmonton
+Champdoré		46.3860	-64.7824	America/Moncton
+Hanwell		45.8831	-66.7690	America/Moncton
+Imperoyal		44.6362	-63.5273	America/Halifax
+La Perle		53.5361	-113.6403	America/Edmonton
+Oliver		49.1831	-119.5524	America/Vancouver
+Hudson		45.4501	-74.1492	America/Toronto
+Churchill Park		47.5770	-52.7210	America/St_Johns
+Shannon		46.8803	-71.5146	America/Toronto
+Bridgeview		49.2081	-122.8603	America/Vancouver
+Bible Hill		45.3750	-63.2380	America/Halifax
+Fairvale		45.4008	-65.9717	America/Moncton
+Metchosin		48.3829	-123.5359	America/Vancouver
+Spallumcheen		50.4015	-119.2204	America/Vancouver
+Breslau		43.4668	-80.4164	America/Toronto
+Willow Park		50.9556	-114.0556	America/Edmonton
+Ermineskin		53.4575	-113.5041	America/Edmonton
+Mount Forest		43.9795	-80.7220	America/Toronto
+Almonte		45.2299	-76.1958	America/Toronto
+Mount Hope Huron Park		43.4594	-80.4964	America/Toronto
+Memramcook	ميمرامكوك	46.0044	-64.5516	America/Moncton
+Rural Saanich		48.4973	-123.4288	America/Vancouver
+Saint-Henri		46.6931	-71.0693	America/Toronto
+Sainte Catherine de la Jacques Cartier		46.8524	-71.6206	America/Toronto
+Belvedere		53.5931	-113.4386	America/Edmonton
+Lakeburn		46.1001	-64.6821	America/Moncton
+Saint-Joseph-de-Beauce		46.3000	-70.8667	America/Toronto
+Peachland		49.7686	-119.7463	America/Vancouver
+Antigonish		45.6168	-61.9986	America/Halifax
+Breakeyville		46.6804	-71.2233	America/Toronto
+Univercity		49.2785	-122.9050	America/Vancouver
+Larkspur		53.4794	-113.3814	America/Edmonton
+College Park East		52.1195	-106.5756	America/Regina
+Grand Bay-Westfield		45.3407	-66.2528	America/Moncton
+Airport Heights		47.5999	-52.7480	America/St_Johns
+Baden		43.4001	-80.6497	America/Toronto
+Colby Village		44.6651	-63.4848	America/Halifax
+Mount Albert		44.1334	-79.3163	America/Toronto
+City Park		52.1382	-106.6545	America/Regina
+Deer Run		50.9175	-114.0098	America/Edmonton
+Meaford		44.6073	-80.6108	America/Toronto
+Kingsland		50.9899	-114.0786	America/Edmonton
+Glenbrooke North		49.2167	-122.9167	America/Vancouver
+Exeter		43.3435	-81.4793	America/Toronto
+LeMoyne		45.5001	-73.4936	America/Toronto
+Central Lynn		49.3390	-123.0375	America/Vancouver
+McKee		49.0615	-122.2415	America/Vancouver
+Carbonear		47.7392	-53.2272	America/St_Johns
+Saint-Jean-de-Matha		46.2315	-73.5342	America/Toronto
+Chertsey		46.0711	-73.8910	America/Toronto
+Greektown		49.2641	-123.1757	America/Vancouver
+Morley-Buckingham		49.2260	-122.9573	America/Vancouver
+Heritage		50.4482	-104.6008	America/Regina
+Glenwood		53.5361	-113.6016	America/Edmonton
+Humboldt	هومبولت	52.2000	-105.1255	America/Regina
+Country Hills		43.4150	-80.4739	America/Toronto
+Klarvatten		53.6346	-113.4729	America/Edmonton
+Meadowgreen		52.1189	-106.7114	America/Regina
+Warwick		45.9501	-71.9824	America/Toronto
+Grand River North		43.4595	-80.4319	America/Toronto
+Humphreys Mills		46.1124	-64.7589	America/Moncton
+Southwood		43.3438	-80.3315	America/Toronto
+Hearst		49.6835	-83.6665	America/Toronto
+Current River		48.4695	-89.1873	America/Toronto
+MacEwan		51.1358	-114.1143	America/Edmonton
+Walkerton		44.1302	-81.1531	America/Toronto
+Britannia Youngstown		53.5472	-113.6000	America/Edmonton
+Picton		44.0018	-77.1464	America/Toronto
+Central McDougall		53.5542	-113.5000	America/Edmonton
+Tilbury		42.2668	-82.4331	America/Toronto
+Espanola		46.2584	-81.7665	America/Toronto
+Waterford Valley		47.5310	-52.7454	America/St_Johns
+Queen Alexandra		53.5083	-113.5083	America/Edmonton
+Westlock		54.1502	-113.8688	America/Edmonton
+Capitol Hill		51.0703	-114.0956	America/Edmonton
+Heritage Mountain		49.2908	-122.8319	America/Vancouver
+Azilda		46.5501	-81.0998	America/Toronto
+Mississauga Beach		43.2588	-79.0863	America/Toronto
+New Minas		45.0691	-64.4696	America/Halifax
+Rusagonis		45.8028	-66.6204	America/Moncton
+Rivière-Rouge		46.4168	-74.8660	America/Toronto
+Greenstone		49.7334	-87.1667	America/Toronto
+Rockwood		43.6190	-80.1444	America/Toronto
+Grand Bank		47.0999	-55.7650	America/St_Johns
+River Heights		52.1625	-106.6342	America/Regina
+Whitney Pier		46.1593	-60.1866	America/Glace_Bay
+Ct 0006		45.6008	-73.5119	America/Toronto
+Neepawa		50.2289	-99.4664	America/Winnipeg
+L'Épiphanie		45.8501	-73.4825	America/Toronto
+Belmead		53.5254	-113.6416	America/Edmonton
+East Richmond-Fraser Lands		49.1597	-123.0297	America/Vancouver
+Queensland		50.9389	-114.0222	America/Edmonton
+Barrhead		54.1335	-114.4021	America/Edmonton
+Harbour Chines		49.2667	-122.8500	America/Vancouver
+Carisbrooke		49.3416	-123.0650	America/Vancouver
+La Pocatière	لا بوكاريه	47.3673	-70.0348	America/Toronto
+Evergreen Village		47.5388	-52.8339	America/St_Johns
+Pacific Heights		52.1348	-106.7420	America/Regina
+Caledon East		43.8691	-79.8669	America/Toronto
+Galt		43.3558	-80.3106	America/Toronto
+Pollard Meadows		53.4486	-113.4125	America/Edmonton
+Blue Quill		53.4575	-113.5265	America/Edmonton
+Valley Waters		45.6730	-65.8370	America/Moncton
+South Calgary		51.0279	-114.1038	America/Edmonton
+Duggan		53.4720	-113.5060	America/Edmonton
+Saint-Agapit		46.5567	-71.4419	America/Toronto
+Mission		51.0337	-114.0696	America/Edmonton
+Gabriola		49.1704	-123.8499	America/Vancouver
+Ozerna		53.6227	-113.4488	America/Edmonton
+Dallas		50.6665	-120.1692	America/Vancouver
+Lac-Alouette		45.8170	-73.9592	America/Toronto
+Spring Garden		44.6416	-63.5825	America/Halifax
+Prescott		44.7168	-75.5160	America/Toronto
+Lanoraie		45.9668	-73.2159	America/Toronto
+West Royalty		46.2584	-63.1626	America/Halifax
+Goulds		47.4553	-52.7755	America/St_Johns
+St. Stephen		45.1804	-67.2953	America/Moncton
+Berthierville		46.0834	-73.1825	America/Toronto
+Waterloo		45.3501	-72.5158	America/Toronto
+Windsor Park		51.0053	-114.0763	America/Edmonton
+Nipawin		53.3668	-104.0009	America/Regina
+Battleford		52.7349	-108.3091	America/Regina
+Hampton		45.5288	-65.8535	America/Moncton
+Erindale		52.1412	-106.5700	America/Regina
+Beaumaris		53.6178	-113.5094	America/Edmonton
+Crawford Plains		53.4389	-113.4056	America/Edmonton
+Red Lake		51.0168	-93.8274	America/Winnipeg
+Bonnie Doon		53.5245	-113.4658	America/Edmonton
+Haddow		53.4559	-113.5965	America/Edmonton
+Vanderhoof	فاندرهوف	54.0166	-124.0198	America/Vancouver
+Discovery Ridge		51.0159	-114.2128	America/Edmonton
+Middle Sackville		44.7764	-63.6960	America/Halifax
+Vickers Park		48.3750	-89.2613	America/Toronto
+Spring Park		46.2495	-63.1440	America/Halifax
+Gonzales		48.4165	-123.3299	America/Vancouver
+Deep River		46.1001	-77.4995	America/Toronto
+Beresford		47.6913	-65.6989	America/Moncton
+Caraquet		47.7941	-64.9386	America/Moncton
+Terrasse-des-Pins		45.8645	-74.0663	America/Toronto
+Bowen Island		49.3847	-123.3362	America/Vancouver
+Vallée-des-Rivières		47.2151	-67.9607	America/Moncton
+Kindersley		51.4668	-109.1682	America/Regina
+Maniwaki	مانيواكي	46.3834	-75.9660	America/Toronto
+Karwood Estates		47.5310	-52.8546	America/St_Johns
+Iroquois Falls		48.7669	-80.6831	America/Toronto
+Roxton Pond		45.4834	-72.6658	America/Toronto
+Fairfield Island		49.1861	-121.9417	America/Vancouver
+King Edward Park		53.5157	-113.4575	America/Edmonton
+Altona		49.1047	-97.5596	America/Winnipeg
+Mayliewan		53.6232	-113.4619	America/Edmonton
+Harrisville		46.1177	-64.7221	America/Moncton
+Caernarvon		53.6125	-113.5264	America/Edmonton
+Swan River		52.1058	-101.2676	America/Winnipeg
+Spruce Cliff		51.0504	-114.1405	America/Edmonton
+Wolfville		45.0834	-64.3655	America/Halifax
+Ritchie		53.5128	-113.4795	America/Edmonton
+Victory Heights		49.2355	-122.8998	America/Vancouver
+Stonewall		50.1344	-97.3268	America/Winnipeg
+Montgomery		51.0751	-114.1645	America/Edmonton
+Brevoort Park		52.1100	-106.6103	America/Regina
+New Maryland		45.8966	-66.6822	America/Moncton
+Beeton		44.0799	-79.7816	America/Toronto
+Juniper Ridge		50.6667	-120.2500	America/Vancouver
+Fairview Acres		47.5396	-52.7436	America/St_Johns
+Patterson		51.0618	-114.1747	America/Edmonton
+West End		48.4365	-89.2481	America/Toronto
+Rossland		49.0831	-117.8022	America/Vancouver
+Bridgeport		49.1989	-123.1136	America/Vancouver
+Didsbury		51.6668	-114.1353	America/Edmonton
+Inglewood		51.0392	-114.0220	America/Edmonton
+Melville		50.9167	-102.8010	America/Regina
+Sakaw		53.4403	-113.4306	America/Edmonton
+Fairville Plateau		45.2485	-66.0993	America/Moncton
+Highland Park		51.0833	-114.0667	America/Edmonton
+Ct 0015		45.5538	-73.5373	America/Toronto
+Vermilion		53.3541	-110.8585	America/Edmonton
+Metabetchouan-Lac-a-la-Croix		48.4100	-71.7800	America/Toronto
+Niverville		49.6056	-97.0423	America/Winnipeg
+Carstairs		51.5668	-114.1020	America/Edmonton
+Carleton-sur-Mer	كارلتون سور مير	48.1075	-66.1280	America/Toronto
+Bridgwater Trails		49.7876	-97.2038	America/Winnipeg
+Vineland		43.1513	-79.3945	America/Toronto
+College Park		48.3944	-89.2905	America/Toronto
+Uptown Fredericton		45.9426	-66.6702	America/Moncton
+Bancroft		45.0575	-77.8570	America/Toronto
+Richmond		45.1834	-75.8327	America/Toronto
+Matt Berry		53.6219	-113.4366	America/Edmonton
+Holliston		52.1100	-106.6301	America/Regina
+Grand Forks		49.0331	-118.4356	America/Vancouver
+Lincoln Park		49.2833	-122.7500	America/Vancouver
+Golden		51.3000	-116.9689	America/Edmonton
+University Downs		43.4849	-80.4946	America/Toronto
+Lorelei		53.6235	-113.5000	America/Edmonton
+Verchères		45.7834	-73.3492	America/Toronto
+Ct 0029		45.5472	-73.5513	America/Toronto
+Berry Mills Heights		46.1000	-64.8500	America/Moncton
+Westmount		43.4556	-80.5275	America/Toronto
+Stellarton		45.5585	-62.6607	America/Halifax
+Cadboro Bay		48.4667	-123.3000	America/Vancouver
+Koksilah		48.7667	-123.6833	America/Vancouver
+Middlegate		49.2167	-122.9500	America/Vancouver
+Sunnyside		51.0580	-114.0770	America/Edmonton
+Westview		52.1481	-106.7031	America/Regina
+Calder		53.5886	-113.5289	America/Edmonton
+Ellenvale		44.6774	-63.5202	America/Halifax
+Killarney		53.5891	-113.4798	America/Edmonton
+Sparwood		49.7333	-114.8853	America/Edmonton
+Three Rivers		45.9118	-65.1523	America/Moncton
+Lago Lindo		53.6368	-113.4831	America/Edmonton
+Eastwood		53.5749	-113.4715	America/Edmonton
+Cowan Heights		47.5312	-52.7716	America/St_Johns
+Mary Hill		49.2333	-122.7833	America/Vancouver
+Eastview		52.0945	-106.6145	America/Regina
+Normanview		50.4806	-104.6625	America/Regina
+Callander		46.2168	-79.3663	America/Toronto
+Saint-Augustin		51.2260	-58.6502	America/Blanc-Sablon
+Belle Rive		53.6235	-113.4760	America/Edmonton
+Jasper		52.8795	-118.0804	America/Edmonton
+Wellington		49.2165	-124.0418	America/Vancouver
+Varsity View		52.1217	-106.6403	America/Regina
+Forest Heights		53.5463	-113.4497	America/Edmonton
+Fairmount		44.6443	-63.6347	America/Halifax
+Morin-Heights		45.9001	-74.2492	America/Toronto
+Jackson Heights		53.4833	-113.4083	America/Edmonton
+Shawnigan Lake		48.6506	-123.6449	America/Vancouver
+Jasper Park Lodge		52.8863	-118.0563	America/Edmonton
+Sutton		45.1001	-72.6158	America/Toronto
+Jamieson Place		53.4895	-113.6485	America/Edmonton
+Baie-D'Urfé		45.4140	-73.9159	America/Toronto
+Port Hardy		50.7209	-127.4923	America/Vancouver
+Bois-Joli		47.9910	-66.5116	America/Moncton
+Douglas		49.0028	-122.7356	America/Vancouver
+Bromont	برومون	45.3168	-72.6491	America/Toronto
+Saint-Tite		46.7334	-72.5658	America/Toronto
+Deer Lodge		49.8817	-97.2305	America/Winnipeg
+Windsor		44.9834	-64.1320	America/Halifax
+Barrington		43.5628	-65.5617	America/Halifax
+Lakeridge		52.0948	-106.5756	America/Regina
+Pincher Creek		49.4833	-113.9519	America/Edmonton
+Carlisle		53.6042	-113.5250	America/Edmonton
+Montréal-Est		45.6320	-73.5075	America/Toronto
+Fort Langley		49.1684	-122.5800	America/Vancouver
+York		53.6037	-113.4276	America/Edmonton
+Bisset		53.4583	-113.3986	America/Edmonton
+Lantzville		49.2454	-124.0755	America/Vancouver
+Balwin		53.5879	-113.4545	America/Edmonton
+Central Frederick		43.4547	-80.4790	America/Toronto
+Banff Trail		51.0743	-114.1124	America/Edmonton
+L'Islet-sur-Mer		47.1287	-70.3707	America/Toronto
+British Properties		49.3500	-123.1333	America/Vancouver
+Massey Place		52.1414	-106.7192	America/Regina
+Deer Ridge		50.9264	-114.0142	America/Edmonton
+Bridgwater Lakes		49.7970	-97.2080	America/Winnipeg
+Claresholm		50.0333	-113.5852	America/Edmonton
+Ct 0002		45.6041	-73.5172	America/Toronto
+UDistrict		49.0314	-122.2943	America/Vancouver
+Nackawic-Millville		46.0783	-67.2334	America/Moncton
+Brighton		52.1274	-106.5605	America/Regina
+Caulfeild		49.3500	-123.2500	America/Vancouver
+Cumberland		49.6163	-125.0361	America/Vancouver
+New-Richmond		48.1606	-65.8582	America/Toronto
+Pleasantview		53.4917	-113.5083	America/Edmonton
+Rockland		48.4222	-123.3361	America/Vancouver
+Kirkness		53.6108	-113.3877	America/Edmonton
+North Park		48.4343	-123.3536	America/Vancouver
+Haut-Madawaska		47.2606	-68.6369	America/Moncton
+East Galt		43.3574	-80.3046	America/Toronto
+Porters Lake		44.7377	-63.3131	America/Halifax
+Malartic		48.1363	-78.1253	America/Toronto
+Raymond		49.4638	-112.6602	America/Edmonton
+Adelaide/Churchill		52.1000	-106.6451	America/Regina
+Saint-Adolphe-d'Howard		45.9668	-74.3325	America/Toronto
+Arcadia		45.8081	-66.0638	America/Moncton
+Lakeview Heights		49.8667	-119.5333	America/Vancouver
+Batchelor Hills		50.7167	-120.3667	America/Vancouver
+Indian River		49.3226	-122.9612	America/Vancouver
+Fairview		50.9849	-114.0610	America/Edmonton
+Black Diamond		50.6877	-114.2324	America/Edmonton
+Country Hills		51.1636	-114.0547	America/Edmonton
+Fairfield		43.4642	-80.4962	America/Toronto
+Mill Courtland Woodside Park		43.4385	-80.4839	America/Toronto
+Neuville	نيوفيل	46.6982	-71.5828	America/Toronto
+East Angus	أيست أنغس	45.4834	-71.6658	America/Toronto
+L'Ange-Gardien		46.9198	-71.0825	America/Toronto
+Lancaster		45.2431	-66.1401	America/Moncton
+Westville		45.5669	-62.7153	America/Halifax
+Pasadena		49.0167	-57.5984	America/St_Johns
+Rigaud		45.4793	-74.3024	America/Toronto
+Caswell Hill		52.1403	-106.6756	America/Regina
+Winston Heights-Mountview		51.0738	-114.0425	America/Edmonton
+West End		49.2000	-122.9333	America/Vancouver
+Bulyea Heights		53.4750	-113.5695	America/Edmonton
+Charleswood		51.0899	-114.1167	America/Edmonton
+Seton		50.8729	-113.9473	America/Edmonton
+Greenfield		53.4722	-113.5278	America/Edmonton
+Contrecoeur		45.8501	-73.2325	America/Toronto
+Cardston		49.2000	-113.3019	America/Edmonton
+Bobcaygeon		44.5462	-78.5420	America/Toronto
+Alnwick		47.2157	-65.1806	America/Moncton
+Centre Square		50.4426	-104.6081	America/Regina
+Château-Richer		46.9603	-71.0322	America/Toronto
+Saint-André-Avellin		45.7168	-75.0660	America/Toronto
+Ct 0009		45.5802	-73.5164	America/Toronto
+Channel-Port aux Basques		47.5729	-59.1381	America/St_Johns
+Daly Grove		53.4486	-113.3972	America/Edmonton
+New Edinburgh		45.4414	-75.6878	America/Toronto
+Rivière-du-Nord		47.7231	-65.1839	America/Moncton
+Hay River		60.8156	-115.7999	America/Edmonton
+Sainte-Claire		46.6013	-70.8632	America/Toronto
+Eskasoni 3		45.9452	-60.6162	America/Glace_Bay
+McCauley		53.5560	-113.4835	America/Edmonton
+Glenora		53.5462	-113.5512	America/Edmonton
+Ct 0030		45.5485	-73.5530	America/Toronto
+Thorncliff		53.5153	-113.6236	America/Edmonton
+Mount Uniacke		44.9001	-63.8320	America/Halifax
+Smith Creek		49.8530	-119.6200	America/Vancouver
+Kenmount Terrace		47.5502	-52.7908	America/St_Johns
+Silver Falls		45.3000	-66.0167	America/Moncton
+Fruitvale		49.1165	-117.5522	America/Vancouver
+Aldergrove East		49.0561	-122.4546	America/Vancouver
+Rosscarrock		51.0416	-114.1472	America/Edmonton
+Saint-Pascal		47.5181	-69.8030	America/Toronto
+Downtown		52.1264	-106.6637	America/Regina
+Kensington		53.5961	-113.5278	America/Edmonton
+Saint-Germain-de-Grantham		45.8334	-72.5658	America/Toronto
+Royal Gardens		53.4792	-113.5278	America/Edmonton
+Clarenville-Shoal Harbour		48.1805	-53.9698	America/St_Johns
+Dunham		45.1334	-72.7991	America/Toronto
+Kingston		44.9918	-64.9409	America/Halifax
+Havre-Saint-Pierre		50.2434	-63.6026	America/Toronto
+Brighton		46.2354	-63.1440	America/Halifax
+Eastern Hillsides		49.1427	-121.8286	America/Vancouver
+Bonavista		48.6499	-53.1147	America/St_Johns
+Weinlos		53.4583	-113.4069	America/Edmonton
+Hillview		53.4694	-113.4264	America/Edmonton
+Whonnock		49.1833	-122.4667	America/Vancouver
+West End		50.6733	-120.3486	America/Vancouver
+Parkland		50.9147	-114.0187	America/Edmonton
+Blind River		46.1834	-82.9582	America/Toronto
+Buena Vista		52.1112	-106.6659	America/Regina
+Casselman		53.6097	-113.4194	America/Edmonton
+Portland Hills		44.6640	-63.5048	America/Halifax
+Lawrencetown		44.6596	-63.3673	America/Halifax
+Five Rivers		46.5568	-64.9046	America/Moncton
+King William Estates		47.6116	-52.6962	America/St_Johns
+Oxford		53.6221	-113.5478	America/Edmonton
+Invermere		50.5167	-116.0354	America/Edmonton
+Satoo		53.4472	-113.4583	America/Edmonton
+Grande-Riviere		48.4003	-64.5011	America/Toronto
+Avalon		52.0967	-106.6562	America/Regina
+Upper Lynn		49.3500	-123.0250	America/Vancouver
+Delwood		53.5949	-113.4561	America/Edmonton
+Stillwater Lake		44.6990	-63.8352	America/Halifax
+Campbellford		44.3084	-77.7995	America/Toronto
+Southport		46.2265	-63.1043	America/Halifax
+Sainte-Marguerite-du-Lac-Masson		46.0334	-74.0659	America/Toronto
+County Park		48.4584	-89.2467	America/Toronto
+Rundle Heights		53.5611	-113.3938	America/Edmonton
+Ct 0004		45.6085	-73.5192	America/Toronto
+Ramsay Heights		53.4819	-113.5806	America/Edmonton
+Beaverton		44.4334	-79.1496	America/Toronto
+Austin Heights		49.2500	-122.8667	America/Vancouver
+West Meadowlark Park		53.5252	-113.6083	America/Edmonton
+Glenridge Crescent		47.5785	-52.7105	America/St_Johns
+Parkview		53.5244	-113.5686	America/Edmonton
+Yarrow		49.0821	-122.0503	America/Vancouver
+Montgomery Place		52.1112	-106.7289	America/Regina
+Fairfield Park		49.7983	-97.1656	America/Winnipeg
+Skyline Acres		45.9341	-66.6375	America/Moncton
+Holyrood		53.5299	-113.4514	America/Edmonton
+Westwood		53.5766	-113.4992	America/Edmonton
+Brigadoon		43.3915	-80.4629	America/Toronto
+Canora		53.5417	-113.5833	America/Edmonton
+Malmo Plains		53.4833	-113.5333	America/Edmonton
+St-Jean-Port-Joli		47.2142	-70.2697	America/Toronto
+Magnetic Hill		46.1347	-64.8885	America/Moncton
+Richfield		53.4681	-113.4583	America/Edmonton
+Atholville		47.9894	-66.7125	America/Moncton
+Lebel-sur-Quévillon		49.0502	-76.9827	America/Toronto
+Lynnwood		53.5167	-113.5833	America/Edmonton
+Placentia		47.2332	-53.9648	America/St_Johns
+Lewisporte		49.2434	-55.0620	America/St_Johns
+Elbow Park		51.0205	-114.0843	America/Edmonton
+Palliser		50.9635	-114.1105	America/Edmonton
+Homesteader		53.5833	-113.4042	America/Edmonton
+Penhold		52.1334	-113.8687	America/Edmonton
+Grande Cache		53.8834	-119.1359	America/Edmonton
+Fraser		53.6104	-113.3726	America/Edmonton
+Coach Hill		51.0562	-114.1800	America/Edmonton
+Sainte-Julienne		45.9668	-73.7159	America/Toronto
+Mackenzie		55.3364	-123.0937	America/Vancouver
+Capreol		46.7063	-80.9211	America/Toronto
+St. George		43.2450	-80.2514	America/Toronto
+Rhatigan Ridge		53.4749	-113.5885	America/Edmonton
+Sydenham		44.5668	-80.7997	America/Toronto
+Amethyst Harbour		48.5427	-88.8729	America/Toronto
+Haileybury		47.4490	-79.6373	America/Toronto
+Shuniah Township		48.5242	-89.1147	America/Toronto
+Wellesley		43.4769	-80.7621	America/Toronto
+Inuvik		68.3617	-133.7282	America/Inuvik
+Montrose		53.5751	-113.4385	America/Edmonton
+Seaview		49.2765	-122.8690	America/Vancouver
+Richmond		45.6668	-72.1491	America/Toronto
+Saint-Raymond		45.4670	-73.6095	America/Toronto
+Lake Cowichan		48.8250	-124.0546	America/Vancouver
+Clareview Town Centre		53.6020	-113.4071	America/Edmonton
+Westgate		51.0450	-114.1582	America/Edmonton
+Ballantrae		44.0334	-79.2996	America/Toronto
+Preston		44.7157	-63.4342	America/Halifax
+Dalhousie		48.0644	-66.3749	America/Moncton
+Kearney Lake		44.6870	-63.6850	America/Halifax
+Headingley		49.8753	-97.4090	America/Winnipeg
+Bradner		49.1000	-122.4167	America/Vancouver
+Canossa		53.6340	-113.5204	America/Edmonton
+Port Hawkesbury		45.6165	-61.3564	America/Halifax
+Lorette		49.7392	-96.8723	America/Winnipeg
+Alpine		43.4236	-80.4803	America/Toronto
+Cabano	كابانو	47.6806	-68.8781	America/Toronto
+Parkdale		53.5674	-113.4737	America/Edmonton
+Saint-Thomas		46.0168	-73.3491	America/Toronto
+Beverly Heights		53.5667	-113.4000	America/Edmonton
+Tracadie-Sheila		47.5144	-64.9181	America/Moncton
+Capilano		49.3409	-123.1070	America/Vancouver
+Ct 0005		45.6063	-73.5111	America/Toronto
+Secord		53.5339	-113.7013	America/Edmonton
+High Level		58.5169	-117.1360	America/Edmonton
+Little Canada		47.5955	-52.7169	America/St_Johns
+Hanna		51.6334	-111.9018	America/Edmonton
+Wellington		53.5955	-113.5519	America/Edmonton
+Waterford		42.9334	-80.2830	America/Toronto
+Tweddle Place		53.4750	-113.4597	America/Edmonton
+Beausejour		50.0622	-96.5167	America/Winnipeg
+Napierville		45.1865	-73.4047	America/Toronto
+Downtown Cambridge		43.3621	-80.3128	America/Toronto
+Athlone		53.5889	-113.5486	America/Edmonton
+Trois Pistoles		48.1167	-69.1667	America/Toronto
+Virden		49.8508	-100.9326	America/Winnipeg
+Clinton		43.6168	-81.5331	America/Toronto
+Greendale		49.1167	-122.0500	America/Vancouver
+Pictou		45.6788	-62.7094	America/Halifax
+Portneuf	بورتنيوف	46.6906	-71.8901	America/Toronto
+Ct 0008		45.5870	-73.5105	America/Toronto
+Griesbach		53.6070	-113.5037	America/Edmonton
+Minchau		53.4681	-113.4083	America/Edmonton
+White City		50.4334	-104.3678	America/Regina
+Portland Estates		44.6643	-63.5177	America/Halifax
+Aloha Estates		49.1317	-122.6863	America/Vancouver
+Perce		48.4879	-64.2985	America/Toronto
+Conservation		43.4861	-80.5813	America/Toronto
+Ellison		49.9331	-119.3691	America/Vancouver
+Nutana Park		52.0945	-106.6301	America/Regina
+Mont-Saint-Grégoire		45.3334	-73.1659	America/Toronto
+Forest Hills		45.3124	-66.0122	America/Moncton
+Bishop's Falls		49.0166	-55.4815	America/St_Johns
+Indiantown		45.2751	-66.0785	America/Moncton
+Casselman		45.3168	-75.0826	America/Toronto
+Kernohan		53.5921	-113.3809	America/Edmonton
+Haultain		52.1100	-106.6464	America/Regina
+ByWard Market		45.4271	-75.6923	America/Toronto
+Fort Macleod		49.7167	-113.4186	America/Edmonton
+Eaux Claires		53.6211	-113.4874	America/Edmonton
+Nouvelle-Arcadie		46.6981	-65.3613	America/Moncton
+Three Hills		51.7001	-113.2686	America/Edmonton
+Bannerman		53.6038	-113.3786	America/Edmonton
+Madeira Park		49.6197	-124.0232	America/Vancouver
+Norgate		49.3167	-123.1167	America/Vancouver
+Grand Bend		43.3168	-81.7498	America/Toronto
+Ct 0021		45.5457	-73.5388	America/Toronto
+Carman		49.4992	-98.0016	America/Winnipeg
+Cherry Hill		43.4446	-80.5083	America/Toronto
+Chemainus		48.9163	-123.7194	America/Vancouver
+Nutana Urban Centre		52.1022	-106.6084	America/Regina
+Ct 0025		45.5427	-73.5465	America/Toronto
+Morrisburg		44.9001	-75.1826	America/Toronto
+Ridgetown		42.4354	-81.8873	America/Toronto
+Westmount		46.1355	-60.2192	America/Glace_Bay
+Fairview		56.0667	-118.3861	America/Edmonton
+Oleskiw		53.4978	-113.6073	America/Edmonton
+Houston		54.3998	-126.6701	America/Vancouver
+Lower Mount Royal		51.0375	-114.0861	America/Edmonton
+Hazeldean		53.5020	-113.4798	America/Edmonton
+Greystone Heights		52.1187	-106.6117	America/Regina
+Rankin Inlet		62.8091	-92.0853	America/Rankin_Inlet
+Miller		53.6108	-113.4128	America/Edmonton
+Fermont		52.7944	-67.0838	America/Toronto
+West Jasper Place		53.5361	-113.5833	America/Edmonton
+Athabasca		54.7169	-113.2854	America/Edmonton
+University Heights		51.0705	-114.1364	America/Edmonton
+Enderby		50.5498	-119.1523	America/Vancouver
+Sackville		45.8987	-64.3684	America/Moncton
+Tavistock		43.3168	-80.8330	America/Toronto
+City Commercial Core		43.4487	-80.4868	America/Toronto
+Lakewood Urban Centre		52.0996	-106.5665	America/Regina
+Hatzic		49.1500	-122.2500	America/Vancouver
+Sioux Lookout		50.0668	-91.9836	America/Winnipeg
+Schmidtville		44.6399	-63.5782	America/Halifax
+Virgil		43.2168	-79.1329	America/Toronto
+Charlesworth		53.4286	-113.4182	America/Edmonton
+Wingham		43.8879	-81.3114	America/Toronto
+Cleveland		49.3569	-123.0875	America/Vancouver
+Chineside		49.2667	-122.8333	America/Vancouver
+Southdale		44.6647	-63.5488	America/Halifax
+Greenview		53.4736	-113.4250	America/Edmonton
+Meyonohk		53.4555	-113.4577	America/Edmonton
+Academy Heights		48.4221	-89.2445	America/Toronto
+Boothill		50.4343	-104.5716	America/Regina
+Newton		53.5733	-113.4246	America/Edmonton
+Beacon Heights		53.5736	-113.4069	America/Edmonton
+Fort-Coulonge	فور كولونج	45.8420	-76.7390	America/Toronto
+La Crête		58.1835	-116.4027	America/Edmonton
+Alexandria		45.3132	-74.6367	America/Toronto
+Glengarry		53.5962	-113.4797	America/Edmonton
+Wawa		47.9888	-84.7741	America/Toronto
+Northmount		53.6014	-113.4792	America/Edmonton
+Rosslyn		53.5955	-113.5042	America/Edmonton
+Saint-Gabriel		46.3001	-73.3825	America/Toronto
+Tipaskan		53.4625	-113.4569	America/Edmonton
+Chase River		49.1333	-123.9167	America/Vancouver
+North Hanwell		45.9585	-66.6819	America/Moncton
+Kameyosek		53.4625	-113.4417	America/Edmonton
+Meyokumin		53.4500	-113.4264	America/Edmonton
+Ste. Anne		49.6697	-96.6500	America/Winnipeg
+Highlands		49.3427	-123.0952	America/Vancouver
+High Prairie		55.4334	-116.4858	America/Edmonton
+Mistissini		50.4183	-73.8689	America/Toronto
+Preston Heights		43.3972	-80.3769	America/Toronto
+Overlanders		53.5778	-113.3833	America/Edmonton
+Sesame Park		47.5187	-52.7624	America/St_Johns
+Windsor Park		53.5250	-113.5350	America/Edmonton
+Huntingdon		45.0834	-74.1659	America/Toronto
+Regent Park		50.4734	-104.6464	America/Regina
+Arviat		61.1088	-94.0585	America/Rankin_Inlet
+Tisdale		52.8500	-104.0510	America/Regina
+Keheewin		53.4486	-113.5028	America/Edmonton
+Garrison Woods		51.0133	-114.1135	America/Edmonton
+Stanstead		45.0145	-72.0913	America/Toronto
+Golden Village		49.1878	-123.1282	America/Vancouver
+Canyon Heights		49.3549	-123.0974	America/Vancouver
+Kingsclear		45.8844	-66.9085	America/Moncton
+Westmount		52.1337	-106.6862	America/Regina
+Gold Bar		53.5458	-113.4097	America/Edmonton
+Cedar		49.1163	-123.8527	America/Vancouver
+Ville-Marie		47.3334	-79.4330	America/Toronto
+Princeton		49.4580	-120.5108	America/Vancouver
+Scott Creek		49.2904	-122.8072	America/Vancouver
+Downtown West End		51.0470	-114.0883	America/Edmonton
+McKernan		53.5083	-113.5167	America/Edmonton
+Suder Greens		53.5248	-113.6791	America/Edmonton
+Magrath Heights		53.4483	-113.5570	America/Edmonton
+Dundalk		44.1679	-80.3936	America/Toronto
+Beaupré		47.0443	-70.8953	America/Toronto
+Halfmoon Bay		49.5129	-123.9087	America/Vancouver
+Clairmont		55.2667	-118.7860	America/Edmonton
+Cowichan Bay		48.7337	-123.6174	America/Vancouver
+Queen Elizabeth		52.1045	-106.6568	America/Regina
+Harbour Grace		47.6865	-53.2326	America/St_Johns
+Gibbons		53.8334	-113.3353	America/Edmonton
+Herring Cove		44.5703	-63.5682	America/Halifax
+Dufferin		50.6667	-120.3833	America/Vancouver
+Queens Park		49.2156	-122.9066	America/Vancouver
+Normanview West		50.4778	-104.6756	America/Regina
+Botwood		49.1499	-55.3482	America/St_Johns
+Val-Morin		46.0001	-74.1825	America/Toronto
+Granville		53.5046	-113.6829	America/Edmonton
+Pohénégamook		47.4631	-69.2267	America/Toronto
+Wildwood		51.0500	-114.1500	America/Edmonton
+Cocagne		46.3349	-64.6150	America/Moncton
+Norwood Queens		49.3410	-123.0780	America/Vancouver
+Atikokan		48.7567	-91.6241	America/Atikokan
+Lakefield		44.4334	-78.2662	America/Toronto
+Carrington		51.1840	-114.0850	America/Edmonton
+Sunset Acres		44.6938	-63.4871	America/Halifax
+Riversdale		52.1250	-106.6787	America/Regina
+Springhill		45.6501	-64.0487	America/Halifax
+Lee Ridge		53.4694	-113.4458	America/Edmonton
+Tobique Valley		46.9349	-67.3911	America/Moncton
+Elsipogtog First Nation		46.5854	-64.9858	America/Moncton
+Upper Mount Royal		51.0306	-114.0847	America/Edmonton
+Carlton		53.6225	-113.5582	America/Edmonton
+Macamic		48.7502	-78.9996	America/Toronto
+Allendale		53.5028	-113.5052	America/Edmonton
+Normandin		48.8333	-72.5321	America/Toronto
+Piedmont		45.9001	-74.1325	America/Toronto
+Glendale		51.0329	-114.1448	America/Edmonton
+Harbour Village		49.2667	-122.8167	America/Vancouver
+Parkdale		46.2520	-63.1181	America/Halifax
+Lauderdale		53.5889	-113.5014	America/Edmonton
+Markstay-Warren		46.4668	-80.4830	America/Toronto
+Saint-Léonard		47.1632	-67.9246	America/Moncton
+Alison		43.3650	-80.2959	America/Toronto
+Cowie Hill		44.6321	-63.6202	America/Halifax
+Kildare		53.6029	-113.4551	America/Edmonton
+Dollarton		49.3167	-122.9500	America/Vancouver
+Southwood Park		45.9248	-66.6263	America/Moncton
+Dieppe-Westerra		50.4573	-104.6761	America/Regina
+Bedford		45.1168	-72.9824	America/Toronto
+Ct 0001		45.5983	-73.5101	America/Toronto
+Capilano		53.5500	-113.4333	America/Edmonton
+Seaforth		43.5501	-81.3998	America/Toronto
+Highfield Park		44.6864	-63.5889	America/Halifax
+Ingonish		46.7001	-60.3652	America/Halifax
+Bonaventure		48.0457	-65.4926	America/Toronto
+Sundre		51.8001	-114.6353	America/Edmonton
+Pleasantside		49.2917	-122.8500	America/Vancouver
+Coalhurst		49.7464	-112.9325	America/Edmonton
+Kuujjuaq	كوجواك	58.1073	-68.3997	America/Toronto
+Cap-Santé		46.6716	-71.7881	America/Toronto
+Lions Gate		49.3264	-123.1220	America/Vancouver
+Mount Brydges		42.9001	-81.4831	America/Toronto
+Hodgson		53.4576	-113.5596	America/Edmonton
+Laurier Heights		53.5167	-113.5667	America/Edmonton
+Saint Helen's Park		49.1876	-122.8719	America/Vancouver
+Adstock	أدستوك	46.0501	-71.0824	America/Toronto
+Maple Bay		48.8163	-123.6194	America/Vancouver
+Kits Point		49.2749	-123.1471	America/Vancouver
+Exhibition		52.0986	-106.6756	America/Regina
+Saint-Bruno		48.4668	-71.6491	America/Toronto
+Sweet Grass		53.4625	-113.5250	America/Edmonton
+Westmorland Heights		45.2920	-66.0423	America/Moncton
+St. Peter's		45.6566	-60.8742	America/Halifax
+Cedar Hill		43.4445	-80.4845	America/Toronto
+Spaniard's Bay		47.6166	-53.2814	America/St_Johns
+Elmvale Acres		45.3965	-75.6321	America/Toronto
+Strathearn		53.5342	-113.4628	America/Edmonton
+Thamesford		43.0571	-80.9988	America/Toronto
+Melocheville		45.3173	-73.9371	America/Toronto
+Elmwood		53.5167	-113.6000	America/Edmonton
+Fort Nelson	حصن نلسون	58.8053	-122.7002	America/Fort_Nelson
+Turner Valley		50.6668	-114.2853	America/Edmonton
+Woodhaven Court		46.1167	-64.8667	America/Moncton
+Highlands		53.5667	-113.4292	America/Edmonton
+Meadowlark Park		53.5259	-113.5967	America/Edmonton
+Woodcroft		53.5663	-113.5575	America/Edmonton
+Grand Manan		44.6982	-66.8211	America/Moncton
+Keith-Lynn		49.3167	-123.0667	America/Vancouver
+Bridgeport North		43.4940	-80.4756	America/Toronto
+Chetwynd		55.6999	-121.6363	America/Dawson_Creek
+Elkford		50.0153	-114.9235	America/Edmonton
+Blackmud Creek		53.4204	-113.5109	America/Edmonton
+Shippagan		47.7442	-64.7080	America/Moncton
+Osgoode		45.1489	-75.5978	America/Toronto
+Twin Creeks		49.3016	-122.8324	America/Vancouver
+Crichton Park		44.6809	-63.5666	America/Halifax
+Saint-Joseph		45.9582	-73.2202	America/Toronto
+Pemberton	بيمبرتون	50.3164	-122.8027	America/Vancouver
+Rimbey		52.6334	-114.2353	America/Edmonton
+Ekota		53.4500	-113.4417	America/Edmonton
+Harrow		42.0334	-82.9165	America/Toronto
+Grimshaw		56.1834	-117.6027	America/Edmonton
+Leger		53.4580	-113.5763	America/Edmonton
+Southern Victoria		46.7738	-67.7214	America/Moncton
+Liverpool	ليفربول	44.0364	-64.7204	America/Halifax
+Country Hills East		43.4180	-80.4668	America/Toronto
+Menisa		53.4403	-113.4500	America/Edmonton
+Ct 0024		45.5402	-73.5480	America/Toronto
+Fort Smith		60.0044	-111.8887	America/Edmonton
+Lucan		43.1834	-81.3998	America/Toronto
+Waverley		44.7835	-63.5987	America/Halifax
+Saint-Anselme		46.6292	-70.9734	America/Toronto
+Sainte-Martine		45.2501	-73.7992	America/Toronto
+Westphal		44.6855	-63.5414	America/Halifax
+East Royalty		46.2779	-63.1023	America/Halifax
+Delaware		42.9168	-81.4165	America/Toronto
+Westridge		49.2833	-122.9500	America/Vancouver
+Tam O'Shanter Ridge		44.6890	-63.5268	America/Halifax
+Ct 0026		45.5479	-73.5462	America/Toronto
+Tofino		49.1531	-125.9074	America/Vancouver
+Grand-Bouctouche		46.4889	-64.7103	America/Moncton
+Crossfield		51.4334	-114.0353	America/Edmonton
+Chilliwack Mountain		49.1621	-122.0131	America/Vancouver
+Lincoln		45.9001	-66.5822	America/Moncton
+Delbrook		49.3455	-123.0833	America/Vancouver
+Kenilworth		53.5211	-113.4324	America/Edmonton
+Moosomin		50.1426	-101.6667	America/Regina
+Country Hills Village		51.1583	-114.0653	America/Edmonton
+Lac-Lapierre		45.8984	-73.7731	America/Toronto
+Thurso		45.6001	-75.2493	America/Toronto
+Unity		52.4501	-109.1682	America/Regina
+South End		49.1519	-123.9339	America/Vancouver
+Chase		50.8165	-119.6857	America/Vancouver
+Holyrood		47.3832	-53.1314	America/St_Johns
+Hounsfield Heights/Briar Hill		51.0636	-114.1054	America/Edmonton
+Ct 0016		45.5521	-73.5308	America/Toronto
+Hairsine		53.6032	-113.3912	America/Edmonton
+Sexsmith		55.3500	-118.7860	America/Edmonton
+Saint-Raphaël		46.7960	-70.7558	America/Toronto
+Fox Creek		54.4001	-116.8024	America/Edmonton
+Berwick		45.0502	-64.7321	America/Halifax
+Tumbler Ridge		55.1303	-120.9942	America/Dawson_Creek
+Valcourt		45.5001	-72.3158	America/Toronto
+Lakeland Ridges		45.9715	-67.4899	America/Moncton
+Minnedosa		50.2453	-99.8436	America/Winnipeg
+Saint-Lambert-de-Lauzon		46.5862	-71.2089	America/Toronto
+South End		45.2672	-66.0546	America/Moncton
+Cap-Pele		46.2129	-64.2784	America/Moncton
+Sherbrooke		53.5763	-113.5475	America/Edmonton
+Brander Gardens		53.4958	-113.5778	America/Edmonton
+North Glenmore		51.0046	-114.1116	America/Edmonton
+Forest		43.1001	-81.9998	America/Toronto
+Micmac Village		44.6838	-63.5579	America/Halifax
+Betsiamites		48.9413	-68.6460	America/Toronto
+Ange-Gardien	آنج غارديان	45.3501	-72.9324	America/Toronto
+Langdale		49.4339	-123.4798	America/Vancouver
+Trenton		45.6155	-62.6374	America/Halifax
+Reserve Mines		46.1803	-60.0196	America/Glace_Bay
+Stoneridge		44.6344	-63.6329	America/Halifax
+River John		45.7501	-63.0487	America/Halifax
+Ct 0019		45.5493	-73.5377	America/Toronto
+Lunenburg	مدينة ونينبورج	44.3785	-64.3166	America/Halifax
+Winchester		45.0834	-75.3493	America/Toronto
+Assiniboia		49.6334	-105.9845	America/Regina
+Clearwater		51.6406	-120.0277	America/Vancouver
+Salisbury		46.0391	-65.0463	America/Moncton
+Callingwood North		53.5083	-113.6236	America/Edmonton
+Blind Bay		50.8831	-119.3857	America/Vancouver
+Lake Echo		44.7334	-63.3820	America/Halifax
+North Haven		51.0967	-114.0896	America/Edmonton
+Logy Bay-Middle Cove-Outer Cove		47.6332	-52.6813	America/St_Johns
+Killarney		49.1833	-99.6636	America/Winnipeg
+Bouctouche		46.4684	-64.7391	America/Moncton
+Parc La Salle		49.7654	-97.1598	America/Winnipeg
+Saint-Marc-des-Carrières		46.6833	-72.0491	America/Toronto
+Chester	تشستر	44.5423	-64.2389	America/Halifax
+Wyoming		42.9501	-82.1165	America/Toronto
+Tamarack		53.4644	-113.3624	America/Edmonton
+Grovenor		53.5464	-113.5721	America/Edmonton
+Seymour Heights		49.3250	-123.0000	America/Vancouver
+Colchester		41.9834	-82.9331	America/Toronto
+Coxheath		46.1168	-60.2317	America/Glace_Bay
+Forestville		48.7381	-69.0848	America/Toronto
+Terrace Heights		53.5403	-113.4347	America/Edmonton
+Fundy Heights		45.2517	-66.0723	America/Moncton
+River Springs		49.2833	-122.7667	America/Vancouver
+Government Road		49.2521	-122.9437	America/Vancouver
+Lillooet		50.6856	-121.9420	America/Vancouver
+Aspen Ridge		52.1777	-106.5520	America/Regina
+Constance Bay		45.5001	-76.0827	America/Toronto
+Elmvale		44.5834	-79.8664	America/Toronto
+Lac La Biche		54.7669	-111.9686	America/Edmonton
+McLeod		53.6083	-113.4333	America/Edmonton
+Auditorium		43.4484	-80.4697	America/Toronto
+Rosetown		51.5501	-108.0014	America/Regina
+Mt. Edward		46.2599	-63.1275	America/Halifax
+Vista Heights		51.0740	-114.0144	America/Edmonton
+Parkdale		51.0601	-114.1375	America/Edmonton
+Glen Moir		44.7187	-63.6807	America/Halifax
+Collingwood		51.0840	-114.1015	America/Edmonton
+Sifton Park		53.5939	-113.4082	America/Edmonton
+Spruce Meadows		47.6027	-52.7241	America/St_Johns
+Outlook		51.4880	-107.0564	America/Regina
+Crestmont		51.0850	-114.2608	America/Edmonton
+Saint-Pamphile		46.9578	-69.7806	America/Toronto
+Beaverlodge		55.2166	-119.4360	America/Edmonton
+Okanagan Falls		49.3500	-119.5667	America/Vancouver
+Lynnmour		49.3167	-123.0333	America/Vancouver
+Prairie Pointe		49.7783	-97.1963	America/Winnipeg
+Grande-Digue		46.3001	-64.5655	America/Moncton
+Deep Cove		49.3333	-122.9500	America/Vancouver
+Ilderton		43.0792	-81.3805	America/Toronto
+Chinatown		51.0518	-114.0636	America/Edmonton
+Crabtree		45.9668	-73.4659	America/Toronto
+Gimli		50.6336	-96.9907	America/Winnipeg
+Blueridge		49.3292	-122.9917	America/Vancouver
+Hudson Bay Park		52.1453	-106.6895	America/Regina
+Sunset Acres		45.9785	-66.6794	America/Moncton
+Fulton Place		53.5458	-113.4250	America/Edmonton
+Senneterre		48.3930	-77.2395	America/Toronto
+Burin		47.0829	-55.1907	America/St_Johns
+Minto	مينتو	46.0848	-66.0622	America/Moncton
+Port McNeill		50.5900	-127.0864	America/Vancouver
+Lantz		44.9834	-63.4820	America/Halifax
+Calmar		53.2668	-113.8187	America/Edmonton
+Marysville		45.9834	-66.5822	America/Moncton
+Pennfield		45.1016	-66.7390	America/Moncton
+Parkallen		53.5000	-113.5167	America/Edmonton
+Disraeli		45.9001	-71.3491	America/Toronto
+Anmore		49.3164	-122.8526	America/Vancouver
+Bridgeview		44.6713	-63.6559	America/Halifax
+Highwood		51.0908	-114.0813	America/Edmonton
+Wendake		46.8614	-71.3573	America/Toronto
+Bridgeport East		43.4782	-80.4672	America/Toronto
+Michaels Park		53.4778	-113.4486	America/Edmonton
+Esterhazy		50.6500	-102.0843	America/Regina
+Logan Lake		50.4922	-120.8149	America/Vancouver
+Lincoln Heights		45.9083	-66.5922	America/Moncton
+Thornhill		44.6035	-63.6115	America/Halifax
+Terra Losa		53.5337	-113.6229	America/Edmonton
+Nanton		50.3501	-113.7687	America/Edmonton
+Upper Miramichi		46.4660	-66.4112	America/Moncton
+Saint-Côme--Linière		46.0668	-70.5157	America/Toronto
+Bella Coola		52.3718	-126.7539	America/Vancouver
+Little Current		45.9793	-81.9248	America/Toronto
+Ramsay		51.0362	-114.0431	America/Edmonton
+Lynn Canyon		49.3400	-123.0222	America/Vancouver
+Port Stanley		42.6668	-81.2164	America/Toronto
+Causapscal		48.3640	-67.2326	America/Toronto
+Wabana		47.6332	-52.9481	America/St_Johns
+Russell Lake		44.6633	-63.5276	America/Halifax
+Saint-Quentin		47.5133	-67.3929	America/Moncton
+Rutland Park		51.0204	-114.1363	America/Edmonton
+Pilot Butte		50.4801	-104.4191	America/Regina
+Windermere		53.4358	-113.6220	America/Edmonton
+Sunny Brae		46.1035	-64.7768	America/Moncton
+Belgravia		53.5085	-113.5335	America/Edmonton
+Ct 0017		45.5534	-73.5340	America/Toronto
+Puvirnituq		60.0357	-77.2741	America/Toronto
+Glencoe		42.7501	-81.7165	America/Toronto
+Elsinore		53.6414	-113.4973	America/Edmonton
+Westview Village		53.5525	-113.6978	America/Edmonton
+Métabetchouan		48.3668	-72.0158	America/Toronto
+Maple Creek		49.9063	-109.4809	America/Regina
+Twillingate		49.6499	-54.7649	America/St_Johns
+Spruce Avenue		53.5625	-113.4999	America/Edmonton
+Fogo Island		49.7165	-54.1698	America/St_Johns
+Bearspaw		53.4417	-113.5000	America/Edmonton
+Ferme-Neuve		46.7001	-75.4493	America/Toronto
+North Park		52.1473	-106.6450	America/Regina
+Bruce Park		49.8769	-97.2167	America/Winnipeg
+Beechville		44.6362	-63.6820	America/Halifax
+Greenview		51.0958	-114.0564	America/Edmonton
+Magrath		49.4167	-112.8686	America/Edmonton
+Pemberton Heights		49.3306	-123.1083	America/Vancouver
+Avonmore		53.5095	-113.4519	America/Edmonton
+Provost		52.3501	-110.2683	America/Edmonton
+Springdale		49.4999	-56.0649	America/St_Johns
+Falconer Heights		53.4666	-113.5895	America/Edmonton
+Strait Shores		46.0897	-64.0764	America/Moncton
+Heritage Pointe		50.8421	-114.0049	America/Edmonton
+King George		52.1178	-106.6858	America/Regina
+Saltair		48.9496	-123.7694	America/Vancouver
+Biggar		52.0598	-107.9884	America/Regina
+Ucluelet		48.9415	-125.5464	America/Vancouver
+Chambery		53.6416	-113.5107	America/Edmonton
+Crestwood		53.5333	-113.5667	America/Edmonton
+Lumby		50.2498	-118.9690	America/Vancouver
+Pouch Cove		47.7666	-52.7647	America/St_Johns
+Baker Lake		64.3201	-96.0212	America/Rankin_Inlet
+Summerlea		53.5250	-113.6222	America/Edmonton
+Ct 0028		45.5447	-73.5479	America/Toronto
+Canora		51.6333	-102.4343	America/Regina
+Shad Bay		44.5229	-63.7874	America/Halifax
+Fundy Shores		45.1666	-66.3918	America/Moncton
+Igloolik		69.3777	-81.7999	America/Iqaluit
+St. Anthony		51.3704	-55.5974	America/St_Johns
+Limoges		45.3334	-75.2493	America/Toronto
+Saint Andrews		45.0737	-67.0531	America/Moncton
+New-Wes-Valley		49.1499	-53.5647	America/St_Johns
+Mandeville		46.3668	-73.3491	America/Toronto
+King East		43.4444	-80.4732	America/Toronto
+Walker		53.4177	-113.4304	America/Edmonton
+Sainte-Anne-de-la-Pérade		46.5834	-72.1991	America/Toronto
+Dovercourt		53.5741	-113.5589	America/Edmonton
+Stirling		44.3001	-77.5495	America/Toronto
+Connaught Heights		49.2000	-122.9500	America/Vancouver
+Montague		46.1668	-62.6487	America/Halifax
+Bow Island		49.8668	-111.3684	America/Edmonton
+North Glenora		53.5540	-113.5581	America/Edmonton
+Shawnee Slopes		50.9264	-114.0833	America/Edmonton
+Wishingwell Park		47.5613	-52.7341	America/St_Johns
+Canon Ridge		53.5787	-113.3789	America/Edmonton
+Cross Lake 19A		54.6514	-97.7685	America/Winnipeg
+Ct 0018		45.5518	-73.5357	America/Toronto
+Hudson		53.6059	-113.5507	America/Edmonton
+Saint-Esprit		45.9001	-73.6659	America/Toronto
+Delton		53.5781	-113.4817	America/Edmonton
+Gladmer Park		50.4362	-104.6016	America/Regina
+Riverdale		53.5437	-113.4702	America/Edmonton
+Digby		44.6219	-65.7586	America/Halifax
+Big Eddy		51.0000	-118.2167	America/Vancouver
+Cambrian Heights		51.0864	-114.0903	America/Edmonton
+Chute-aux-Outardes		49.1168	-68.3990	America/Toronto
+Wakefield		45.6668	-75.8327	America/Toronto
+Fossambault-sur-le-Lac		46.8766	-71.6154	America/Toronto
+Clovelly Trails		47.6160	-52.7103	America/St_Johns
+Wiarton	ويارتون	44.7419	-81.1396	America/Toronto
+Miramichi River Valley		46.6150	-65.9017	America/Moncton
+Mattawa		46.3168	-78.6996	America/Toronto
+Neebing		48.1668	-89.4168	America/Toronto
+Kedgwick	كيدويك	47.6446	-67.3434	America/Moncton
+100 Mile House		51.6498	-121.2859	America/Vancouver
+Strathcona Park		51.0472	-114.1750	America/Edmonton
+Gambo		48.7832	-54.2148	America/St_Johns
+Commodore Park		44.6804	-63.5309	America/Halifax
+Mayfield		53.5540	-113.5989	America/Edmonton
+Fort Qu'Appelle		50.7668	-103.8010	America/Regina
+Tawa		53.4611	-113.4236	America/Edmonton
+Paper Mill Lake		44.7097	-63.6797	America/Halifax
+Meadowbrook		49.2667	-122.7833	America/Vancouver
+Matagami	ماتاغامي	49.7633	-77.6274	America/Toronto
+Caplan	كابلون	48.1026	-65.6843	America/Toronto
+Handsworth		49.3545	-123.1043	America/Vancouver
+Wabush		52.9001	-66.8654	America/Goose_Bay
+Glenayre		49.2744	-122.8756	America/Vancouver
+St. Jacobs		43.5316	-80.5572	America/Toronto
+Sainte-Madeleine		45.6001	-73.0991	America/Toronto
+Gellatly		49.8167	-119.6167	America/Vancouver
+Petit-Rocher	بيتيت روتشر	47.7827	-65.7175	America/Moncton
+Dominion		46.2168	-60.0151	America/Glace_Bay
+Oxford House		54.9485	-95.2660	America/Winnipeg
+Roberts Creek		49.4236	-123.6478	America/Vancouver
+Glovertown		48.6832	-54.0314	America/St_Johns
+Skyrattler		53.4514	-113.5236	America/Edmonton
+University Heights Urban Centre		52.1508	-106.5751	America/Regina
+Chapleau		47.8405	-83.4034	America/Toronto
+Pelican Narrows		55.1668	-102.9341	America/Regina
+Vallée-Jonction		46.3744	-70.9188	America/Toronto
+Cacouna		47.9166	-69.5005	America/Toronto
+Horseshoe Bay		49.3740	-123.2746	America/Vancouver
+Saint-Élie-de-Caxton		46.4834	-72.9658	America/Toronto
+Eastview		50.4639	-104.5894	America/Regina
+Manners Sutton		45.6889	-67.0399	America/Moncton
+Brookside		53.4905	-113.5668	America/Edmonton
+Vulcan		50.4001	-113.2519	America/Edmonton
+Morris		49.3550	-97.3657	America/Winnipeg
+Breckenridge Greens		53.5161	-113.6841	America/Edmonton
+Fenelon Falls		44.5334	-78.7496	America/Toronto
+Cromdale		53.5620	-113.4624	America/Edmonton
+Tofield		53.3668	-112.6686	America/Edmonton
+Sunalta		51.0415	-114.0988	America/Edmonton
+Estey's Bridge		46.0350	-66.7140	America/Moncton
+Harrison Hot Springs		49.2997	-121.7859	America/Vancouver
+Millet		53.0941	-113.4706	America/Edmonton
+Glendale		47.5144	-52.8171	America/St_Johns
+Swan Hills		54.7168	-115.4023	America/Edmonton
+Harbour Breton		47.4832	-55.7983	America/St_Johns
+Kamsack		51.5667	-101.9009	America/Regina
+Deseronto		44.2001	-77.0494	America/Toronto
+Henderson Estates		53.4677	-113.5985	America/Edmonton
+Kelvin		49.2167	-122.9333	America/Vancouver
+Birchwood		49.8742	-97.2569	America/Winnipeg
+Rockcliffe Park		45.4501	-75.6826	America/Toronto
+Lendrum Place		53.4950	-113.5221	America/Edmonton
+Rideau Park		53.4790	-113.5047	America/Edmonton
+Gariepy		53.4917	-113.6208	America/Edmonton
+Sacré-Coeur		48.2297	-69.8006	America/Toronto
+Christie Park		51.0375	-114.1750	America/Edmonton
+Saint-Mathieu		45.3168	-73.5159	America/Toronto
+Walpole Island		42.6152	-82.5140	America/Detroit
+Souris		49.6172	-100.2612	America/Winnipeg
+Eau Claire		51.0506	-114.0801	America/Edmonton
+Middleton		44.9428	-65.0702	America/Halifax
+Steinhauer		53.4625	-113.5097	America/Edmonton
+Watrous		51.6668	-105.4679	America/Regina
+Greendale		45.2532	-66.1033	America/Moncton
+Valleyview	فاليفيو	55.0667	-117.2858	America/Edmonton
+Saint-Gédéon		48.5001	-71.7658	America/Toronto
+Témiscaming		46.7212	-79.0971	America/Toronto
+Sainte-Béatrix		46.2001	-73.6159	America/Toronto
+Eel River Crossing		48.0159	-66.4220	America/Moncton
+Kippens		48.5500	-58.6318	America/St_Johns
+Upper Hammonds Plains		44.7545	-63.8417	America/Halifax
+Waskaganish		51.4833	-78.7500	America/Toronto
+Elboya		51.0096	-114.0747	America/Edmonton
+Jasper Park		53.5240	-113.5840	America/Edmonton
+East Broughton	ايست بروتون	46.2136	-71.0767	America/Toronto
+Maple Ridge		50.9555	-114.0369	America/Edmonton
+Chapais		49.7834	-74.8492	America/Toronto
+Lumsden		50.6501	-104.8678	America/Regina
+Inukjuak		58.4547	-78.1014	America/Toronto
+Greenough		44.6876	-63.5096	America/Halifax
+Maugerville		45.8717	-66.4453	America/Moncton
+Moose Factory		51.2669	-80.6162	America/Toronto
+Cliff Bungalow		51.0336	-114.0746	America/Edmonton
+Kelvin Grove		50.9882	-114.0882	America/Edmonton
+Saint-Narcisse		46.5639	-72.4705	America/Toronto
+Harriston		43.9120	-80.8720	America/Toronto
+St-André		47.1010	-67.7592	America/Moncton
+Keremeos		49.1998	-119.8357	America/Vancouver
+Sicamous		50.8331	-118.9857	America/Vancouver
+Saint-Placide		45.5334	-74.1992	America/Toronto
+Burns Lake		54.2297	-125.7608	America/Vancouver
+Cove Cliff		49.3228	-122.9489	America/Vancouver
+Metcalfe		45.2334	-75.4660	America/Toronto
+Albany		53.6317	-113.5498	America/Edmonton
+Abbottsfield		53.5727	-113.3919	America/Edmonton
+Saint-Liboire		45.6507	-72.7635	America/Toronto
+Lamont		53.7669	-112.8020	America/Edmonton
+Chambord	شومبور	48.4334	-72.0658	America/Toronto
+Louisdale		45.6069	-61.0664	America/Halifax
+Parkhill		51.0174	-114.0699	America/Edmonton
+Eastwood		43.4424	-80.4623	America/Toronto
+Idylwylde		53.5226	-113.4494	America/Edmonton
+Barrière		51.1831	-120.1192	America/Vancouver
+Shaganappi		51.0385	-114.1280	America/Edmonton
+Danville		45.7834	-72.0158	America/Toronto
+Geraldton		49.7267	-86.9484	America/Toronto
+Cambridge Bay	خليج كامبردج	69.1149	-105.0548	America/Cambridge_Bay
+Balgonie		50.4834	-104.2678	America/Regina
+Warfield		49.0956	-117.7453	America/Vancouver
+Montebello		44.7013	-63.5425	America/Halifax
+Patricia Heights		53.5100	-113.5960	America/Edmonton
+Behchokǫ̀		62.8025	-116.0464	America/Edmonton
+Grosvenor Park		52.1181	-106.6284	America/Regina
+Red Carpet		51.0410	-113.9400	America/Edmonton
+Blairmore Urban Centre		52.1281	-106.7589	America/Regina
+Carberry		49.8689	-99.3602	America/Winnipeg
+Parkhill		43.1599	-81.6846	America/Toronto
+Ripon		45.7834	-75.0993	America/Toronto
+St. Norbert		49.7657	-97.1463	America/Winnipeg
+Wynyard		51.7667	-104.1844	America/Regina
+Georgestown		47.5690	-52.7186	America/St_Johns
+Ormstown	أورمستاون	45.1334	-73.9992	America/Toronto
+Bowser		49.4447	-124.6886	America/Vancouver
+Windsor Park		49.3119	-122.9942	America/Vancouver
+Dechene		53.4911	-113.6366	America/Edmonton
+Stonepark		46.2686	-63.1206	America/Halifax
+Flatrock		47.6999	-52.7148	America/St_Johns
+Carter Crest		53.4639	-113.5780	America/Edmonton
+Sainte-Perpétue		47.0642	-69.9293	America/Toronto
+Burnt Church		47.1989	-65.1396	America/Moncton
+Musquodoboit Harbour		44.7835	-63.1487	America/Halifax
+Schonsee		53.6322	-113.4548	America/Edmonton
+Maple Ridge		53.5017	-113.3627	America/Edmonton
+Marion Bridge		45.9809	-60.2123	America/Glace_Bay
+Popkum		49.2037	-121.7381	America/Vancouver
+Manitouwadge		49.1215	-85.8403	America/Toronto
+Nakusp		50.2499	-117.8023	America/Vancouver
+Sayabec		48.5616	-67.6874	America/Toronto
+Saint-Jean-Baptiste		45.3806	-74.0121	America/Toronto
+Tweed		44.4751	-77.3162	America/Toronto
+Picture Butte		49.8833	-112.7852	America/Edmonton
+Eastmount		45.3080	-66.0307	America/Moncton
+McAllister		45.3100	-66.0197	America/Moncton
+Millbrook		44.1501	-78.4495	America/Toronto
+Rabbit Town		45.9552	-66.6506	America/Moncton
+Neguac	نيغاك	47.2489	-65.0741	America/Moncton
+Franklin		45.0334	-73.9159	America/Toronto
+Belfast		46.0834	-62.8820	America/Halifax
+Florence		46.2599	-60.2659	America/Glace_Bay
+Suncrest		49.2167	-123.0167	America/Vancouver
+Mactaggart		53.4382	-113.5637	America/Edmonton
+Grunthal		49.4067	-96.8587	America/Winnipeg
+Garrison Green		51.0030	-114.1242	America/Edmonton
+Saint-Ambroise		48.5545	-71.3215	America/Toronto
+Saint-Édouard		45.2334	-73.5159	America/Toronto
+Saint-Jacques-le-Mineur		45.2834	-73.4159	America/Toronto
+Bannerman		47.5713	-52.7085	America/St_Johns
+McQueen		53.5528	-113.5750	America/Edmonton
+Virginia Park		47.5985	-52.6917	America/St_Johns
+Shaunavon		49.6501	-108.4181	America/Regina
+Victoria		47.7666	-53.2314	America/St_Johns
+Holiday Park		52.1075	-106.6984	America/Regina
+Boissevain		49.2306	-100.0559	America/Winnipeg
+Centre District		43.4511	-80.4918	America/Toronto
+Saint-Ambroise		46.0765	-73.5564	America/Toronto
+Keswick Ridge		46.0001	-66.8822	America/Moncton
+North Devon		45.9708	-66.6325	America/Moncton
+Big Bend		49.1977	-122.9784	America/Vancouver
+Trinity Bay North		48.5221	-53.0713	America/St_Johns
+Manawan		47.2203	-74.3861	America/Toronto
+Musqueam		49.2283	-123.1928	America/Vancouver
+Shea Heights		47.5499	-52.7147	America/St_Johns
+Indian Head		50.5334	-103.6677	America/Regina
+Witless Bay		47.2832	-52.8314	America/St_Johns
+Florenceville-Bristol		46.4435	-67.6154	America/Moncton
+Aspen Gardens		53.4750	-113.5444	America/Edmonton
+Gentilly		46.4001	-72.2741	America/Toronto
+Sainte-Sophie		45.8168	-73.8992	America/Toronto
+Stephenville Crossing		48.5037	-58.4375	America/St_Johns
+Pleasantville		47.5880	-52.6829	America/St_Johns
+Regina Beach		50.7915	-104.9801	America/Regina
+Ct 0027		45.5461	-73.5473	America/Toronto
+Balmoral		47.9726	-66.4455	America/Moncton
+Naramata		49.5951	-119.5944	America/Vancouver
+Cow Bay		44.6314	-63.4322	America/Halifax
+Kensington		46.4334	-63.6487	America/Halifax
+Royston		49.6470	-124.9467	America/Vancouver
+Burford		43.1029	-80.4287	America/Toronto
+Roblin		51.2300	-101.3565	America/Winnipeg
+Coombs		49.2996	-124.4195	America/Vancouver
+Fort William	حصن ويليام	47.5713	-52.7018	America/St_Johns
+Massey Drive		48.9333	-57.8984	America/St_Johns
+Laurel		53.4467	-113.3820	America/Edmonton
+Dearborn		43.4874	-80.5182	America/Toronto
+Papineauville	بابينيوفيل	45.6168	-75.0160	America/Toronto
+Parkway		49.3146	-122.9748	America/Vancouver
+Quidi Vidi		47.5804	-52.6825	America/St_Johns
+Wabasca-Desmarais		55.9667	-113.8500	America/Edmonton
+Lincoln Park		51.0042	-114.1253	America/Edmonton
+Boundary		49.3333	-123.0469	America/Vancouver
+Saint-Joseph-de-Sorel		46.0334	-73.1158	America/Toronto
+East Meadows		47.5999	-52.6980	America/St_Johns
+Richmond Lakes		49.7700	-97.1661	America/Winnipeg
+St. George		45.1265	-66.8314	America/Moncton
+Oakalla		49.2340	-122.9775	America/Vancouver
+Perth-Andover	بيرت أندوفر	46.7355	-67.7039	America/Moncton
+Lawson Heights Urban Centre		52.1700	-106.6342	America/Regina
+Saint-Ulric		48.7870	-67.7023	America/Toronto
+Bay Bulls		47.3166	-52.8147	America/St_Johns
+Saanichton		48.6000	-123.4167	America/Vancouver
+Sainte-Clotilde-de-Horton		45.9834	-72.2324	America/Toronto
+Barkers Point		45.9517	-66.6234	America/Moncton
+Sainte-Élisabeth		46.0950	-73.3518	America/Toronto
+Ashcroft	أشكروفت	50.7237	-121.2821	America/Vancouver
+Mount Lehman		49.1167	-122.3833	America/Vancouver
+Stewiacke		45.1335	-63.3487	America/Halifax
+Pond Inlet		72.6992	-77.9595	America/Iqaluit
+Wallace Heights		44.6878	-63.6100	America/Halifax
+Signal Hill		47.5716	-52.6866	America/St_Johns
+Southview		51.0333	-113.9833	America/Edmonton
+Shearwater		44.6268	-63.5137	America/Halifax
+Venise-en-Québec		45.0834	-73.1325	America/Toronto
+Watson Lake		60.0635	-128.7089	America/Whitehorse
+Ile des Chênes		49.7106	-96.9889	America/Winnipeg
+Amigo Beach		44.6919	-79.3932	America/Toronto
+Humber Arm South		49.0091	-58.1348	America/St_Johns
+McGregor		42.1501	-82.9665	America/Toronto
+Watford		42.9501	-81.8831	America/Toronto
+Chinook Park		50.9829	-114.0884	America/Edmonton
+Madoc		44.5084	-77.4745	America/Toronto
+Sussex Corner		45.7102	-65.4833	America/Moncton
+Bon Accord		53.8334	-113.4187	America/Edmonton
+Greater Lakeburn		46.0765	-64.6682	America/Moncton
+Lacolle	لاكولي	45.0834	-73.3658	America/Toronto
+Milford		45.2659	-66.1098	America/Moncton
+Terrace Bay		48.7834	-87.1000	America/Toronto
+Ct 0022		45.5423	-73.5425	America/Toronto
+Grindrod		50.6331	-119.1191	America/Vancouver
+Wildwood Lake		44.6868	-63.5037	America/Halifax
+Blairmore		49.6000	-114.4353	America/Edmonton
+Potter Greens		53.5179	-113.6722	America/Edmonton
+Wembley		55.1499	-119.1360	America/Edmonton
+Youngs Crossing		45.9668	-66.5989	America/Moncton
+Leblanc		48.2668	-74.3491	America/Toronto
+Rural East-Country Squire		43.5207	-80.4974	America/Toronto
+Carlyle		49.6333	-102.2677	America/Regina
+Blackburne		53.4301	-113.5025	America/Edmonton
+Springbrook		52.1792	-113.8798	America/Edmonton
+Dalmeny		52.3408	-106.7712	America/Regina
+Hudson Bay		52.8500	-102.3842	America/Regina
+Pangnirtung		66.1464	-65.7000	America/Iqaluit
+Attawapiskat		52.9277	-82.4167	America/Toronto
+East Sooke		48.3664	-123.6836	America/Vancouver
+Ohsweken		43.0668	-80.1163	America/Toronto
+Oyster River		49.8667	-125.1333	America/Vancouver
+Penobsquis		45.7763	-65.3810	America/Moncton
+Pritchard		50.6831	-119.8191	America/Vancouver
+Red Head		45.2494	-66.0004	America/Moncton
+Springfield Lake		44.8135	-63.7446	America/Halifax
+Napanee Downtown		44.2483	-76.9507	America/Toronto
+Skatepark		44.2512	-76.9442	America/Toronto
+Anahim Lake		52.4665	-125.3066	America/Vancouver
+Marmora		44.4834	-77.6828	America/Toronto
+Henryville	أونريفيل	45.1334	-73.1825	America/Toronto
+Langham		52.3589	-106.9617	America/Regina
+Rosedale		51.0636	-114.0791	America/Edmonton
+Ct 0010		45.5819	-73.5286	America/Toronto
+Quinton Heights		45.2521	-66.1201	America/Moncton
+Lac-au-Saumon	لاك او سومون	48.4210	-67.3476	America/Toronto
+Intercity		48.4089	-89.2548	America/Toronto
+Tingwick		45.8801	-71.9422	America/Toronto
+Saint-Charles		45.7029	-73.5542	America/Toronto
+Rougemont		45.4334	-73.0491	America/Toronto
+Kingsey Falls		45.8501	-72.0658	America/Toronto
+Englehart		47.8240	-79.8739	America/Toronto
+Carp		45.3501	-76.0327	America/Toronto
+Devon		45.9638	-66.6170	America/Moncton
+Petitcodiac		45.9393	-65.1802	America/Moncton
+McLennan		49.1627	-123.0983	America/Vancouver
+Telkwa		54.6970	-127.0535	America/Vancouver
+Nipigon		49.0168	-88.2667	America/Toronto
+Waswanipi		49.7335	-76.1660	America/Toronto
+Nauwigewauk		45.4669	-65.8988	America/Moncton
+Parrsboro		45.4057	-64.3259	America/Halifax
+Wedgewood Heights		53.4791	-113.6454	America/Edmonton
+Coronation Park		49.2799	-122.8188	America/Vancouver
+Cap-Chat	كاب شا	49.0974	-66.6851	America/Toronto
+Dowling		46.5911	-81.3392	America/Toronto
+Saint-Antoine-de-Tilly		46.6635	-71.5734	America/Toronto
+McEwen		46.1452	-64.7862	America/Moncton
+Saint-Ubalde		46.7501	-72.2658	America/Toronto
+Pump Hill		50.9667	-114.1000	America/Edmonton
+Bergman		53.5789	-113.4088	America/Edmonton
+Evergreen		53.6316	-113.3512	America/Edmonton
+L'Orignal		45.6198	-74.6915	America/Toronto
+Winsloe		46.2934	-63.1776	America/Halifax
+Crofton		48.8663	-123.6527	America/Vancouver
+East End		48.3956	-89.2269	America/Toronto
+East Wellington		49.1739	-124.0174	America/Vancouver
+Coleman		49.6333	-114.5020	America/Edmonton
+Brookside		44.5540	-63.7239	America/Halifax
+Lappe		48.5668	-89.3501	America/Toronto
+Les Cèdres		45.3101	-74.0593	America/Toronto
+Tobermory		45.2501	-81.6665	America/Toronto
+Brookside West		45.9996	-66.6510	America/Moncton
+Debert		45.4335	-63.4654	America/Halifax
+College Hill		45.9471	-66.6447	America/Moncton
+Shilo		49.8055	-99.6463	America/Winnipeg
+Noyan	نويان	45.0668	-73.2991	America/Toronto
+Nantucket		44.6747	-63.5143	America/Halifax
+Richibucto		46.6807	-64.8804	America/Moncton
+Godefroy		51.7501	-68.0821	America/Toronto
+Norton		45.6388	-65.6984	America/Moncton
+Tsleil-Waututh		49.3097	-122.9813	America/Vancouver
+Tufts Cove		44.6822	-63.5969	America/Halifax
+Moosonee		51.2793	-80.6345	America/Toronto
+Rosthern		52.6668	-106.3345	America/Regina
+Parkdale		48.3859	-89.3070	America/Toronto
+Keating		48.5667	-123.4000	America/Vancouver
+Sainte-Croix		45.1337	-72.8008	America/Toronto
+Mountain Meadows		49.2883	-122.8181	America/Vancouver
+Clarke's Beach		47.5425	-53.2839	America/St_Johns
+Sharbot Lake		44.7739	-76.6872	America/Toronto
+Sun Peaks		50.8762	-119.9107	America/Vancouver
+Bally Haly		47.5874	-52.7024	America/St_Johns
+Elk Point		53.9002	-110.9017	America/Edmonton
+Kinngait		64.2338	-76.5437	America/Iqaluit
+Stoney Point/Pointe-aux-Roches		42.3047	-82.5486	America/Toronto
+Boulderwood		44.6236	-63.5952	America/Halifax
+Middleton		45.7166	-63.1793	America/Halifax
+Puntledge		49.6732	-125.0291	America/Vancouver
+Saint-Barnabé-Sud		45.7298	-72.9224	America/Toronto
+Fort St. James		54.4560	-124.2627	America/Vancouver
+Linière		46.0001	-70.4157	America/Toronto
+Saint-Éphrem-de-Beauce		46.0668	-70.9490	America/Toronto
+Chartwell		49.3490	-123.1531	America/Vancouver
+Kugluktuk		67.8274	-115.0965	America/Cambridge_Bay
+Norwood		44.3834	-77.9828	America/Toronto
+Dawson City		64.0601	-139.4333	America/Dawson
+High Park		53.5545	-113.5845	America/Edmonton
+South Lynnmour		49.3068	-123.0426	America/Vancouver
+Plattsville		43.3079	-80.6162	America/Toronto
+Westlake		55.2223	-118.8042	America/Edmonton
+St. Adolphe		49.6744	-97.1112	America/Winnipeg
+Garden Creek		45.9640	-66.7072	America/Moncton
+Manning		56.9217	-117.6312	America/Edmonton
+New Carlisle		48.0096	-65.3362	America/Toronto
+Upper West Lynn		49.3300	-123.0356	America/Vancouver
+Two Hills		53.7103	-111.7459	America/Edmonton
+Gjoa Haven		68.6260	-95.8784	America/Cambridge_Bay
+Saint-Damase		45.5334	-72.9991	America/Toronto
+Hillsborough		45.9198	-64.6552	America/Moncton
+St. Andrews Heights		51.0626	-114.1239	America/Edmonton
+Lower West Lynn		49.3203	-123.0497	America/Vancouver
+Pointe-à-la-Croix		48.0163	-66.6819	America/Toronto
+Hérouxville		46.6662	-72.6251	America/Toronto
+Radium Hot Springs		50.6167	-116.0688	America/Edmonton
+Les Escoumins	ليس إيسكومينس	48.3519	-69.4072	America/Toronto
+West Lorne		42.6001	-81.5998	America/Toronto
+Saint-Léonard-d'Aston		46.1072	-72.3735	America/Toronto
+Lions Bay		49.4522	-123.2376	America/Vancouver
+Sainte-Thècle		46.8168	-72.4991	America/Toronto
+Point McKay		51.0583	-114.1472	America/Edmonton
+Shelburne		43.7632	-65.3235	America/Halifax
+Smooth Rock Falls		49.2835	-81.6331	America/Toronto
+Christina Lake		49.0397	-118.2085	America/Vancouver
+Labrecque		48.6668	-71.5324	America/Toronto
+Tidnish		45.9937	-64.0095	America/Halifax
+Westridge		53.5070	-113.6064	America/Edmonton
+Belledune		47.8858	-65.8113	America/Moncton
+Omemee		44.2990	-78.5599	America/Toronto
+Charlo		48.0007	-66.3287	America/Moncton
+Mayerthorpe		53.9502	-115.1355	America/Edmonton
+Ootischenia		49.2831	-117.6355	America/Vancouver
+North Oyster/Yellow Point		49.0481	-123.8340	America/Vancouver
+Grousewoods		49.3637	-123.0970	America/Vancouver
+Jameswood		49.8873	-97.2471	America/Winnipeg
+Prince Rupert		53.5632	-113.5238	America/Edmonton
+Saint-Joseph-de-Coleraine		45.9668	-71.3658	America/Toronto
+Baie Ste. Anne		47.0523	-64.9536	America/Moncton
+Daveluyville		46.2001	-72.1324	America/Toronto
+Taylor		56.1528	-120.6814	America/Dawson_Creek
+Maliotenam		50.2112	-66.1816	America/Toronto
+Longlac		49.7817	-86.5348	America/Toronto
+Baie Verte		49.9333	-56.1815	America/St_Johns
+Bas-Caraquet		47.8006	-64.8320	America/Moncton
+Saint-Louis-du-Ha Ha		47.6660	-68.9764	America/Toronto
+Burgeo		47.6167	-57.6152	America/St_Johns
+Wadena		51.9500	-103.8010	America/Regina
+Bel Ayr Park		44.6751	-63.5057	America/Halifax
+Rio Terrace		53.5083	-113.5881	America/Edmonton
+Lower Doon		43.3928	-80.4075	America/Toronto
+Saint-Alexandre		45.5001	-75.7494	America/Toronto
+Youbou		48.8663	-124.2027	America/Vancouver
+Wendover		45.5727	-75.1276	America/Toronto
+Alberton		46.8169	-64.0654	America/Halifax
+Wilkie		52.4168	-108.7014	America/Regina
+Lamèque		47.7936	-64.6475	America/Moncton
+Port Hood		46.0168	-61.5318	America/Halifax
+Saint-Siméon		47.8443	-69.8784	America/Toronto
+Blue Quill Estates		53.4578	-113.5405	America/Edmonton
+Landmark		49.6717	-96.8223	America/Winnipeg
+Ryder Lake		49.1000	-121.8833	America/Vancouver
+La Conception	لاك كونسبتشن	46.1501	-74.6993	America/Toronto
+Albert Bridge		46.0165	-60.0595	America/Glace_Bay
+Fortune		47.0667	-55.8316	America/St_Johns
+Bowden		51.9288	-114.0349	America/Edmonton
+Erlton		51.0284	-114.0619	America/Edmonton
+McNab		50.4504	-104.6611	America/Regina
+Arborg		50.9072	-97.2176	America/Winnipeg
+Saint-Cyrille-de-Wendover		45.9334	-72.4324	America/Toronto
+Prince Charles		53.5778	-113.5347	America/Edmonton
+Currie Barracks		51.0179	-114.1223	America/Edmonton
+Rockway		43.4353	-80.4623	America/Toronto
+Wells		45.3851	-65.9290	America/Moncton
+Louisbourg		45.9205	-59.9710	America/Glace_Bay
+McAdam	مك أدام	45.5923	-67.3070	America/Moncton
+Riviere-Bleue		47.4341	-69.0428	America/Toronto
+Irishtown-Summerside		48.9833	-57.9817	America/St_Johns
+Macklin		52.3334	-109.9348	America/Regina
+Rivers		50.0308	-100.2403	America/Winnipeg
+Oka	أوكا	45.4649	-74.0889	America/Toronto
+Sherwood		53.5292	-113.5833	America/Edmonton
+Hantsport		45.0666	-64.1797	America/Halifax
+Saint-Antoine	ساينت أنتوني	46.3629	-64.7498	America/Moncton
+Donsdale		53.4850	-113.6354	America/Edmonton
+Mill Woods Town Centre		53.4564	-113.4275	America/Edmonton
+Gold River		49.7809	-126.0501	America/Vancouver
+Lac-Simon		46.1570	-74.7413	America/Toronto
+Powassan		46.0334	-79.3496	America/Toronto
+Mount Currie		50.3167	-122.7167	America/Vancouver
+St. Clements		43.5168	-80.6497	America/Toronto
+Yamachiche		46.2818	-72.8287	America/Toronto
+Labelle		46.2834	-74.7326	America/Toronto
+Ardrossan		53.5501	-113.1353	America/Edmonton
+Ct 0023		45.5396	-73.5453	America/Toronto
+Waldheim		52.6210	-106.6530	America/Regina
+La Minerve		46.2501	-74.9326	America/Toronto
+Saint-Victor		45.6112	-73.5153	America/Toronto
+Keystone Village		44.7050	-63.5370	America/Halifax
+Inverness		46.2334	-61.2985	America/Halifax
+Moose Lake		49.2056	-95.3063	America/Winnipeg
+Naujaat		66.5291	-86.2437	America/Rankin_Inlet
+Westbrook Estates		53.4694	-113.5500	America/Edmonton
+Lancaster Ridge		44.6892	-63.5689	America/Halifax
+Huntingdon		49.0075	-122.2649	America/Vancouver
+Vauxhall		50.0668	-112.1185	America/Edmonton
+Mildmay		44.0430	-81.1189	America/Toronto
+Irricana		51.3237	-113.6047	America/Edmonton
+Markdale		44.3168	-80.6497	America/Toronto
+Lansdowne		53.4889	-113.5486	America/Edmonton
+Cookstown		44.1834	-79.6996	America/Toronto
+Saint-Donat-de-Montcalm		46.3187	-74.2217	America/Toronto
+Edgemont Village		49.3381	-123.1014	America/Vancouver
+Lac-Connelly		45.8979	-73.9723	America/Toronto
+Mabou		46.0668	-61.3818	America/Halifax
+Bassano		50.7900	-112.4681	America/Edmonton
+Coldbrook		45.0669	-64.5821	America/Halifax
+Ignace		49.4163	-91.6590	America/Winnipeg
+Emo		48.6332	-93.8336	America/Winnipeg
+Lanigan		51.8501	-105.0344	America/Regina
+Nain		56.5419	-61.6955	America/Goose_Bay
+Creighton		54.7501	-101.9008	America/Winnipeg
+Shawville		45.6001	-76.4827	America/Toronto
+Chipman		46.1693	-65.8839	America/Moncton
+Crescent Beach		49.0500	-122.8833	America/Vancouver
+Union Bay		49.5838	-124.8861	America/Vancouver
+Vermilion Bay		49.8605	-93.3878	America/Winnipeg
+Mont-Carmel		47.4408	-69.8566	America/Toronto
+Windsor Junction		44.7894	-63.6423	America/Halifax
+Bella Bella	بيلا بيلا	52.1631	-128.1440	America/Vancouver
+Rogersville	روجرسفيل	46.7345	-65.4270	America/Moncton
+Shellbrook		53.2168	-106.4011	America/Regina
+St. Alban's		47.8666	-55.8483	America/St_Johns
+South Pender Harbour		49.6220	-124.0248	America/Vancouver
+Kaleden		49.3984	-119.6042	America/Vancouver
+Upper Delbrook		49.3526	-123.0767	America/Vancouver
+Kirkstone		49.3272	-123.0444	America/Vancouver
+Notre-Dame-du-Lac		46.7501	-79.0496	America/Toronto
+Clyde River		70.4723	-68.5899	America/Iqaluit
+Ayer's Cliff		45.1677	-72.0400	America/Toronto
+Barraute	باروت	48.4335	-77.6328	America/Toronto
+Bath		44.1834	-76.7827	America/Toronto
+Hillsborough Park		46.2670	-63.1065	America/Halifax
+Deep Cove		48.6833	-123.4667	America/Vancouver
+Red Lake		51.0668	-93.7337	America/Winnipeg
+Callaghan		53.4080	-113.5264	America/Edmonton
+Shediac Bridge-Shediac River		46.2689	-64.6005	America/Moncton
+Thessalon		46.2501	-83.5666	America/Toronto
+New Dundee		43.3510	-80.5366	America/Toronto
+Oxford		45.7334	-63.8654	America/Halifax
+Little Mountain		49.1806	-121.9221	America/Vancouver
+Bourget		45.4348	-75.1603	America/Toronto
+Fundy Bay		44.7410	-66.7604	America/Moncton
+Langenburg		50.8500	-101.7176	America/Regina
+Denman Island Trust Area		49.5519	-124.7988	America/Vancouver
+Bridgwater Centre		49.7945	-97.1978	America/Winnipeg
+Cultus Lake		49.0667	-121.9667	America/Vancouver
+Davidson		51.2668	-105.9845	America/Regina
+Nelson-Miramichi		46.9786	-65.5406	America/Moncton
+Centreville		45.1335	-64.5321	America/Halifax
+Brussels		43.7432	-81.2500	America/Toronto
+Spirit River		55.7833	-118.8361	America/Edmonton
+Rosemont		51.0780	-114.0908	America/Edmonton
+Lucknow		43.9605	-81.5128	America/Toronto
+Golden		51.0592	-93.7357	America/Winnipeg
+Bertrand	برتراند	47.7567	-65.0655	America/Moncton
+Eganville		45.5334	-77.0995	America/Toronto
+Newcastle		47.0001	-65.5654	America/Moncton
+Haliburton Village		45.0492	-78.5085	America/Toronto
+Island View Heights		45.2337	-66.1266	America/Moncton
+Fairwinds		49.2759	-124.1278	America/Vancouver
+Munster		45.1648	-75.9396	America/Toronto
+Confederation Urban Centre		52.1321	-106.7229	America/Regina
+Upper Island Cove		47.6499	-53.2148	America/St_Johns
+Salmo		49.1955	-117.2770	America/Vancouver
+Belmont		42.8834	-81.0830	America/Toronto
+Green Acres		44.5950	-63.5994	America/Halifax
+St. George's		48.4285	-58.4815	America/St_Johns
+Foam Lake		51.6500	-103.5343	America/Regina
+Baranow		53.6069	-113.5347	America/Edmonton
+L'Ascension-de-Notre-Seigneur		48.6834	-71.6658	America/Toronto
+Saint-Michel-des-Saints		46.6770	-73.9188	America/Toronto
+Parc-Boutin		45.2921	-73.2615	America/Toronto
+Hensall		43.4334	-81.4998	America/Toronto
+Welcome Beach		49.4796	-123.8924	America/Vancouver
+West Lynn Terrace		49.3322	-123.0261	America/Vancouver
+Maria		48.1749	-65.9860	America/Toronto
+Cameron Heights		53.4731	-113.6331	America/Edmonton
+Saint-Isidore		47.4335	-79.2996	America/Toronto
+Hayes Subdivision		45.0552	-64.5880	America/Halifax
+Pierreville		46.0703	-72.8113	America/Toronto
+Saint-Valère		46.0668	-72.0991	America/Toronto
+Centreville-Wareham-Trinity		49.0110	-53.8890	America/St_Johns
+Essondale		49.2297	-122.8111	America/Vancouver
+St. Lawrence		46.9166	-55.3983	America/St_Johns
+Le Bic		48.3755	-68.6941	America/Toronto
+South River		45.8334	-79.3829	America/Toronto
+Saint-Raphaël		46.2501	-76.0161	America/Toronto
+Luceville		48.5450	-68.3966	America/Toronto
+Bridgeport West		43.4784	-80.4843	America/Toronto
+Lower Economy		45.4013	-63.9859	America/Halifax
+Port Williams		45.1001	-64.4155	America/Halifax
+Gravelbourg		49.8834	-106.5512	America/Regina
+Lewis Point		46.2520	-63.1606	America/Halifax
+Howie Centre		46.0752	-60.2685	America/Glace_Bay
+Viking		53.0961	-111.7753	America/Edmonton
+Maskinongé		46.2286	-73.0192	America/Toronto
+Bay St. George South		48.2278	-58.8416	America/St_Johns
+U of S Lands South Management Area		52.1271	-106.6204	America/Regina
+Port Rowan		42.6168	-80.4664	America/Toronto
+Sainte-Jeanne-d'Arc		48.8667	-72.0822	America/Toronto
+Carleton		48.1025	-66.1196	America/Toronto
+Fort Simpson		61.8627	-121.3516	America/Edmonton
+Hornby Island		49.5345	-124.6692	America/Vancouver
+Milford Station		45.0408	-63.4364	America/Halifax
+Saint-Bruno-de-Guigues		47.4669	-79.4330	America/Toronto
+Eel Ground		46.9654	-65.6288	America/Moncton
+New Victoria		46.2537	-60.1278	America/Glace_Bay
+Saint-Alexandre		50.0254	-66.8615	America/Toronto
+Notre-Dame-du-Mont-Carmel		46.0168	-75.0826	America/Toronto
+Maplewood		49.3045	-123.0136	America/Vancouver
+Lac du Bonnet		50.2536	-96.0612	America/Winnipeg
+Dunmore		49.9668	-110.6016	America/Edmonton
+Snow Lake		54.8790	-100.0374	America/Winnipeg
+Albanel		48.8832	-72.4487	America/Toronto
+Stoney Point		44.2668	-79.5329	America/Toronto
+Saint-Pacôme		47.4046	-69.9502	America/Toronto
+Elmwood Park		53.5800	-113.4620	America/Edmonton
+Scotchtown		46.2389	-60.0997	America/Glace_Bay
+Canoe		50.7500	-119.2333	America/Vancouver
+Sydney Forks		46.0604	-60.3038	America/Glace_Bay
+Souris		46.3501	-62.2486	America/Halifax
+Westmount		49.3451	-123.2182	America/Vancouver
+Salluit		62.2041	-75.6434	America/Toronto
+Oakmount		44.7391	-63.6521	America/Halifax
+La Broquerie		49.5169	-96.5003	America/Winnipeg
+Mineville		44.6916	-63.3747	America/Halifax
+Cobden		45.6334	-76.8827	America/Toronto
+Melville Cove		44.6338	-63.6142	America/Halifax
+Deloraine		49.1908	-100.4948	America/Winnipeg
+Saint-Denis-sur-Richelieu		45.7834	-73.1492	America/Toronto
+Black River-Hardwicke		47.0212	-65.2076	America/Moncton
+Cap-de-Richibucto		46.5946	-64.7793	America/Moncton
+Whitbourne		47.4166	-53.5314	America/St_Johns
+Harbour Main-Chapel's Cove-Lakeview		47.4166	-53.1648	America/St_Johns
+Altamont		49.3408	-123.2025	America/Vancouver
+Mahone Bay		44.4488	-64.3816	America/Halifax
+Smoky Lake		54.1169	-112.4686	America/Edmonton
+Cache Creek	كاتش كريك	50.8101	-121.3246	America/Vancouver
+Kerrobert		51.9168	-109.1348	America/Regina
+Sentinel Hill		49.3373	-123.1460	America/Vancouver
+Saint-Norbert		46.1695	-73.3149	America/Toronto
+Weedon Centre		45.7080	-71.4599	America/Toronto
+English Corner		44.7334	-63.7820	America/Halifax
+Oxbow		49.2334	-102.1676	America/Regina
+Saint-Elzéar		45.6034	-73.7270	America/Toronto
+Killam		52.7834	-111.8517	America/Edmonton
+Valemount		52.8333	-119.2525	America/Vancouver
+Hornepayne		49.2145	-84.7762	America/Toronto
+Kaslo		49.9166	-116.9189	America/Vancouver
+Sheshatshiu		53.5187	-60.1459	America/Goose_Bay
+Paisley		44.3064	-81.2726	America/Toronto
+Bell's Turn		47.5931	-52.7296	America/St_Johns
+108 Mile Ranch		51.7489	-121.3689	America/Vancouver
+Melita		49.2681	-100.9967	America/Winnipeg
+Noonan		45.9668	-66.5322	America/Moncton
+Cawston		49.1825	-119.7596	America/Vancouver
+Schreiber		48.8125	-87.2646	America/Toronto
+Weymontachie		47.8994	-73.7772	America/Toronto
+Jarvis		42.8856	-80.1122	America/Toronto
+Quarryville		46.8334	-65.7820	America/Moncton
+Coral Harbour		64.1383	-83.1654	America/Atikokan
+Saint-Boniface		46.5001	-75.9826	America/Toronto
+Upper Sackville		44.8190	-63.7600	America/Halifax
+Woodhaven		49.8744	-97.2724	America/Winnipeg
+Desbiens		48.4179	-71.9477	America/Toronto
+Six Mile		48.4577	-123.4609	America/Vancouver
+Hubley		44.6734	-63.8222	America/Halifax
+Glenmore		49.3625	-123.1222	America/Vancouver
+Sainte-Geneviève-de-Batiscan		46.5301	-72.3388	America/Toronto
+Norman Wells		65.2820	-126.8329	America/Edmonton
+Chalk River		46.0168	-77.4495	America/Toronto
+Bentley		52.4654	-114.0501	America/Edmonton
+Delisle		51.9236	-107.1352	America/Regina
+French Creek		49.3412	-124.3554	America/Vancouver
+Cookshire		45.4154	-71.6296	America/Toronto
+Saint-Prime		48.5924	-72.3355	America/Toronto
+Denman Island		49.5329	-124.8195	America/Vancouver
+Queen Square		45.9557	-66.6392	America/Moncton
+Ardmore		48.6385	-123.4693	America/Vancouver
+Buffalo Narrows		55.8609	-108.4790	America/Regina
+Eckville		52.3627	-114.3701	America/Edmonton
+Sanikiluaq		56.5411	-79.2258	America/Iqaluit
+Scarboro		51.0395	-114.1042	America/Edmonton
+Gillam		56.3475	-94.7081	America/Winnipeg
+Preeceville		51.9500	-102.6677	America/Regina
+Northward		43.4674	-80.4759	America/Toronto
+Mannheim		43.3981	-80.5454	America/Toronto
+Plaster Rock		46.9065	-67.3900	America/Moncton
+Falher		55.7334	-117.2026	America/Edmonton
+Ogilvie Ridge		53.4640	-113.5639	America/Edmonton
+Lac-des-Aigles		47.9904	-68.6778	America/Toronto
+Clinton		51.0831	-121.5860	America/Vancouver
+La Guadeloupe		45.9611	-70.9398	America/Toronto
+Nahanni Butte		61.0335	-123.3864	America/Edmonton
+Gamèti		64.1120	-117.3530	America/Edmonton
+Saint-Colomban		45.7334	-74.1325	America/Toronto
+Saint-Isidore-de-Laprairie		45.3001	-73.6800	America/Toronto
+Saint-Jacques		45.9487	-73.5703	America/Toronto
+Saint-Nazaire		48.5894	-71.5525	America/Toronto
+Saint-Philippe-de-La Prairie		45.3572	-73.4771	America/Toronto
+Saint-Pie-V		46.0035	-72.7469	America/Toronto
+Saint-Pierre-les-Becquets		46.5001	-72.1991	America/Toronto
+Saint-Polycarpe		45.3001	-74.2992	America/Toronto
+Saint-Rémi-de-Tingwick		45.8668	-71.8158	America/Toronto
+Saint-Lazare-de-Bellechasse		46.6531	-70.8070	America/Toronto
+Saint-Antonin		47.7607	-69.4775	America/Toronto

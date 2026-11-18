@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import com.athaan.app.Notifications
 import com.athaan.app.data.AppSettings
 import com.athaan.app.data.SettingsStore
 import com.athaan.app.prayer.Prayer
@@ -28,7 +29,7 @@ object AdhanScheduler {
     /** Next enabled adhan strictly after [after]. Looks 3 days ahead. */
     fun nextAdhan(s: AppSettings, after: Long = System.currentTimeMillis()): UpcomingEvent? {
         for (d in 0..2) {
-            val day = PrayerTimesCalc.forDayOffset(d, s.lat, s.lng, s.method, s.madhab, after)
+            val day = PrayerTimesCalc.forDayOffset(d, s.lat, s.lng, s.method, s.madhab, after, s.zone())
             for (p in Prayer.adhanPrayers) {
                 val t = day[p]
                 if (t > after && s.enabled[p] == true) return UpcomingEvent(p, t)
@@ -42,6 +43,7 @@ object AdhanScheduler {
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.S || am.canScheduleExactAlarms()
     }
 
+    @android.annotation.SuppressLint("ScheduleExactAlarm", "MissingPermission")
     fun reschedule(context: Context) {
         val s = SettingsStore.get(context).current
         val am = context.getSystemService(AlarmManager::class.java)
@@ -52,7 +54,17 @@ object AdhanScheduler {
         if (!s.hasLocation) return
 
         nextAdhan(s, now)?.let { ev ->
-            set(context, am, ev.at, pending(context, ACTION_ADHAN, RC_ADHAN, ev))
+            android.util.Log.i("AthaanSchedule", "next adhan ${ev.prayer.name} at ${ev.at} exact=${canExact(context)}")
+            val pi = pending(context, ACTION_ADHAN, RC_ADHAN, ev)
+            if (canExact(context)) {
+                // An "alarm clock" alarm is the most reliable kind: exempt from Doze and
+                // battery savers, and it may start the adhan service from the background.
+                runCatching {
+                    am.setAlarmClock(AlarmManager.AlarmClockInfo(ev.at, Notifications.openAppIntent(context, false)), pi)
+                }.onFailure { set(context, am, ev.at, pi) }
+            } else {
+                set(context, am, ev.at, pi)
+            }
         }
 
         if (s.preAlertMinutes > 0) {
@@ -73,11 +85,10 @@ object AdhanScheduler {
 
     @android.annotation.SuppressLint("ScheduleExactAlarm", "MissingPermission")
     private fun set(context: Context, am: AlarmManager, at: Long, pi: PendingIntent) {
-        if (canExact(context)) {
-            am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi)
-        } else {
-            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi)
-        }
+        runCatching {
+            if (canExact(context)) am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi)
+            else am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi)
+        }.onFailure { am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, at, pi) }
     }
 
     private fun intent(context: Context, action: String) =

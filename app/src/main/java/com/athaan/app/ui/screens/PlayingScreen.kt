@@ -1,5 +1,13 @@
 package com.athaan.app.ui.screens
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -22,10 +30,12 @@ import androidx.compose.material3.SliderDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
@@ -36,6 +46,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.athaan.app.data.Muezzins
+import com.athaan.app.prayer.Prayer
 import com.athaan.app.prayer.TimeFmt
 import com.athaan.app.service.AdhanPlayback
 import com.athaan.app.ui.AppViewModel
@@ -58,6 +69,12 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
         // Today's time for this prayer (the adhan starts at it).
         vm.dayTimes(s, 0, now)[pb.prayer]
     }
+    val tz = s.zone()
+    val pulse = rememberInfiniteTransition(label = "pulse")
+    val breath by pulse.animateFloat(0f, 1f, infiniteRepeatable(tween(2600, easing = FastOutSlowInEasing), RepeatMode.Reverse), label = "breath")
+    val spin by pulse.animateFloat(0f, 360f, infiniteRepeatable(tween(40_000, easing = LinearEasing)), label = "spin")
+    val enter = remember { Animatable(0f) }
+    LaunchedEffect(Unit) { enter.animateTo(1f, tween(800, easing = FastOutSlowInEasing)) }
 
     Box(
         Modifier
@@ -65,33 +82,45 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
             .background(AC.InkDeep)
             .systemBarsPadding()
     ) {
-        // Rings and star
+        // Breathing rings and a slowly turning star
+        val gold = AC.Gold
         Canvas(Modifier.fillMaxWidth().height(520.dp).padding(top = 40.dp)) {
             val c = Offset(size.width / 2, size.height / 2)
             val k = size.width / 390f
-            listOf(200f to 0.06f, 160f to 0.10f, 120f to 0.16f).forEach { (r, a) ->
-                drawCircle(AC.Gold.copy(alpha = a), radius = r * k, center = c, style = Stroke(1.dp.toPx()))
+            listOf(200f to 0.06f, 160f to 0.10f, 120f to 0.16f).forEachIndexed { i, (r, a) ->
+                val grow = 1f + breath * 0.05f * (3 - i)
+                drawCircle(gold.copy(alpha = a * (0.7f + 0.6f * breath)), radius = r * k * grow * enter.value, center = c, style = Stroke(1.dp.toPx()))
             }
             val half = 62f * k
             val stroke = Stroke(1.2f.dp.toPx())
             val tl = Offset(c.x - half, c.y - half)
-            drawRect(AC.Gold.copy(alpha = 0.55f), tl, Size(half * 2, half * 2), style = stroke)
-            rotate(45f, c) { drawRect(AC.Gold.copy(alpha = 0.55f), tl, Size(half * 2, half * 2), style = stroke) }
+            rotate(spin, c) {
+                drawRect(gold.copy(alpha = 0.55f), tl, Size(half * 2, half * 2), style = stroke)
+                rotate(45f, c) { drawRect(gold.copy(alpha = 0.55f), tl, Size(half * 2, half * 2), style = stroke) }
+            }
         }
 
         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
-            T(tr("حان الآن موعد أذان", "It's time for"), 13.sp, color = AC.Muted, modifier = Modifier.padding(top = 24.dp))
+            T(
+                if (pb.prayer == Prayer.FAJR) tr("حان الآن موعد أذان · الفجر", "It's time for · Fajr adhan") else tr("حان الآن موعد أذان", "It's time for"),
+                13.sp, color = AC.Muted, modifier = Modifier.padding(top = 24.dp),
+            )
             Spacer(Modifier.height(170.dp))
-            T(if (ar) pb.prayer.ar else pb.prayer.en, 58.sp, color = AC.Gold, kufi = true, lineHeight = 66.sp)
-            T(TimeFmt.clock(prayerTime, ar), 18.sp, FontWeight.SemiBold)
+            Column(
+                Modifier.graphicsLayer { alpha = enter.value; val sc = 0.8f + 0.2f * enter.value; scaleX = sc; scaleY = sc },
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                T(if (ar) pb.prayer.ar else pb.prayer.en, 58.sp, color = AC.Gold, kufi = true, lineHeight = 70.sp)
+                T(TimeFmt.clock(prayerTime, ar, tz), 18.sp, FontWeight.SemiBold)
+            }
             Spacer(Modifier.weight(1f))
-            T((if (ar && !m.nameAr.startsWith("أذان")) "الشيخ " else "") + m.name(ar), 18.sp, FontWeight.Bold)
+            T(m.title(ar), 18.sp, FontWeight.Bold, align = TextAlign.Center, modifier = Modifier.padding(horizontal = 24.dp))
             T(s.place(ar) + " · " + (if (ar) s.method.ar else s.method.en), 13.sp, color = AC.Muted, align = TextAlign.Center,
                 modifier = Modifier.padding(horizontal = 24.dp))
 
             Column(Modifier.padding(horizontal = 45.dp, vertical = 16.dp)) {
                 val frac = if (pb.durationMs > 0) pb.positionMs.toFloat() / pb.durationMs else 0f
-                Box(Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)).background(Color.White.copy(alpha = 0.10f))) {
+                Box(Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)).background(AC.Line2)) {
                     Box(Modifier.fillMaxWidth(frac.coerceIn(0f, 1f)).height(4.dp).clip(RoundedCornerShape(2.dp)).background(AC.Gold))
                 }
                 Row(Modifier.padding(top = 6.dp)) {
@@ -128,7 +157,7 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
                     .padding(start = 16.dp, end = 16.dp, top = 18.dp, bottom = 24.dp)
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(18.dp))
-                    .background(Color(0xFF0F1728))
+                    .background(AC.Surface)
                     .border(1.dp, AC.Line, RoundedCornerShape(18.dp))
                     .padding(horizontal = 16.dp, vertical = 14.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp),

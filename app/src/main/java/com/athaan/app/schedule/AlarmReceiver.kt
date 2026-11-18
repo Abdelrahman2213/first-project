@@ -18,6 +18,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val prayer = intent.getStringExtra(AdhanScheduler.EXTRA_PRAYER)
             ?.let { runCatching { Prayer.valueOf(it) }.getOrNull() }
         val s = SettingsStore.get(context).current
+        android.util.Log.i("AthaanAlarm", "alarm ${intent.action} prayer=$prayer")
 
         if (prayer != null) {
             when (intent.action) {
@@ -33,7 +34,13 @@ class AlarmReceiver : BroadcastReceiver() {
                             val svc = Intent(context, AdhanService::class.java)
                                 .setAction(AdhanService.ACTION_PLAY)
                                 .putExtra(AdhanService.EXTRA_PRAYER, prayer.name)
-                            ContextCompat.startForegroundService(context, svc)
+                            try {
+                                ContextCompat.startForegroundService(context, svc)
+                            } catch (e: Exception) {
+                                // The system refused to start playback in the background:
+                                // at least tell the user it's prayer time.
+                                Notifications.showAdhanSilent(context, prayer, s.arabic)
+                            }
                         }
                     }
                 }

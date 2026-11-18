@@ -1,11 +1,12 @@
 package com.athaan.app.prayer
 
 import java.util.Calendar
+import java.util.TimeZone
 
 object TimeFmt {
     /** "6:19 م" / "6:19 PM" */
-    fun clock(millis: Long, ar: Boolean): String {
-        val c = Calendar.getInstance().apply { timeInMillis = millis }
+    fun clock(millis: Long, ar: Boolean, tz: TimeZone = TimeZone.getDefault()): String {
+        val c = Calendar.getInstance(tz).apply { timeInMillis = millis }
         val h24 = c.get(Calendar.HOUR_OF_DAY)
         val m = c.get(Calendar.MINUTE)
         val h12 = if (h24 % 12 == 0) 12 else h24 % 12

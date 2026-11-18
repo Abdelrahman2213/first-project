@@ -58,9 +58,10 @@ import com.athaan.app.ui.theme.LocalArabic
 import com.athaan.app.ui.theme.tr
 
 @Composable
-fun SettingsScreen(vm: AppViewModel, onPickCity: () -> Unit) {
+fun SettingsScreen(vm: AppViewModel, onPickCity: () -> Unit, onUseLocation: () -> Unit) {
     val s by vm.settings.collectAsState()
-    val locating by vm.locating.collectAsState()
+    val loc by vm.locStatus.collectAsState()
+    val locating = loc == com.athaan.app.ui.LocStatus.LOCATING
     val ar = LocalArabic.current
     val context = LocalContext.current
     var showMethod by remember { mutableStateOf(false) }
@@ -110,8 +111,8 @@ fun SettingsScreen(vm: AppViewModel, onPickCity: () -> Unit) {
                     onClick = onPickCity,
                 ) { T(tr("تغيير", "Change"), 13.sp, FontWeight.SemiBold, AC.Gold) }
                 ListRow(
-                    AIcons.Locate, tr("تحديث موقعي الحالي", "Use my current location"), null,
-                    onClick = { vm.detectLocation() },
+                    AIcons.Locate, tr("تحديث موقعي الحالي", "Use my current location"), locStatusError(loc),
+                    onClick = onUseLocation,
                 ) {
                     if (locating) CircularProgressIndicator(Modifier.size(18.dp), color = AC.Gold, strokeWidth = 2.dp)
                 }
@@ -157,9 +158,11 @@ fun SettingsScreen(vm: AppViewModel, onPickCity: () -> Unit) {
                         colors = SliderDefaults.colors(thumbColor = AC.Gold, activeTrackColor = AC.Gold, inactiveTrackColor = AC.Track),
                     )
                 }
-                Box(Modifier.fillMaxWidth().padding(horizontal = 0.dp).heightIn(min = 1.dp).background(AC.Line))
+                Box(Modifier.fillMaxWidth().heightIn(min = 1.dp, max = 1.dp).background(AC.Line))
                 ListRow(AIcons.Play, tr("تجربة الأذان الآن", "Test the adhan now"), tr("يشغّل أذان الصلاة القادمة", "Plays the next prayer's adhan"),
-                    onClick = { vm.testAdhan(vm.nextInfo(s, System.currentTimeMillis()).prayer) }, divider = false)
+                    onClick = { vm.testAdhan(vm.nextInfo(s, System.currentTimeMillis()).prayer) })
+                ListRow(AIcons.MoonStar, tr("تجربة أذان الفجر", "Test the Fajr adhan"), s.muezzin(com.athaan.app.prayer.Prayer.FAJR).name(ar),
+                    onClick = { vm.testAdhan(com.athaan.app.prayer.Prayer.FAJR) }, divider = false)
             }
         }
 
@@ -173,11 +176,15 @@ fun SettingsScreen(vm: AppViewModel, onPickCity: () -> Unit) {
             ) { Icon(AIcons.Forward, null, tint = AC.Muted, modifier = Modifier.size(18.dp)) }
         }
 
+        SectionLabel(tr("المظهر", "Appearance"))
+        Segmented(listOf(false to tr("ليلي", "Dark"), true to tr("فاتح", "Light")), s.light, { vm.setLight(it) }, Modifier.padding(horizontal = 16.dp))
+
         SectionLabel(tr("اللغة", "Language"))
         Segmented(listOf(true to "العربية", false to "English"), s.arabic, { vm.setArabic(it) }, Modifier.padding(horizontal = 16.dp))
 
         T(
-            tr("تسجيلات الأذان من مستودعات عامة على GitHub · الخطوط برخصة OFL", "Adhan recordings from public GitHub repositories · Fonts under the OFL"),
+            tr("تسجيلات الأذان من مستودعات عامة على GitHub · بيانات المدن من GeoNames (CC BY 4.0) · الخطوط برخصة OFL",
+                "Adhan recordings from public GitHub repositories · City data from GeoNames (CC BY 4.0) · Fonts under the OFL"),
             11.sp, color = AC.Muted, modifier = Modifier.padding(start = 28.dp, end = 28.dp, top = 24.dp),
         )
     }
@@ -224,7 +231,7 @@ private fun <V> ChoiceDialog(title: String, options: List<Pair<V, String>>, sele
                         Box(
                             Modifier.size(20.dp).clip(CircleShape).background(if (on) AC.Gold else AC.Track),
                             contentAlignment = Alignment.Center,
-                        ) { if (on) Icon(AIcons.Check, null, tint = AC.Ink, modifier = Modifier.size(14.dp)) }
+                        ) { if (on) Icon(AIcons.Check, null, tint = AC.OnGold, modifier = Modifier.size(14.dp)) }
                         Spacer(Modifier.width(12.dp))
                         T(label, 15.sp, if (on) FontWeight.SemiBold else FontWeight.Normal)
                     }

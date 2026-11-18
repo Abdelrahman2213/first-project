@@ -8,9 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.athaan.app.audio.AudioRepository
 import com.athaan.app.data.AppSettings
 import com.athaan.app.data.City
+import com.athaan.app.data.Country
 import com.athaan.app.data.Muezzin
-import com.athaan.app.data.Muezzins
+import com.athaan.app.data.Places
 import com.athaan.app.data.SettingsStore
+import com.athaan.app.data.Track
+import com.athaan.app.location.LocateResult
 import com.athaan.app.location.LocationHelper
 import com.athaan.app.prayer.AsrMadhab
 import com.athaan.app.prayer.CalcMethod
@@ -29,6 +32,8 @@ import kotlinx.coroutines.launch
 /** The next prayer, the one before it, and both times — drives the home hero. */
 data class NextInfo(val prayer: Prayer, val at: Long, val prevAt: Long)
 
+enum class LocStatus { IDLE, LOCATING, DENIED, SERVICES_OFF, NOT_FOUND }
+
 class AppViewModel(app: Application) : AndroidViewModel(app) {
     private val store = SettingsStore.get(app)
     val audio = AudioRepository.get(app)
@@ -41,11 +46,8 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     private val _now = MutableStateFlow(System.currentTimeMillis())
     val now: StateFlow<Long> = _now.asStateFlow()
 
-    private val _locating = MutableStateFlow(false)
-    val locating: StateFlow<Boolean> = _locating.asStateFlow()
-
-    private val _locationError = MutableStateFlow(false)
-    val locationError: StateFlow<Boolean> = _locationError.asStateFlow()
+    private val _loc = MutableStateFlow(LocStatus.IDLE)
+    val locStatus: StateFlow<LocStatus> = _loc.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -58,7 +60,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun dayTimes(s: AppSettings, offset: Int, now: Long): DayTimes =
-        PrayerTimesCalc.forDayOffset(offset, s.lat, s.lng, s.method, s.madhab, now)
+        PrayerTimesCalc.forDayOffset(offset, s.lat, s.lng, s.method, s.madhab, now, s.zone())
 
     fun nextInfo(s: AppSettings, now: Long): NextInfo {
         val days = (-1..1).map { dayTimes(s, it, now) }
@@ -68,65 +70,76 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         return NextInfo(next.first, next.second, prev)
     }
 
-    private fun changed() {
-        AdhanScheduler.reschedule(getApplication())
-    }
-
     private fun update(t: (AppSettings) -> AppSettings) {
         store.update(t)
-        changed()
+        AdhanScheduler.reschedule(getApplication())
     }
 
     // ---------- Location ----------
 
-    fun detectLocation(onDone: (Boolean) -> Unit = {}) {
-        if (_locating.value) return
-        _locating.value = true
-        _locationError.value = false
+    fun clearLocStatus() { _loc.value = LocStatus.IDLE }
+    fun setLocDenied() { _loc.value = LocStatus.DENIED }
+
+    /** Finds the phone's location and saves it. Permission must already be granted. */
+    fun detectLocation(onDone: (LocStatus) -> Unit = {}) {
+        if (_loc.value == LocStatus.LOCATING) return
+        _loc.value = LocStatus.LOCATING
         viewModelScope.launch {
             val ctx = getApplication<Application>()
-            val loc = LocationHelper.currentLocation(ctx)
-            if (loc == null) {
-                _locating.value = false
-                _locationError.value = true
-                onDone(false)
-                return@launch
+            val status = when (val r = runCatching { LocationHelper.locate(ctx) }.getOrDefault(LocateResult.NotFound)) {
+                LocateResult.NoPermission -> LocStatus.DENIED
+                LocateResult.ServicesOff -> LocStatus.SERVICES_OFF
+                LocateResult.NotFound -> LocStatus.NOT_FOUND
+                is LocateResult.Found -> {
+                    val lat = r.location.latitude
+                    val lng = r.location.longitude
+                    val geo = LocationHelper.placeName(ctx, lat, lng)
+                    val near = if (geo == null) Places.nearest(ctx, lat, lng, null) else null
+                    val country = geo?.countryCode ?: near?.country
+                    val countryNameAr = country?.let { Country(it, it, 0).name(true) }
+                    val countryNameEn = country?.let { Country(it, it, 0).name(false) }
+                    val coords = "%.3f, %.3f".format(java.util.Locale.ROOT, lat, lng)
+                    val placeAr = geo?.ar ?: near?.let { listOfNotNull(it.name(true), countryNameAr).joinToString("، ") } ?: coords
+                    val placeEn = geo?.en ?: near?.let { listOfNotNull(it.name(false), countryNameEn).joinToString(", ") } ?: coords
+                    update {
+                        it.copy(
+                            hasLocation = true, manualLocation = false, timezoneId = null,
+                            lat = lat, lng = lng, placeAr = placeAr, placeEn = placeEn,
+                            method = if (!it.hasLocation) suggestedMethod(country) else it.method,
+                        )
+                    }
+                    LocStatus.IDLE
+                }
             }
-            val names = LocationHelper.placeName(ctx, loc.latitude, loc.longitude)
-            val coords = "%.3f, %.3f".format(loc.latitude, loc.longitude)
-            update {
-                it.copy(
-                    hasLocation = true, manualLocation = false,
-                    lat = loc.latitude, lng = loc.longitude,
-                    placeAr = names?.first ?: coords, placeEn = names?.second ?: coords,
-                    method = if (!it.hasLocation) suggestedMethod(names?.second) else it.method,
-                )
-            }
-            _locating.value = false
-            onDone(true)
+            _loc.value = status
+            onDone(status)
         }
     }
 
-    fun setCity(c: City) = update {
-        it.copy(
-            hasLocation = true, manualLocation = true, lat = c.lat, lng = c.lng,
-            placeAr = "${c.ar}، ${c.countryAr}", placeEn = "${c.en}, ${c.countryEn}",
-            method = if (!it.hasLocation) suggestedMethod(c.countryEn) else it.method,
-        )
+    fun setCity(c: City) {
+        val country = Country(c.country, c.country, 0)
+        update {
+            it.copy(
+                hasLocation = true, manualLocation = true, lat = c.lat, lng = c.lng,
+                timezoneId = c.timezone.ifBlank { null },
+                placeAr = "${c.name(true)}، ${country.name(true)}",
+                placeEn = "${c.name(false)}, ${country.name(false)}",
+                method = suggestedMethod(c.country),
+            )
+        }
+        _loc.value = LocStatus.IDLE
     }
 
-    private fun suggestedMethod(place: String?): CalcMethod {
-        val p = place ?: return CalcMethod.EGYPT
-        return when {
-            p.contains("Egypt") || p.contains("Sudan") || p.contains("Libya") -> CalcMethod.EGYPT
-            p.contains("Saudi") -> CalcMethod.UMM_AL_QURA
-            p.contains("Emirates") || p.contains("UAE") -> CalcMethod.DUBAI
-            p.contains("Kuwait") -> CalcMethod.KUWAIT
-            p.contains("Qatar") -> CalcMethod.QATAR
-            p.contains("Pakistan") || p.contains("India") || p.contains("Bangladesh") -> CalcMethod.KARACHI
-            p.contains("United States") || p.contains("Canada") -> CalcMethod.ISNA
-            else -> CalcMethod.MWL
-        }
+    private fun suggestedMethod(countryCode: String?): CalcMethod = when (countryCode?.uppercase()) {
+        null -> CalcMethod.EGYPT
+        "EG", "SD", "LY", "SY", "LB", "IQ", "JO", "PS", "MY", "SS" -> CalcMethod.EGYPT
+        "SA", "YE" -> CalcMethod.UMM_AL_QURA
+        "AE" -> CalcMethod.DUBAI
+        "KW" -> CalcMethod.KUWAIT
+        "QA", "BH", "OM" -> CalcMethod.QATAR
+        "PK", "IN", "BD", "AF" -> CalcMethod.KARACHI
+        "US", "CA" -> CalcMethod.ISNA
+        else -> CalcMethod.MWL
     }
 
     // ---------- Adhan settings ----------
@@ -137,8 +150,9 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun assign(m: Muezzin, prayers: Set<Prayer>) {
-        if (prayers.isEmpty()) return
-        update { s -> s.copy(muezzinFor = s.muezzinFor + prayers.associateWith { m.id }) }
+        val ok = prayers.filter { m.canCall(it) }
+        if (ok.isEmpty()) return
+        update { s -> s.copy(muezzinFor = s.muezzinFor + ok.associateWith { m.id }) }
         ensureSelectedDownloaded()
     }
 
@@ -149,6 +163,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     fun setSilent(on: Boolean) = update { it.copy(silent = on) }
     fun setVibrate(on: Boolean) = update { it.copy(vibrate = on) }
     fun setArabic(on: Boolean) = store.update { it.copy(arabic = on) }
+    fun setLight(on: Boolean) = store.update { it.copy(light = on) }
     fun setAutoDownload(on: Boolean) {
         store.update { it.copy(autoDownload = on) }
         ensureSelectedDownloaded()
@@ -156,6 +171,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
 
     fun setVolume(v: Float) {
         store.update { it.copy(volume = v) }
+        audio.setPreviewVolume(v)
         if (playback.value != null) {
             sendToService(Intent(getApplication(), AdhanService::class.java)
                 .setAction(AdhanService.ACTION_SET_VOLUME).putExtra(AdhanService.EXTRA_VOLUME, v))
@@ -166,22 +182,22 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     fun ensureSelectedDownloaded() {
         val s = store.current
         if (!s.autoDownload) return
-        s.muezzinFor.values.toSet().forEach { audio.download(Muezzins.byId(it)) }
+        Prayer.adhanPrayers.map { s.track(it) }.distinctBy { it.key }.forEach { audio.download(it) }
     }
 
     // ---------- Audio ----------
 
-    fun togglePreview(m: Muezzin) = audio.togglePreview(m, settings.value.volume)
+    fun togglePreview(t: Track) = audio.togglePreview(t, settings.value.volume)
     fun stopPreview() = audio.stopPreview()
-    fun download(m: Muezzin) = audio.download(m)
-    fun deleteDownload(m: Muezzin) = audio.delete(m)
+    fun download(t: Track) = audio.download(t)
+    fun deleteDownload(t: Track) = audio.delete(t)
 
     fun testAdhan(p: Prayer) {
         audio.stopPreview()
         val i = Intent(getApplication(), AdhanService::class.java)
             .setAction(AdhanService.ACTION_PLAY)
             .putExtra(AdhanService.EXTRA_PRAYER, p.name)
-        ContextCompat.startForegroundService(getApplication(), i)
+        runCatching { ContextCompat.startForegroundService(getApplication(), i) }
     }
 
     fun stopAdhan() = sendToService(Intent(getApplication(), AdhanService::class.java).setAction(AdhanService.ACTION_STOP))

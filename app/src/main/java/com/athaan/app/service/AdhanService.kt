@@ -9,6 +9,7 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
+import android.util.Log
 import androidx.core.app.ServiceCompat
 import com.athaan.app.Notifications
 import com.athaan.app.audio.AudioRepository
@@ -66,7 +67,8 @@ class AdhanService : Service() {
 
     private fun play(prayer: Prayer, muezzinOverride: String?) {
         val s = SettingsStore.get(this).current
-        val m = Muezzins.byId(muezzinOverride ?: s.muezzinFor[prayer])
+        val m = muezzinOverride?.let { Muezzins.find(it) }?.takeIf { it.canCall(prayer) } ?: s.muezzin(prayer)
+        val track = m.trackFor(prayer)
         val notif = Notifications.buildPlaying(this, prayer, m, s.arabic)
         val type = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK else 0
         ServiceCompat.startForeground(this, Notifications.ID_PLAYING, notif, type)
@@ -77,11 +79,12 @@ class AdhanService : Service() {
         _state.value = AdhanPlayback(prayer, m.id)
 
         val repo = AudioRepository.get(this)
-        val src = repo.source(m)
+        val src = repo.source(track)
+        Log.i(TAG, "adhan ${prayer.name} muezzin=${m.id} fajr=${track.fajr} source=$src")
         startPlayer(src, s.volume)
 
         // Keep an offline copy for next time.
-        if (s.autoDownload && !repo.isDownloaded(m)) repo.download(m)
+        if (s.autoDownload && !repo.isDownloaded(track)) repo.download(track)
     }
 
     private fun startPlayer(source: String?, volume: Float) {
@@ -104,7 +107,7 @@ class AdhanService : Service() {
                 startTicker()
             }
             mp.setOnCompletionListener { stopAll() }
-            mp.setOnErrorListener { _, _, _ -> fallback(volume); true }
+            mp.setOnErrorListener { _, what, extra -> Log.w(TAG, "player error $what/$extra"); fallback(volume); true }
             mp.prepareAsync()
         } catch (e: Exception) {
             fallback(volume)
@@ -159,6 +162,7 @@ class AdhanService : Service() {
     }
 
     companion object {
+        private const val TAG = "AthaanAdhan"
         const val ACTION_PLAY = "com.athaan.app.PLAY"
         const val ACTION_STOP = "com.athaan.app.STOP"
         const val ACTION_TOGGLE_MUTE = "com.athaan.app.TOGGLE_MUTE"

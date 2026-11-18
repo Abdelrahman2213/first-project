@@ -174,14 +174,15 @@ object PrayerTimesCalc {
         offsetDays: Int, lat: Double, lng: Double,
         method: CalcMethod, madhab: AsrMadhab,
         now: Long = System.currentTimeMillis(),
+        tz: TimeZone = TimeZone.getDefault(),
     ): DayTimes {
-        val c = Calendar.getInstance().apply {
+        val c = Calendar.getInstance(tz).apply {
             timeInMillis = now
             add(Calendar.DAY_OF_YEAR, offsetDays)
         }
         return compute(
             c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH),
-            lat, lng, method, madhab, c.timeZone
+            lat, lng, method, madhab, tz
         )
     }
 }

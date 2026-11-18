@@ -3,8 +3,9 @@ package com.athaan.app.audio
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
-import com.athaan.app.data.Muezzin
+import android.util.Log
 import com.athaan.app.data.Muezzins
+import com.athaan.app.data.Track
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -13,6 +14,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,22 +31,25 @@ sealed interface DownloadState {
 }
 
 data class PreviewState(
-    val muezzinId: String? = null,
+    /** Track.key of the recording being previewed. */
+    val key: String? = null,
     val playing: Boolean = false,
     val positionMs: Int = 0,
     val durationMs: Int = 0,
     val loading: Boolean = false,
+    val error: Boolean = false,
 )
 
 /**
- * Keeps the offline copies of the recordings (app files dir) and plays previews.
+ * Keeps offline copies of the recordings (app files dir) and plays previews.
+ * Download/preview state is keyed by [Track.key] ("afasy" or "afasy_fajr").
  */
 class AudioRepository private constructor(context: Context) {
     private val appContext = context.applicationContext
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
     private val dir = File(appContext.filesDir, "adhans").apply { mkdirs() }
 
-    private val _downloads = MutableStateFlow<Map<String, DownloadState>>(initialDownloads())
+    private val _downloads = MutableStateFlow(initialDownloads())
     val downloads: StateFlow<Map<String, DownloadState>> = _downloads.asStateFlow()
 
     private val _preview = MutableStateFlow(PreviewState())
@@ -53,34 +58,43 @@ class AudioRepository private constructor(context: Context) {
     private var player: MediaPlayer? = null
     private var ticker: Job? = null
 
-    fun localFile(m: Muezzin): File = File(dir, "${m.id}.mp3")
-    fun isDownloaded(m: Muezzin): Boolean = localFile(m).let { it.exists() && it.length() > 10_000 }
+    fun localFile(t: Track): File = File(dir, "${t.key}.mp3")
+    fun isDownloaded(t: Track): Boolean = localFile(t).let { it.exists() && it.length() > 10_000 }
 
     /** Local file path if downloaded, otherwise the online URL. */
-    fun source(m: Muezzin): String = if (isDownloaded(m)) localFile(m).absolutePath else m.url
+    fun source(t: Track): String = if (isDownloaded(t)) localFile(t).absolutePath else t.url
 
-    private fun initialDownloads(): Map<String, DownloadState> =
-        Muezzins.all.associate { it.id to if (isDownloaded(it)) DownloadState.Done else DownloadState.None }
-
-    private fun setDl(id: String, s: DownloadState) {
-        _downloads.value = _downloads.value + (id to s)
+    private fun initialDownloads(): Map<String, DownloadState> {
+        val m = HashMap<String, DownloadState>()
+        Muezzins.all.forEach { mz ->
+            listOf(true, false).forEach { fajr ->
+                val t = Track(mz, fajr)
+                if ((fajr && mz.hasFajr) || (!fajr && mz.hasRegular)) {
+                    m[t.key] = if (isDownloaded(t)) DownloadState.Done else DownloadState.None
+                }
+            }
+        }
+        return m
     }
 
-    fun download(m: Muezzin) {
-        val cur = _downloads.value[m.id]
-        if (cur is DownloadState.Downloading || isDownloaded(m)) return
-        setDl(m.id, DownloadState.Downloading(0f))
+    private fun setDl(key: String, s: DownloadState) = _downloads.update { it + (key to s) }
+
+    fun download(t: Track) {
+        val cur = _downloads.value[t.key]
+        if (cur is DownloadState.Downloading) return
+        if (isDownloaded(t)) { setDl(t.key, DownloadState.Done); return }
+        setDl(t.key, DownloadState.Downloading(0f))
         scope.launch {
-            val ok = withContext(Dispatchers.IO) { downloadBlocking(m) { p -> setDl(m.id, DownloadState.Downloading(p)) } }
-            setDl(m.id, if (ok) DownloadState.Done else DownloadState.Failed)
+            val ok = withContext(Dispatchers.IO) { downloadBlocking(t) { p -> setDl(t.key, DownloadState.Downloading(p)) } }
+            setDl(t.key, if (ok) DownloadState.Done else DownloadState.Failed)
         }
     }
 
     /** Synchronous download, safe to call from a background thread. */
-    fun downloadBlocking(m: Muezzin, onProgress: (Float) -> Unit = {}): Boolean {
-        val tmp = File(dir, "${m.id}.part")
+    fun downloadBlocking(t: Track, onProgress: (Float) -> Unit = {}): Boolean {
+        val tmp = File(dir, "${t.key}.part")
         return try {
-            var url = URL(m.url)
+            var url = URL(t.url)
             var conn: HttpURLConnection
             var redirects = 0
             while (true) {
@@ -111,33 +125,36 @@ class AudioRepository private constructor(context: Context) {
                             onProgress((sum.toFloat() / total).coerceIn(0f, 1f))
                         }
                     }
+                    if (total > 0 && sum < total) throw java.io.IOException("truncated")
                 }
             }
             conn.disconnect()
-            tmp.renameTo(localFile(m))
+            tmp.renameTo(localFile(t))
         } catch (e: Exception) {
+            Log.w(TAG, "download failed ${t.key}", e)
             tmp.delete()
             false
         }
     }
 
-    fun delete(m: Muezzin) {
-        localFile(m).delete()
-        setDl(m.id, DownloadState.None)
+    fun delete(t: Track) {
+        if (_preview.value.key == t.key) stopPreview()
+        localFile(t).delete()
+        setDl(t.key, DownloadState.None)
     }
 
     // ---------- Preview playback ----------
 
-    fun togglePreview(m: Muezzin, volume: Float) {
+    fun togglePreview(t: Track, volume: Float) {
         val st = _preview.value
-        if (st.muezzinId == m.id && player != null) {
-            val p = player!!
+        val p = player
+        if (st.key == t.key && p != null && !st.loading) {
             if (p.isPlaying) { p.pause(); _preview.value = st.copy(playing = false) }
             else { p.start(); _preview.value = st.copy(playing = true); startTicker() }
             return
         }
         stopPreview()
-        _preview.value = PreviewState(muezzinId = m.id, loading = true)
+        _preview.value = PreviewState(key = t.key, loading = true)
         val mp = MediaPlayer()
         player = mp
         try {
@@ -147,32 +164,47 @@ class AudioRepository private constructor(context: Context) {
                     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
                     .build()
             )
-            mp.setDataSource(source(m))
+            mp.setDataSource(source(t))
             mp.setVolume(volume, volume)
             mp.setOnPreparedListener {
                 if (player !== it) return@setOnPreparedListener
                 it.start()
-                _preview.value = PreviewState(m.id, playing = true, durationMs = it.duration)
+                _preview.value = PreviewState(t.key, playing = true, durationMs = it.duration)
                 startTicker()
             }
             mp.setOnCompletionListener { stopPreview() }
-            mp.setOnErrorListener { _, _, _ -> stopPreview(); true }
+            mp.setOnErrorListener { _, what, extra ->
+                Log.w(TAG, "preview error $what/$extra for ${t.key}")
+                releasePlayer()
+                _preview.value = PreviewState(key = t.key, error = true)
+                true
+            }
             mp.prepareAsync()
         } catch (e: Exception) {
-            stopPreview()
+            Log.w(TAG, "preview failed ${t.key}", e)
+            releasePlayer()
+            _preview.value = PreviewState(key = t.key, error = true)
         }
     }
 
     fun seekPreview(fraction: Float) {
         val p = player ?: return
         val d = _preview.value.durationMs
-        if (d > 0) p.seekTo((d * fraction).toInt())
+        if (d > 0) runCatching { p.seekTo((d * fraction).toInt()) }
+    }
+
+    fun setPreviewVolume(v: Float) {
+        runCatching { player?.setVolume(v, v) }
+    }
+
+    private fun releasePlayer() {
+        ticker?.cancel()
+        player?.let { runCatching { it.stop() }; runCatching { it.release() } }
+        player = null
     }
 
     fun stopPreview() {
-        ticker?.cancel()
-        player?.let { runCatching { it.stop() }; it.release() }
-        player = null
+        releasePlayer()
         _preview.value = PreviewState()
     }
 
@@ -190,6 +222,7 @@ class AudioRepository private constructor(context: Context) {
     }
 
     companion object {
+        private const val TAG = "AthaanAudio"
         @Volatile private var instance: AudioRepository? = null
         fun get(context: Context): AudioRepository =
             instance ?: synchronized(this) {

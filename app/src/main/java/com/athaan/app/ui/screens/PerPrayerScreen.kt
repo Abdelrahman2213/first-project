@@ -31,7 +31,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.athaan.app.audio.DownloadState
-import com.athaan.app.data.Muezzins
 import com.athaan.app.prayer.Prayer
 import com.athaan.app.prayer.TimeFmt
 import com.athaan.app.ui.AppViewModel
@@ -52,6 +51,7 @@ fun PerPrayerScreen(vm: AppViewModel, onChange: (Prayer) -> Unit) {
     val downloads by vm.downloads.collectAsState()
     val ar = LocalArabic.current
     val today = remember(s, now / 60_000L) { vm.dayTimes(s, 0, now) }
+    val tz = s.zone()
 
     Column(
         Modifier
@@ -64,8 +64,9 @@ fun PerPrayerScreen(vm: AppViewModel, onChange: (Prayer) -> Unit) {
         Column(Modifier.padding(horizontal = 16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Prayer.adhanPrayers.forEach { p ->
                 val on = s.enabled[p] == true
-                val m = Muezzins.byId(s.muezzinFor[p])
-                val dl = downloads[m.id] ?: DownloadState.None
+                val m = s.muezzin(p)
+                val track = m.trackFor(p)
+                val dl = downloads[track.key] ?: DownloadState.None
                 val shape = RoundedCornerShape(22.dp)
                 Column(
                     Modifier
@@ -83,28 +84,29 @@ fun PerPrayerScreen(vm: AppViewModel, onChange: (Prayer) -> Unit) {
                         Spacer(Modifier.width(10.dp))
                         Column(Modifier.weight(1f)) {
                             T(if (ar) p.ar else p.en, 16.sp, FontWeight.Bold)
-                            T(TimeFmt.clock(today[p], ar), 12.sp, color = AC.Muted)
+                            T(TimeFmt.clock(today[p], ar, tz) + if (p == Prayer.FAJR) tr(" · أذان الفجر", " · Fajr adhan") else "", 12.sp, color = AC.Muted)
                         }
                         GoldSwitch(on) { vm.setEnabled(p, it) }
                     }
                     Box(Modifier.padding(top = 10.dp).fillMaxWidth().height(1.dp).background(AC.Line))
+                    val dim by androidx.compose.animation.core.animateFloatAsState(if (on) 1f else 0.5f, label = "dim")
                     Row(
-                        Modifier.padding(top = 10.dp).alpha(if (on) 1f else 0.55f),
+                        Modifier.padding(top = 10.dp).alpha(dim),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Avatar(m.initial, 32.dp, 13.sp)
                         Spacer(Modifier.width(10.dp))
                         Column(Modifier.weight(1f)) {
-                            T((if (ar) "الشيخ " else "") + m.name(ar), 14.sp, FontWeight.SemiBold, maxLines = 1)
+                            T(m.title(ar), 14.sp, FontWeight.SemiBold, maxLines = 1)
                             when (dl) {
                                 DownloadState.Done -> T(tr("محمّل · يعمل بدون إنترنت", "Downloaded · works offline"), 11.sp, color = AC.Mint)
                                 is DownloadState.Downloading -> T(tr("جارٍ التحميل ${(dl.progress * 100).toInt()}%", "Downloading ${(dl.progress * 100).toInt()}%"), 11.sp, color = AC.Gold)
                                 DownloadState.Failed -> Row(
-                                    Modifier.clickable(role = Role.Button) { vm.download(m) },
+                                    Modifier.clickable(role = Role.Button) { vm.download(track) },
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) { T(tr("فشل التحميل · إعادة المحاولة", "Download failed · retry"), 11.sp, color = AC.Danger) }
                                 DownloadState.None -> Row(
-                                    Modifier.clickable(role = Role.Button) { vm.download(m) },
+                                    Modifier.clickable(role = Role.Button) { vm.download(track) },
                                     verticalAlignment = Alignment.CenterVertically,
                                 ) {
                                     Icon(AIcons.Download, null, tint = AC.Muted, modifier = Modifier.size(13.dp))

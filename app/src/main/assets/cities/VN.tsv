@@ -1,0 +1,884 @@
+Ho Chi Minh City	مدينة هو تشي مينه	10.8230	106.6296	Asia/Ho_Chi_Minh
+Hanoi	خانوي	21.0245	105.8412	Asia/Bangkok
+Haiphong	هايفونج	20.8648	106.6834	Asia/Bangkok
+Cần Thơ	كان ثو	10.0371	105.7883	Asia/Ho_Chi_Minh
+Huế	هيو	16.4619	107.5955	Asia/Bangkok
+Da Nang	دا نانج	16.0678	108.2208	Asia/Ho_Chi_Minh
+Biên Hòa	بيان هوا	10.9447	106.8243	Asia/Ho_Chi_Minh
+Thanh Hóa	تان هوا	19.8000	105.7667	Asia/Bangkok
+Vinh	فينه	18.6734	105.6923	Asia/Bangkok
+Thuận An		10.9239	106.7143	Asia/Ho_Chi_Minh
+Nha Trang	نها ترانج	12.2451	109.1943	Asia/Ho_Chi_Minh
+Chợ Lớn		10.7500	106.6500	Asia/Ho_Chi_Minh
+Bình Thạnh		10.8110	106.7060	Asia/Ho_Chi_Minh
+Thủ Đức		10.8486	106.7721	Asia/Ho_Chi_Minh
+Qui Nhon	كويه نهون	13.7765	109.2237	Asia/Ho_Chi_Minh
+Vũng Tàu		10.3460	107.0843	Asia/Ho_Chi_Minh
+Dĩ An		10.9068	106.7694	Asia/Ho_Chi_Minh
+Rạch Giá	راتش جيا	10.0124	105.0809	Asia/Ho_Chi_Minh
+Bắc Giang		21.2731	106.1946	Asia/Bangkok
+Nam Định	نام ديه	20.4339	106.1773	Asia/Bangkok
+Buôn Ma Thuột	بوون ما توت	12.6675	108.0378	Asia/Ho_Chi_Minh
+Thái Nguyên	تاي نجوين	21.5942	105.8482	Asia/Bangkok
+Việt Trì	فيت تري	21.3227	105.4020	Asia/Bangkok
+Quận Mười		10.7682	106.6663	Asia/Ho_Chi_Minh
+Thủ Dầu Một	تو دائو موت	10.9804	106.6519	Asia/Ho_Chi_Minh
+Đống Đa		21.0130	105.8250	Asia/Bangkok
+Bến Cát		11.1500	106.6000	Asia/Ho_Chi_Minh
+Long Bien		21.0333	105.9000	Asia/Bangkok
+Bắc Từ Liêm		21.0653	105.7466	Asia/Ho_Chi_Minh
+Quận Mười Một		10.7638	106.6436	Asia/Ho_Chi_Minh
+Gia Lâm		21.0200	105.9390	Asia/Bangkok
+An Nhơn		13.8858	109.1082	Asia/Ho_Chi_Minh
+Hai Bà Trưng		21.0134	105.8477	Asia/Bangkok
+Nghi Sơn		19.3275	105.8214	Asia/Bangkok
+Phu Quoc		10.2241	103.9716	Asia/Ho_Chi_Minh
+Thanh Xuân		20.9947	105.7998	Asia/Bangkok
+Cầu Giấy		21.0323	105.8007	Asia/Bangkok
+Bắc Ninh	باك نينه	21.1861	106.0763	Asia/Bangkok
+Phú Mỹ		10.6333	107.0667	Asia/Ho_Chi_Minh
+Long Xuyên	لونج سوين	10.3864	105.4352	Asia/Ho_Chi_Minh
+Ba Vì		21.0833	105.3833	Asia/Bangkok
+Quảng Ngãi	كوانج نجاي	15.1205	108.7923	Asia/Ho_Chi_Minh
+Quận Sáu		10.7468	106.6490	Asia/Ho_Chi_Minh
+Mỹ Tho	مي ثو	10.3600	106.3600	Asia/Ho_Chi_Minh
+Hạ Long	هالونج	20.9505	107.0734	Asia/Bangkok
+Hà Tĩnh	ها تينه	18.3428	105.9057	Asia/Bangkok
+Ðà Lạt	دا لات	11.9465	108.4419	Asia/Ho_Chi_Minh
+Xuân Lộc		10.9333	107.2333	Asia/Ho_Chi_Minh
+Thị Trấn Đông Triều		21.0824	106.5138	Asia/Bangkok
+Hải Dương		20.9410	106.3330	Asia/Bangkok
+Thành Phố Bà Rịa	ثان فو با ريا	10.4963	107.1685	Asia/Ho_Chi_Minh
+Phổ Yên		21.4198	105.8899	Asia/Bangkok
+Sơn Tây		21.1405	105.5069	Asia/Bangkok
+Ninh Hòa		12.4919	109.1249	Asia/Ho_Chi_Minh
+Phan Thiết	فان تييت	10.9289	108.1021	Asia/Ho_Chi_Minh
+Điện Bàn		15.8885	108.2545	Asia/Ho_Chi_Minh
+Cà Mau	كا ماو	9.1768	105.1524	Asia/Ho_Chi_Minh
+Ba Dinh		21.0365	105.8268	Asia/Bangkok
+Sóc Trăng	سوك ترانج	9.5999	105.9719	Asia/Ho_Chi_Minh
+Chí Linh		21.0667	106.3167	Asia/Ho_Chi_Minh
+Quận Ba		10.7749	106.6863	Asia/Ho_Chi_Minh
+Tân An	تان آن	10.5359	106.4137	Asia/Ho_Chi_Minh
+Sa Dec		10.2909	105.7563	Asia/Ho_Chi_Minh
+Cao Lãnh	كاو لانه	10.4602	105.6329	Asia/Ho_Chi_Minh
+Phan Rang-Tháp Chàm	فان رانج-ثاب تشام	11.5643	108.9886	Asia/Ho_Chi_Minh
+Việt Yên		21.2667	106.1333	Asia/Ho_Chi_Minh
+Kon Tum		14.3545	108.0076	Asia/Ho_Chi_Minh
+Thanh Khê		16.0706	108.1910	Asia/Ho_Chi_Minh
+Lạng Sơn	لانج سون	21.8526	106.7610	Asia/Bangkok
+Thuận Thanh		21.0460	106.0790	Asia/Bangkok
+Quận Bốn		10.7668	106.7057	Asia/Ho_Chi_Minh
+Cẩm Phả	كام فا	21.0100	107.2734	Asia/Bangkok
+Quận Năm		10.7557	106.6675	Asia/Ho_Chi_Minh
+Vĩnh Châu		9.3244	105.9801	Asia/Ho_Chi_Minh
+Phúc Yên		21.2370	105.7048	Asia/Bangkok
+Phú Quốc		10.2872	104.0105	Asia/Ho_Chi_Minh
+Thị Trấn Đại Từ		21.6338	105.6377	Asia/Ho_Chi_Minh
+Tân Châu		10.7983	105.2389	Asia/Ho_Chi_Minh
+Long Khánh		10.9266	107.2478	Asia/Ho_Chi_Minh
+Bảo Lộc		11.5480	107.8077	Asia/Ho_Chi_Minh
+Tây Hồ		21.0690	105.8105	Asia/Bangkok
+Đồng Xoài	جيونج خوي	11.5350	106.8832	Asia/Ho_Chi_Minh
+Tam Kỳ	تام كي	15.5736	108.4740	Asia/Ho_Chi_Minh
+Ðông Hà	دونج ها	16.8163	107.1003	Asia/Bangkok
+Trảng Bàng		11.0299	106.3575	Asia/Ho_Chi_Minh
+Đưc Trọng		11.7356	108.3733	Asia/Ho_Chi_Minh
+La Gi	لا جى	10.6599	107.7721	Asia/Ho_Chi_Minh
+Trà Vinh	ثانه فو ترا فين	9.9472	106.3423	Asia/Ho_Chi_Minh
+Thốt Nốt		10.2721	105.5338	Asia/Ho_Chi_Minh
+Bạc Liêu		9.2941	105.7278	Asia/Ho_Chi_Minh
+Tuy Hòa	توي هوا	13.0955	109.3209	Asia/Ho_Chi_Minh
+Đức Phổ		14.8135	108.9593	Asia/Ho_Chi_Minh
+Thị Trấn Thuận Châu		21.4385	103.6900	Asia/Ho_Chi_Minh
+Cần Giuộc		10.6086	106.6714	Asia/Ho_Chi_Minh
+Kỳ Anh		18.0624	106.2983	Asia/Bangkok
+Hòa Thành		11.2870	106.1294	Asia/Ho_Chi_Minh
+Cam Ranh		11.9214	109.1591	Asia/Ho_Chi_Minh
+Giá Rai		9.2344	105.4583	Asia/Ho_Chi_Minh
+Huyện Lâm Hà		11.8155	108.2144	Asia/Ho_Chi_Minh
+Tịnh Biên		10.5959	104.9367	Asia/Ho_Chi_Minh
+Cai Lậy		10.4000	106.1167	Asia/Ho_Chi_Minh
+Vĩnh Long	فين لونج	10.2537	105.9722	Asia/Ho_Chi_Minh
+Phủ Lý	فو لي	20.5453	105.9122	Asia/Bangkok
+Hoàn Kiếm		21.0286	105.8506	Asia/Bangkok
+Cẩm Phả Mines		21.0167	107.3000	Asia/Ho_Chi_Minh
+Tây Ninh	تاي نينه	11.3100	106.0983	Asia/Ho_Chi_Minh
+Đồng Hới		17.4688	106.6223	Asia/Bangkok
+Quận Đức Thịnh		10.3099	105.7386	Asia/Ho_Chi_Minh
+Hải Châu		15.9167	108.1333	Asia/Ho_Chi_Minh
+Lào Cai	لاو كاي	22.4856	103.9707	Asia/Bangkok
+Sầm Sơn		19.7333	105.9000	Asia/Ho_Chi_Minh
+Ô Môn		10.1097	105.6232	Asia/Ho_Chi_Minh
+Thành phố Sông Công		21.4772	105.8414	Asia/Ho_Chi_Minh
+Buôn Hồ		12.9523	108.2962	Asia/Ho_Chi_Minh
+Chũ		21.3738	106.5665	Asia/Bangkok
+Bến Tre	بن تري	10.2415	106.3758	Asia/Ho_Chi_Minh
+Chơn Thành		11.4282	106.6354	Asia/Ho_Chi_Minh
+Bồ Đề		21.0562	105.8667	Asia/Bangkok
+Hòa Cường		16.0431	108.1821	Asia/Ho_Chi_Minh
+Vĩnh Yên		21.3089	105.6049	Asia/Bangkok
+Bắc Quang		22.4833	104.8667	Asia/Ho_Chi_Minh
+Hưng Yên	هونج ين	20.6464	106.0511	Asia/Bangkok
+Kiến An		20.8053	106.6256	Asia/Bangkok
+Nghi Xuân		18.6580	105.7520	Asia/Bangkok
+Cờ Đỏ		10.0938	105.4292	Asia/Ho_Chi_Minh
+Mỹ Hào		20.9167	106.0833	Asia/Bangkok
+Phong Điền		16.5832	107.3644	Asia/Bangkok
+Pleiku	بليكو	13.9833	108.0000	Asia/Ho_Chi_Minh
+Bình Thủy		10.0743	105.7397	Asia/Ho_Chi_Minh
+Hoàng Mai		19.2676	105.7159	Asia/Bangkok
+Gò Vấp		10.8167	106.6833	Asia/Ho_Chi_Minh
+Thới Lai		10.0652	105.5586	Asia/Ho_Chi_Minh
+Móng Cái		21.5247	107.9662	Asia/Bangkok
+Yên Vinh		18.6667	105.6667	Asia/Bangkok
+Ba Đồn		17.7535	106.4236	Asia/Bangkok
+Sơn La	سون لا	21.3256	103.9188	Asia/Bangkok
+Hòa Bình		20.8172	105.3376	Asia/Bangkok
+Tuyên Quang	تويين كوانج	21.8236	105.2142	Asia/Bangkok
+Ngã Bảy		9.8137	105.8210	Asia/Ho_Chi_Minh
+Hồng Ngự		10.8000	105.3500	Asia/Ho_Chi_Minh
+Yên Bái		21.7229	104.9113	Asia/Bangkok
+Hà Tiên		10.3831	104.4875	Asia/Ho_Chi_Minh
+Phong Điền		9.9975	105.6673	Asia/Ho_Chi_Minh
+Vĩnh Thạnh		10.2226	105.3984	Asia/Ho_Chi_Minh
+Gò Công		10.3667	106.6667	Asia/Ho_Chi_Minh
+Nghĩa Đô		21.0500	105.8000	Asia/Bangkok
+Hương Thủy		16.4218	107.6400	Asia/Ho_Chi_Minh
+Bình Minh		10.0682	105.8222	Asia/Ho_Chi_Minh
+Sông Cầu		13.4556	109.2235	Asia/Ho_Chi_Minh
+Phú Thọ		21.3996	105.2222	Asia/Bangkok
+Bạch Mai		20.9833	105.8333	Asia/Bangkok
+Tân Bình		10.8025	106.6600	Asia/Ho_Chi_Minh
+Thượng Cát		21.0934	105.7319	Asia/Bangkok
+Sơn Trà		16.0607	108.2326	Asia/Ho_Chi_Minh
+Vĩnh Tuy		21.0000	105.8833	Asia/Bangkok
+Cái Răng		10.0009	105.7510	Asia/Ho_Chi_Minh
+Sóc Sơn		21.2578	105.8489	Asia/Bangkok
+Gia Nghĩa	جيا نغيا	12.0042	107.6907	Asia/Ho_Chi_Minh
+Dien Bien Phu	ديان بيان فو	21.3860	103.0230	Asia/Bangkok
+An Hải		16.0667	108.2333	Asia/Ho_Chi_Minh
+An Khê		13.9500	108.6500	Asia/Ho_Chi_Minh
+Lai Vung		10.2566	105.5933	Asia/Ho_Chi_Minh
+Cung Kiệm		21.1870	106.1608	Asia/Ho_Chi_Minh
+Cẩm Lệ		16.0177	108.2038	Asia/Ho_Chi_Minh
+Yên Hòa		21.0219	105.7915	Asia/Bangkok
+Thanh Liệt		20.9667	105.8167	Asia/Bangkok
+Củ Chi		10.9733	106.4933	Asia/Ho_Chi_Minh
+Cao Bằng	كاو بانج	22.6657	106.2579	Asia/Bangkok
+Hương Trà		16.5254	107.4755	Asia/Bangkok
+Thị Trấn Mạo Khê		21.0586	106.5926	Asia/Ho_Chi_Minh
+Cổ Đô		21.2796	105.3640	Asia/Bangkok
+Châu Đốc		10.7000	105.1167	Asia/Ho_Chi_Minh
+Linh Đàm		20.9644	105.8305	Asia/Bangkok
+Duyên Hải		9.6350	106.4924	Asia/Ho_Chi_Minh
+Núi Thành		15.4319	108.6595	Asia/Ho_Chi_Minh
+Nghĩa Lộ		21.6000	104.5167	Asia/Ho_Chi_Minh
+Thái Hòa		18.9203	104.9744	Asia/Ho_Chi_Minh
+Từ Sơn		21.1000	105.9667	Asia/Bangkok
+Thành Phố Uông Bí		21.0343	106.7705	Asia/Ho_Chi_Minh
+Long Mỹ		9.6814	105.5723	Asia/Ho_Chi_Minh
+Vinhomes Ocean Park		20.9948	105.9465	Asia/Bangkok
+Dại Mỗ		20.9833	105.7667	Asia/Bangkok
+Ngã Năm	نجا نام	9.5651	105.5990	Asia/Ho_Chi_Minh
+Trảng Bom		10.9536	107.0059	Asia/Ho_Chi_Minh
+Châu Phong		10.7167	105.1333	Asia/Ho_Chi_Minh
+Trần Văn Thời		9.0771	104.9791	Asia/Ho_Chi_Minh
+Hà Giang		22.8233	104.9836	Asia/Bangkok
+Cần Giờ		10.4111	106.9547	Asia/Ho_Chi_Minh
+Xóm Cái Nước		9.8000	105.1000	Asia/Ho_Chi_Minh
+Phong Thạnh		9.3236	105.3464	Asia/Ho_Chi_Minh
+Bỉm Sơn		20.0781	105.8603	Asia/Ho_Chi_Minh
+Thái Bình		20.4500	106.3400	Asia/Bangkok
+Tân Uyên		11.0842	106.7883	Asia/Ho_Chi_Minh
+Cửa Nam		21.0211	105.8523	Asia/Bangkok
+Thị Trấn Phước Bửu		10.5347	107.4020	Asia/Ho_Chi_Minh
+Đố Sơn		20.7136	106.7894	Asia/Ho_Chi_Minh
+Hà Đông		20.9714	105.7788	Asia/Bangkok
+Cần Đước		10.5097	106.6031	Asia/Ho_Chi_Minh
+Mui Ne		10.9331	108.2833	Asia/Ho_Chi_Minh
+Vinhomes Smart City		21.0045	105.7404	Asia/Ho_Chi_Minh
+Vinhomes Times City		20.9945	105.8677	Asia/Bangkok
+Thị Trấn Ngải Giao		10.6471	107.2458	Asia/Ho_Chi_Minh
+Phú Khương		11.2833	106.1333	Asia/Ho_Chi_Minh
+Nga Sơn		20.0072	105.9704	Asia/Bangkok
+Thị Trấn Đầm Hà		21.3531	107.5972	Asia/Bangkok
+Tây Mỗ		21.0025	105.7457	Asia/Bangkok
+Bắc Kạn		22.1470	105.8348	Asia/Bangkok
+Hoàn Lão		17.5844	106.5343	Asia/Bangkok
+Lai Châu	لاي تشاو	22.3964	103.4582	Asia/Bangkok
+Ấp Một		9.8422	105.5360	Asia/Ho_Chi_Minh
+Mai Dịch		21.0333	105.7833	Asia/Bangkok
+Đan Phượng		21.0892	105.6625	Asia/Bangkok
+Óc Eo		10.2421	105.1550	Asia/Ho_Chi_Minh
+Lương Bằng		20.7400	106.0600	Asia/Bangkok
+Hưng Mỹ		8.9000	104.9833	Asia/Ho_Chi_Minh
+Thới Bình		9.3558	105.0993	Asia/Ho_Chi_Minh
+Hồng Lĩnh		18.5286	105.7064	Asia/Bangkok
+Ninh Bình	نينه بينه	20.2581	105.9797	Asia/Bangkok
+Cái Đôi Vàm		8.8571	104.8120	Asia/Ho_Chi_Minh
+Ô Chợ Dừa		21.0215	105.8246	Asia/Ho_Chi_Minh
+Quán Hàu		17.4044	106.6407	Asia/Bangkok
+Dương Minh Châu		11.3841	106.2308	Asia/Ho_Chi_Minh
+Xã Long Hải		10.3871	107.2388	Asia/Ho_Chi_Minh
+A Yun Pa		13.4002	108.4350	Asia/Ho_Chi_Minh
+Ấp Long Thạnh		10.7607	105.2743	Asia/Ho_Chi_Minh
+Đông Phú		15.6736	108.2201	Asia/Ho_Chi_Minh
+Hàm Ninh		10.1806	104.0477	Asia/Ho_Chi_Minh
+Thị Trấn Lam Sơn		19.9047	105.4056	Asia/Ho_Chi_Minh
+Thị Trấn Phố Lu		22.3192	104.1872	Asia/Ho_Chi_Minh
+Hoi An	هوي أن	15.8794	108.3350	Asia/Ho_Chi_Minh
+Xóm Mỹ Xuân		10.6167	107.0667	Asia/Ho_Chi_Minh
+Gành Hào		9.0283	105.4212	Asia/Ho_Chi_Minh
+Láng Thượng		21.0237	105.8036	Asia/Ho_Chi_Minh
+Cô Tô		10.3500	105.0167	Asia/Ho_Chi_Minh
+Năm Căn		8.7590	104.9929	Asia/Ho_Chi_Minh
+Cam Lộ		16.8080	106.9941	Asia/Bangkok
+Trâu Quỳ		21.0195	105.9369	Asia/Bangkok
+Cát Bà		20.7278	107.0482	Asia/Ho_Chi_Minh
+Tu Bông		12.7667	109.3000	Asia/Ho_Chi_Minh
+An Trạch		9.0686	105.3958	Asia/Ho_Chi_Minh
+Kiến An		10.5667	105.3667	Asia/Ho_Chi_Minh
+Dịch Vọng		21.0333	105.8000	Asia/Bangkok
+Long Thành		10.7891	106.9503	Asia/Ho_Chi_Minh
+Cầu Diễn		21.0393	105.7666	Asia/Bangkok
+Quảng Phú		12.8196	108.0774	Asia/Ho_Chi_Minh
+Núi Sập		10.2648	105.2668	Asia/Ho_Chi_Minh
+Khánh Hòa		10.6833	105.1667	Asia/Ho_Chi_Minh
+Phú Quý		10.5166	108.9329	Asia/Ho_Chi_Minh
+Phước An		12.7130	108.3015	Asia/Ho_Chi_Minh
+Xuân Mai		20.9000	105.5833	Asia/Ho_Chi_Minh
+Quang Minh		21.1888	105.7727	Asia/Ho_Chi_Minh
+Ecopark		20.9621	105.9318	Asia/Ho_Chi_Minh
+Kim Liên		18.8833	105.3167	Asia/Ho_Chi_Minh
+Vị Thanh	في ثان	9.7845	105.4701	Asia/Ho_Chi_Minh
+Thị Trấn Na Dương		21.7025	106.9555	Asia/Ho_Chi_Minh
+Mỹ Lại		15.1876	108.8890	Asia/Ho_Chi_Minh
+Mỹ Khê		15.1500	108.9000	Asia/Ho_Chi_Minh
+Yên Phụ		21.0333	105.8333	Asia/Bangkok
+Buôn Trấp		12.4848	108.0298	Asia/Ho_Chi_Minh
+thị xã Quảng Trị		16.7508	107.1828	Asia/Ho_Chi_Minh
+Tam Giang		8.8000	105.1833	Asia/Ho_Chi_Minh
+Kiên Hải		9.9727	104.8475	Asia/Ho_Chi_Minh
+Tràm Chim		10.6700	105.5647	Asia/Ho_Chi_Minh
+Ấp Hô Phòng		9.2258	105.4186	Asia/Ho_Chi_Minh
+Lý Sơn		15.3720	109.1189	Asia/Ho_Chi_Minh
+Thị Trấn Tiên Yên		21.3313	107.4053	Asia/Ho_Chi_Minh
+Ấp Phước Tĩnh		10.4000	107.1833	Asia/Ho_Chi_Minh
+Diễn Thành		18.9765	105.6003	Asia/Bangkok
+Ea Drăng		13.2045	108.2103	Asia/Ho_Chi_Minh
+Liễu Giai		21.0333	105.8167	Asia/Bangkok
+Mường Lay		22.0000	103.1333	Asia/Ho_Chi_Minh
+Thị Trấn Nước Hai		22.7374	106.1522	Asia/Ho_Chi_Minh
+Thị Trấn Đất Đỏ		10.4909	107.2701	Asia/Ho_Chi_Minh
+Thị Trấn Thất Khê		22.2553	106.4736	Asia/Ho_Chi_Minh
+Vinhomes Royal City		21.0028	105.8151	Asia/Ho_Chi_Minh
+Nghèn		18.4512	105.7797	Asia/Bangkok
+Long Diền		10.4833	107.2167	Asia/Ho_Chi_Minh
+Thị Trấn Trùng Khánh		22.8351	106.5250	Asia/Ho_Chi_Minh
+Thị Trấn Ba Chẽ		21.2716	107.2836	Asia/Bangkok
+Nhà Bè		10.6967	106.7403	Asia/Ho_Chi_Minh
+Bến Thủy		18.6500	105.7000	Asia/Bangkok
+Trung Phụng		21.0000	105.8333	Asia/Bangkok
+Bản Na Hỷ		19.5636	104.5346	Asia/Ho_Chi_Minh
+Cổ Lóa		21.1167	105.8667	Asia/Ho_Chi_Minh
+Đại Lộc		15.8821	108.1209	Asia/Ho_Chi_Minh
+Ít Ong		21.5175	104.0270	Asia/Bangkok
+Thị Trấn Việt Quang		22.4151	104.8068	Asia/Bangkok
+Đinh Văn		11.7862	108.2428	Asia/Ho_Chi_Minh
+Phú Đô		21.0167	105.7667	Asia/Bangkok
+Khánh Hải		11.5910	109.0405	Asia/Ho_Chi_Minh
+Phước Hòa		12.1000	107.1167	Asia/Ho_Chi_Minh
+Bo		20.6726	105.5362	Asia/Bangkok
+Ấp Bình Châu		10.5500	107.5500	Asia/Ho_Chi_Minh
+Ea T’ling		12.5890	107.8958	Asia/Ho_Chi_Minh
+Bà Nà		15.9833	107.9833	Asia/Ho_Chi_Minh
+Phú Lộc		9.4284	105.7411	Asia/Ho_Chi_Minh
+Dương Đông		10.2172	103.9593	Asia/Ho_Chi_Minh
+Bình Long		11.6471	106.6059	Asia/Ho_Chi_Minh
+Quỳnh Lôi		20.9833	105.8667	Asia/Bangkok
+Hiệp Đức		15.5822	108.1142	Asia/Ho_Chi_Minh
+Yên Viên		21.0833	105.9167	Asia/Bangkok
+Ông Yến		9.4830	105.3459	Asia/Ho_Chi_Minh
+Thị Trấn Na Sầm		22.0564	106.6151	Asia/Ho_Chi_Minh
+Thổ Tăng		21.2553	105.4894	Asia/Bangkok
+Khe Sanh		16.6283	106.7388	Asia/Bangkok
+Mường Chà		21.7617	103.0978	Asia/Ho_Chi_Minh
+Thụy Phương		21.0833	105.7833	Asia/Bangkok
+Thạch Hà		18.3679	105.8612	Asia/Bangkok
+Ngọc Hồi		20.9219	105.8520	Asia/Bangkok
+Rạch Gốc		8.6119	105.0051	Asia/Ho_Chi_Minh
+Ba Chúc		10.4943	104.9072	Asia/Ho_Chi_Minh
+Côn Đảo		8.7029	106.6489	Asia/Ho_Chi_Minh
+Thị Trấn Ba Hàng		21.4155	105.8732	Asia/Bangkok
+Hồ Xá		17.0684	107.0052	Asia/Bangkok
+Tây Đằng		21.1981	105.4222	Asia/Bangkok
+Lao Bảo		16.6141	106.6007	Asia/Ho_Chi_Minh
+Cẩm Xuyên		18.2503	106.0013	Asia/Bangkok
+Ea Na		12.5429	107.9898	Asia/Ho_Chi_Minh
+Chợ Mới		10.5512	105.4044	Asia/Ho_Chi_Minh
+Ea Kar		12.8082	108.4490	Asia/Ho_Chi_Minh
+Nhà Bàng		10.6177	105.0034	Asia/Ho_Chi_Minh
+Thị Trấn Yên Bình		21.7259	104.9635	Asia/Ho_Chi_Minh
+Ea Hiao		13.2073	108.3164	Asia/Ho_Chi_Minh
+Ấp Phú Hòa		10.9000	105.1333	Asia/Ho_Chi_Minh
+Phú Túc		13.1968	108.6904	Asia/Ho_Chi_Minh
+Suối Nghệ		10.5919	107.2162	Asia/Ho_Chi_Minh
+Cửa Lô		18.8167	105.7167	Asia/Ho_Chi_Minh
+Trại Khoai		21.1317	105.3448	Asia/Ho_Chi_Minh
+Kép		21.4000	106.2667	Asia/Ho_Chi_Minh
+Đức Thọ		18.5396	105.5830	Asia/Bangkok
+Mường Nhé		22.1924	102.4579	Asia/Bangkok
+Ea Pô		12.7000	107.8833	Asia/Ho_Chi_Minh
+Xuân Trùng		21.0575	105.2838	Asia/Ho_Chi_Minh
+Hàng Trạm		20.3947	105.6224	Asia/Bangkok
+Phụng Nghia		20.9500	105.7167	Asia/Bangkok
+Ea H'Leo		13.1992	108.1939	Asia/Ho_Chi_Minh
+Thị Trấn Na Hang		22.3492	105.3824	Asia/Bangkok
+Lăng Cô		16.2387	108.0804	Asia/Ho_Chi_Minh
+Đại Nghĩa		15.8790	108.0890	Asia/Ho_Chi_Minh
+Hương Khê		18.1767	105.7002	Asia/Bangkok
+Đại Quang		15.8667	108.0500	Asia/Ho_Chi_Minh
+Đại Đồng		15.8744	108.0213	Asia/Ho_Chi_Minh
+Sa Pa		22.3402	103.8441	Asia/Bangkok
+Lộc Ninh		11.8448	106.5907	Asia/Ho_Chi_Minh
+Thạnh Phú		9.9483	106.5163	Asia/Ho_Chi_Minh
+Khánh Vĩnh Yên	خانه فينه ين	18.4631	105.7131	Asia/Ho_Chi_Minh
+Nguyễn Du		21.0167	105.8500	Asia/Bangkok
+Ấp Bình Chánh		10.5533	105.2581	Asia/Ho_Chi_Minh
+Tra Que Vegetable Village		15.9022	108.3388	Asia/Ho_Chi_Minh
+Lim		21.1439	106.0202	Asia/Bangkok
+Xuyên Mộc		10.5667	107.4167	Asia/Ho_Chi_Minh
+Xã Bình Giả		10.6500	107.2667	Asia/Ho_Chi_Minh
+Thị Trấn Mường Khương		22.7614	104.1216	Asia/Bangkok
+Vụ Bản		20.4642	105.4435	Asia/Bangkok
+Lộc Bình		21.7587	106.9233	Asia/Bangkok
+Ông Do		8.8243	105.0087	Asia/Ho_Chi_Minh
+Ấp Xuân Sơn		10.6500	107.3500	Asia/Ho_Chi_Minh
+Thị Trấn Bình Minh		19.9910	106.0627	Asia/Bangkok
+Sa Rài		10.8702	105.4658	Asia/Ho_Chi_Minh
+Liên Quan		21.0572	105.5792	Asia/Bangkok
+Ấp Tân Mỹ		10.6167	105.5167	Asia/Ho_Chi_Minh
+Thị Trấn Đồng Đăng		21.9511	106.6977	Asia/Ho_Chi_Minh
+Kim Song Trường		18.4634	105.6873	Asia/Ho_Chi_Minh
+Ấp Tân Ngãi		10.2333	106.2833	Asia/Ho_Chi_Minh
+Thị Trấn Phố Ràng		22.2343	104.4764	Asia/Ho_Chi_Minh
+Vượng Lộc		18.4806	105.7337	Asia/Bangkok
+Thị Trấn Tân Yên		22.0655	105.0345	Asia/Bangkok
+Trường Sơn		18.3833	105.7333	Asia/Ho_Chi_Minh
+U Minh		9.4129	104.9735	Asia/Ho_Chi_Minh
+Thị Trấn Cao Lộc		21.8665	106.7683	Asia/Bangkok
+Tuần Giáo		21.5833	103.4167	Asia/Ho_Chi_Minh
+Phố Châu		18.5133	105.4241	Asia/Bangkok
+Nhã Nam		21.4500	106.1000	Asia/Ho_Chi_Minh
+Đại Cường		15.8500	108.0833	Asia/Ho_Chi_Minh
+Tùng Lộc		18.4576	105.8148	Asia/Bangkok
+Đường Lâm		21.1533	105.4712	Asia/Bangkok
+Vân Tùng		22.4308	105.9969	Asia/Bangkok
+An Hà		15.5833	108.4833	Asia/Ho_Chi_Minh
+Thị Trấn Yên Minh		23.1179	105.1416	Asia/Bangkok
+Tân Ninh		10.3335	106.4449	Asia/Ho_Chi_Minh
+Thuần Thiện		18.4742	105.7869	Asia/Bangkok
+Thị Trấn Đồng Văn		23.2784	105.3629	Asia/Bangkok
+Phúc Sơn		18.9667	105.0500	Asia/Ho_Chi_Minh
+Ich Hau		18.4500	105.8500	Asia/Bangkok
+Tú Trưng		21.1989	105.5328	Asia/Bangkok
+Buôn Tur		12.5000	108.0167	Asia/Ho_Chi_Minh
+Ea Súp		13.0662	107.8855	Asia/Ho_Chi_Minh
+Xuân Lộc		18.4190	105.7584	Asia/Bangkok
+Phong Châu		21.2393	105.4325	Asia/Ho_Chi_Minh
+Chi Lăng		21.5736	106.5026	Asia/Bangkok
+Thị Trấn Thanh Hà		20.5945	105.6793	Asia/Bangkok
+Mỹ Lộc		18.3653	105.7533	Asia/Bangkok
+Gio Linh		16.9248	107.0844	Asia/Bangkok
+Măng Đen		14.6006	108.2909	Asia/Ho_Chi_Minh
+Thị Trấn Mèo Vạc		23.1641	105.4099	Asia/Ho_Chi_Minh
+Côn Sơn		8.6864	106.6082	Asia/Ho_Chi_Minh
+Cô Tô		20.9727	107.7658	Asia/Bangkok
+Bùi Xá		18.3898	105.8250	Asia/Ho_Chi_Minh
+Bắc Lũng		21.2667	106.3833	Asia/Ho_Chi_Minh
+Thị Trấn Khánh Yên		22.0893	104.2515	Asia/Ho_Chi_Minh
+Thiên Lộc		18.5042	105.7688	Asia/Bangkok
+Trà My		15.3397	108.2207	Asia/Ho_Chi_Minh
+Na Lay		22.0351	103.1535	Asia/Ho_Chi_Minh
+Bích Chu		21.2072	105.4755	Asia/Bangkok
+Gôi		20.3333	106.0783	Asia/Bangkok
+Nà Tấu		21.5064	103.1178	Asia/Ho_Chi_Minh
+Thanh Nguyên		20.4150	105.9259	Asia/Bangkok
+Sơn Lộc		18.3719	105.7795	Asia/Bangkok
+Cao Thượng		21.3871	106.1293	Asia/Bangkok
+Si Pa Phìn		21.8015	102.9626	Asia/Ho_Chi_Minh
+Quang Lộc		18.4036	105.7694	Asia/Bangkok
+Đồng Lộc		18.3761	105.7175	Asia/Ho_Chi_Minh
+Vĩnh Tường		21.2165	105.5125	Asia/Bangkok
+Đại Tân		15.8333	108.0500	Asia/Ho_Chi_Minh
+Thị Trấn Tĩnh Túc		22.6535	105.8849	Asia/Bangkok
+Gia Hanh		18.4245	105.6872	Asia/Bangkok
+Xuân Sơn		17.6167	106.3167	Asia/Bangkok
+Xã An Ngãi		10.4833	107.2333	Asia/Ho_Chi_Minh
+Si Ma Cai		22.6951	104.2786	Asia/Bangkok
+Thị Trấn Sìn Hồ		22.3665	103.2344	Asia/Bangkok
+Thị Trấn Vĩnh Tuy		22.2744	104.8909	Asia/Bangkok
+Phúc Trạch		18.1333	105.7667	Asia/Ho_Chi_Minh
+Than Uyên		21.9591	103.8800	Asia/Bangkok
+Phú Lộc		18.4408	105.6707	Asia/Bangkok
+Liên Sơn		12.4109	108.1768	Asia/Ho_Chi_Minh
+Lay Nưa		22.0176	103.1162	Asia/Ho_Chi_Minh
+Xóm Bến Củi		11.2667	106.3500	Asia/Ho_Chi_Minh
+Nông Trường Trần Phú		21.4824	104.7288	Asia/Bangkok
+Quán Hành		18.7793	105.6460	Asia/Bangkok
+Nghĩa Đàn		19.3000	105.4333	Asia/Ho_Chi_Minh
+A Lưới		16.2723	107.2339	Asia/Bangkok
+Thượng Lộc		18.3910	105.7000	Asia/Bangkok
+Lũng Cú		23.3611	105.3155	Asia/Ho_Chi_Minh
+Huyền Tụng		20.9500	106.5500	Asia/Bangkok
+Thường Nga		18.4500	105.6667	Asia/Bangkok
+Pác Miầu		22.8297	105.4933	Asia/Bangkok
+Thiên Cầm		18.2784	106.0787	Asia/Bangkok
+Krông Klang		16.6891	106.8874	Asia/Bangkok
+Thanh Lộc		18.4784	105.7121	Asia/Bangkok
+Ba		15.9628	107.9065	Asia/Ho_Chi_Minh
+Lâm Đớt		16.0756	107.3555	Asia/Ho_Chi_Minh
+Thị Trấn Xuân Hoà		22.9024	106.0774	Asia/Bangkok
+Quảng Nhâm		16.2310	107.1837	Asia/Ho_Chi_Minh
+Vạn Thạnh		12.6707	109.4038	Asia/Ho_Chi_Minh
+Trung Lộc		18.4240	105.7320	Asia/Bangkok
+Na Mèo		20.2916	104.6466	Asia/Vientiane
+Nằm Vi		22.2167	102.5167	Asia/Ho_Chi_Minh
+Prao		15.9244	107.6481	Asia/Ho_Chi_Minh
+Nong Hạ		21.9500	105.8000	Asia/Ho_Chi_Minh
+Thôn La Vang Chinh		16.7167	107.2333	Asia/Ho_Chi_Minh
+Phù Ninh		21.0833	105.9500	Asia/Ho_Chi_Minh
+Khánh Lộc		18.4431	105.7406	Asia/Bangkok
+Yên Lộc		18.4648	105.7088	Asia/Ho_Chi_Minh
+Thị Trấn Đình Cả		21.7522	106.0752	Asia/Bangkok
+Phổng Lăng		21.4646	103.6704	Asia/Ho_Chi_Minh
+Xuân Lạc		19.0000	105.2833	Asia/Ho_Chi_Minh
+Bộc Bố		22.6121	105.6671	Asia/Bangkok
+Tiến Lộc		18.4294	105.7955	Asia/Bangkok
+Song Lộc		18.4804	105.6787	Asia/Bangkok
+Phương Linh		21.4671	105.0987	Asia/Ho_Chi_Minh
+Chợ Rã		22.4500	105.7000	Asia/Ho_Chi_Minh
+Hòa Hợp		18.3114	105.9099	Asia/Ho_Chi_Minh
+Kim Lộc		18.4907	105.6831	Asia/Bangkok
+Pú Hồng		21.0696	103.2371	Asia/Ho_Chi_Minh
+An Bá		14.9833	108.8500	Asia/Ho_Chi_Minh
+Trung Sơn		16.3250	107.1605	Asia/Ho_Chi_Minh
+Ấp Long Thọ		10.1333	106.0333	Asia/Ho_Chi_Minh
+Vĩnh Lộc		18.4495	105.7211	Asia/Bangkok
+Thị Trấn Trạm Tấu		21.4666	104.3797	Asia/Ho_Chi_Minh
+Giáo Liêm		16.8500	107.1500	Asia/Ho_Chi_Minh
+Xóm Mười Lăm		19.2232	105.6572	Asia/Bangkok
+Thị Trấn Phố Bảng		23.2543	105.1845	Asia/Ho_Chi_Minh
+Cao Ký		21.9833	105.8500	Asia/Ho_Chi_Minh
+Hạ Hiệu		22.4333	105.8500	Asia/Ho_Chi_Minh
+Long Cốc		21.1184	105.0605	Asia/Bangkok
+A Tiêng		15.9058	107.4908	Asia/Ho_Chi_Minh
+Trường Lộc		18.4659	105.6933	Asia/Bangkok
+Vũ Quang		18.3838	105.5059	Asia/Bangkok
+Sơn Thủy		16.2528	107.2727	Asia/Ho_Chi_Minh
+A Ngo		16.2577	107.2438	Asia/Ho_Chi_Minh
+Chợ Mới		21.8837	105.7728	Asia/Bangkok
+Lao Chải		22.3138	103.8684	Asia/Ho_Chi_Minh
+Bha Lê		15.9732	107.5105	Asia/Ho_Chi_Minh
+Sà Phìn		23.2667	105.2500	Asia/Ho_Chi_Minh
+A Ting		15.9863	107.8274	Asia/Ho_Chi_Minh
+Sông Kôn		15.9939	107.7673	Asia/Ho_Chi_Minh
+Mà Cooi		15.8365	107.6943	Asia/Ho_Chi_Minh
+Hồng Vân		16.3646	107.1217	Asia/Ho_Chi_Minh
+Jơ Ngây		15.9286	107.7735	Asia/Ho_Chi_Minh
+Tân Hiệp		15.9500	108.5000	Asia/Ho_Chi_Minh
+Sằng Uỷ		22.7000	106.5500	Asia/Bangkok
+A Roàng Hai		16.1125	107.3970	Asia/Bangkok
+An Thới		10.0191	104.0150	Asia/Ho_Chi_Minh
+Lăng		15.8258	107.4563	Asia/Ho_Chi_Minh
+Lương Bằng		21.6484	105.0285	Asia/Ho_Chi_Minh
+Thổ Châu		9.3031	103.4755	Asia/Ho_Chi_Minh
+A Xan		15.8077	107.3160	Asia/Ho_Chi_Minh
+A Vương		15.9655	107.5491	Asia/Ho_Chi_Minh
+Hồng Thượng		16.1857	107.2609	Asia/Ho_Chi_Minh
+Ka Dăng		15.8807	107.8085	Asia/Ho_Chi_Minh
+Dang		15.8267	107.5786	Asia/Ho_Chi_Minh
+Hồng Bắc		16.2773	107.1834	Asia/Ho_Chi_Minh
+Ấp Hòa Thanh		11.0333	108.1667	Asia/Ho_Chi_Minh
+Hồng Kim		16.3352	107.2372	Asia/Ho_Chi_Minh
+Hoàng Sa		16.6666	112.7254	Asia/Ho_Chi_Minh
+Ch’ Ơm		15.7966	107.2695	Asia/Ho_Chi_Minh
+Ga Ri		15.7466	107.2655	Asia/Ho_Chi_Minh
+Tư		16.0169	107.9104	Asia/Ho_Chi_Minh
+Yên Thượng		18.8833	105.2833	Asia/Ho_Chi_Minh
+Hồng Hạ		16.3006	107.3129	Asia/Ho_Chi_Minh
+A Rooi		15.8755	107.6282	Asia/Ho_Chi_Minh
+Đông Sơn		16.1126	107.3200	Asia/Ho_Chi_Minh
+Tr'Hy		15.7959	107.3655	Asia/Ho_Chi_Minh
+Hồng Thái		16.1844	107.2071	Asia/Ho_Chi_Minh
+Za Hung		15.8923	107.6766	Asia/Ho_Chi_Minh
+Tam Đảo		21.3932	105.6144	Asia/Bangkok
+Yên Thành		18.9986	105.4712	Asia/Bangkok
+Yên Ninh		20.1840	106.0612	Asia/Bangkok
+Yến Lạc		22.2369	106.1815	Asia/Bangkok
+Yên Lạc		21.2365	105.5730	Asia/Bangkok
+Yên Châu		21.0458	104.3010	Asia/Bangkok
+Gia Ray		10.9261	107.4017	Asia/Ho_Chi_Minh
+Vũng Liêm		10.0958	106.1855	Asia/Ho_Chi_Minh
+Võ Xu		11.1869	107.5602	Asia/Ho_Chi_Minh
+Vĩnh Thuận		9.5080	105.2575	Asia/Ho_Chi_Minh
+Vĩnh Thạnh		14.1088	108.7838	Asia/Ho_Chi_Minh
+Vĩnh Lộc		20.0544	105.6157	Asia/Bangkok
+Vĩnh Bình		10.3450	106.5806	Asia/Ho_Chi_Minh
+Văn Quan		21.8652	106.5392	Asia/Bangkok
+Vạn Giã		12.6920	109.2207	Asia/Ho_Chi_Minh
+Vân Đình		20.7351	105.7724	Asia/Bangkok
+Văn Điển		20.9463	105.8450	Asia/Bangkok
+Vân Canh		13.6195	108.9981	Asia/Ho_Chi_Minh
+Tuy Phước		13.8274	109.1665	Asia/Ho_Chi_Minh
+Hòa Bình		19.2639	104.4723	Asia/Bangkok
+Tư Nghĩa		15.0845	108.8260	Asia/Ho_Chi_Minh
+Tri Tôn		10.4202	105.0007	Asia/Ho_Chi_Minh
+Trà Ôn		9.9626	105.9217	Asia/Ho_Chi_Minh
+Trà Cú		9.6977	106.2583	Asia/Ho_Chi_Minh
+Trà Bồng		15.2557	108.5172	Asia/Ho_Chi_Minh
+Tĩnh Gia		19.4464	105.7786	Asia/Bangkok
+Tiểu Cần		9.8117	106.1907	Asia/Ho_Chi_Minh
+Tiên Phước		15.4882	108.3074	Asia/Ho_Chi_Minh
+Thủ Thừa		10.6023	106.4021	Asia/Ho_Chi_Minh
+Thường Xuân		19.9029	105.3472	Asia/Bangkok
+Thọ Xuân		19.9313	105.5218	Asia/Bangkok
+Ái Tử		16.7689	107.1650	Asia/Bangkok
+Thanh Sơn		21.1987	105.1789	Asia/Bangkok
+Thanh Nê		20.3881	106.4383	Asia/Bangkok
+Thanh Chương		18.7788	105.3336	Asia/Bangkok
+Thanh Bình		10.5619	105.4841	Asia/Ho_Chi_Minh
+Kim Tân		20.1305	105.6745	Asia/Bangkok
+Đầm Dơi		8.9921	105.1960	Asia/Ho_Chi_Minh
+Tân Kỳ		19.0476	105.2681	Asia/Bangkok
+Tánh Linh		11.0842	107.6809	Asia/Ho_Chi_Minh
+Tân Hiệp		10.4490	106.3439	Asia/Ho_Chi_Minh
+Tân Hiệp		10.1171	105.2858	Asia/Ho_Chi_Minh
+Tam Bình		10.0481	106.0002	Asia/Ho_Chi_Minh
+Thị Trấn Tà Lùng		22.4979	106.5669	Asia/Ho_Chi_Minh
+Sơn Tịnh		15.1586	108.7958	Asia/Ho_Chi_Minh
+Sơn Hà		15.0419	108.4697	Asia/Ho_Chi_Minh
+Sơn Dương		21.6968	105.3990	Asia/Bangkok
+Sông Mã		21.0509	103.7499	Asia/Bangkok
+Mường Chiên		21.8424	103.5661	Asia/Bangkok
+Quỳnh Côi		20.6619	106.3274	Asia/Bangkok
+Quỳ Hợp		19.3255	105.1825	Asia/Bangkok
+Quy Đạt		17.8046	105.9704	Asia/Bangkok
+Quỳ Châu		19.5521	105.0939	Asia/Bangkok
+Kim Sơn		19.6041	104.9190	Asia/Bangkok
+Quan Hóa		20.3848	105.1002	Asia/Bangkok
+Quảng Yên		20.9421	106.8027	Asia/Bangkok
+Thị Trấn Quảng Uyên		22.6950	106.4424	Asia/Bangkok
+Plei Kần		14.7050	107.6862	Asia/Ho_Chi_Minh
+Phù Yên		21.2633	104.6444	Asia/Bangkok
+Phú Vang		16.4391	107.7144	Asia/Bangkok
+Phủ Thông		22.2731	105.8794	Asia/Bangkok
+Phú Phong		13.9096	108.9190	Asia/Ho_Chi_Minh
+Phụng Hiệp		9.7797	105.7338	Asia/Ho_Chi_Minh
+Phù Mỹ		14.1718	109.0489	Asia/Ho_Chi_Minh
+Phù Cát		14.0032	109.0580	Asia/Ho_Chi_Minh
+Phong Thổ		22.5443	103.2978	Asia/Bangkok
+Bến Sung		19.6314	105.5781	Asia/Bangkok
+Phát Diệm		20.0905	106.0832	Asia/Bangkok
+Núi Đèo		20.9157	106.6744	Asia/Bangkok
+Ninh Giang		20.7308	106.3979	Asia/Bangkok
+Như Quỳnh		20.9817	105.9849	Asia/Bangkok
+Nho Quan		20.3228	105.7519	Asia/Bangkok
+Nhơn Trạch		10.7229	106.8834	Asia/Ho_Chi_Minh
+Thị Trấn Nguyên Bình		22.6500	105.9599	Asia/Bangkok
+Ngô Đồng		20.2830	106.4435	Asia/Bangkok
+Ngọc Lặc		20.0919	105.3676	Asia/Bangkok
+Tiền Hải		20.4056	106.5036	Asia/Bangkok
+Nghĩa Hành		15.0457	108.7772	Asia/Ho_Chi_Minh
+Nam Đàn		18.7280	105.4980	Asia/Bangkok
+Mỹ Xuyên		9.5601	105.9898	Asia/Ho_Chi_Minh
+Mỹ Thọ		10.4427	105.6951	Asia/Ho_Chi_Minh
+Mỹ Lộc		20.4411	106.1024	Asia/Bangkok
+Thạnh Mỹ		15.7489	107.8368	Asia/Ho_Chi_Minh
+Mường Lát		20.5292	104.6014	Asia/Bangkok
+Mù Cang Chải		21.8513	104.0895	Asia/Bangkok
+Mộ Đức		14.9551	108.8859	Asia/Ho_Chi_Minh
+Mộc Châu		20.8520	104.6218	Asia/Bangkok
+Mỏ Cày		10.1331	106.3352	Asia/Ho_Chi_Minh
+Minh Lương		9.9025	105.1595	Asia/Ho_Chi_Minh
+Minh Long		14.9322	108.7033	Asia/Ho_Chi_Minh
+Ma Đa Gui		11.3870	107.5351	Asia/Ho_Chi_Minh
+Long Phú		9.6103	106.1188	Asia/Ho_Chi_Minh
+Liễu Đề		20.2209	106.1875	Asia/Bangkok
+Liên Hương		11.2276	108.7237	Asia/Ho_Chi_Minh
+Kiến Giang		17.2233	106.7901	Asia/Bangkok
+Lấp Vò		10.3616	105.5192	Asia/Ho_Chi_Minh
+Lũng Hồ		22.9848	105.2398	Asia/Bangkok
+Lang Chánh		20.1561	105.2422	Asia/Bangkok
+Lái Thiêu		10.9051	106.6995	Asia/Ho_Chi_Minh
+Lai Cách		20.9325	106.2476	Asia/Bangkok
+Lạc Dương		12.0040	108.4190	Asia/Ho_Chi_Minh
+Mường Xén		19.3980	104.1524	Asia/Bangkok
+Kinh Môn		20.9896	106.5551	Asia/Bangkok
+Kim Bài		20.8527	105.7696	Asia/Bangkok
+Kiên Lương		10.2862	104.6462	Asia/Ho_Chi_Minh
+Kẻ Sặt		20.9101	106.1477	Asia/Bangkok
+Kế Sách		9.7674	105.9857	Asia/Ho_Chi_Minh
+Hữu Lũng		21.5056	106.3446	Asia/Bangkok
+Hương Canh		21.2788	105.6470	Asia/Bangkok
+Hòn Đất		10.1846	104.9296	Asia/Ho_Chi_Minh
+Hóc Môn		10.8891	106.5953	Asia/Ho_Chi_Minh
+Hòa Vang		15.9876	108.1389	Asia/Ho_Chi_Minh
+Hòa Mạc		20.6417	105.9890	Asia/Bangkok
+Hoài Ân		14.3635	108.9648	Asia/Ho_Chi_Minh
+Thị Trấn Thanh Nhật		22.6875	106.6700	Asia/Bangkok
+Hà Lam		15.7387	108.3506	Asia/Ho_Chi_Minh
+Hải Lăng		16.6935	107.2512	Asia/Bangkok
+Hạ Hòa		21.5630	105.0051	Asia/Bangkok
+Gò Quao		9.7332	105.2739	Asia/Ho_Chi_Minh
+Giồng Riềng		9.9097	105.3143	Asia/Ho_Chi_Minh
+Duy Xuyên		15.8290	108.2596	Asia/Ho_Chi_Minh
+Đức Phong		11.8135	107.2443	Asia/Ho_Chi_Minh
+Đắk Mil		12.4496	107.6224	Asia/Ho_Chi_Minh
+Đồng Xuân		13.3773	109.1081	Asia/Ho_Chi_Minh
+Đồng Mỏ		21.6570	106.5783	Asia/Bangkok
+Thị Trấn Đông Khê		22.4294	106.4319	Asia/Bangkok
+Anh Son		18.9696	105.0550	Asia/Bangkok
+Đoan Hùng		21.6225	105.1846	Asia/Bangkok
+Đình Lập		21.5463	107.0981	Asia/Bangkok
+Di Linh		11.5815	108.0764	Asia/Ho_Chi_Minh
+Diên Khánh		12.2549	109.0933	Asia/Ho_Chi_Minh
+Diêm Điền		20.5583	106.5688	Asia/Bangkok
+Dầu Tiếng		11.2741	106.3588	Asia/Ho_Chi_Minh
+Đắk Song		12.2552	107.6092	Asia/Ho_Chi_Minh
+Đắk Tô		14.6609	107.8389	Asia/Ho_Chi_Minh
+Củng Sơn		13.0500	108.9789	Asia/Ho_Chi_Minh
+Con Cuông		19.0500	104.8812	Asia/Bangkok
+Chúc Sơn		20.9237	105.7015	Asia/Bangkok
+Chợ Lách		10.2603	106.1189	Asia/Ho_Chi_Minh
+Giồng Trôm		10.1502	106.5061	Asia/Ho_Chi_Minh
+Chợ Gạo		10.3498	106.4634	Asia/Ho_Chi_Minh
+Chợ Chu		21.9072	105.6422	Asia/Bangkok
+Chí Thạnh		13.3085	109.2152	Asia/Ho_Chi_Minh
+Chi Nê		20.4906	105.7780	Asia/Bangkok
+Cầu Kè		9.8724	106.0550	Asia/Ho_Chi_Minh
+Cầu Giát		19.1460	105.6309	Asia/Bangkok
+Cẩm Thủy		20.2087	105.4695	Asia/Bangkok
+Cái Tàu Hạ		10.2597	105.8704	Asia/Ho_Chi_Minh
+Cái Nước		8.9423	105.0141	Asia/Ho_Chi_Minh
+Cái Nhum		10.1741	106.1105	Asia/Ho_Chi_Minh
+Bồng Sơn		14.4291	109.0156	Asia/Ho_Chi_Minh
+Bù Đốp		11.9549	106.8002	Asia/Ho_Chi_Minh
+Bình Sơn		15.2978	108.7612	Asia/Ho_Chi_Minh
+Bình Gia		21.9609	106.3645	Asia/Bangkok
+Bình Đại		10.1896	106.6915	Asia/Ho_Chi_Minh
+Tân Túc		10.6954	106.5913	Asia/Ho_Chi_Minh
+Bến Cầu		11.1105	106.1792	Asia/Ho_Chi_Minh
+Ba Tri		10.0443	106.5902	Asia/Ho_Chi_Minh
+Ba Tơ		14.7636	108.7322	Asia/Ho_Chi_Minh
+Thị Trấn Bảo Lạc		22.9492	105.6805	Asia/Bangkok
+Bẩn Yên Nhân		20.9365	106.0571	Asia/Bangkok
+Bắc Yên		21.2463	104.4328	Asia/Bangkok
+Bắc Sơn		21.9000	106.3208	Asia/Bangkok
+Bắc Hà		22.5391	104.2930	Asia/Bangkok
+Tân Trụ		10.5127	106.5076	Asia/Ho_Chi_Minh
+An Hòa		10.2969	105.7443	Asia/Ho_Chi_Minh
+An Lão		14.6124	108.8899	Asia/Ho_Chi_Minh
+An Dương		20.8638	106.6133	Asia/Bangkok
+An Châu		21.3346	106.8493	Asia/Bangkok
+An Biên		9.8153	105.0637	Asia/Ho_Chi_Minh
+Quận Bảy		10.7118	106.7364	Asia/Ho_Chi_Minh
+Tam Điệp		20.1563	105.9174	Asia/Bangkok
+Châu Thành		9.8699	106.3494	Asia/Ho_Chi_Minh
+Yên Lập		21.3470	105.0574	Asia/Bangkok
+Thanh Ba		21.4988	105.1410	Asia/Bangkok
+Sông Thao		21.4213	105.1337	Asia/Bangkok
+Hưng Hóa		21.2549	105.2953	Asia/Bangkok
+Phong Châu		21.4068	105.3123	Asia/Bangkok
+Tân Việt		22.8641	105.4591	Asia/Bangkok
+Lập Thạch		21.4154	105.4608	Asia/Bangkok
+An Châu		10.4456	105.3862	Asia/Ho_Chi_Minh
+Tầm Vu		10.4411	106.4679	Asia/Ho_Chi_Minh
+Gia Bình		21.0594	106.1747	Asia/Bangkok
+Thứa		21.0194	106.2004	Asia/Bangkok
+Chờ		21.1949	105.9547	Asia/Bangkok
+Hồ		21.0631	106.0857	Asia/Bangkok
+Thị Trấn Gành Hào		9.0318	105.4211	Asia/Ho_Chi_Minh
+Thị Trấn Ngan Dừa		9.5670	105.4502	Asia/Ho_Chi_Minh
+Thị Trấn Phước Long		9.4375	105.4622	Asia/Ho_Chi_Minh
+Thị Trấn Giá Rai		9.2379	105.4552	Asia/Ho_Chi_Minh
+Thị Trấn Hòa Bình		9.2847	105.6292	Asia/Ho_Chi_Minh
+Cái Dầu		10.5698	105.2295	Asia/Ho_Chi_Minh
+Cầu Gồ		21.4768	106.1265	Asia/Bangkok
+Đồi Ngô		21.3063	106.3867	Asia/Bangkok
+Neo		21.2005	106.2474	Asia/Bangkok
+Bích Động		21.2742	106.1007	Asia/Bangkok
+Thắng		21.3550	105.9834	Asia/Bangkok
+Bằng Lũng		22.1578	105.5956	Asia/Bangkok
+Thị Trấn Long Điền		10.4856	107.2123	Asia/Ho_Chi_Minh
+Thị Trấn Tủa Chùa		21.8577	103.3426	Asia/Bangkok
+Điện Biên Đông		21.2967	103.2201	Asia/Bangkok
+Thị Trấn Điện Biên		21.2596	103.0344	Asia/Bangkok
+Tam Đường		22.3181	103.6262	Asia/Bangkok
+Thị Trấn Mường Tè		22.3807	102.8201	Asia/Bangkok
+Thị Trấn Tam Sơn		23.0674	104.9893	Asia/Bangkok
+Thị Trấn Vị Xuyên		22.6676	104.9819	Asia/Bangkok
+Thị Trấn Việt Lâm		22.6249	104.9599	Asia/Bangkok
+Yên Phú		22.7322	105.3714	Asia/Bangkok
+Thị Trấn Vinh Quang		22.7408	104.6796	Asia/Bangkok
+Yên Bình		22.4099	104.5795	Asia/Bangkok
+Thị Trấn Thông Nông		22.7841	105.9832	Asia/Bangkok
+Thị Trấn Hùng Quốc		22.8290	106.3234	Asia/Bangkok
+Thị Trấn Vĩnh Lộc		22.1436	105.2719	Asia/Bangkok
+Sơn Thịnh		21.5625	104.5948	Asia/Bangkok
+Cổ Phúc		21.7558	104.8277	Asia/Bangkok
+Thị Trấn Yên Thế		22.1107	104.7675	Asia/Bangkok
+An Phú		10.8159	105.0904	Asia/Ho_Chi_Minh
+Phú Mỹ		10.5924	105.3557	Asia/Ho_Chi_Minh
+Thị Trấn Phú Mỹ		10.6036	107.0540	Asia/Ho_Chi_Minh
+Bát Xát		22.5431	103.8899	Asia/Bangkok
+Hát Lót		21.1973	104.1060	Asia/Bangkok
+Quảng Xương		19.7295	105.7827	Asia/Bangkok
+Nông Cống		19.6240	105.6494	Asia/Bangkok
+Quan Sơn		20.2591	104.9452	Asia/Bangkok
+Yên Cát		19.6633	105.4285	Asia/Bangkok
+Bút Sơn		19.8580	105.8548	Asia/Bangkok
+Cành Nàng		20.3480	105.2288	Asia/Bangkok
+Hậu Lộc		19.9144	105.8862	Asia/Bangkok
+Triệu Sơn		19.8191	105.6039	Asia/Bangkok
+Quán Lào		19.9715	105.6511	Asia/Bangkok
+Hà Trung		20.0129	105.8532	Asia/Bangkok
+Rừng Thông		19.8191	105.7328	Asia/Bangkok
+Vạn Hà		19.8866	105.6788	Asia/Bangkok
+Đà Bắc		20.8771	105.2542	Asia/Bangkok
+Mường Khến		20.6144	105.2795	Asia/Bangkok
+Lương Sơn		20.8715	105.5257	Asia/Bangkok
+Kỳ Sơn		20.8867	105.3524	Asia/Bangkok
+Cao Phong		20.7045	105.3206	Asia/Bangkok
+Me		20.3470	105.8362	Asia/Bangkok
+Thiên Tồn		20.2991	105.9520	Asia/Bangkok
+Yên Thịnh		20.1624	106.0070	Asia/Bangkok
+Xuân Trường		20.2923	106.3328	Asia/Bangkok
+Yên Định		20.2015	106.2958	Asia/Bangkok
+Hanoi		20.3277	106.0121	Asia/Ho_Chi_Minh
+Nam Giang		20.3332	106.1775	Asia/Bangkok
+Cổ Lễ		20.3234	106.2658	Asia/Bangkok
+Quế		20.5806	105.8727	Asia/Bangkok
+Vĩnh Trụ		20.5602	106.0281	Asia/Bangkok
+Bình Mỹ		20.4912	106.0096	Asia/Bangkok
+Thanh Lưu		20.4740	105.9527	Asia/Bangkok
+Hưng Hà		20.5904	106.2245	Asia/Bangkok
+Vũ Thư		20.4367	106.2912	Asia/Bangkok
+Đông Hưng		20.5565	106.3553	Asia/Bangkok
+Thị Trấn Tuần Giáo		21.5899	103.4218	Asia/Bangkok
+Mường Ảng		21.5199	103.2229	Asia/Bangkok
+An Lão		20.8229	106.5558	Asia/Bangkok
+Tiên Lãng		20.7246	106.5539	Asia/Bangkok
+Núi Đối		20.7508	106.6689	Asia/Bangkok
+Quảng Hà		21.4506	107.7559	Asia/Bangkok
+Trới		21.0314	106.9910	Asia/Bangkok
+Thanh Miện		20.7871	106.2462	Asia/Bangkok
+Nam Sách		20.9920	106.3361	Asia/Bangkok
+Gia Lộc		20.8678	106.3000	Asia/Bangkok
+Tứ Kỳ		20.8191	106.4066	Asia/Bangkok
+Thanh Hà		20.8982	106.4261	Asia/Bangkok
+Phú Thái		20.9628	106.5095	Asia/Bangkok
+Đu		21.7385	105.7039	Asia/Bangkok
+Hương Sơn		21.4601	105.9781	Asia/Bangkok
+Chùa Hang		21.6238	105.8417	Asia/Bangkok
+Thanh Thủy		21.1755	105.2839	Asia/Bangkok
+Lâm Thao		21.3201	105.2916	Asia/Bangkok
+Mê Linh		21.1580	105.7390	Asia/Bangkok
+Hợp Hòa		21.3753	105.5426	Asia/Bangkok
+Văn Giang		20.9430	105.9312	Asia/Bangkok
+Yên Mỹ		20.8856	106.0356	Asia/Bangkok
+Khoái Châu		20.8391	105.9775	Asia/Bangkok
+Ân Thi		20.8183	106.0912	Asia/Bangkok
+Trần Cao		20.7295	106.1797	Asia/Bangkok
+Vương		20.7011	106.1175	Asia/Bangkok
+Phúc Thọ		21.1034	105.5455	Asia/Bangkok
+Phùng		21.0890	105.6590	Asia/Bangkok
+Trôi		21.0695	105.7065	Asia/Bangkok
+Quốc Oai		20.9902	105.6409	Asia/Bangkok
+Thường Tín		20.8687	105.8612	Asia/Bangkok
+Phú Xuyên		20.7455	105.9136	Asia/Bangkok
+Đại Nghĩa		20.6867	105.7447	Asia/Bangkok
+Đông Anh		21.1396	105.8493	Asia/Bangkok
+Hưng Nguyên		18.6716	105.6288	Asia/Bangkok
+Đồng Lê		17.8839	106.0254	Asia/Bangkok
+Khe Tre		16.1691	107.7179	Asia/Bangkok
+Sịa		16.5745	107.5107	Asia/Bangkok
+Liên Chiểu		16.0727	108.1582	Asia/Ho_Chi_Minh
+Ngũ Hành Sơn		16.0162	108.2533	Asia/Ho_Chi_Minh
+Khâm Đức		15.4451	107.7934	Asia/Ho_Chi_Minh
+Phú Ninh		15.5547	108.4114	Asia/Ho_Chi_Minh
+Tây Trà		15.1695	108.3600	Asia/Ho_Chi_Minh
+Đắk Glei		15.0864	107.7358	Asia/Ho_Chi_Minh
+Sa Thầy		14.4138	107.7934	Asia/Ho_Chi_Minh
+Đắk Hà		14.5135	107.9210	Asia/Ho_Chi_Minh
+Đắk Rve		14.5072	108.2473	Asia/Ho_Chi_Minh
+Đăk Đoa		13.9950	108.1121	Asia/Ho_Chi_Minh
+K Bang		14.1445	108.5991	Asia/Ho_Chi_Minh
+Kông Chro		13.7753	108.5256	Asia/Ho_Chi_Minh
+Ia Pa		13.5336	108.4553	Asia/Ho_Chi_Minh
+Chư Sê		13.6915	108.0802	Asia/Ho_Chi_Minh
+Chư Prông		13.7568	107.8862	Asia/Ho_Chi_Minh
+Chư Ty		13.8051	107.6961	Asia/Ho_Chi_Minh
+Ia Kha		13.9624	107.8448	Asia/Ho_Chi_Minh
+Phú Hòa		14.1000	107.9690	Asia/Ho_Chi_Minh
+Kon Dơng		14.0389	108.2501	Asia/Ho_Chi_Minh
+Hai Riêng		12.9791	108.8973	Asia/Ho_Chi_Minh
+Krông Năng		12.9517	108.3443	Asia/Ho_Chi_Minh
+Krông Kmar		12.5045	108.3329	Asia/Ho_Chi_Minh
+M’Đrăk		12.7462	108.7428	Asia/Ho_Chi_Minh
+Khánh Vĩnh		12.2835	108.9047	Asia/Ho_Chi_Minh
+Tô Hạp		12.0058	108.9487	Asia/Ho_Chi_Minh
+Cam Lâm		12.0540	109.1600	Asia/Ho_Chi_Minh
+Đắk Mâm		12.4579	107.8625	Asia/Ho_Chi_Minh
+Thạnh Mỹ		11.7616	108.4947	Asia/Ho_Chi_Minh
+Lộc Thắng		11.6284	107.8351	Asia/Ho_Chi_Minh
+Đồng Nai		11.5798	107.3652	Asia/Ho_Chi_Minh
+Đạ Tẻh		11.5115	107.4909	Asia/Ho_Chi_Minh
+Bác Ái		11.8410	108.9032	Asia/Ho_Chi_Minh
+Tân Sơn		11.7752	108.7848	Asia/Ho_Chi_Minh
+Phước Dân		11.5270	108.9300	Asia/Ho_Chi_Minh
+Chợ Lầu		11.2216	108.5071	Asia/Ho_Chi_Minh
+Ma Lâm		11.0730	108.1300	Asia/Ho_Chi_Minh
+Thuận Nam		10.8500	107.8786	Asia/Ho_Chi_Minh
+Tân Phú		11.2722	107.4365	Asia/Ho_Chi_Minh
+Vĩnh An		11.0890	107.0352	Asia/Ho_Chi_Minh
+Thống Nhất		10.9505	107.1457	Asia/Ho_Chi_Minh
+Tân Phú		11.4512	106.8681	Asia/Ho_Chi_Minh
+Tân Châu		11.5520	106.1724	Asia/Ho_Chi_Minh
+Tân Biên		11.5444	106.0116	Asia/Ho_Chi_Minh
+Châu Thành		11.3117	106.0295	Asia/Ho_Chi_Minh
+Gò Dầu		11.0885	106.2635	Asia/Ho_Chi_Minh
+Tân Hưng		10.8348	105.6613	Asia/Ho_Chi_Minh
+Vĩnh Hưng		10.8907	105.7849	Asia/Ho_Chi_Minh
+Tân Thạnh		10.6067	106.0471	Asia/Ho_Chi_Minh
+Thạnh Hóa		10.6574	106.1808	Asia/Ho_Chi_Minh
+Đông Thành		10.8922	106.3061	Asia/Ho_Chi_Minh
+Hậu Nghĩa		10.8943	106.3970	Asia/Ho_Chi_Minh
+Mỹ Phước		10.4771	106.1926	Asia/Ho_Chi_Minh
+Tân Hòa		10.3191	106.7113	Asia/Ho_Chi_Minh
+Thứ Mười Một		9.6114	104.9465	Asia/Ho_Chi_Minh
+Long Hồ		10.1928	106.0123	Asia/Ho_Chi_Minh
+Châu Thành		10.3012	106.3570	Asia/Ho_Chi_Minh
+Nàng Mau		9.7513	105.5345	Asia/Ho_Chi_Minh
+Ngã Sáu		9.9230	105.8054	Asia/Ho_Chi_Minh
+Một Ngàn		9.9240	105.6296	Asia/Ho_Chi_Minh
+Cù Lao Dung		9.5930	106.2060	Asia/Ho_Chi_Minh
+Châu Thành		9.7007	105.9020	Asia/Ho_Chi_Minh
+Huỳnh Hữu Nghĩa		9.6354	105.8117	Asia/Ho_Chi_Minh
+Ngọc Hiển		8.6572	105.0602	Asia/Ho_Chi_Minh
+Quận Hai		10.7916	106.7495	Asia/Ho_Chi_Minh
+Quận Chín		10.8397	106.7709	Asia/Ho_Chi_Minh
+Quận Một		10.7807	106.6994	Asia/Ho_Chi_Minh
+Quận Phú Nhuận		10.7948	106.6763	Asia/Ho_Chi_Minh
+Quận Tân Phú		10.7838	106.6370	Asia/Ho_Chi_Minh
+Quận Bình Thạnh		10.8033	106.6967	Asia/Ho_Chi_Minh
+Quận Lấp Vò		10.3555	105.5812	Asia/Ho_Chi_Minh
+Hoàng Sa		16.8352	112.3387	Asia/Shanghai
+Huyện Bảo Lâm		11.6996	107.7625	Asia/Ho_Chi_Minh
+Xã Phúc Thọ		11.8070	108.1287	Asia/Ho_Chi_Minh
+Xã Tân Hà		11.7348	108.2023	Asia/Ho_Chi_Minh
+Xã Tân Văn		11.7754	108.2246	Asia/Ho_Chi_Minh
+Xã Hoài Đức		11.7447	108.1469	Asia/Ho_Chi_Minh
+Xã Tân Thanh		11.7522	108.0697	Asia/Ho_Chi_Minh
+Xã Đạ K'Nàng		11.8936	108.1348	Asia/Ho_Chi_Minh

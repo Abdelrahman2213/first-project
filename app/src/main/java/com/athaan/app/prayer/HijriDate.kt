@@ -4,6 +4,7 @@ import android.icu.util.IslamicCalendar
 import android.icu.util.ULocale
 import java.util.Calendar
 import java.util.Date
+import java.util.TimeZone
 
 object HijriDate {
     private val monthsAr = listOf(
@@ -20,11 +21,11 @@ object HijriDate {
     private val gMonthsEn = listOf("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
     /** "الإثنين · 6 جمادى الآخرة 1448 هـ" */
-    fun hijriLine(millis: Long, ar: Boolean): String {
-        val g = Calendar.getInstance().apply { timeInMillis = millis }
+    fun hijriLine(millis: Long, ar: Boolean, tz: TimeZone = TimeZone.getDefault()): String {
+        val g = Calendar.getInstance(tz).apply { timeInMillis = millis }
         val dayName = (if (ar) daysAr else daysEn)[g.get(Calendar.DAY_OF_WEEK) - 1]
         return try {
-            val ic = IslamicCalendar(ULocale("ar"))
+            val ic = IslamicCalendar(android.icu.util.TimeZone.getTimeZone(tz.id), ULocale("ar"))
             ic.calculationType = IslamicCalendar.CalculationType.ISLAMIC_UMALQURA
             ic.time = Date(millis)
             val d = ic.get(IslamicCalendar.DAY_OF_MONTH)
@@ -37,8 +38,8 @@ object HijriDate {
     }
 
     /** "16 نوفمبر" */
-    fun gregorianShort(millis: Long, ar: Boolean): String {
-        val g = Calendar.getInstance().apply { timeInMillis = millis }
+    fun gregorianShort(millis: Long, ar: Boolean, tz: TimeZone = TimeZone.getDefault()): String {
+        val g = Calendar.getInstance(tz).apply { timeInMillis = millis }
         val m = (if (ar) gMonthsAr else gMonthsEn)[g.get(Calendar.MONTH)]
         return "${g.get(Calendar.DAY_OF_MONTH)} $m"
     }
