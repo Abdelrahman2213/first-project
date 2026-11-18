@@ -1,0 +1,530 @@
+--------- beginning of kernel
+11-18 16:32:18.918     0     0 W logd    : Skipping entries from slow reader, pid 457, fd 14, from LogBuffer::Prune()
+11-18 16:32:18.920     0     0 W logd    : Skipping entries from slow reader, pid 457, fd 14, from LogBuffer::Prune()
+--------- beginning of system
+11-19 02:52:40.045   520   599 D CompatibilityChangeReporter: Compat change id reported: 265195908; UID 10120; state: ENABLED
+--------- beginning of main
+11-19 02:52:40.053  1081  1758 D EGL_emulation: app_time_stats: avg=274.74ms min=24.17ms max=1469.51ms count=9
+11-19 02:52:40.055  9055  9064 I adbd    : jdwp connection from 1729
+11-19 02:52:40.057   520   549 D ActivityManager: sync unfroze 1729 com.google.android.apps.youtube.music for 3
+11-19 02:52:40.061   831   886 D EGL_emulation: app_time_stats: avg=1611.86ms min=10.77ms max=9507.53ms count=6
+11-19 02:52:40.085   520   549 D ActivityManager: sync unfroze 2009 com.google.android.contacts for 3
+11-19 02:52:40.094  9055  9064 I adbd    : jdwp connection from 2009
+11-19 02:52:40.100  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:52:40.100  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:52:40.100  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:52:40.100  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:52:40.103  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:52:40.103  4435  4616 I Bugle   : BroadcastReceiverAsyncWorkTracker: Acknowledging broadcast of bdxy@b1f4b38
+11-19 02:52:40.109   520   766 D CompatibilityChangeReporter: Compat change id reported: 143231523; UID 1000; state: DISABLED
+11-19 02:52:40.110   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.110   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.111   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.112   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.113   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.113   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.113   398   398 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:52:40.113   520   549 D ActivityManager: sync unfroze 2705 com.google.android.dialer for 3
+11-19 02:52:40.124  2705  2875 W TimedProcessReaper: Memory state is: 300
+11-19 02:52:40.126   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:52:40.128   520   548 I UsageStatsDatabase: Time changed by +10h20m21s314ms. files deleted: 0 files moved: 4
+11-19 02:52:40.135   520   548 I UsageStatsService: User[0] Rollover scheduled @ 2026-11-20 02:43:41(1795142621990)
+11-19 02:52:40.145  8943  8950 I .apps.wellbeing: Background concurrent copying GC freed 146388(5705KB) AllocSpace objects, 3(124KB) LOS objects, 49% free, 4005KB/8011KB, paused 26us,47us total 102.075ms
+11-19 02:52:40.158  8943  8966 W UsageSyncManager: <DWB> Last (TimeDelta{wallTime=2026-11-18T16:23:44.640Z, elapsedSinceBoot=PT54.508S}, boot count 1) and current (TimeDelta{wallTime=2026-11-19T02:52:40.143Z, elapsedSinceBoot=PT9M28.697S}, boot count 1) deltas are different. Increase event shift by PT10H20M21.314S.
+11-19 02:52:40.159  8943  8966 W UsageSyncManager: <DWB> Deferring shifting events by PT10H20M21.314S
+11-19 02:52:40.162   520   549 D ActivityManager: sync unfroze 4027 com.google.android.gm for 3
+11-19 02:52:40.163   520   549 D ActivityManager: sync unfroze 3383 com.google.android.gms.unstable for 10
+11-19 02:52:40.163   520   549 D ActivityManager: sync unfroze 6293 com.google.android.gms.ui for 10
+11-19 02:52:40.164   520  2199 I ActivityManager: Background started FGS: Allowed [callingPackage: com.google.android.apps.wellbeing; callingUid: 10120; uidState: RCVR; uidBFSL: n/a; intent: Intent { cmp=com.google.android.apps.wellbeing/com.google.apps.tiktok.concurrent.InternalForegroundService (has extras) }; code:BACKGROUND_ACTIVITY_PERMISSION; tempAllowListReason:<9cbcfa android.intent.action.TIME_SET/u-1,reasonCode:TIME_CHANGED,duration:20000,callingUid:1000>; targetSdkVersion:33; callerTargetSdkVersion:33; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+11-19 02:52:40.175  9055  9064 I adbd    : jdwp connection from 4027
+11-19 02:52:40.185   520   549 D ActivityManager: sync unfroze 5628 com.google.android.googlequicksearchbox for 10
+11-19 02:52:40.196   520   549 D ActivityManager: sync unfroze 3989 com.google.android.rkpdapp for 3
+11-19 02:52:40.212   520   549 D ActivityManager: sync unfroze 2866 com.google.android.tts for 3
+11-19 02:52:40.216   520  1020 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:52:40.218   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:52:40.221   520  2174 D CompatibilityChangeReporter: Compat change id reported: 170668199; UID 10120; state: ENABLED
+11-19 02:52:40.221   520  2174 D CompatibilityChangeReporter: Compat change id reported: 255038118; UID 10120; state: DISABLED
+11-19 02:52:40.221   520  2174 D CompatibilityChangeReporter: Compat change id reported: 255042465; UID 10120; state: DISABLED
+11-19 02:52:40.225   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:52:40.226   520  1020 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 10ms
+11-19 02:52:40.227   520  1020 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:52:40.228   832   832 D PermissionStorageTimeChangeReceiver: Time changed by 37221 seconds
+11-19 02:52:40.230   520  1020 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 2ms
+11-19 02:52:40.230   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:52:40.230   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:52:40.230   831   831 D Tonal   : Gradients: 
+11-19 02:52:40.230   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:52:40.230   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:52:40.230   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:52:40.231   832   832 D PermissionStorageTimeChangeReceiver: systemTimeSnapshot set to 1795056760228
+11-19 02:52:40.231   832   832 D PermissionStorageTimeChangeReceiver: realtimeSnapshot set to 568782
+11-19 02:52:40.236   520   549 D ActivityManager: sync unfroze 1826 com.google.android.youtube for 3
+11-19 02:52:40.236   520   549 D ActivityManager: sync unfroze 2680 com.android.chrome for 10
+11-19 02:52:40.245   520   520 D ConditionProviders.SCP: onReceive android.app.action.NEXT_ALARM_CLOCK_CHANGED
+11-19 02:52:40.245   520   520 D ConditionProviders.SCP: evaluateSubscriptionLocked cal=ScheduleCalendar[mDays={1, 2, 3, 4, 5, 6, 7}, mSchedule=ScheduleInfo{days=[1, 2, 3, 4, 5, 6, 7], startHour=22, startMinute=0, endHour=7, endMinute=0, exitAtAlarm=true, nextAlarm=Thu Nov 19 02:53:00 UTC 2026 (1795056780000)}], now=Thu Nov 19 02:52:40 UTC 2026 (1795056760245), nextUserAlarmTime=Thu Jan 01 00:00:00 UTC 1970 (0)
+11-19 02:52:40.245   520   520 D ConditionProviders.SCP: notifyCondition condition://android/schedule?days=1.2.3.4.5.6.7&start=22.0&end=7.0&exitAtAlarm=true STATE_TRUE reason=meetsSchedule
+11-19 02:52:40.245   520   520 D ConditionProviders.SCP: Scheduling evaluate for Thu Nov 19 07:00:00 UTC 2026 (1795071600000), in +4h7m19s755ms, now=Thu Nov 19 02:52:40 UTC 2026 (1795056760245)
+11-19 02:52:40.253  2462  2462 I AthaanSchedule: next adhan FAJR at 1795056780000 exact=true
+11-19 02:52:40.254  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:52:40.255  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:52:40.255  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:52:40.255  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:52:40.255  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:52:40.258  8943  8961 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10120; state: ENABLED
+11-19 02:52:40.258  8943  8961 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10120; state: DISABLED
+11-19 02:52:40.258   520  2199 D CompatibilityChangeReporter: Compat change id reported: 253665015; UID 10120; state: DISABLED
+11-19 02:52:40.258   520  2199 D CompatibilityChangeReporter: Compat change id reported: 194532703; UID 10120; state: ENABLED
+11-19 02:52:40.259   520   520 D ConditionProviders.SCP: onReceive android.app.action.NEXT_ALARM_CLOCK_CHANGED
+11-19 02:52:40.259   520   520 D ConditionProviders.SCP: evaluateSubscriptionLocked cal=ScheduleCalendar[mDays={1, 2, 3, 4, 5, 6, 7}, mSchedule=ScheduleInfo{days=[1, 2, 3, 4, 5, 6, 7], startHour=22, startMinute=0, endHour=7, endMinute=0, exitAtAlarm=true, nextAlarm=Thu Jan 01 00:00:00 UTC 1970 (0)}], now=Thu Nov 19 02:52:40 UTC 2026 (1795056760259), nextUserAlarmTime=Thu Nov 19 02:53:00 UTC 2026 (1795056780000)
+11-19 02:52:40.260   520   520 D ConditionProviders.SCP: notifyCondition condition://android/schedule?days=1.2.3.4.5.6.7&start=22.0&end=7.0&exitAtAlarm=true STATE_TRUE reason=meetsSchedule
+11-19 02:52:40.260   520   520 D ConditionProviders.SCP: Scheduling evaluate for Thu Nov 19 07:00:00 UTC 2026 (1795071600000), in +4h7m19s741ms, now=Thu Nov 19 02:52:40 UTC 2026 (1795056760259)
+11-19 02:52:40.261  6093  6093 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.clearcut.bootcount.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+11-19 02:52:40.265   520  1020 D CompatibilityChangeReporter: Compat change id reported: 271850009; UID 10120; state: DISABLED
+11-19 02:52:40.266   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:52:40.275   520  2199 D CompatibilityChangeReporter: Compat change id reported: 172251878; UID 10120; state: ENABLED
+11-19 02:52:40.278  8943  8961 D CompatibilityChangeReporter: Compat change id reported: 263076149; UID 10120; state: DISABLED
+11-19 02:52:40.285  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:52:40.285  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:52:40.285  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:52:40.285  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:52:40.285  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:52:40.294  6176  9110 I AlarmManager: setExactAndAllowWhileIdle [name: RemindersNSREFRESH_TIME_REMINDERS_ALARM type: 0 triggerAtMillis: 1795132800000]
+11-19 02:52:40.298   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:52:40.298   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.focusmode.quicksettings.FocusModeTileService}(0)
+11-19 02:52:40.298   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:52:40.301   520  2199 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:52:40.301   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:52:40.303   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:52:40.303   520   542 D ColorDisplayService: GlobalSaturationTintController Animation cancelled: true to matrix: 
+11-19 02:52:40.303   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 min matrix coefficients: 
+11-19 02:52:40.303   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 max matrix coefficients: 
+11-19 02:52:40.303   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+11-19 02:52:40.309  6176  9119 I SystemUpdate: [Installation,ReceiverIntentOperation] Received intent: Intent { act=android.intent.action.TIME_SET flg=0x25200010 pkg=com.google.android.gms cmp=com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver }.
+11-19 02:52:40.312   520  2199 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 10ms
+11-19 02:52:40.313   520  2199 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:52:40.315   520  2199 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 2ms
+11-19 02:52:40.322   831   886 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-19 02:52:40.323  8943  8967 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=4875e8a6-a572-47ea-a921-d89cf0046e97, tags={ com.google.apps.tiktok.contrib.work.TikTokListenableWorker, TikTokWorker#com.google.apps.tiktok.sync.impl.workmanager.SyncWorker } ]
+11-19 02:52:40.328   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:52:40.328   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:52:40.328   831   831 D Tonal   : Gradients: 
+11-19 02:52:40.328   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:52:40.328   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:52:40.328   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:52:40.337  6176  9110 I SystemUpdate: [Execution,InstallationEventIntentOperation] Handling event of type 6.
+11-19 02:52:40.347  6176  9110 I SystemUpdate: [Execution,InstallationIntentOperation] Received intent: Intent { act=com.google.android.gms.update.INSTALL_UPDATE cat=[targeted_intent_op_prefix:.update.execution.InstallationIntentOperation] cmp=com.google.android.gms/.chimera.GmsIntentOperationService }.
+11-19 02:52:40.359  6176  9110 I SystemUpdate: [Execution,ExecutionManager] Action finished-execution executed for 0.00 seconds.
+11-19 02:52:40.383   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:52:40.394   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:52:40.395   520   820 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:52:40.398   520   542 D ColorDisplayService: GlobalSaturationTintController Animation cancelled: true to matrix: 
+11-19 02:52:40.398   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 min matrix coefficients: 
+11-19 02:52:40.398   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 max matrix coefficients: 
+11-19 02:52:40.398   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+11-19 02:52:40.398   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:52:40.410   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:52:40.411   520   820 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 15ms
+11-19 02:52:40.411   520   820 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:52:40.414   520   820 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 2ms
+11-19 02:52:40.418   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:52:40.418   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:52:40.418   831   831 D Tonal   : Gradients: 
+11-19 02:52:40.418   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:52:40.418   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:52:40.418   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:52:41.461   832   845 W ssioncontroller: Cleared Reference was only reachable from finalizer (only reported once)
+11-19 02:52:42.169  6093  6101 W System  : A resource failed to call close. 
+11-18 16:32:21.938     0     0 I logd    : logdr: UID=0 GID=0 PID=9126 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:52:43.398   520   542 D ColorDisplayService: GlobalSaturationTintController Animation cancelled: false to matrix: 
+11-19 02:52:43.398   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 min matrix coefficients: 
+11-19 02:52:43.398   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 max matrix coefficients: 
+11-19 02:52:43.398   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+11-19 02:52:43.605   520  2174 W BatteryExternalStatsWorker: error reading Bluetooth stats: 11
+11-19 02:52:43.606   520  2174 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=572160 mSleepTimeMs=0 mIdleTimeMs=572156 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[0, 0, 0, 0, 0],mRxTimeMs=0}]}
+11-19 02:52:43.608   520   556 W KernelCpuProcStringReader: File not found. It's normal if not implemented: /proc/uid_concurrent_policy_time
+11-19 02:52:43.628   336   376 I netd    : tetherGetStats() -> {[]} <0.34ms>
+11-19 02:52:43.671   520  1705 D OomAdjuster: Not killing cached processes
+11-19 02:52:43.671   520  1705 W ProcessStats: Tracking association SourceState{eba51c7 com.google.android.apps.nexuslauncher/10169 BTop #14123} whose proc state 2 is better than process ProcessState{63083e4 com.google.android.googlequicksearchbox:search/10132 pkg=com.google.android.googlequicksearchbox} proc state 4 (193 skipped)
+11-19 02:52:45.034  6620  6620 D PeriodicJobReceiver: refresh periodic job from action=com.android.settings.battery.action.PERIODIC_JOB_UPDATE
+11-19 02:52:45.034  6620  6620 D CompatibilityChangeReporter: Compat change id reported: 160794467; UID 1000; state: ENABLED
+11-19 02:52:45.034  6620  9129 D BatteryUsageDataLoader: loadUsageDataSafely() in the AsyncTask
+11-19 02:52:45.038  6620  6620 D CompatibilityChangeReporter: Compat change id reported: 170233598; UID 1000; state: ENABLED
+11-19 02:52:45.039  6620  6620 D PeriodicJobManager: schedule next alarm job at Nov 19, 2026, 03:00:00
+11-19 02:52:45.042  6620  9129 W PowerProfile: ambient.on is deprecated! Use ambient.on.display0 instead.
+11-19 02:52:45.042  6620  9129 W PowerProfile: screen.on is deprecated! Use screen.on.display0 instead.
+11-19 02:52:45.042  6620  9129 W PowerProfile: screen.full is deprecated! Use screen.full.display0 instead.
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x0, drain:SLEEP,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x10000000, drain:IDLE,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x20000000, drain:RX,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x30000000, drain:TX,level:0,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x31000000, drain:TX,level:1,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x32000000, drain:TX,level:2,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x33000000, drain:TX,level:3,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W ModemPowerProfile: getAverageBatteryDrainMaH called with unexpected key: 0x34000000, drain:TX,level:4,RAT:DEFAULT
+11-19 02:52:45.042  6620  9129 W DataProcessor: shouldShowBatteryAttributionList(): 0.1
+11-19 02:52:45.042  6620  9129 W BatteryUsageDataLoader: getBatteryEntryList() returns null or empty content
+11-19 02:52:45.042  6620  9129 D BatteryUsageDataLoader: getBatteryUsageStats() in 8/ms
+11-19 02:52:45.042   520  2199 D CompatibilityChangeReporter: Compat change id reported: 161145287; UID 1000; state: ENABLED
+11-19 02:52:45.049  6620  9129 D DatabaseUtils: insert() data into database with isFullChargeStart:false
+11-19 02:52:45.049  6620  9129 D DatabaseUtils: sendBatteryEntryData() size=1 in 7/ms
+11-19 02:52:45.050  6620  9132 D AppUsageDataLoader: loadAppUsageDataSafely() in the AsyncTask
+11-19 02:52:45.050  6620  9132 D BatteryUsageContentProvider: getQueryUserId from uri: content://com.android.settings.battery.usage.provider/appUsageLatestTimestamp?userid=0
+11-19 02:52:45.050  6620  9132 D BatteryUsageContentProvider: query app usage latest timestamp 1795056765050 for user 0 in 0/ms
+11-19 02:52:45.050  6620  9132 D DatabaseUtils: getAppUsageStartTimestampOfUser() userId=0 latestTimestamp=Dec 07, 1969, 03:28:36 in 0/ms
+11-19 02:52:45.051  6620  9132 D DataProcessor: getAppUsageEventsForUser(): 0 from 1794528000000 to 1795056765050 in 1/ms
+11-19 02:52:45.051  6620  9132 D DataProcessor: getAppUsageEvents() for all unlocked users in 1/ms
+11-19 02:52:45.053  6620  9132 W DataProcessor: Read 16 relevant events (287 total) from UsageStatsManager
+11-19 02:52:45.053  6620  9132 D AppUsageDataLoader: loadAppUsageData() size=16 in 3/ms
+11-19 02:52:45.056  6620  9132 D DatabaseUtils: insert() app usage events data into database
+11-19 02:52:45.056  6620  9132 D DatabaseUtils: sendAppUsageEventData() size=16 in 3/ms
+11-19 02:52:45.786   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-18 16:32:24.951     0     0 I logd    : logdr: UID=0 GID=0 PID=9136 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:52:48.788   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-18 16:32:27.963     0     0 I logd    : logdr: UID=0 GID=0 PID=9139 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:52:49.701   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-18 16:32:30.976     0     0 I logd    : logdr: UID=0 GID=0 PID=9142 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:52:52.214   520  1705 D OomAdjuster: Not killing cached processes
+11-19 02:52:54.796   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-18 16:32:33.989     0     0 I logd    : logdr: UID=0 GID=0 PID=9145 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:52:55.152   520   535 W ProcessStats: Tracking association SourceState{eba51c7 com.google.android.apps.nexuslauncher/10169 BTop #14151} whose proc state 2 is better than process ProcessState{63083e4 com.google.android.googlequicksearchbox:search/10132 pkg=com.google.android.googlequicksearchbox} proc state 4 (18 skipped)
+11-19 02:52:55.268  6093  6093 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.clearcut.bootcount.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+11-19 02:52:57.800   831   831 D StatusBarIconController: ignoring old pipeline callback because the new wifi icon is enabled
+11-18 16:32:37.001     0     0 I logd    : logdr: UID=0 GID=0 PID=9148 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:52:59.701   831   831 D StatusBarIconController: ignoring old pipeline callbacks, because the new mobile icons are enabled
+11-19 02:53:00.001  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:00.001  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:00.001  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:00.001  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:00.001  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:00.002   520   549 D OomAdjuster: Not killing cached processes
+11-19 02:53:00.002   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:00.003   520   520 D ConditionProviders.SCP: onReceive android.app.action.NEXT_ALARM_CLOCK_CHANGED
+11-19 02:53:00.003   520   520 D ConditionProviders.SCP: evaluateSubscriptionLocked cal=ScheduleCalendar[mDays={1, 2, 3, 4, 5, 6, 7}, mSchedule=ScheduleInfo{days=[1, 2, 3, 4, 5, 6, 7], startHour=22, startMinute=0, endHour=7, endMinute=0, exitAtAlarm=true, nextAlarm=Thu Nov 19 02:53:00 UTC 2026 (1795056780000)}], now=Thu Nov 19 02:53:00 UTC 2026 (1795056780003), nextUserAlarmTime=Thu Jan 01 00:00:00 UTC 1970 (0)
+11-19 02:53:00.003   520   520 D ConditionProviders.SCP: notifyCondition condition://android/schedule?days=1.2.3.4.5.6.7&start=22.0&end=7.0&exitAtAlarm=true STATE_FALSE reason=alarmCanceled
+11-19 02:53:00.003   520   520 D ConditionProviders.SCP: Scheduling evaluate for Thu Nov 19 07:00:00 UTC 2026 (1795071600000), in +4h6m59s997ms, now=Thu Nov 19 02:53:00 UTC 2026 (1795056780003)
+11-19 02:53:00.004  1640  7551 I AiAiEcho: Settings changed for uri: content://settings/secure/snoozed_schedule_condition_provider
+11-19 02:53:00.004  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:00.004  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:00.004  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface home with targets# 0 (types=[])
+11-19 02:53:00.005   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.005   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.005   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.006   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.007  2462  2462 I AthaanAlarm: alarm com.athaan.app.ACTION_ADHAN prayer=FAJR
+11-19 02:53:00.008   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.009   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.009   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.009   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.009   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.009   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.010   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.010   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.010   520   535 E VibratorManagerService: Ignoring incoming vibration as process with uid= 10192 is background, attrs= VibrationAttributes: Usage=UNKNOWN Audio Usage= USAGE_UNKNOWN Flags=0
+11-19 02:53:00.010   520  2214 I ActivityManager: Background started FGS: Allowed [callingPackage: com.athaan.app; callingUid: 10192; uidState: RCVR; uidBFSL: n/a; intent: Intent { act=com.athaan.app.PLAY cmp=com.athaan.app/.service.AdhanService (has extras) }; code:ALARM_MANAGER_ALARM_CLOCK; tempAllowListReason:<d50bbdb com.athaan.app.ACTION_ADHAN/u0,reasonCode:ALARM_MANAGER_ALARM_CLOCK,duration:10000,callingUid:10192>; targetSdkVersion:34; callerTargetSdkVersion:34; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+11-19 02:53:00.011   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.011   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.011   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.012   398   416 D AF::TrackHandle: OpPlayAudio: track:55 usage:13 not muted
+11-19 02:53:00.019   831   886 D EGL_emulation: app_time_stats: avg=19957.95ms min=19957.95ms max=19957.95ms count=1
+11-19 02:53:00.020  4435  4574 W Bugle   : TextClassifierLibManagerImpl: Reclaiming memory at level: 40
+11-19 02:53:00.022  2462  2462 I AthaanSchedule: next adhan DHUHR at 1795081260000 exact=true
+11-19 02:53:00.025   520   591 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:00.025   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:53:00.026   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:00.026   520   520 D ConditionProviders.SCP: onReceive android.app.action.NEXT_ALARM_CLOCK_CHANGED
+11-19 02:53:00.027   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:53:00.027   520   520 D ConditionProviders.SCP: evaluateSubscriptionLocked cal=ScheduleCalendar[mDays={1, 2, 3, 4, 5, 6, 7}, mSchedule=ScheduleInfo{days=[1, 2, 3, 4, 5, 6, 7], startHour=22, startMinute=0, endHour=7, endMinute=0, exitAtAlarm=true, nextAlarm=Thu Jan 01 00:00:00 UTC 1970 (0)}], now=Thu Nov 19 02:53:00 UTC 2026 (1795056780027), nextUserAlarmTime=Thu Nov 19 09:41:00 UTC 2026 (1795081260000)
+11-19 02:53:00.027   520   520 D ConditionProviders.SCP: notifyCondition condition://android/schedule?days=1.2.3.4.5.6.7&start=22.0&end=7.0&exitAtAlarm=true STATE_FALSE reason=snoozed
+11-19 02:53:00.027   520   520 D ConditionProviders.SCP: Scheduling evaluate for Thu Nov 19 07:00:00 UTC 2026 (1795071600000), in +4h6m59s973ms, now=Thu Nov 19 02:53:00 UTC 2026 (1795056780027)
+11-19 02:53:00.028   520   591 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 3ms
+11-19 02:53:00.029   520   591 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:00.030   520  1872 W ActivityManager: Foreground service started from background can not have location/camera/microphone access: service com.athaan.app/.service.AdhanService
+11-19 02:53:00.032  2462  2462 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr.mp3
+11-19 02:53:00.039  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:00.039   470   499 D NuPlayerDriver: NuPlayerDriver(0x7627292e4a10) created, clientPid(2462)
+11-19 02:53:00.040  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:00.040  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:00.040  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:00.040  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:00.041  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:00.041  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:00.044  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:00.044  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:00.044  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:00.044  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:00.044  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:00.044  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:00.045  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:00.045  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:00.045   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:00.045   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:00.045   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:00.047   136   136 I hwservicemanager: getTransport: Cannot find entry android.hardware.media.omx@1.0::IOmx/default in either framework or device VINTF manifest.
+11-19 02:53:00.050   470   499 D MediaPlayerService: OMX service is not available
+11-19 02:53:00.056   470  9155 D GenericSource: FileSource remote
+11-19 02:53:00.059   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:53:00.068   520   591 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 38ms
+11-19 02:53:00.069   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:53:00.069   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:53:00.069   831   831 D Tonal   : Gradients: 
+11-19 02:53:00.069   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:53:00.069   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:53:00.069   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:53:00.092   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:53:00.092   520   542 D ColorDisplayService: GlobalSaturationTintController Animation cancelled: true to matrix: 
+11-19 02:53:00.092   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 min matrix coefficients: 
+11-19 02:53:00.092   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 max matrix coefficients: 
+11-19 02:53:00.092   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+11-19 02:53:00.094   831   886 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-19 02:53:00.099   520   628 D FlashNotifController: alarm state changed: true
+11-19 02:53:00.101   520   628 D FlashNotifController: requestStartFlashNotification
+11-19 02:53:00.101   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:53:00.104   520  2197 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:00.105   520   628 I FlashNotifController: startFlashNotification: type=2, tag=alarm
+11-19 02:53:00.105   520   628 D FlashNotifController: Flash notification is disabled
+11-19 02:53:00.106   520  2197 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 1ms
+11-19 02:53:00.106   520  2197 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:00.106   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:53:00.106   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:53:00.106   831   831 D Tonal   : Gradients: 
+11-19 02:53:00.106   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:53:00.106   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:53:00.106   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:53:00.106   520  2197 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 1ms
+11-19 02:53:00.108   470  9153 I GenericSource: start
+11-19 02:53:00.117   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:53:00.120   470  9159 D CCodec  : allocate(c2.android.mp3.decoder)
+11-19 02:53:00.121   470  9159 I CCodec  : setting up 'default' as default (vendor) store
+11-19 02:53:00.123   470  9159 I CCodec  : Created component [c2.android.mp3.decoder]
+11-19 02:53:00.123   470  9159 D CCodecConfig: read media type: audio/mpeg
+11-19 02:53:00.123   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.max-count.values
+11-19 02:53:00.123   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: output.subscribed-indices.values
+11-19 02:53:00.124   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: input.buffers.allocator-ids.values
+11-19 02:53:00.124   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.allocator-ids.values
+11-19 02:53:00.128   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.allocator-ids.values
+11-19 02:53:00.129   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: output.buffers.pool-ids.values
+11-19 02:53:00.129   470  9159 D ReflectedParamUpdater: extent() != 1 for single value type: algo.buffers.pool-ids.values
+11-19 02:53:00.132   470  9159 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-19 02:53:00.132   470  9159 D CCodecConfig: c2 config diff is Dict {
+11-19 02:53:00.132   470  9159 D CCodecConfig:   c2::u32 coded.bitrate.value = 64000
+11-19 02:53:00.132   470  9159 D CCodecConfig:   c2::u32 input.buffers.max-size.value = 8192
+11-19 02:53:00.132   470  9159 D CCodecConfig:   c2::u32 input.delay.value = 0
+11-19 02:53:00.132   470  9159 D CCodecConfig:   string input.media-type.value = "audio/mpeg"
+11-19 02:53:00.132   470  9159 D CCodecConfig:   string output.media-type.value = "audio/raw"
+11-19 02:53:00.132   470  9159 D CCodecConfig:   c2::u32 raw.channel-count.value = 2
+11-19 02:53:00.132   470  9159 D CCodecConfig:   c2::u32 raw.sample-rate.value = 44100
+11-19 02:53:00.132   470  9159 D CCodecConfig: }
+11-19 02:53:00.143   470  9159 D MediaCodec: flushMediametrics
+11-19 02:53:00.143   470  9159 D CCodec  : [c2.android.mp3.decoder] buffers are bound to CCodec for this session
+11-19 02:53:00.143   470  9159 D CCodecConfig: no c2 equivalents for durationUs
+11-19 02:53:00.143   470  9159 D CCodecConfig: no c2 equivalents for flags
+11-19 02:53:00.143   470  9159 D CCodecConfig: c2 config diff is   c2::u32 coded.bitrate.value = 128000
+11-19 02:53:00.143   470  9159 W Codec2Client: query -- param skipped: index = 1107298332.
+11-19 02:53:00.143   470  9159 D CCodec  : encoding statistics level = 0
+11-19 02:53:00.143   470  9159 D CCodec  : setup formats input: AMessage(what = 0x00000000) = {
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t bitrate = 128000
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t channel-count = 2
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t max-input-size = 8192
+11-19 02:53:00.143   470  9159 D CCodec  :   string mime = "audio/mpeg"
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t sample-rate = 44100
+11-19 02:53:00.143   470  9159 D CCodec  : }
+11-19 02:53:00.143   470  9159 D CCodec  : setup formats output: AMessage(what = 0x00000000) = {
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t channel-count = 2
+11-19 02:53:00.143   470  9159 D CCodec  :   string mime = "audio/raw"
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t sample-rate = 44100
+11-19 02:53:00.143   470  9159 D CCodec  :   int32_t android._config-pcm-encoding = 2
+11-19 02:53:00.143   470  9159 D CCodec  : }
+11-19 02:53:00.143   470  9159 I CCodecConfig: query failed after returning 7 values (BAD_INDEX)
+11-19 02:53:00.144   470  9159 I MediaCodec: MediaCodec will operate in async mode
+11-19 02:53:00.144   470  9158 D MediaCodec: keep callback message for reclaim
+11-19 02:53:00.144   470  9159 W Codec2Client: query -- param skipped: index = 1342179345.
+11-19 02:53:00.144   470  9159 W Codec2Client: query -- param skipped: index = 2415921170.
+11-19 02:53:00.146   470  9159 D CCodecBufferChannel: [c2.android.mp3.decoder#731] Created input block pool with allocatorID 16 => poolID 19 - OK (0)
+11-19 02:53:00.146   479   493 D BufferPoolAccessor2.0: bufferpool2 0x76c674892e48 : 0(0 size) total buffers - 0(0 size) used buffers - 601/605 (recycle/alloc) - 4/605 (fetch/transfer)
+11-19 02:53:00.146   479   493 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x76c674892e48 cached: 0/0M, 0/0% in use; allocs: 605, 99% recycled; transfers: 605, 99% unfetched
+11-19 02:53:00.147   470  5752 D BufferPoolAccessor2.0: bufferpool2 0x7625d92e27e8 : 0(0 size) total buffers - 0(0 size) used buffers - 598/606 (recycle/alloc) - 8/1210 (fetch/transfer)
+11-19 02:53:00.147   470  5752 D BufferPoolAccessor2.0: Destruction - bufferpool2 0x7625d92e27e8 cached: 0/0M, 0/0% in use; allocs: 606, 99% recycled; transfers: 1210, 99% unfetched
+11-19 02:53:00.147   470  9159 I CCodecBufferChannel: [c2.android.mp3.decoder#731] Created output block pool with allocatorID 16 => poolID 28 - OK
+11-19 02:53:00.147   470  9159 D CCodecBufferChannel: [c2.android.mp3.decoder#731] Configured output block pool ids 28 => OK
+11-19 02:53:00.148   479  9160 D SimpleC2Component: Using output block pool with poolID 28 => got 28 - 0
+11-19 02:53:00.148   479  9160 I C2SoftMp3Dec: Reconfiguring decoder: 0->44100 Hz, 0->2 channels
+11-19 02:53:00.150   398   416 W AudioFlinger: createTrack_l(): mismatch between requested flags (00000008) and output flags (00000002)
+11-19 02:53:00.150   398   416 D AudioFlinger: Client defaulted notificationFrames to 11488 for frameCount 22977
+11-19 02:53:00.151   398   416 D AF::TrackHandle: OpPlayAudio: track:58 usage:4 not muted
+11-19 02:53:00.153   398   416 D audioserver: FGS Logger Transaction failed
+11-19 02:53:00.153   398   416 D audioserver: -129
+11-19 02:53:00.154   470  9157 D AudioTrack: getTimestamp_l(18): device stall time corrected using current time 588709034646
+11-19 02:53:00.225   398   500 D AudioFlinger: mixer(0x7eaee7a8f930) throttle end: throttle time(32)
+11-18 16:32:40.014     0     0 I logd    : logdr: UID=0 GID=0 PID=9162 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-18 16:32:40.026     0     0 I logd    : logdr: UID=0 GID=0 PID=9165 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-19 02:53:03.098   520   542 D ColorDisplayService: GlobalSaturationTintController Animation cancelled: false to matrix: 
+11-19 02:53:03.098   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 min matrix coefficients: 
+11-19 02:53:03.098   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 max matrix coefficients: 
+11-19 02:53:03.098   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+11-19 02:53:04.207  9170  9170 W BpBinder: Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+11-19 02:53:04.208  9170  9170 W ProcessState: Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+11-19 02:53:04.218   136   136 I hwservicemanager: getTransport: Cannot find entry android.hardware.graphics.mapper@4.0::IMapper/default in either framework or device VINTF manifest.
+11-19 02:53:04.218  9170  9171 I Gralloc4: mapper 4.x is not supported
+11-18 16:32:43.095     0     0 I servicemanager: Could not find android.hardware.graphics.allocator.IAllocator/default in the VINTF manifest.
+11-19 02:53:04.907   520   535 I ActivityTaskManager: START u0 {flg=0x10000000 cmp=com.athaan.app/.MainActivity (has extras)} with LAUNCH_SINGLE_TOP from uid 0 (BAL_ALLOW_ALLOWLISTED_UID) result code=2
+11-19 02:53:04.907   520  2214 E Transition: Trying to add a ready-group twice: Display{#0 state=ON size=1080x2400 ROTATION_0}
+11-19 02:53:04.911   831   862 D WindowManagerShell: onActivityRestartAttempt: ComponentInfo{com.athaan.app/com.athaan.app.MainActivity}
+11-19 02:53:04.911   520   548 I UsageStatsService: Time changed in by 37221 seconds
+11-19 02:53:04.913   831   862 V WindowManagerShell: Transition requested: android.os.BinderProxy@50ed30 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.athaan.app/.MainActivity } baseActivity=ComponentInfo{com.athaan.app/com.athaan.app.MainActivity} topActivity=ComponentInfo{com.athaan.app/com.athaan.app.MainActivity} origActivity=null realActivity=ComponentInfo{com.athaan.app/com.athaan.app.MainActivity} numActivities=1 lastActiveTime=564142 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@dd9cda9} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{c1c3f2e com.athaan.app.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-19 02:53:04.914   402   402 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+11-19 02:53:04.919  2462  2462 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@9250266e
+11-19 02:53:04.923  2462  2462 I AthaanSchedule: next adhan DHUHR at 1795081260000 exact=true
+11-19 02:53:04.943  1081  1758 D EGL_emulation: app_time_stats: avg=12445.18ms min=98.92ms max=24791.43ms count=2
+11-19 02:53:04.952   520   520 D ConditionProviders.SCP: onReceive android.app.action.NEXT_ALARM_CLOCK_CHANGED
+11-19 02:53:04.961   520   520 D ConditionProviders.SCP: evaluateSubscriptionLocked cal=ScheduleCalendar[mDays={1, 2, 3, 4, 5, 6, 7}, mSchedule=ScheduleInfo{days=[1, 2, 3, 4, 5, 6, 7], startHour=22, startMinute=0, endHour=7, endMinute=0, exitAtAlarm=true, nextAlarm=Thu Nov 19 09:41:00 UTC 2026 (1795081260000)}], now=Thu Nov 19 02:53:04 UTC 2026 (1795056784952), nextUserAlarmTime=Thu Nov 19 09:41:00 UTC 2026 (1795081260000)
+11-19 02:53:04.961   520   520 D ConditionProviders.SCP: notifyCondition condition://android/schedule?days=1.2.3.4.5.6.7&start=22.0&end=7.0&exitAtAlarm=true STATE_FALSE reason=snoozed
+11-19 02:53:04.961   520   520 D ConditionProviders.SCP: Scheduling evaluate for Thu Nov 19 07:00:00 UTC 2026 (1795071600000), in +4h6m55s48ms, now=Thu Nov 19 02:53:04 UTC 2026 (1795056784952)
+11-19 02:53:04.962   520   520 D ConditionProviders.SCP: onReceive android.app.action.NEXT_ALARM_CLOCK_CHANGED
+11-19 02:53:04.962   520   520 D ConditionProviders.SCP: evaluateSubscriptionLocked cal=ScheduleCalendar[mDays={1, 2, 3, 4, 5, 6, 7}, mSchedule=ScheduleInfo{days=[1, 2, 3, 4, 5, 6, 7], startHour=22, startMinute=0, endHour=7, endMinute=0, exitAtAlarm=true, nextAlarm=Thu Nov 19 09:41:00 UTC 2026 (1795081260000)}], now=Thu Nov 19 02:53:04 UTC 2026 (1795056784962), nextUserAlarmTime=Thu Nov 19 09:41:00 UTC 2026 (1795081260000)
+11-19 02:53:04.963   520   520 D ConditionProviders.SCP: notifyCondition condition://android/schedule?days=1.2.3.4.5.6.7&start=22.0&end=7.0&exitAtAlarm=true STATE_FALSE reason=snoozed
+11-19 02:53:04.963   520   520 D ConditionProviders.SCP: Scheduling evaluate for Thu Nov 19 07:00:00 UTC 2026 (1795071600000), in +4h6m55s38ms, now=Thu Nov 19 02:53:04 UTC 2026 (1795056784962)
+11-19 02:53:04.972  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: Predicting[0]: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: EchoTargets: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: Filtered by AiAi flag check: 
+11-19 02:53:04.972  1640  2038 I AiAiEcho: Ranked targets strategy: SORT, count: 0, ranking metadata: 
+11-19 02:53:04.973  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:04.974   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:04.974  1640  2038 I AiAiEcho: #postPredictionTargets: Sending updates to UISurface lockscreen with targets# 0 (types=[])
+11-19 02:53:04.975   831   831 W PageIndicator: Total number of pages invalid: 0. Assuming 1 page.
+11-19 02:53:04.980   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:53:05.010   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:53:05.010   520  1096 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:05.088   520  1096 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 78ms
+11-19 02:53:05.088   520  1096 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:05.091   520  1096 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 2ms
+11-19 02:53:05.128   831   862 W Looper  : Slow delivery took 47ms wmshell.main h=android.os.Handler c=com.android.wm.shell.bubbles.BubbleController$BubblesImpl$$ExternalSyntheticLambda5@21bd78 m=0
+11-19 02:53:05.130   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:53:05.147   479   829 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-19 02:53:05.157   470  5747 D BufferPoolAccessor2.0: evictor expired: 1, evicted: 0
+11-19 02:53:05.160   520  2212 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:05.167   520  2212 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 7ms
+11-19 02:53:05.167   520  2212 D WallpaperManagerService: WPMS.saveSettingsLocked-0
+11-19 02:53:05.178   520  2212 V WallpaperManagerService: WPMS.saveSettingsLocked-0 took to complete: 10ms
+11-19 02:53:05.184   831   954 V WallpaperService: Setting wallpaper dimming: 0
+11-19 02:53:05.185   520   542 D ColorDisplayService: Setting saturation level: 100
+11-19 02:53:05.186   520   542 D ColorDisplayService: GlobalSaturationTintController Animation cancelled: true to matrix: 
+11-19 02:53:05.186   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 min matrix coefficients: 
+11-19 02:53:05.186   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 max matrix coefficients: 
+11-19 02:53:05.186   520   542 D ColorDisplayService:        1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 1.000000
+11-19 02:53:05.192   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:53:05.192   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:53:05.192   831   831 D Tonal   : Gradients: 
+11-19 02:53:05.192   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:53:05.192   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:53:05.192   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:53:05.192   831   831 D Tonal   : Tonal Palette - index: 4. Main color: ff343e65
+11-19 02:53:05.192   831   831 D Tonal   : Colors: ff0b0c16, ff141627, ff1d2138, ff272d4c, ff343e65, ff41477e, ff4e5597, ff8184a4, ff898cc3, ff9e9ecd, ffb7b6d9, ffd9d7eb, ffefeef7
+11-19 02:53:05.192   831   831 D Tonal   : Gradients: 
+11-19 02:53:05.192   831   831 D Tonal   : 	Normal GradientColors(ff343e65, ff343e65)
+11-19 02:53:05.192   831   831 D Tonal   : 	Dark GradientColors(ff272d4c, ff272d4c)
+11-19 02:53:05.192   831   831 D Tonal   : 	Extra dark: GradientColors(ff1d2138, ff1d2138)
+11-19 02:53:05.227   831   831 D TileServices: Couldn't find tile for ComponentInfo{com.google.android.apps.wellbeing/com.google.android.apps.wellbeing.screen.ui.GrayscaleTileService}(0)
+11-19 02:53:05.230   520  2212 D OomAdjuster: Not killing cached processes
+11-19 02:53:05.251   831   886 E OpenGLRenderer: Unable to match the desired swap behavior.
+11-19 02:53:05.276   398   500 D AudioFlinger: mixer(0x7eaee7a8f930) throttle end: throttle time(33)
+11-19 02:53:05.322   470   499 D NuPlayerDriver: stop(0x7627292e4a10)
+11-19 02:53:05.323   520   628 D FlashNotifController: alarm state changed: false
+11-19 02:53:05.323   520   628 I FlashNotifController: stopFlashNotification: tag=alarm
+11-19 02:53:05.323  2462  2462 V MediaPlayer: resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+11-19 02:53:05.323  2462  2462 V MediaPlayer: cleanDrmObj: mDrmObj=null mDrmSessionId=null
+11-19 02:53:05.324   470   499 D NuPlayerDriver: reset(0x7627292e4a10) at state 8
+11-19 02:53:05.343   520   539 W ziparchive: Unable to open '/data/app/~~NPibS2n5EnW4YnNPBE3Lqg==/com.athaan.app-UWmewtHQ5L2ptOE9Av33LQ==/base.dm': No such file or directory
+11-19 02:53:05.345   520   539 V WindowManager: Sent Transition #25 createdAt=11-19 02:53:04.902 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=8 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=com.athaan.app/.MainActivity } baseActivity=ComponentInfo{com.athaan.app/com.athaan.app.MainActivity} topActivity=ComponentInfo{com.athaan.app/com.athaan.app.MainActivity} origActivity=null realActivity=ComponentInfo{com.athaan.app/com.athaan.app.MainActivity} numActivities=1 lastActiveTime=564142 supportsMultiWindow=true resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{507bafd Task{bb368db #8 type=standard A=10192:com.athaan.app}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 128 - 0, 0) topActivityInfo=ActivityInfo{219326 com.athaan.app.MainActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+11-19 02:53:05.345   520   539 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+11-19 02:53:05.345   520   539 V WindowManager:     info={id=25 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{507bafd Task{bb368db #8 type=standard A=10192:com.athaan.app}}} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=8)/@0x28a20b9 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{RemoteToken{f74a5d5 Task{5eb728a #1 type=home}}} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x1828809 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-19 02:53:05.349   470  9159 D CCodecBuffers: [c2.android.mp3.decoder#731:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 0
+11-19 02:53:05.349   470  9159 D CCodecBuffers: [c2.android.mp3.decoder#731:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 1
+11-19 02:53:05.349   470  9159 D CCodecBuffers: [c2.android.mp3.decoder#731:1D-Output.Impl[N]] Client returned a buffer it does not own according to our record: 2
+11-19 02:53:05.351   831   862 V WindowManagerShell: onTransitionReady android.os.BinderProxy@50ed30: {id=25 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@3767c8d} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=8)/@0x39cfcb6 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@5742e42} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x99b3db7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-19 02:53:05.351   831   862 V WindowManagerShell: Playing animation for (#25)android.os.BinderProxy@50ed30@0
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@8df1b98
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@f73ff1
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@427d7d6
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@e3e4a57
+11-19 02:53:05.352   831   862 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@1765944
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@d2eea2d
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@4219b62
+11-19 02:53:05.352   831   862 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=25 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@3767c8d} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=8)/@0x39cfcb6 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@5742e42} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x99b3db7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-19 02:53:05.352   831   862 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x0 checks=[{atype=dream independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=ANY topActivity=null},{atype=home independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@5066cdf, appThread = android.app.IApplicationThread$Stub$Proxy@c627d2c, debugName = LauncherToDream }}
+11-19 02:53:05.352   831   862 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.google.android.apps.nexuslauncher/com.google.android.apps.nexuslauncher.NexusLauncherActivity}},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@41ae3f5, appThread = android.app.IApplicationThread$Stub$Proxy@565e58a, debugName = QuickstepLaunchHome }}
+11-19 02:53:05.352   831   862 V WindowManagerShell:  Delegate animation for #25 to null
+11-19 02:53:05.352   831   862 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@c022d4f
+11-19 02:53:05.352   831   862 V WindowManagerShell: start default transition animation, info = {id=25 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@3767c8d} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=8)/@0x39cfcb6 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@5742e42} m=TO_BACK f=SHOW_WALLPAPER leash=Surface(name=Task=1)/@0x99b3db7 sb=Rect(0, 0 - 1080, 2400) eb=Rect(0, 0 - 1080, 2400) d=0}]}
+11-19 02:53:05.353   831   862 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@e1ac390 animAttr=0x13 type=OPEN isEntrance=false
+11-19 02:53:05.353   831   862 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@29088bc animAttr=0x12 type=OPEN isEntrance=true
+11-19 02:53:05.353   831   862 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@c022d4f
+11-19 02:53:05.372   470  9159 D BufferPoolAccessor2.0: bufferpool2 0x7625d92e5628 : 0(0 size) total buffers - 0(0 size) used buffers - 213/221 (recycle/alloc) - 8/440 (fetch/transfer)
+11-19 02:53:05.372   479   493 D BufferPoolAccessor2.0: bufferpool2 0x76c674896128 : 0(0 size) total buffers - 0(0 size) used buffers - 216/220 (recycle/alloc) - 4/220 (fetch/transfer)
+11-19 02:53:05.372   470  9158 D MediaCodec: flushMediametrics
+11-19 02:53:05.373   470  9153 D NuPlayerDriver: notifyResetComplete(0x7627292e4a10)
+11-19 02:53:05.373   470   499 W AMessage: failed to post message as target looper for handler 0 is gone.
+11-19 02:53:05.373   479   493 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-19 02:53:05.373   479   493 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-19 02:53:05.373   470  9184 I hw-BpHwBinder: onLastStrongRef automatically unlinking death recipients
+11-19 02:53:05.508   398   500 D audioserver: FGS Logger Transaction failed
+11-19 02:53:05.508   398   500 D audioserver: -129
+11-19 02:53:05.543   398   500 D audioserver: FGS Logger Transaction failed
+11-19 02:53:05.543   398   500 D audioserver: -129
+11-19 02:53:05.627   831   871 W Looper  : Slow delivery took 60ms wmshell.anim h=android.view.Choreographer$FrameHandler c=android.view.Choreographer$FrameDisplayEventReceiver@d7d059a m=0
+11-19 02:53:05.633   831   871 W Looper  : Drained
+11-19 02:53:05.675   831   862 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#25)android.os.BinderProxy@50ed30@0
+11-19 02:53:05.677   831   862 V WindowManagerShell: Track 0 became idle
+11-19 02:53:05.677   831   862 V WindowManagerShell: All active transition animations finished
+11-19 02:53:05.677   831  1969 D KeyguardService: setOccluded(false)
+11-19 02:53:05.677   831  1969 D KeyguardViewMediator: setOccluded(false)
+11-19 02:53:05.677   831  1969 D KeyguardService: setOccluded(false)
+11-19 02:53:05.677   831  1969 D KeyguardViewMediator: setOccluded(false)
+11-19 02:53:05.677   831   831 D KeyguardViewMediator: handleSetOccluded(false)
+11-19 02:53:05.697   831   862 W Looper  : Drained
+11-19 02:53:05.704   520   539 V WindowManager: Finish Transition #25: created at 11-19 02:53:04.902 collect-started=0.014ms request-sent=4.632ms started=11.629ms ready=11.621ms sent=430.135ms finished=773.85ms
+11-19 02:53:05.767   520  1096 W ProcessStats: Tracking association SourceState{1fa5b92 com.google.android.googlequicksearchbox:search/10132 BTop #14199} whose proc state 2 is better than process ProcessState{3cb3366 com.google.android.googlequicksearchbox:interactor/10132 pkg=com.google.android.googlequicksearchbox} proc state 4 (84 skipped)
+11-19 02:53:05.772  1081  1999 D OneSearchSuggestProvider: Shut down the binder channel
+11-19 02:53:05.776  1081  1968 I IPCThreadState: oneway function results for code 2 on binder at 0x74b2b067a4f0 will be dropped but finished with status UNKNOWN_TRANSACTION
+11-19 02:53:05.776  1081  1140 I ImeTracker: com.google.android.apps.nexuslauncher:1eaab8f0: onRequestHide at ORIGIN_CLIENT_HIDE_SOFT_INPUT reason HIDE_SOFT_INPUT
+11-19 02:53:05.781  2462  2462 W MediaPlayer: mediaplayer went away with unhandled events
+11-19 02:53:05.788   520  1872 I ImeTracker: com.google.android.apps.nexuslauncher:1eaab8f0: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-19 02:53:05.793  1785  2464 I A       : Using proto config with mendel
+11-19 02:53:05.796  1785  2464 I A       : Using proto config with mendel
+11-19 02:53:05.796  1785  4268 I PBSessionCacheImpl: Deleted sessionId[7852308041325711] from persistence.
+11-19 02:53:05.797  1785  2464 W SearchServiceCore: Abort, client detached.
+11-19 02:53:05.797  1785  2464 I MicroDetectionState: Should stop hotword detection immediately - true
+11-19 02:53:05.804  1785  2464 I A       : Using proto config with mendel
+11-19 02:53:05.805  1785  2464 I A       : Using proto config with mendel
+11-19 02:53:05.808  2462  2864 I OpenGLRenderer: Davey! duration=743ms; Flags=0, FrameTimelineVsyncId=93471, IntendedVsync=593485638832, Vsync=593935638814, InputEventId=0, HandleInputStart=593943302448, AnimationStart=593943306414, PerformTraversalsStart=594009743257, DrawStart=594010610017, FrameDeadline=593918972148, FrameInterval=593942403190, FrameStartTime=16666666, SyncQueued=594215328173, SyncStart=594324906154, IssueDrawCommandsStart=594325185639, SwapBuffers=594325252980, FrameCompleted=594338468315, DequeueBufferDuration=3275, QueueBufferDuration=3270817, GpuCompleted=594338420304, SwapBuffersCompleted=594338468315, DisplayPresentTime=0, CommandSubmissionCompleted=594325252980, 
+11-19 02:53:05.829  1021  1273 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-19 02:53:05.830  1021  1273 D BtGatt.ScanManager: uid 10131 isForeground true scanMode -1
+11-19 02:53:05.867   520  1872 I ImeTracker: com.athaan.app:200990bf: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+11-19 02:53:05.868   520  1872 I ImeTracker: com.athaan.app:200990bf: onCancelled at PHASE_SERVER_SHOULD_HIDE
+11-19 02:53:05.891  1553  1553 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():3227 
+11-19 02:53:05.891  1553  1553 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 0, unlocked = true
+11-19 02:53:05.892  1553  1553 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1877 onStartInput(EditorInfo{inputType=0x0(NULL) imeOptions=0x0 privateImeOptions=null actionName=UNSPECIFIED actionLabel=null actionId=0 initialSelStart=-1 initialSelEnd=-1 initialCapsMode=0x0 hintText=null label=null packageName=com.athaan.app fieldId=0 fieldName=null extras=null}, false)
+11-19 02:53:05.892  1553  1553 I GoogleInputMethodService: GoogleInputMethodService.shouldHideHeaderOnInitialState():4008 ShouldHideHeaderOnInitialState = false
+11-19 02:53:05.894  1553  1553 I GoogleInputMethodService: GoogleInputMethodService.updateDeviceLockedStatus():2087 repeatCheckTimes = 2, unlocked = true
+11-19 02:53:06.806  2462  2633 D EGL_emulation: app_time_stats: avg=68.24ms min=23.26ms max=463.52ms count=21
+11-18 16:32:46.372     0     0 I logd    : logdr: UID=0 GID=0 PID=9185 n tail=0 logMask=10 pid=0 start=0ns deadline=0ns
