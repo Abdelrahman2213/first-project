@@ -58,22 +58,33 @@ object Places {
         }.getOrDefault(emptyList()).also { cityCache[code] = it }
     }
 
-    /** Nearest known city to a point (searches the given country, or all countries). */
+    /**
+     * The city a point belongs to: the biggest city within ~20 km (files are sorted by
+     * population, so that is the first match), otherwise the closest one within 150 km.
+     */
     suspend fun nearest(context: Context, lat: Double, lng: Double, countryHint: String? = null): City? = withContext(Dispatchers.IO) {
         val codes = if (countryHint != null) listOf(countryHint) else countries(context).map { it.code }
-        var best: City? = null
-        var bestD = Double.MAX_VALUE
         val k = cos(Math.toRadians(lat))
+        fun km(c: City): Double {
+            val dx = (c.lng - lng) * k
+            val dy = c.lat - lat
+            return sqrt(dx * dx + dy * dy) * 111.0
+        }
+        var closest: City? = null
+        var closestKm = Double.MAX_VALUE
         for (cc in codes) {
-            for (c in cities(context, cc)) {
-                val dx = (c.lng - lng) * k
-                val dy = c.lat - lat
-                val d = dx * dx + dy * dy
-                if (d < bestD) { bestD = d; best = c }
+            val list = cities(context, cc)
+            list.firstOrNull { km(it) < 20.0 }?.let { big ->
+                if (countryHint != null) return@withContext big
+                if (km(big) < closestKm) { closest = big; closestKm = km(big) }
+            }
+            for (c in list) {
+                val d = km(c)
+                if (d < closestKm) { closestKm = d; closest = c }
             }
             if (countryHint == null) cityCache.remove(cc) // keep memory low on a full scan
         }
-        if (best != null && sqrt(bestD) * 111 < 150) best else null
+        closest?.takeIf { closestKm < 150 }
     }
 
     /** Lower-cases, strips accents and unifies Arabic letter forms, for search. */

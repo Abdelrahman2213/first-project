@@ -110,28 +110,79 @@ fun Modifier.pressClick(enabled: Boolean = true, role: Role = Role.Button, label
         .clickable(interactionSource = source, indication = androidx.compose.material3.ripple(), enabled = enabled, role = role, onClickLabel = label, onClick = onClick)
 }
 
-/** Eight-point star tile pattern used behind hero areas. */
+/** Path of an eight-point star (khatam) centred on [c]. */
+private fun starPath(c: Offset, outer: Float, inner: Float, rot: Float): androidx.compose.ui.graphics.Path {
+    val p = androidx.compose.ui.graphics.Path()
+    for (i in 0 until 16) {
+        val r = if (i % 2 == 0) outer else inner
+        val a = Math.toRadians((i * 22.5 + rot).toDouble())
+        val x = c.x + r * kotlin.math.cos(a).toFloat()
+        val y = c.y + r * kotlin.math.sin(a).toFloat()
+        if (i == 0) p.moveTo(x, y) else p.lineTo(x, y)
+    }
+    p.close()
+    return p
+}
+
+enum class Fade { NONE, TO_START, TO_BOTTOM }
+
+/**
+ * Islamic "star and cross" tessellation: eight-point stars whose tips meet, leaving
+ * crosses between them. Fades out towards the text so it never competes with it.
+ */
 @Composable
-fun StarPattern(modifier: Modifier, tile: Dp = 44.dp, alpha: Float = 0.11f, rotation: Float = 0f) {
-    val color = AC.Gold.copy(alpha = alpha)
+fun StarPattern(modifier: Modifier, tile: Dp = 44.dp, alpha: Float = 0.11f, rotation: Float = 0f, fade: Fade = Fade.NONE) {
+    val gold = AC.Gold
+    val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     Canvas(modifier) {
         val t = tile.toPx()
-        val s = t / 2f
+        val strong = gold.copy(alpha = alpha * 1.6f)
+        val clear = gold.copy(alpha = 0f)
+        val brush = when (fade) {
+            Fade.NONE -> androidx.compose.ui.graphics.SolidColor(gold.copy(alpha = alpha * 1.3f))
+            Fade.TO_START -> androidx.compose.ui.graphics.Brush.horizontalGradient(
+                if (rtl) listOf(strong, clear) else listOf(clear, strong), startX = 0f, endX = size.width,
+            )
+            Fade.TO_BOTTOM -> androidx.compose.ui.graphics.Brush.verticalGradient(listOf(strong, clear), startY = 0f, endY = size.height)
+        }
         val stroke = Stroke(width = 1.dp.toPx())
         var y = 0f
-        while (y < size.height) {
+        while (y < size.height + t) {
             var x = 0f
-            while (x < size.width) {
-                val c = Offset(x + t / 2, y + t / 2)
-                val tl = Offset(c.x - s / 2, c.y - s / 2)
-                rotate(rotation, pivot = c) {
-                    drawRect(color, topLeft = tl, size = Size(s, s), style = stroke)
-                    rotate(45f, pivot = c) { drawRect(color, topLeft = tl, size = Size(s, s), style = stroke) }
-                }
+            while (x < size.width + t) {
+                val c = Offset(x, y)
+                drawPath(starPath(c, t * 0.5f, t * 0.30f, rotation), brush, style = stroke)
+                drawCircle(brush, radius = t * 0.12f, center = c, style = stroke)
                 x += t
             }
             y += t
         }
+    }
+}
+
+/** A large eight-fold rosette, drawn in fine gold lines that fade away from its centre. */
+@Composable
+fun Rosette(modifier: Modifier, rotation: Float = 0f, alpha: Float = 0.5f) {
+    val gold = AC.Gold
+    Canvas(modifier) {
+        val c = Offset(size.width / 2, size.height / 2)
+        val R = size.minDimension / 2
+        val brush = androidx.compose.ui.graphics.Brush.radialGradient(
+            0f to gold.copy(alpha = alpha), 0.75f to gold.copy(alpha = alpha * 0.45f), 1f to gold.copy(alpha = 0f),
+            center = c, radius = R,
+        )
+        val thin = Stroke(width = 1.dp.toPx())
+        listOf(1f, 0.74f, 0.5f, 0.28f).forEachIndexed { i, k ->
+            val rot = rotation * (if (i % 2 == 0) 1f else -1f) + i * 11.25f
+            drawPath(starPath(c, R * k, R * k * 0.77f, rot), brush, style = thin)
+            drawCircle(brush, radius = R * k * 0.86f, center = c, style = thin)
+        }
+        for (i in 0 until 8) {
+            val a = Math.toRadians((i * 45 + rotation).toDouble())
+            val d = Offset(kotlin.math.cos(a).toFloat(), kotlin.math.sin(a).toFloat())
+            drawLine(brush, c + d * (R * 0.28f), c + d * (R * 0.86f), strokeWidth = 1.dp.toPx())
+        }
+        drawCircle(brush, radius = R * 0.08f, center = c)
     }
 }
 
@@ -145,7 +196,7 @@ fun Avatar(initial: String, size: Dp, fontSize: TextUnit, ring: Color = AC.GoldL
             .border(ringWidth, ring, CircleShape),
         contentAlignment = Alignment.Center,
     ) {
-        T(initial, size = fontSize, color = AC.Gold, kufi = true)
+        T(initial, size = fontSize, weight = FontWeight.SemiBold, color = AC.Gold)
     }
 }
 
@@ -323,6 +374,31 @@ fun <V> Segmented(options: List<Pair<V, String>>, selected: V, onSelect: (V) -> 
     }
 }
 
+/** Slim slider: a thin gold track and a round thumb (no Material 3 "gap" style). */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@Composable
+fun GoldSlider(value: Float, onChange: (Float) -> Unit, modifier: Modifier = Modifier, enabled: Boolean = true) {
+    val source = remember { MutableInteractionSource() }
+    val dragged by source.collectIsPressedAsState()
+    val thumb by animateDpAsState(if (dragged) 22.dp else 18.dp, label = "thumb")
+    androidx.compose.material3.Slider(
+        value = value.coerceIn(0f, 1f),
+        onValueChange = onChange,
+        modifier = modifier.height(36.dp),
+        enabled = enabled,
+        interactionSource = source,
+        thumb = {
+            Box(Modifier.size(thumb).clip(CircleShape).background(if (enabled) AC.Gold else AC.Muted))
+        },
+        track = { st ->
+            val f = ((st.value - st.valueRange.start) / (st.valueRange.endInclusive - st.valueRange.start)).coerceIn(0f, 1f)
+            Box(Modifier.fillMaxWidth().height(4.dp).clip(RoundedCornerShape(2.dp)).background(AC.Track)) {
+                Box(Modifier.fillMaxWidth(f).height(4.dp).clip(RoundedCornerShape(2.dp)).background(if (enabled) AC.Gold else AC.Muted))
+            }
+        },
+    )
+}
+
 @Composable
 fun GoldSwitch(checked: Boolean, onChange: (Boolean) -> Unit) {
     Switch(
@@ -399,7 +475,7 @@ fun ListRow(
 /** Sun/moon button that spins and swaps its icon when the theme changes. */
 @Composable
 fun ThemeToggle(light: Boolean, onToggle: () -> Unit) {
-    val turn by animateFloatAsState(if (light) 180f else 0f, spring(dampingRatio = 0.6f, stiffness = Spring.StiffnessLow), label = "themeTurn")
+    val turn by animateFloatAsState(if (light) 360f else 0f, spring(dampingRatio = 0.6f, stiffness = Spring.StiffnessLow), label = "themeTurn")
     val label = if (light) tr("الوضع الليلي", "Dark mode") else tr("الوضع الفاتح", "Light mode")
     Box(
         Modifier
@@ -468,26 +544,28 @@ fun BottomNav(current: Tab, onSelect: (Tab) -> Unit) {
             items.forEach { (tab, icon, label) ->
                 val on = tab == current
                 val tint by animateColorAsState(if (on) AC.Gold else AC.Muted, tween(250), label = "navTint")
-                val lift by animateDpAsState(if (on) (-2).dp else 0.dp, spring(dampingRatio = 0.5f), label = "navLift")
-                val pill by animateFloatAsState(if (on) 1f else 0f, spring(dampingRatio = 0.7f, stiffness = Spring.StiffnessMediumLow), label = "navPill")
+                val pill by animateFloatAsState(if (on) 1f else 0f, tween(260), label = "navPill")
+                val source = remember { MutableInteractionSource() }
+                val pressed by source.collectIsPressedAsState()
+                val press by animateFloatAsState(if (pressed) 0.9f else 1f, tween(120), label = "navPress")
                 Column(
                     Modifier
                         .weight(1f)
                         .fillMaxHeight()
-                        .clickable(role = Role.Tab, onClickLabel = label) { onSelect(tab) },
+                        .clickable(interactionSource = source, indication = null, role = Role.Tab, onClickLabel = label) { if (!on) onSelect(tab) },
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
                 ) {
                     Box(
                         Modifier
-                            .offset(y = lift)
+                            .graphicsLayer { scaleX = press; scaleY = press }
                             .width(56.dp)
                             .height(30.dp),
                         contentAlignment = Alignment.Center,
                     ) {
                         Box(
                             Modifier
-                                .graphicsLayer { scaleX = pill; alpha = pill }
+                                .graphicsLayer { scaleX = 0.6f + 0.4f * pill; alpha = pill }
                                 .fillMaxWidth()
                                 .height(30.dp)
                                 .clip(RoundedCornerShape(15.dp))

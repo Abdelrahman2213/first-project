@@ -66,7 +66,7 @@ import com.athaan.app.ui.theme.LocalArabic
 import com.athaan.app.ui.theme.Plex
 import com.athaan.app.ui.theme.tr
 
-private enum class Filter { ALL, FAJR, EGYPT, HARAMAIN, GULF, OTHER, OFFLINE }
+private enum class Filter { ALL, FAJR, EGYPT, HARAMAIN, GULF, OTHER, CUSTOM, OFFLINE }
 
 /**
  * The muezzin library. With [pickFor] set, only muezzins who can call that prayer are shown
@@ -80,6 +80,7 @@ fun LibraryScreen(
     onOpen: (Muezzin) -> Unit,
     onPicked: () -> Unit,
     onBack: (() -> Unit)?,
+    onAdd: () -> Unit,
 ) {
     val s by vm.settings.collectAsState()
     val downloads by vm.downloads.collectAsState()
@@ -102,6 +103,7 @@ fun LibraryScreen(
             Filter.HARAMAIN -> m.region == Region.HARAMAIN
             Filter.GULF -> m.region == Region.GULF
             Filter.OTHER -> m.region == Region.OTHER
+            Filter.CUSTOM -> m.region == Region.CUSTOM
             Filter.OFFLINE -> downloads[trackOf(m).key] == DownloadState.Done
         }
         matchPick && matchQ && matchF
@@ -161,6 +163,7 @@ fun LibraryScreen(
                 add(Filter.HARAMAIN to (if (ar) Region.HARAMAIN.ar else Region.HARAMAIN.en))
                 add(Filter.GULF to (if (ar) Region.GULF.ar else Region.GULF.en))
                 add(Filter.OTHER to (if (ar) Region.OTHER.ar else Region.OTHER.en))
+                if (Muezzins.all.any { it.isCustom }) add(Filter.CUSTOM to (if (ar) Region.CUSTOM.ar else Region.CUSTOM.en))
                 add(Filter.OFFLINE to tr("المحمّلة", "Downloaded"))
             }
             LazyRow(
@@ -175,6 +178,28 @@ fun LibraryScreen(
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = if (preview.key != null) 92.dp else 16.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
+                item(key = "add") {
+                    Row(
+                        Modifier
+                            .animateItem()
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(20.dp))
+                            .background(AC.GoldSoft)
+                            .border(1.dp, AC.GoldLine, RoundedCornerShape(20.dp))
+                            .pressClick(onClick = onAdd)
+                            .padding(14.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        Box(Modifier.size(44.dp).clip(RoundedCornerShape(22.dp)).background(AC.Gold), contentAlignment = Alignment.Center) {
+                            T("+", 24.sp, FontWeight.Bold, AC.OnGold)
+                        }
+                        Spacer(Modifier.width(12.dp))
+                        Column(Modifier.weight(1f)) {
+                            T(tr("إضافة صوت مؤذن", "Add a muezzin"), 15.sp, FontWeight.Bold)
+                            T(tr("شيخ مش موجود أو نسخة تانية، من ملف على موبايلك", "A missing sheikh or another version, from a file on your phone"), 12.sp, color = AC.Muted, maxLines = 2)
+                        }
+                    }
+                }
                 if (shown.isEmpty()) item(key = "empty") {
                     T(tr("لا توجد نتائج", "No results"), 14.sp, color = AC.Muted, modifier = Modifier.padding(24.dp).animateItem())
                 }

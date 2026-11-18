@@ -52,6 +52,7 @@ import com.athaan.app.service.AdhanPlayback
 import com.athaan.app.ui.AppViewModel
 import com.athaan.app.ui.components.GoldButton
 import com.athaan.app.ui.components.OutlineButton
+import com.athaan.app.ui.components.GoldSlider
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.theme.AC
 import com.athaan.app.ui.theme.AIcons
@@ -131,12 +132,7 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(AIcons.Volume, null, tint = AC.Muted, modifier = Modifier.size(20.dp))
                     Spacer(Modifier.width(10.dp))
-                    Slider(
-                        value = s.volume,
-                        onValueChange = { vm.setVolume(it) },
-                        modifier = Modifier.weight(1f),
-                        colors = SliderDefaults.colors(thumbColor = AC.Gold, activeTrackColor = AC.Gold, inactiveTrackColor = AC.Track),
-                    )
+                    GoldSlider(s.volume, { vm.setVolume(it) }, Modifier.weight(1f))
                 }
             }
 

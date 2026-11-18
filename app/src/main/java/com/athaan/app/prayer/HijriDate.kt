@@ -43,4 +43,17 @@ object HijriDate {
         val m = (if (ar) gMonthsAr else gMonthsEn)[g.get(Calendar.MONTH)]
         return "${g.get(Calendar.DAY_OF_MONTH)} $m"
     }
+
+    /** "الأربعاء · 18 نوفمبر" */
+    fun weekdayGregorian(millis: Long, ar: Boolean, tz: TimeZone = TimeZone.getDefault()): String {
+        val g = Calendar.getInstance(tz).apply { timeInMillis = millis }
+        val dayName = (if (ar) daysAr else daysEn)[g.get(Calendar.DAY_OF_WEEK) - 1]
+        return "$dayName · ${gregorianShort(millis, ar, tz)}"
+    }
+
+    /** "8 جمادى الآخرة 1448 هـ" */
+    fun hijriDate(millis: Long, ar: Boolean, tz: TimeZone = TimeZone.getDefault()): String {
+        val line = hijriLine(millis, ar, tz)
+        return line.substringAfter(" · ", line)
+    }
 }

@@ -103,6 +103,29 @@ def tap(*labels, wait=1.5, exact=False, tries=6):
     return False
 
 
+def tap_edit(wait=1.0):
+    """Focus the first text field on screen."""
+    for _ in range(4):
+        for n in nodes():
+            if "EditText" in (n.get("class") or ""):
+                x, y = center(n)
+                sh(f"input tap {x} {y}")
+                time.sleep(wait)
+                return True
+        time.sleep(1)
+    log("     (no text field found)")
+    return False
+
+
+def dismiss_system_dialogs():
+    """Accept the notification permission prompt if it is showing."""
+    for _ in range(2):
+        n = find("to send you notifications", "بإرسال إشعارات")
+        if n is None:
+            return
+        tap("Allow", "السماح", exact=True, wait=1.5)
+
+
 def wait_for(*labels, timeout=30):
     end = time.time() + timeout
     while time.time() < end:
@@ -165,7 +188,10 @@ granted = tap("While using the app", "أثناء استخدام التطبيق",
 ok("permission dialog shown and accepted", granted)
 # If Google asks to turn on location accuracy, accept.
 tap("Turn on", "OK", "تشغيل", tries=2)
+time.sleep(4)
+dismiss_system_dialogs()
 home = wait_for("الصلاة القادمة", timeout=60)
+dismiss_system_dialogs()
 ok("location found and home screen opened", home, screen_text()[:300])
 time.sleep(3)
 shot("home_dark")
@@ -176,6 +202,7 @@ loclog = adb("logcat", "-d", "-s", "AthaanLocation:*", "AthaanSchedule:*")
 log("     " + loclog.strip().replace("\n", "\n     ")[-600:])
 ok("next adhan scheduled", "next adhan" in loclog)
 
+dismiss_system_dialogs()
 # ------------------------------------------------------------------ 3. theme on home
 ok("light theme on home", tap("الوضع الفاتح", wait=1.5))
 shot("home_light")
@@ -209,22 +236,43 @@ shot("pick_fajr")
 txt = screen_text()
 ok("fajr picker hides muezzins without a Fajr recording", "الحصري" not in txt and "رفعت" not in txt, txt[:300])
 
-debug("debug_route muezzin:afasy")
-ok("muezzin page", wait_for("أذان الفجر") and wait_for("مشاري"))
-shot("muezzin_afasy")
+debug("debug_route muezzin:dosari")
+ok("muezzin page", wait_for("أذان الفجر") and wait_for("الدوسري"))
+shot("muezzin_dosari")
+
+# ------------------------------------------------------------------ 5b. user's own recording
+debug("debug_route add")
+ok("add-muezzin screen", wait_for("إضافة صوت مؤذن"))
+shot("add_muezzin")
+adb("logcat", "-c")
+debug("debug_add_custom صوتي_للتجربة")
+time.sleep(12)
+ok("custom muezzin added", "custom added custom_" in adb("logcat", "-d", "-s", "AthaanDebug:*"))
+debug("debug_route library")
+time.sleep(1.5)
+tap("أصواتي", wait=1.5)
+ok("custom muezzin in library", wait_for("صوتي_للتجربة"))
+shot("library_custom")
+adb("logcat", "-c")
+debug("debug_play DHUHR")
+time.sleep(5)
+plog = adb("logcat", "-d", "-s", "AthaanAdhan:*")
+ok("Dhuhr plays the user's recording", "muezzin=custom_" in plog and "fajr=false" in plog, plog[-300:])
+debug("debug_stop 1")
+time.sleep(2)
 
 # ------------------------------------------------------------------ 6. country -> city picker
 debug("debug_route city")
 ok("country list", wait_for("اختر دولتك"))
 shot("countries")
-tap("ابحث عن دولة", wait=1)
+tap_edit()
 sh("input text Egy")
 time.sleep(1.5)
 shot("countries_search")
 ok("country search", tap("مصر", wait=2))
 ok("city list for Egypt", wait_for("اختر مدينتك"))
 shot("cities_egypt")
-tap("ابحث عن مدينة", wait=1)
+tap_edit()
 sh("input text Alex")
 time.sleep(1.5)
 shot("cities_search")
@@ -242,8 +290,9 @@ alog = adb("logcat", "-d", "-s", "AthaanAdhan:*")
 log("     " + alog.strip()[-400:])
 ok("Fajr uses the Fajr recording", "fajr=true" in alog, alog[-300:])
 ok("no player error", "player error" not in alog)
-tap("إيقاف الأذان", wait=2)
-ok("adhan stops", wait_for("الصلاة القادمة", timeout=10))
+tap("إيقاف الأذان", wait=3)
+dismiss_system_dialogs()
+ok("adhan stops", find("إيقاف الأذان") is None, screen_text()[:200])
 
 # ------------------------------------------------------------------ 8. English + light screenshots
 debug("debug_lang en")

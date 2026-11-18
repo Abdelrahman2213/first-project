@@ -23,7 +23,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -44,6 +44,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.font.FontWeight
@@ -57,7 +58,7 @@ import com.athaan.app.prayer.TimeFmt
 import com.athaan.app.ui.AppViewModel
 import com.athaan.app.ui.components.Avatar
 import com.athaan.app.ui.components.PlayButton
-import com.athaan.app.ui.components.StarPattern
+import com.athaan.app.ui.components.Rosette
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.components.ThemeToggle
 import com.athaan.app.ui.components.pressClick
@@ -65,6 +66,8 @@ import com.athaan.app.ui.theme.AC
 import com.athaan.app.ui.theme.AIcons
 import com.athaan.app.ui.theme.LocalArabic
 import com.athaan.app.ui.theme.tr
+
+private var homeIntroPlayed = false
 
 @Composable
 fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> Unit) {
@@ -84,8 +87,12 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
     val progress by animateFloatAsState(rawProgress, tween(900, easing = FastOutSlowInEasing), label = "progress")
 
     // Entrance: hero rises in, rows follow one by one.
-    val enter = remember { Animatable(0f) }
-    LaunchedEffect(Unit) { enter.animateTo(1f, tween(700, easing = FastOutSlowInEasing)) }
+    // Played once per app launch, so switching tabs back to Home stays steady.
+    val enter = remember { Animatable(if (homeIntroPlayed) 1f else 0f) }
+    LaunchedEffect(Unit) {
+        homeIntroPlayed = true
+        enter.animateTo(1f, tween(700, easing = FastOutSlowInEasing))
+    }
 
     Column(
         Modifier
@@ -117,12 +124,10 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
             }
         }
 
-        Row(
-            Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp, top = 14.dp),
-            verticalAlignment = Alignment.Bottom,
-        ) {
-            T(HijriDate.hijriLine(now, ar, tz), 15.sp, FontWeight.SemiBold, modifier = Modifier.weight(1f), maxLines = 1)
-            T(HijriDate.gregorianShort(now, ar, tz), 13.sp, color = AC.Muted)
+        // Weekday and Gregorian date, then the Hijri date — two calm lines that never collide.
+        Column(Modifier.fillMaxWidth().padding(start = 24.dp, end = 24.dp, top = 14.dp)) {
+            T(HijriDate.weekdayGregorian(now, ar, tz), 13.sp, color = AC.Muted, maxLines = 1)
+            T(HijriDate.hijriDate(now, ar, tz), 16.sp, FontWeight.SemiBold, maxLines = 1)
         }
 
         // Hero card
@@ -140,14 +145,18 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
                 .background(AC.Surface)
                 .border(1.dp, AC.Gold.copy(alpha = 0.22f), RoundedCornerShape(28.dp))
         ) {
-            // Slowly turning star pattern on the "end" half of the card
+            // A slowly turning rosette tucked into the card's far corner, away from the text.
             val spin = rememberInfiniteTransition(label = "heroSpin")
-            val rot by spin.animateFloat(0f, 90f, infiniteRepeatable(tween(60_000, easing = LinearEasing), RepeatMode.Restart), label = "rot")
-            val rtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-            Box(Modifier.matchParentSize(), contentAlignment = if (rtl) Alignment.CenterStart else Alignment.CenterEnd) {
-                Box(Modifier.fillMaxHeight().fillMaxWidth(0.58f)) {
-                    StarPattern(Modifier.matchParentSize(), rotation = rot)
-                }
+            val rot by spin.animateFloat(0f, 45f, infiniteRepeatable(tween(90_000, easing = LinearEasing), RepeatMode.Restart), label = "rot")
+            Box(Modifier.matchParentSize()) {
+                Rosette(
+                    Modifier
+                        .align(Alignment.TopEnd)
+                        .offset(x = 70.dp, y = (-60).dp)
+                        .size(260.dp)
+                        .graphicsLayer { alpha = enter.value },
+                    rotation = rot, alpha = 0.42f,
+                )
             }
             Column(Modifier.padding(22.dp)) {
                 T(tr("الصلاة القادمة", "Next prayer"), 13.sp, FontWeight.Medium, AC.Muted)
@@ -231,22 +240,32 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
     }
 }
 
-/** Text whose changing characters roll up, like a split-flap clock. */
+/** Countdown whose changing digits roll, each in a fixed-width cell so nothing shifts. */
 @Composable
 private fun RollingText(text: String, size: TextUnit) {
+    val density = androidx.compose.ui.platform.LocalDensity.current
+    val digitW = with(density) { (size * 0.6f).toDp() }
+    val colonW = with(density) { (size * 0.3f).toDp() }
+    val cellH = with(density) { (size * 1.3f).toDp() }
     // Digits always read left-to-right, even in the Arabic layout.
-    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) { Row {
-        text.forEachIndexed { i, ch ->
-            AnimatedContent(
-                targetState = ch,
-                transitionSpec = {
-                    (slideInVertically(tween(260)) { -it } + fadeIn(tween(260))) togetherWith
-                        (slideOutVertically(tween(260)) { it } + fadeOut(tween(200)))
-                },
-                label = "digit$i",
-            ) { c -> T(c.toString(), size, FontWeight.SemiBold) }
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            text.forEachIndexed { i, ch ->
+                val w = if (ch.isDigit()) digitW else colonW
+                Box(Modifier.width(w).height(cellH).clipToBounds(), contentAlignment = Alignment.Center) {
+                    AnimatedContent(
+                        targetState = ch,
+                        transitionSpec = {
+                            (slideInVertically(tween(280)) { -it } + fadeIn(tween(280))) togetherWith
+                                (slideOutVertically(tween(280)) { it } + fadeOut(tween(220)))
+                        },
+                        contentAlignment = Alignment.Center,
+                        label = "digit$i",
+                    ) { c -> T(c.toString(), size, FontWeight.SemiBold, lineHeight = size * 1.2f) }
+                }
+            }
         }
-    } }
+    }
 }
 
 @Composable

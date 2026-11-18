@@ -64,9 +64,12 @@ import com.athaan.app.ui.AppViewModel
 import com.athaan.app.ui.components.Avatar
 import com.athaan.app.ui.components.CircleIconButton
 import com.athaan.app.ui.components.GoldButton
+import com.athaan.app.ui.components.OutlineButton
 import com.athaan.app.ui.components.Pill
 import com.athaan.app.ui.components.PlayButton
 import com.athaan.app.ui.components.StarPattern
+import com.athaan.app.ui.components.Fade
+import com.athaan.app.ui.components.GoldSlider
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.components.pressClick
 import com.athaan.app.ui.theme.AC
@@ -76,7 +79,7 @@ import com.athaan.app.ui.theme.tr
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit) {
+fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit, onAddVersion: (String) -> Unit) {
     val s by vm.settings.collectAsState()
     val downloads by vm.downloads.collectAsState()
     val preview by vm.preview.collectAsState()
@@ -84,6 +87,7 @@ fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit) {
 
     val assigned = Prayer.adhanPrayers.filter { s.muezzin(it).id == m.id }.toSet()
     var selected by remember(m.id) { mutableStateOf(assigned) }
+    var confirmDelete by remember { mutableStateOf(false) }
 
     val enter = remember { Animatable(0f) }
     LaunchedEffect(Unit) { enter.animateTo(1f, tween(600, easing = FastOutSlowInEasing)) }
@@ -91,7 +95,7 @@ fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit) {
     val ring by breathe.animateFloat(1f, 1.08f, infiniteRepeatable(tween(2200), RepeatMode.Reverse), label = "ringScale")
 
     Box(Modifier.fillMaxSize()) {
-        StarPattern(Modifier.fillMaxWidth().height(300.dp), tile = 48.dp, alpha = 0.10f)
+        StarPattern(Modifier.fillMaxWidth().height(300.dp), tile = 52.dp, alpha = 0.10f, fade = Fade.TO_BOTTOM)
         Box(Modifier.fillMaxWidth().height(300.dp).background(Brush.verticalGradient(0.35f to Color.Transparent, 1f to AC.Ink)))
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             Row(Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 12.dp)) {
@@ -144,7 +148,16 @@ fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit) {
                 T(tr("هذا تسجيل لأذان الفجر فقط", "This is a Fajr-only recording"), 12.sp, color = AC.Muted, modifier = Modifier.padding(start = 24.dp, end = 24.dp, top = 10.dp))
             }
 
-            Spacer(Modifier.height(28.dp))
+            // Add another version of this sheikh, or delete a recording the user added.
+            Row(Modifier.padding(start = 16.dp, end = 16.dp, top = 18.dp)) {
+                if (m.isCustom) {
+                    OutlineButton(tr("حذف هذا الصوت", "Delete this recording"), { confirmDelete = true }, Modifier.fillMaxWidth(), icon = AIcons.Trash, color = AC.Danger, border = AC.Danger.copy(alpha = 0.4f))
+                } else {
+                    OutlineButton(tr("إضافة نسخة أخرى بصوته من ملف", "Add another version from a file"), { onAddVersion(m.name(ar) + if (ar) " (نسخة أخرى)" else " (another version)") }, Modifier.fillMaxWidth(), icon = AIcons.Mic)
+                }
+            }
+
+            Spacer(Modifier.height(20.dp))
             val valid = selected.filter { m.canCall(it) }.toSet()
             val newOnes = valid - assigned
             val label = when {
@@ -161,6 +174,21 @@ fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit) {
             )
         }
     }
+    if (confirmDelete) {
+        DeleteDialog(m.name(ar), onConfirm = { confirmDelete = false; vm.removeCustom(m); onBack() }, onDismiss = { confirmDelete = false })
+    }
+}
+
+@Composable
+private fun DeleteDialog(name: String, onConfirm: () -> Unit, onDismiss: () -> Unit) {
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        containerColor = AC.Surface2,
+        title = { T(tr("حذف الصوت؟", "Delete recording?"), 18.sp, FontWeight.Bold) },
+        text = { T(tr("سيتم حذف «$name» من المكتبة ومن موبايلك. الصلوات اللي كانت بصوته هترجع للمؤذن الافتراضي.", "“$name” will be removed from the library and your phone. Prayers that used it go back to the default muezzin."), 14.sp, color = AC.TextDim, lineHeight = 22.sp) },
+        confirmButton = { androidx.compose.material3.TextButton(onClick = onConfirm) { T(tr("حذف", "Delete"), 14.sp, FontWeight.Bold, AC.Danger) } },
+        dismissButton = { androidx.compose.material3.TextButton(onClick = onDismiss) { T(tr("إلغاء", "Cancel"), 14.sp, FontWeight.SemiBold, AC.Gold) } },
+    )
 }
 
 @Composable
@@ -190,11 +218,7 @@ private fun RecordingCard(vm: AppViewModel, t: Track, title: String, subtitle: S
         AnimatedVisibility(isThis && !preview.loading && !preview.error, enter = expandVertically() + fadeIn(), exit = shrinkVertically() + fadeOut()) {
             Column(Modifier.padding(top = 6.dp)) {
                 val frac = if (preview.durationMs > 0) preview.positionMs.toFloat() / preview.durationMs else 0f
-                Slider(
-                    value = frac.coerceIn(0f, 1f),
-                    onValueChange = { vm.audio.seekPreview(it) },
-                    colors = SliderDefaults.colors(thumbColor = AC.Gold, activeTrackColor = AC.Gold, inactiveTrackColor = AC.Track),
-                )
+                GoldSlider(frac.coerceIn(0f, 1f), { vm.audio.seekPreview(it) })
                 Row {
                     T(TimeFmt.mmss(preview.positionMs), 11.sp, color = AC.Muted)
                     Spacer(Modifier.weight(1f))

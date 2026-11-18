@@ -51,6 +51,7 @@ import com.athaan.app.ui.components.ListRow
 import com.athaan.app.ui.components.ScreenTitle
 import com.athaan.app.ui.components.SectionLabel
 import com.athaan.app.ui.components.Segmented
+import com.athaan.app.ui.components.GoldSlider
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.theme.AC
 import com.athaan.app.ui.theme.AIcons
@@ -153,10 +154,7 @@ fun SettingsScreen(vm: AppViewModel, onPickCity: () -> Unit, onUseLocation: () -
                     Spacer(Modifier.width(12.dp))
                     T(tr("مستوى الصوت", "Volume"), 15.sp, FontWeight.Medium)
                     Spacer(Modifier.width(12.dp))
-                    Slider(
-                        value = s.volume, onValueChange = { vm.setVolume(it) }, modifier = Modifier.weight(1f),
-                        colors = SliderDefaults.colors(thumbColor = AC.Gold, activeTrackColor = AC.Gold, inactiveTrackColor = AC.Track),
-                    )
+                    GoldSlider(s.volume, { vm.setVolume(it) }, Modifier.weight(1f))
                 }
                 Box(Modifier.fillMaxWidth().heightIn(min = 1.dp, max = 1.dp).background(AC.Line))
                 ListRow(AIcons.Play, tr("تجربة الأذان الآن", "Test the adhan now"), tr("يشغّل أذان الصلاة القادمة", "Plays the next prayer's adhan"),

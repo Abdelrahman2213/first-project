@@ -33,7 +33,7 @@ object AIcons {
 
     val Pin = icon("pin", "M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z", circle(12f, 9.5f, 2.5f))
     val Bell = icon("bell", "M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15L6 16z", "M10 20a2 2 0 0 0 4 0")
-    val Play = icon("play", "M8 5.5v13l11-6.5-11-6.5z", fill = true, mirror = true)
+    val Play = icon("play", "M8 5.5v13l11-6.5-11-6.5z", fill = true)
     val Pause = icon("pause", "M6.5 5h4v14h-4z", "M13.5 5h4v14h-4z", fill = true)
     val Stop = icon("stop", "M6 6h12v12H6z", fill = true)
     val Home = icon("home", "M4 11l8-7 8 7v9h-5v-6H9v6H4z")

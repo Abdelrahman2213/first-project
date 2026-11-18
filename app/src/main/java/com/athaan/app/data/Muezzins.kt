@@ -32,13 +32,14 @@ data class Muezzin(
     val hasFajr: Boolean get() = fajrUrl != null
     /** A collective recording (e.g. "أذان الحرم المكي") rather than a named sheikh. */
     val isPlace: Boolean get() = nameAr.startsWith("أذان")
+    val isCustom: Boolean get() = region == Region.CUSTOM
 
     val initial: String
-        get() = nameAr.removePrefix("أذان ").trim().removePrefix("ال").take(1)
+        get() = nameAr.removePrefix("أذان ").removePrefix("الشيخ ").trim().removePrefix("ال").take(1).ifEmpty { "؟" }
 
     fun name(ar: Boolean) = if (ar) nameAr else nameEn
     /** "الشيخ ..." for a person, plain name for a place. */
-    fun title(ar: Boolean) = if (ar && !isPlace) "الشيخ $nameAr" else name(ar)
+    fun title(ar: Boolean) = if (ar && !isPlace && !isCustom) "الشيخ $nameAr" else name(ar)
     fun origin(ar: Boolean) = if (ar) originAr else originEn
 
     fun canCall(p: Prayer) = if (p == Prayer.FAJR) hasFajr else hasRegular
@@ -52,10 +53,14 @@ enum class Region(val ar: String, val en: String) {
     HARAMAIN("الحرمين والأقصى", "Haramain & Aqsa"),
     GULF("الخليج", "Gulf"),
     OTHER("أخرى", "Other"),
+    CUSTOM("أصواتي", "My recordings"),
 }
 
 object Muezzins {
-    val all: List<Muezzin> = listOf(
+    /** Built-in library followed by the user's own recordings. */
+    val all: List<Muezzin> get() = builtIn + CustomMuezzins.list
+
+    val builtIn: List<Muezzin> = listOf(
         Muezzin("basit", "عبد الباسط عبد الصمد", "Abdul Basit Abdus Samad", "مصر", "Egypt", Region.EGYPT, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abdulbasit_Abdusamad_1_-_Egypt_%28%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%B7_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%B5%D9%85%D8%AF_-_%D9%85%D8%B5%D8%B1%29.mp3", "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_abd_albaset.mp3"),
         Muezzin("refaat", "محمد رفعت", "Mohamed Refaat", "مصر", "Egypt", Region.EGYPT, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Muhammad_Refaat_-_Cairo_%28%D9%85%D8%AD%D9%85%D8%AF_%D8%B1%D9%81%D8%B9%D8%AA_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3", null),
         Muezzin("husary", "محمود خليل الحصري", "Mahmoud Khalil Al-Husary", "مصر", "Egypt", Region.EGYPT, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmoud_Khalil_Al_Hussary_-_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%AE%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%AD%D8%B5%D8%B1%D9%8A_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3", null),
@@ -87,7 +92,6 @@ object Muezzins {
         Muezzin("surehi", "عبد المجيد السريحي", "Abdulmajeed Al-Surehi", "المسجد النبوي", "Masjid an-Nabawi", Region.HARAMAIN, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abdul_Majid_Al_Surehi_1_%28%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%85%D8%AC%D9%8A%D8%AF_%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%AD%D9%8A%29.mp3", null),
         Muezzin("aqsa", "أذان المسجد الأقصى", "Al-Aqsa adhan", "القدس", "Jerusalem", Region.HARAMAIN, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Al_Aqsa_-_Jerusalem_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89_-_%D8%A7%D9%84%D9%82%D8%AF%D8%B3%29.mp3", null),
         Muezzin("qazzaz", "ناجي قزاز", "Naji Qazzaz", "المسجد الأقصى", "Al-Aqsa Mosque", Region.HARAMAIN, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Najee_Qazaz_-_Al_Aqsa_Jerusalem_%28%D9%86%D8%A7%D8%AC%D9%8A_%D9%82%D8%B2%D8%A7%D8%B2_-_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89_%D8%A7%D9%84%D9%82%D8%AF%D8%B3%29.mp3", null),
-        Muezzin("afasy", "مشاري راشد العفاسي", "Mishary Rashid Alafasy", "الكويت", "Kuwait", Region.GULF, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mishary_Rashid_Alafasy_1_-_Kuwait_%28%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%B1%D8%A7%D8%B4%D8%AF_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A_-_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3", "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mishary_Rashid_Alafasy_3_-_Fajr_Kuwait_%28%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%B1%D8%A7%D8%B4%D8%AF_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3"),
         Muezzin("qatami", "ناصر القطامي", "Nasser Al-Qatami", "السعودية", "Saudi Arabia", Region.GULF, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Nasser_Al_Qatami_1_-_Saudi_Arabia_%28%D9%86%D8%A7%D8%B5%D8%B1_%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D9%85%D9%8A_-_%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%29.mp3", null),
         Muezzin("zahrani", "منصور الزهراني", "Mansour Az-Zahrani", "السعودية", "Saudi Arabia", Region.GULF, "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mansur_Al_Zahrane_%28%D9%85%D9%86%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D8%B2%D9%87%D8%B1%D8%A7%D9%86%D9%8A%29.mp3", null),
         Muezzin("dosari", "ياسر الدوسري", "Yasser Al-Dosari", "السعودية", "Saudi Arabia", Region.GULF, "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/yasser_aldosary.mp3", "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/yasser_aldosary_fajr.mp3"),
@@ -117,14 +121,14 @@ object Muezzins {
         Muezzin("chebae", "مالك شيبة", "Malek Chebae", "", "", Region.OTHER, null, "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Al-fajer%20-%20Malek%20chebae.mp3"),
     )
 
-    private val byIdMap = all.associateBy { it.id }
+    private val byIdMap = builtIn.associateBy { it.id }
 
-    fun find(id: String?): Muezzin? = id?.let { byIdMap[it] }
-    fun byId(id: String?): Muezzin = find(id) ?: all.first()
+    fun find(id: String?): Muezzin? = id?.let { i -> byIdMap[i] ?: CustomMuezzins.list.firstOrNull { it.id == i } }
+    fun byId(id: String?): Muezzin = find(id) ?: builtIn.first()
 
     val DEFAULTS: Map<Prayer, String> = mapOf(
         Prayer.FAJR to "basit",
-        Prayer.DHUHR to "afasy",
+        Prayer.DHUHR to "minshawi",
         Prayer.ASR to "refaat",
         Prayer.MAGHRIB to "qatami",
         Prayer.ISHA to "abkar",

@@ -9,6 +9,8 @@ import com.athaan.app.audio.AudioRepository
 import com.athaan.app.data.AppSettings
 import com.athaan.app.data.City
 import com.athaan.app.data.Country
+import com.athaan.app.data.CustomMuezzins
+import com.athaan.app.data.Muezzins
 import com.athaan.app.data.Muezzin
 import com.athaan.app.data.Places
 import com.athaan.app.data.SettingsStore
@@ -93,14 +95,16 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
                 is LocateResult.Found -> {
                     val lat = r.location.latitude
                     val lng = r.location.longitude
+                    // Country from the phone's geocoder; city name from our own city list, so the
+                    // name is a real city (not a street) and is right in both languages.
                     val geo = LocationHelper.placeName(ctx, lat, lng)
-                    val near = if (geo == null) Places.nearest(ctx, lat, lng, null) else null
-                    val country = geo?.countryCode ?: near?.country
-                    val countryNameAr = country?.let { Country(it, it, 0).name(true) }
-                    val countryNameEn = country?.let { Country(it, it, 0).name(false) }
+                    val near = Places.nearest(ctx, lat, lng, geo?.countryCode?.uppercase())
+                        ?: if (geo == null) Places.nearest(ctx, lat, lng, null) else null
+                    val country = geo?.countryCode?.uppercase() ?: near?.country
+                    val cn = country?.let { Country(it, it, 0) }
                     val coords = "%.3f, %.3f".format(java.util.Locale.ROOT, lat, lng)
-                    val placeAr = geo?.ar ?: near?.let { listOfNotNull(it.name(true), countryNameAr).joinToString("، ") } ?: coords
-                    val placeEn = geo?.en ?: near?.let { listOfNotNull(it.name(false), countryNameEn).joinToString(", ") } ?: coords
+                    val placeAr = near?.let { listOfNotNull(it.name(true), cn?.name(true)).joinToString("، ") } ?: geo?.ar ?: coords
+                    val placeEn = near?.let { listOfNotNull(it.name(false), cn?.name(false)).joinToString(", ") } ?: geo?.en ?: coords
                     update {
                         it.copy(
                             hasLocation = true, manualLocation = false, timezoneId = null,
@@ -183,6 +187,27 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         val s = store.current
         if (!s.autoDownload) return
         Prayer.adhanPrayers.map { s.track(it) }.distinctBy { it.key }.forEach { audio.download(it) }
+    }
+
+    // ---------- The user's own recordings ----------
+
+    fun addCustom(name: String, note: String, regular: android.net.Uri?, fajr: android.net.Uri?, onResult: (CustomMuezzins.AddResult) -> Unit) {
+        viewModelScope.launch {
+            val r = CustomMuezzins.add(getApplication(), name, note, regular, fajr)
+            if (r is CustomMuezzins.AddResult.Added) {
+                // Mark its recordings as available offline.
+                listOf(true, false).forEach { f -> if (if (f) r.muezzin.hasFajr else r.muezzin.hasRegular) audio.download(Track(r.muezzin, f)) }
+            }
+            onResult(r)
+        }
+    }
+
+    fun removeCustom(m: Muezzin) {
+        audio.stopPreview()
+        CustomMuezzins.remove(getApplication(), m.id)
+        // Any prayer that used it goes back to its default muezzin.
+        update { s -> s.copy(muezzinFor = s.muezzinFor.mapValues { (p, id) -> if (id == m.id) Muezzins.DEFAULTS.getValue(p) else id }) }
+        ensureSelectedDownloaded()
     }
 
     // ---------- Audio ----------

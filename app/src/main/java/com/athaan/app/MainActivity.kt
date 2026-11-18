@@ -58,6 +58,7 @@ import com.athaan.app.ui.AppViewModel
 import com.athaan.app.ui.LocStatus
 import com.athaan.app.ui.components.BottomNav
 import com.athaan.app.ui.components.Tab
+import com.athaan.app.ui.screens.AddMuezzinScreen
 import com.athaan.app.ui.screens.CityPickerScreen
 import com.athaan.app.ui.screens.HomeScreen
 import com.athaan.app.ui.screens.LibraryScreen
@@ -81,6 +82,7 @@ sealed interface Route {
     data class Muezzin(val id: String) : Route
     data class Pick(val prayer: Prayer) : Route
     data object CityPicker : Route
+    data class AddCustom(val prefill: String?) : Route
 }
 
 class MainActivity : ComponentActivity() {
@@ -133,6 +135,16 @@ class MainActivity : ComponentActivity() {
         intent.getStringExtra("debug_play")?.let { p -> runCatching { vm.testAdhan(Prayer.valueOf(p)) } }
         intent.getStringExtra("debug_stop")?.let { vm.stopAdhan() }
         intent.getStringExtra("debug_route")?.let { debugRoute.value = it }
+        intent.getStringExtra("debug_add_custom")?.let { name ->
+            lifecycleScope.launch {
+                val repo = com.athaan.app.audio.AudioRepository.get(this@MainActivity)
+                val src = com.athaan.app.data.Track(Muezzins.byId("husary"), false)
+                kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) { if (!repo.isDownloaded(src)) repo.downloadBlocking(src) }
+                val m = com.athaan.app.data.CustomMuezzins.addFromFile(this@MainActivity, name, repo.localFile(src), false)
+                if (m != null) vm.setMuezzin(Prayer.DHUHR, m.id)
+                Log.i("AthaanDebug", "custom added ${m?.id}")
+            }
+        }
         Log.i("AthaanDebug", "handled debug intent ${intent.extras?.keySet()}")
     }
 
@@ -221,6 +233,7 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
             r == "adhan" -> tab = Tab.ADHAN
             r == "settings" -> tab = Tab.SETTINGS
             r == "city" -> stack.add(Route.CityPicker)
+            r == "add" -> stack.add(Route.AddCustom(null))
             r.startsWith("pick:") -> runCatching { stack.add(Route.Pick(Prayer.valueOf(r.removePrefix("pick:")))) }
             r.startsWith("muezzin:") -> stack.add(Route.Muezzin(r.removePrefix("muezzin:")))
         }
@@ -257,8 +270,8 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
                     initialState == "playing" -> fadeIn(tween(350)) togetherWith (fadeOut(tween(300)) + scaleOut(targetScale = 1.06f, animationSpec = tween(300)))
                     else -> {
                         val dir = (if (pushing) 1 else -1) * (if (rtl) -1 else 1)
-                        (slideInHorizontally(tween(320)) { it * dir / 4 } + fadeIn(tween(320))) togetherWith
-                            (slideOutHorizontally(tween(280)) { -it * dir / 4 } + fadeOut(tween(220)))
+                        (slideInHorizontally(tween(300)) { it * dir / 10 } + fadeIn(tween(300))) togetherWith
+                            (slideOutHorizontally(tween(260)) { -it * dir / 10 } + fadeOut(tween(200)))
                     }
                 }
             },
@@ -288,12 +301,22 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
 
                 key is Pair<*, *> -> Box(Modifier.systemBarsPadding()) {
                     when (val r = key.second as Route) {
-                        is Route.Muezzin -> MuezzinScreen(vm, Muezzins.byId(r.id), onBack = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) })
+                        is Route.Muezzin -> MuezzinScreen(
+                            vm, Muezzins.byId(r.id),
+                            onBack = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) },
+                            onAddVersion = { stack.add(Route.AddCustom(it)) },
+                        )
+                        is Route.AddCustom -> AddMuezzinScreen(
+                            vm, r.prefill,
+                            onBack = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) },
+                            onAdded = { m -> if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex); stack.add(Route.Muezzin(m.id)) },
+                        )
                         is Route.Pick -> LibraryScreen(
                             vm, pickFor = r.prayer,
                             onOpen = { stack.add(Route.Muezzin(it.id)) },
                             onPicked = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) },
                             onBack = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) },
+                            onAdd = { stack.add(Route.AddCustom(null)) },
                         )
                         Route.CityPicker -> CityPickerScreen(
                             onPick = { vm.setCity(it); closeCityPicker() },
@@ -310,7 +333,8 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
                         AnimatedContent(
                             targetState = tab,
                             transitionSpec = {
-                                (fadeIn(tween(260)) + slideInVertically(tween(260)) { it / 24 }) togetherWith fadeOut(tween(160))
+                                // Tabs simply cross-fade: nothing moves, so the screen feels steady.
+                                fadeIn(tween(220, delayMillis = 60)) togetherWith fadeOut(tween(160))
                             },
                             label = "tabs",
                         ) { t ->
@@ -325,6 +349,7 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
                                     onOpen = { stack.add(Route.Muezzin(it.id)) },
                                     onPicked = {},
                                     onBack = null,
+                                    onAdd = { stack.add(Route.AddCustom(null)) },
                                 )
                                 Tab.ADHAN -> PerPrayerScreen(vm, onChange = { stack.add(Route.Pick(it)) })
                                 Tab.SETTINGS -> SettingsScreen(
