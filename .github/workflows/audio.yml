@@ -17,11 +17,16 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install faster-whisper==1.0.3
-      - run: python ci/verify_audio.py ${{ matrix.shard }} 10 result-${{ matrix.shard }}.json
-      - uses: actions/upload-artifact@v4
+      - run: |
+          set -o pipefail
+          python ci/verify_audio.py ${{ matrix.shard }} 10 result-${{ matrix.shard }}.json 2>&1 | tee log-${{ matrix.shard }}.txt
+      - if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: result-${{ matrix.shard }}
-          path: result-${{ matrix.shard }}.json
+          path: |
+            result-${{ matrix.shard }}.json
+            log-${{ matrix.shard }}.txt
   report:
     needs: transcribe
     if: always()
@@ -35,7 +40,7 @@ jobs:
           python3 - <<'PY'
           import json, glob
           rows = []
-          for f in glob.glob("results/*/*.json"):
+          for f in glob.glob("results/*/result-*.json"):
               rows += json.load(open(f))
           rows.sort(key=lambda r: (r["id"], r["kind"]))
           json.dump(rows, open("audio-report.json", "w"), ensure_ascii=False, indent=1)
@@ -43,6 +48,7 @@ jobs:
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add audio-report.json
+          mkdir -p logs; cp results/*/log-*.txt logs/ 2>/dev/null || true
+          git add audio-report.json logs
           git commit -m "Audio report [skip ci]"
           git push
