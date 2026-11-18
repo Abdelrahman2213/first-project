@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install faster-whisper==1.0.3
+      - run: pip install faster-whisper==1.0.3 requests
       - run: |
           set -o pipefail
           python ci/verify_audio.py ${{ matrix.shard }} 10 result-${{ matrix.shard }}.json 2>&1 | tee log-${{ matrix.shard }}.txt
