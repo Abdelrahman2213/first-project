@@ -1,0 +1,47 @@
+name: Build APK
+
+on:
+  push:
+    branches: [athaan-app]
+    paths-ignore: ["dist/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build release APK
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleRelease
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Athaan-apk
+          path: app/build/outputs/apk/release/*.apk
+
+      - name: Publish APK (release + dist/ folder)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/release/app-release.apk dist/Athaan.apk
+          TAG="build-${{ github.run_number }}"
+          gh release create "$TAG" dist/Athaan.apk --target "${{ github.sha }}" --title "Athaan $TAG" --notes "APK built from ${{ github.sha }}" || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f dist/Athaan.apk
+          git commit -m "Add built APK [skip ci]"
+          git push

@@ -1,0 +1,53 @@
+package com.athaan.app.data
+
+data class City(val ar: String, val en: String, val countryAr: String, val countryEn: String, val lat: Double, val lng: Double)
+
+/** Cities for choosing a location by hand (for travellers or without GPS). */
+object Cities {
+    val all = listOf(
+        City("القاهرة", "Cairo", "مصر", "Egypt", 30.0444, 31.2357),
+        City("الجيزة", "Giza", "مصر", "Egypt", 30.0131, 31.2089),
+        City("الإسكندرية", "Alexandria", "مصر", "Egypt", 31.2001, 29.9187),
+        City("المنصورة", "Mansoura", "مصر", "Egypt", 31.0409, 31.3785),
+        City("طنطا", "Tanta", "مصر", "Egypt", 30.7865, 31.0004),
+        City("الزقازيق", "Zagazig", "مصر", "Egypt", 30.5877, 31.5020),
+        City("بورسعيد", "Port Said", "مصر", "Egypt", 31.2653, 32.3019),
+        City("السويس", "Suez", "مصر", "Egypt", 29.9668, 32.5498),
+        City("الإسماعيلية", "Ismailia", "مصر", "Egypt", 30.5965, 32.2715),
+        City("أسيوط", "Asyut", "مصر", "Egypt", 27.1810, 31.1837),
+        City("سوهاج", "Sohag", "مصر", "Egypt", 26.5591, 31.6957),
+        City("المنيا", "Minya", "مصر", "Egypt", 28.0871, 30.7618),
+        City("الأقصر", "Luxor", "مصر", "Egypt", 25.6872, 32.6396),
+        City("أسوان", "Aswan", "مصر", "Egypt", 24.0889, 32.8998),
+        City("الغردقة", "Hurghada", "مصر", "Egypt", 27.2579, 33.8116),
+        City("شرم الشيخ", "Sharm El Sheikh", "مصر", "Egypt", 27.9158, 34.3300),
+        City("مكة المكرمة", "Makkah", "السعودية", "Saudi Arabia", 21.4225, 39.8262),
+        City("المدينة المنورة", "Madinah", "السعودية", "Saudi Arabia", 24.4672, 39.6111),
+        City("الرياض", "Riyadh", "السعودية", "Saudi Arabia", 24.7136, 46.6753),
+        City("جدة", "Jeddah", "السعودية", "Saudi Arabia", 21.4858, 39.1925),
+        City("الدمام", "Dammam", "السعودية", "Saudi Arabia", 26.4207, 50.0888),
+        City("دبي", "Dubai", "الإمارات", "UAE", 25.2048, 55.2708),
+        City("أبوظبي", "Abu Dhabi", "الإمارات", "UAE", 24.4539, 54.3773),
+        City("الكويت", "Kuwait City", "الكويت", "Kuwait", 29.3759, 47.9774),
+        City("الدوحة", "Doha", "قطر", "Qatar", 25.2854, 51.5310),
+        City("المنامة", "Manama", "البحرين", "Bahrain", 26.2285, 50.5860),
+        City("مسقط", "Muscat", "عُمان", "Oman", 23.5880, 58.3829),
+        City("عمّان", "Amman", "الأردن", "Jordan", 31.9454, 35.9284),
+        City("القدس", "Jerusalem", "فلسطين", "Palestine", 31.7683, 35.2137),
+        City("بيروت", "Beirut", "لبنان", "Lebanon", 33.8938, 35.5018),
+        City("دمشق", "Damascus", "سوريا", "Syria", 33.5138, 36.2765),
+        City("بغداد", "Baghdad", "العراق", "Iraq", 33.3152, 44.3661),
+        City("الخرطوم", "Khartoum", "السودان", "Sudan", 15.5007, 32.5599),
+        City("طرابلس", "Tripoli", "ليبيا", "Libya", 32.8872, 13.1913),
+        City("تونس", "Tunis", "تونس", "Tunisia", 36.8065, 10.1815),
+        City("الجزائر", "Algiers", "الجزائر", "Algeria", 36.7538, 3.0588),
+        City("الدار البيضاء", "Casablanca", "المغرب", "Morocco", 33.5731, -7.5898),
+        City("إسطنبول", "Istanbul", "تركيا", "Turkey", 41.0082, 28.9784),
+        City("لندن", "London", "المملكة المتحدة", "United Kingdom", 51.5074, -0.1278),
+        City("باريس", "Paris", "فرنسا", "France", 48.8566, 2.3522),
+        City("برلين", "Berlin", "ألمانيا", "Germany", 52.5200, 13.4050),
+        City("نيويورك", "New York", "الولايات المتحدة", "United States", 40.7128, -74.0060),
+        City("كوالالمبور", "Kuala Lumpur", "ماليزيا", "Malaysia", 3.1390, 101.6869),
+        City("جاكرتا", "Jakarta", "إندونيسيا", "Indonesia", -6.2088, 106.8456),
+    )
+}
