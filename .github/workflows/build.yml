@@ -27,7 +27,20 @@ jobs:
       - name: Unit tests, then debug and release APKs
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon testDebugUnitTest assembleDebug assembleRelease
+          set -o pipefail
+          ./gradlew --no-daemon testDebugUnitTest assembleDebug assembleRelease 2>&1 | tee build.log
+
+      - name: Publish the build log when the build fails
+        if: failure()
+        run: |
+          mkdir -p dist
+          grep -E "^e: |error:|FAILED|What went wrong|Exception|> Task .* FAILED|expected|but was" -A3 build.log | head -300 > dist/build-errors.txt || true
+          tail -150 build.log > dist/build-tail.txt
+          find app/build/test-results -name "*.xml" -exec cp {} dist/ \; 2>/dev/null || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -f dist
+          git commit -m "Build log [skip ci]" && git push || true
 
       - name: Keep unit test report
         if: always()
