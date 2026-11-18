@@ -1,1 +1,668 @@
-[]
+[
+ {
+  "id": "abbad",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fares_abbad.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "abkar",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/edres_abkar.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  2- أشهد أن لا إله إلا الله  3- أشهد أن محمد رسول الله  9- أشهد أن محمد الرسول الله  10- حي على الصلاة  5. حي على الفلاح  1- الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "afasy",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mishary_Rashid_Alafasy_3_-_Fajr_Kuwait_%28%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%B1%D8%A7%D8%B4%D8%AF_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  4. أشهد أن محمد رسول الله  5. أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  الصلاة خير من النوم  الله أكبر الله أكبر لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "afasy",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mishary_Rashid_Alafasy_1_-_Kuwait_%28%D9%85%D8%B4%D8%A7%D8%B1%D9%8A_%D8%B1%D8%A7%D8%B4%D8%AF_%D8%A7%D9%84%D8%B9%D9%81%D8%A7%D8%B3%D9%8A_-_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  6- أشهد أن لا إله إلا الله  4. أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلام  هيا على الفلاح  الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "ajmi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/ahmed_alagamy.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي عنا الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "algeria",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Algeria_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله ونحفظ الله ونحفظ  أشم الله جائرًا من الله  أشهد أننا نجدها إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  تأهي عفونا  حي يا عبد الله  فلي عن فلاح  فلي عن فلاح  أغلاقاً من النوم  أغلاقاً من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "algeria",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Riad_Al_Djazairi_-_Algeria_%28%D8%B1%D9%8A%D8%A7%D8%B6_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A_-_%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  183- أشهد أن لا إله إلا الله  108. أشهد أن محمد رسول الله  109 أشهد أن محمد رسول الله  هيا على الصلاة  حي يا رفاة  حيا على الفلاح  حيًّا فلاح  الله أكبر الله أكبر لا لها إلا الله"
+ },
+ {
+  "id": "ali_mahmoud",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/aly_mahmoud.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أجمع الله إلى رئيس الله  أجمع رئيس الله إلى رئيس الله  أجمع أن نمسك من تدم رجل الله  أهلاً أهلاً  أهلاً أهلاً  أمراك الله  لا إله إلا الله"
+ },
+ {
+  "id": "aqsa",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Al_Aqsa_-_Jerusalem_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89_-_%D8%A7%D9%84%D9%82%D8%AF%D8%B3%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيي على الصلاة  حيي على الصلاة  حيي على الفلاح  حي على الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "arkani",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Ibrahim%20Al-Arkani.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهاد أن لا إله إلا الله  أشهاد أن لا إله إلا الله  أشهاد أن محمد رسول الله  أشهاد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  2. حي على الفلاح  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "bahtimi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/kamel_youssef_albahtemy.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشغل لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيًّا للصلاة  حيًّا للصلاة  حيًّا للصلاة  حينا الكلام  الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "baloushi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/hazzaa_albaloshy.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "banna",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmoud_Ali_Al_Banna_-_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%B9%D9%84%D9%8A_%D8%A7%D9%84%D8%A8%D9%86%D8%A7_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيا للصلاة  حيا للصلاة  حيّا للفناء  حيّا لم فنا  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "basit",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_abd_albaset.mp3",
+  "fajr_phrase": true,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهر لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيان الصلاة  حيّا رسول الله  الصلاة خير من النوم  الصناة خير من النور  الله أكبر  الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "basit",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abdulbasit_Abdusamad_1_-_Egypt_%28%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%A8%D8%A7%D8%B3%D8%B7_%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D8%B5%D9%85%D8%AF_-_%D9%85%D8%B5%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن لمحمد رسول الله  حيّا على الصلاة  حي على الصناة  خي على الفناح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "bukhari",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Assem_Bukhrare_-_Al_Haram_Al_Maki_%28%D8%B9%D8%A7%D8%B5%D9%85_%D8%A8%D8%AE%D8%B1%D8%A7%D8%B1%D9%8A_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر  أشهد أن لا إله إلا من  أشهد أننا أمنا هلما أمنا  أشهد أن محمد رسول الله  أشهد أن لمحمد رسول الله  حيوى الصلاة  حي يا رسولان  حيا الفلاح  حيواناً فلا  الصلاة  خم من النوم  أشلعاته خلو من النور  الله أكبر الله أكبر  لا إله إلا الله  اشترك في القناة"
+ },
+ {
+  "id": "cairo",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Cairo_Egypt_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9_%D9%85%D8%B5%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا نده إلا الله  أشهد أن لا أدى لأولاد الله  أشهد أن محمد رضو الله  أشهد أن محمد ربو الله  حيوى رضي الله  حي رضاها  حيا ربنا  الصلاة خير من النور  الصلاة خير من النور  الله أكبر  لا لها إلا الله"
+ },
+ {
+  "id": "cairo",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/adhan_egypt.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أني محمد رسول الله  أشهد أن محمد رسول الله  عينا الصلاة  عينا الصلاة  حي يا رسول الله  حيّاناً تباه  الله أكبر الله أكبر  تأهلنا إلى الله"
+ },
+ {
+  "id": "chebae",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Al-fajer%20-%20Malek%20chebae.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  هيا على الصلاة  حي على الخلاة  هيا على الفلاح  هيا على الفلاح  الصلاة خير من النوم  الله أتبر الله أتبر  لا إله إلا الله"
+ },
+ {
+  "id": "deghreri",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Hamad_Al_Daghriri_%28%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%AF%D8%BA%D8%B1%D9%8A%D8%B1%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حيوى رفعنا  حيا على الصلاة  حيّا على الفلاح  حي على الفلاح  الله أكرم الله أكرم  لا إله إلا الله"
+ },
+ {
+  "id": "dosari",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/yasser_aldosary_fajr.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  هيا على الفلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "dosari",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/yasser_aldosary.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر  الله أكبر  الله أكبر  الله أكبر  أشهد أن لا إله إلا الله  9- أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الفلاح  الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "dubai",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Dubai_UAE_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%AF%D8%A8%D9%8A_%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D8%B1%D8%A7%D8%AA%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  هيا الصلاة  حيوى الصلاة  هيا على الفلاح  حيّاً فلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "emadi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Al_Amade_1_-_Qatar_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B9%D9%85%D8%A7%D8%AF%D9%8A_-_%D9%82%D8%B7%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله اكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أننا نعمل عند الله  أشهد أن محمد عثور الله  أشهد أن محمد رسول الله  حي يا رفاق  حي عرفان  حي عناك  هيا لنا  اللهم أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "fashni",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/taha_alfashn_1.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أننا أحنا إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهر أن محمد رسول الله  حيّى على الصلاة  حيّى على الصلاة  أيها الفناء  أيها الفناء  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "ghalwash",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/ragheb_ghalosh.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد لا إله إلا الله  أشهد أن لا إباه إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيّى على الصلاة  حيّى على الصلاة  حيا للفضاء  حيا للفضاء  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "ghamdi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/saad_alghamdy.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "hadrawi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Faruq_Abdul_Rahman_Hadrawe_-_Al_Haram_Al_Maki_%28%D9%81%D8%A7%D8%B1%D9%88%D9%82_%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86_%D8%AD%D8%B6%D8%B1%D8%A7%D9%88%D9%8A_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": false,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمداً وسور الله  أشهد أن محمداً رسول الله  حيّى على الصلاة  حيّى الأصوات  حي على الثلاث  فعيني على الفناء  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "hamathani",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/abodehq/Athan-MP3/master/Sounds/Athan%20Majed%20Al-hamathani.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيان الصلاة  حيانا الصلاة  حيانا الفلاح  حيانا فلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "harak",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_abdel_nasser_harak.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيّى على الصلاة  حيا للصلاة  حيا للفلاح  حيوانا الفلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "harak",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/abdel_nasser_hark.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  حيواناً فلا .  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "husary",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmoud_Khalil_Al_Hussary_-_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%AE%D9%84%D9%8A%D9%84_%D8%A7%D9%84%D8%AD%D8%B5%D8%B1%D9%8A_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رجول الله  حيا للصداة  حي على الفناح  حي على الفناح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "islam_sobhi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/islam_sobhey.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حيّعنا الصلاة  حيا على الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "jabr",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ibraheem_Jabr_Abu_Raheq_-_Fajr_%28%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85_%D8%AC%D8%A8%D8%B1_%D8%A3%D8%A8%D9%88_%D8%B1%D8%AD%D9%8A%D9%82_-_%D8%A7%D9%84%D9%81%D8%AC%D8%B1%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  2- أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  حي على الفلا  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "jabr",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ibraheem_Jabr_Abu_Raheq_%28%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85_%D8%AC%D8%A8%D8%B1_%D8%A3%D8%A8%D9%88_%D8%B1%D8%AD%D9%8A%D9%82%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  حي على الفلاح  2. الصلاة خير من النوم  3. الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "jehaim",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/fajr_khaled_aljohaim.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  4. أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "kuwait",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Kuwait_1_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيّى على الصلاة  حيّى على الصلاة  حيا على الفلاح  حيّى على الفلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "kuwait",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Kuwait_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "madinah",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Al_Haram_Al_Madani_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا ما  شبعنا إله إلا الله  أشهد أن لمحمد رسول الله  أشهد أن لمحمد الرسول الله  حي يا عم الصلاة  حي يا رسول الله  حيا للفلاح  حي يا منفلال  الصلاة خير من النوم  الصلاة  يخل من النور  الله أكبر الله أكبر  لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "madinah",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Al_Haram_Al_Madani_-_Al_Madinah_1_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A_-_%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9_%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  هيا على الصلاة  حي على الصلاة  حي على التعالف  حيّوا لتنام  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "makkah",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Fajr_Al_Haram_Al_Maki_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%A7%D9%84%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر  أشهد أن لا إله إلا وار  أشهد أن لا إله إلا الله  أشهد أن محمد رضو الله  أشهد أن محمد رسول الله  هيا أطلع  هيا أطلع  هيا رزاح  هيا أباك  الصلاة الخير من النوم  الصلاة الخير من النوم  الله أكبر الله أكبر  لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "makkah",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/adhan_makkah.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  تحيى الصلاة  حيا على الضلاح  حيا على الضلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "malki",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Hamdan_Al_Maleke_-_Najran_Saudi_Arabia_%28%D8%AD%D9%85%D8%AF%D8%A7%D9%86_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A_-_%D9%86%D8%AC%D8%B1%D8%A7%D9%86_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر ، الله أكبر  أشهد أن أحمدًا رسول الله  أشهد أن أنا محمد رسول الله  أمامك  أمامك  أمامك  أمامك  الله  حيوان الله  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "mejlad",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Nawaf_Al_Mejlad_2_-_Fajr_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D9%88%D8%A7%D9%81_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%AF_-_%D8%A7%D9%84%D9%81%D8%AC%D8%B1%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  اشهد ان لا اله الا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  هيا على الفلاح  حي على الفلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "mejlad",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Nawaf_Al_Mejlad_1_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D9%88%D8%A7%D9%81_%D8%A7%D9%84%D9%85%D8%AC%D9%84%D8%AF%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  اشهد ان لا اله الا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حيا على الصلاة  حي على الفلاح  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "minshawi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mohamed_Siddiq_El-Minshawi_-_Egypt_1_%28%D9%85%D8%AD%D9%85%D8%AF_%D8%B5%D8%AF%D9%8A%D9%82_%D8%A7%D9%84%D9%85%D9%86%D8%B4%D8%A7%D9%88%D9%8A_-_%D9%85%D8%B5%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  أطلع ويطلع ويطلع  تروا الله لا إله إلا الله  أكد أن محمد رسول الله  فكر أن محمد رسول الله  طيّر القناة  اients  the  m  m  m  m  m  m  m  m  m  m  m  m  أَنَّنَّ اللَّهِ"
+ },
+ {
+  "id": "morocco",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Kamal_Muhammad_Al_Marush_2_-_Morocco_%28%D9%83%D9%85%D8%A7%D9%84_%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%85%D8%B1%D8%B9%D9%88%D8%B4_-_%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيّا على الصلاة  حي على الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "mulla",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ali_Ibn_Ahmad_Mala_1_-_Al_Haram_Al_Maki_%28%D8%B9%D9%84%D9%8A_%D8%A8%D9%86_%D8%A3%D8%AD%D9%85%D8%AF_%D9%85%D9%84%D8%A7_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الواقع  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أننا محمد رسول الله  حيان الصلاة  والفلام  وعيوان الفنان  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "mustafa_ismail",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mustafa_Ismail_-_Egypt_%28%D9%85%D8%B5%D8%B7%D9%81%D9%89_%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84_-_%D9%85%D8%B5%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  شهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيا على الصلاة  الحياة والفلام  حي على الصلاة  حيوى والصلاة  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "naqshbandi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Sheikh_Al_Naqshbandi_%28%D8%A7%D9%84%D8%B4%D9%8A%D8%AE_%D8%A7%D9%84%D9%86%D9%82%D8%B4%D8%A8%D9%86%D8%AF%D9%89%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيا على الصلاة  حيا على الصلاة  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "nayef_fida",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Nayf_Fedah_-_Al_Haram_Al_Maki_%28%D9%86%D8%A7%D9%8A%D9%81_%D9%81%D8%AF%D8%A7%D8%AD_-_%D8%A7%D9%84%D8%AD%D8%B1%D9%85_%D8%A7%D9%84%D9%85%D9%83%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد إن محمد رسول الله  حيا رفعنا  حيا على الصلاة  حيّا عنم ثلاث  حياً ونمثلال  الله أكبر الله أكبر  لا إله إلا الله  موسيقى"
+ },
+ {
+  "id": "nufais",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmad_Al_Nafees_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%86%D9%81%D9%8A%D8%B3%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "nuinaa",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmed_Nuinaa_1_-_Egypt_%28%D8%A3%D8%AD%D9%85%D8%AF_%D9%86%D8%B9%D9%8A%D9%86%D8%B9_-_%D9%85%D8%B5%D8%B1%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا ديانه إلا هو الله  أشهد أني من محمد وثور  أشهد أنه لأحمد مدى ركوب  حي يا رفاق  ايها المكونات  صلي على الصلاة  صلى الله عليه وسلم  الصلاة خير من النعوذ  الصلاة خير من النعوذ  الله أكبر الله أكبر  لا يده الله"
+ },
+ {
+  "id": "omran",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mohamed_omran_fajr.mp3",
+  "fajr_phrase": true,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  فكاد وأن لا إله إلا الله  فكاد وأن لا إله إلا الله  أكهد أن محمد رجول الله  أكهد أن محمد رجول الله  يا رفاق  يا رفاق  يا ربنا  يا ربنا  صلاة خير من النوم  صلاة خير من النوم  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "omran",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/mohamed_omran.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  هيا على الفلاح  حيانا الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "qatami",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Nasser_Al_Qatami_1_-_Saudi_Arabia_%28%D9%86%D8%A7%D8%B5%D8%B1_%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D9%85%D9%8A_-_%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  هيا على الصلاة  حي على الفلاح  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "qazzaz",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Najee_Qazaz_-_Al_Aqsa_Jerusalem_%28%D9%86%D8%A7%D8%AC%D9%8A_%D9%82%D8%B2%D8%A7%D8%B2_-_%D8%A7%D9%84%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89_%D8%A7%D9%84%D9%82%D8%AF%D8%B3%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رفو الله  حيّر الصناة  موسيقى  حيا للصناف  حيّا على الفناظ  حيّا للفلا  الله أكبر الله أكبر  لا لها إلا الله"
+ },
+ {
+  "id": "refaat",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Muhammad_Refaat_-_Cairo_%28%D9%85%D8%AD%D9%85%D8%AF_%D8%B1%D9%81%D8%B9%D8%AA_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " يا ملكا يا ملكا  يا ملكا يا ملكا  بالوضى إذاً عين الله  الحمد لله إذاً عين الله  لأن محمد وصول الله  حبيبي محمد رسول الله  يا ربان  يا فنان  يا الله  حيوانا  الله أكبر, الله أكبر.  سمعك في حياتي"
+ },
+ {
+  "id": "sayad",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/shaaban_alsayad.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيّا للصلاة  حيّر الصلاة  حيوانا الفلاح  حينا الفلاق  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "shuaisha",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abul_Ainain_Shuaisha_-_Cairo_%28%D8%A3%D8%A8%D9%88_%D8%A7%D9%84%D8%B9%D9%8A%D9%86%D9%8A%D9%86_%D8%B4%D8%B9%D9%8A%D8%B4%D8%B9_-_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن إله إلا الله  أشهد أن محمد وزور الله  أسأل أن مخيمة رسول الله  حي يا رفضاني  موسيقى  أيها الرطبان  حيواناً أمار  الله  الله أكبر  لا إيمه إلا الله"
+ },
+ {
+  "id": "surehi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Abdul_Majid_Al_Surehi_1_%28%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%85%D8%AC%D9%8A%D8%AF_%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%AD%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  2. أشهد أن لا إله إلا الله  4. أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حيوى رفعنام  حيّا رو الصلاة  حي على الفلاح  حي على الفلاح  الله أكبر الله أكبر  2. لا إله إلا الله"
+ },
+ {
+  "id": "syria",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Syria_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%B3%D9%88%D8%B1%D9%8A%D8%A7%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر  أشهد أن لا إله إلا الله  أشمد أن لا إله إلا الله  أشهد هم محمد الرسول الله  أشهد هم محمداً سعوناً  حي يا رفاق  حيوان  حي يا رفاق  حيا فرح  اللهم لا إله إلا الله"
+ },
+ {
+  "id": "tablawi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/muhammed_altablawy.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حينا الصلاة  حي على الفناء  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "tarablsi",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmd_At-Trablsy_-_Fajr_Kuwait_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D9%8A_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D9%83%D9%88%D9%8A%D8%AA%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حيّ على الصلاة  حي على الفلاح  حي على الفلاح  الصلاة خير من النعوم  الصلاة خير من النعوم  الله أكبر الله أكبر لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "tarablsi",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Ahmd_At-Trablsy_1_%28%D8%A3%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D8%B7%D8%B1%D8%A7%D8%A8%D9%84%D8%B3%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  حيّعنا الفناء  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "tawakh",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mahmud_Al_Tawakh_2_-_Masjid_Al_Rifai_Cairo_%28%D9%85%D8%AD%D9%85%D9%88%D8%AF_%D8%A7%D9%84%D8%B7%D9%88%D8%A7%D8%AE_-_%D9%85%D8%B3%D8%AC%D8%AF_%D8%A7%D9%84%D8%B1%D9%81%D8%A7%D8%B9%D9%8A_%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشعد أن لا إله إلا الله  أشعد أن محمد رسول الله  أشهد أن محمد رسول الله  حي يا رب الصلاة  حي يا رب الصلاة  حياراً فلا  حيوى الفلاح  الله أكبر الله  لا إله إلا الله"
+ },
+ {
+  "id": "toubar",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/nasr_aldeen_tobar_fajr.mp3",
+  "fajr_phrase": true,
+  "has_falah": false,
+  "has_hayya": true,
+  "text": " الله أكبر  الله أكبر  الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رضول الله  أشهد أن محمد رسول الله  حي على الضنار  حي يا ربنا  حي على الفناح  حيّ عَلْفَنَا عَلْفَنَا  الصلاة خير من النوم  الصلاة غيراً من النوم  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "toubar",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/nasr_eldeen_toubar.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رضول الله  أشهد أن محمد رسول الله  حي على الظلام  حي على الغنام  حي على الفلاح  حيّ عَلْفَنَا عَلْفَنَا  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "turkey",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Adhan_Turkey_1_%28%D8%A3%D8%B0%D8%A7%D9%86_%D8%AA%D8%B1%D9%83%D9%8A%D8%A7%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  تشدين محمد رسول الله  هيا للصلاة  خيال الزلال  حيّان رفلاء  حيّا إرفي الله  الله أكبر  الله أكبر  لا إله إلا الله  اشتركوا في القناة"
+ },
+ {
+  "id": "yamani",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Wadi_Hamad_Al-Yamani_%28%D9%88%D8%A7%D8%AF%D9%8A_%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%8A%D9%85%D8%A7%D9%86%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  2. أشهد أن لا إله إلا الله  2. أشهد أن لا إله إلا الله  9- أشهد أن محمد الرسول الله  109- أشهد أن محمد رسول الله  5. حي على الصلاة  5. حي على الصلاة  حي على الفلاح  حي على الفلاح  الله أكبر الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "yaseen",
+  "kind": "fajr",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Yaseen_Al_Aassaf_2_-_Fajr_Iraq_%28%D9%8A%D8%A7%D8%B3%D9%8A%D9%86_%D8%A7%D9%84%D8%A3%D8%B3%D9%81_-_%D9%81%D8%AC%D8%B1_%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%29.mp3",
+  "fajr_phrase": true,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  الله أكبر الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  هيا على الصلاة  حي على الصلاة  حي على الفلاح  حي على الفلاح  الصلاة خير من النوم  الصلاة خير من النوم  الله أكبر الله أكبر لا إله إلا الله"
+ },
+ {
+  "id": "yaseen",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Yaseen_Al_Aassaf_1_%28%D9%8A%D8%A7%D8%B3%D9%8A%D9%86_%D8%A7%D9%84%D8%A3%D8%B3%D9%81%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر  أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  أشهد أن محمد رسول الله  حي على الصلاة  حي على الصلاة  حي على الفلاح  حي على الفلاح  الله أكبر  لا إله إلا الله"
+ },
+ {
+  "id": "zaher",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/bilalelsayed97/adhan_sounds/main/abdel_azem_zaher.mp3",
+  "fajr_phrase": false,
+  "has_falah": false,
+  "has_hayya": false,
+  "text": " الله أطلب الله أكبر  الله أطلب الله أكبر  أشهد أن لا إله إلا الله  أشهد أن لا إله إلا الله  اشهد ان محمد رسول الله  اشهد ان محمد رسول الله  الله أكبر الله  الله أكبر الله  الله أكبر. لا إله إلا الله."
+ },
+ {
+  "id": "zahrani",
+  "kind": "regular",
+  "url": "https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/Mansur_Al_Zahrane_%28%D9%85%D9%86%D8%B5%D9%88%D8%B1_%D8%A7%D9%84%D8%B2%D9%87%D8%B1%D8%A7%D9%86%D9%8A%29.mp3",
+  "fajr_phrase": false,
+  "has_falah": true,
+  "has_hayya": true,
+  "text": " الله أكبر الله أكبر  2- أشهد أن لا إله إلا الله  أشهد أن محمد رسول الله  حي على الصلاة  حيا على الفلاح  الصلاة خير من النور  الله أكبر  لا إله إلا الله"
+ }
+]
