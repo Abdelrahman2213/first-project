@@ -444,6 +444,14 @@ def shade(name):
     sh("cmd statusbar expand-notifications")
     time.sleep(3)
     shot(name)
+    # Open the expanded card of our notification too.
+    for n in nodes():
+        if n.get("resource-id") == "android:id/expand_button" and (n.get("content-desc") or "").lower().startswith("expand"):
+            x, y = center(n)
+            sh(f"input tap {x} {y}")
+            time.sleep(2)
+            shot(name + "_expanded")
+            break
     sh("cmd statusbar collapse")
     time.sleep(1.2)
 
@@ -472,6 +480,8 @@ for night in ["yes", "no"]:
         time.sleep(1)
         shade(f"notif_{kind.lower()}_{'dark' if night == 'yes' else 'light'}")
 sh("cmd uimode night yes")
+sh(f"am start -n {PKG}/.MainActivity --es debug_notify COUNTDOWN_OFF")
+time.sleep(1)
 nlog = adb("logcat", "-d", "-s", "AthaanDebug:*")
 ok("every notification posts", all(f"notify {k} ok" in nlog for k in kinds) and "failed" not in nlog, nlog[-600:])
 with open(os.path.join(OUT, "notifications_all.txt"), "w") as f:

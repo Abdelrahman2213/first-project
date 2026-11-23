@@ -143,7 +143,6 @@ object Notifications {
             .setColor(ACCENT)
             .setContentTitle(listOfNotNull(card.title, card.time).joinToString(" · "))
             .setContentText(card.text ?: card.label)
-            .setSubText(card.label)
             .setStyle(NotificationCompat.DecoratedCustomViewStyle())
             .setCustomContentView(small)
             .setCustomBigContentView(NotificationCards.big(context, card, s))

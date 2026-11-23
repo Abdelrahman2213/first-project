@@ -26,7 +26,7 @@ object NotificationArt {
     private var artCache: Bitmap? = null
 
     /** The Shamsa (sun medallion): rays, a ring, an eight-point star and a rosette. */
-    private fun shamsa(c: Canvas, cx: Float, cy: Float, r: Float, alpha: Int, stroke: Float) {
+    private fun shamsa(c: Canvas, cx: Float, cy: Float, r: Float, alpha: Int, stroke: Float, squares: Boolean = true) {
         val p = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = GOLD; this.alpha = alpha; style = Paint.Style.STROKE; strokeWidth = stroke; strokeCap = Paint.Cap.ROUND
         }
@@ -50,7 +50,7 @@ object NotificationArt {
             }
             path.close(); c.drawPath(path, p)
         }
-        square(0.0, r * 0.6f); square(45.0, r * 0.6f)
+        if (squares) { square(0.0, r * 0.6f); square(45.0, r * 0.6f) }
         // Inner interlaced star.
         val star = Path()
         for (k in 0 until 16) {
@@ -75,7 +75,8 @@ object NotificationArt {
         val b = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
         val c = Canvas(b)
         val cx = if (rtl) 0f else size.toFloat()
-        shamsa(c, cx, 0f, size * 0.98f, 120, 1.3f * d)
+        // A sun rising from the corner: rays and rings, with the star small at the very corner.
+        shamsa(c, cx, 0f, size * 0.92f, 105, 1.1f * d, squares = false)
         // Fade away from the corner.
         val fade = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             shader = RadialGradient(cx, 0f, size * 1.0f, intArrayOf(Color.BLACK, Color.BLACK, Color.TRANSPARENT), floatArrayOf(0f, 0.45f, 1f), Shader.TileMode.CLAMP)
@@ -109,7 +110,11 @@ object NotificationArt {
         c.drawCircle(s / 2f, s / 2f, s * 0.48f, Paint(Paint.ANTI_ALIAS_FLAG).apply {
             shader = RadialGradient(s / 2f, s / 2f, s * 0.48f, intArrayOf(0x40D6B370, 0x00D6B370), null, Shader.TileMode.CLAMP)
         })
-        shamsa(c, s / 2f, s / 2f, min(s, s) * 0.36f, 235, 3.2f)
+        shamsa(c, s / 2f, s / 2f, min(s, s) * 0.40f, 125, 2.4f)
+        // Darken the middle band where the player writes the title.
+        c.drawRect(0f, 0f, s.toFloat(), s.toFloat(), Paint().apply {
+            shader = LinearGradient(0f, 0f, 0f, s.toFloat(), intArrayOf(0x330B1220, 0x660B1220, 0x330B1220), null, Shader.TileMode.CLAMP)
+        })
         artCache = b
         return b
     }

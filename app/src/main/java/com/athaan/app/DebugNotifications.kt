@@ -28,7 +28,8 @@ object DebugNotifications {
             when (what) {
                 "CLEAR" -> NotificationManagerCompat.from(context).cancelAll()
                 "SILENT" -> Notifications.showAdhanSilent(context, Prayer.MAGHRIB, s, Notifications.SilentReason.QUIET, now)
-                "COUNTDOWN" -> Notifications.updateCountdown(context, s.copy(persistentCountdown = true), next)
+                "COUNTDOWN" -> { SettingsStore.get(context).update { it.copy(persistentCountdown = true) }; AdhanScheduler.reschedule(context) }
+                "COUNTDOWN_OFF" -> { SettingsStore.get(context).update { it.copy(persistentCountdown = false) }; AdhanScheduler.reschedule(context) }
                 "PRE_ALERT" -> Notifications.showReminder(context, AlarmKind.PRE_ALERT, p, now + 9 * 60_000L + 42_000L, s)
                 "IQAMA" -> Notifications.showReminder(context, AlarmKind.IQAMA, Prayer.ASR, now, s)
                 "FRIDAY" -> Notifications.showReminder(context, AlarmKind.FRIDAY, Prayer.DHUHR, now + 29 * 60_000L, s)
