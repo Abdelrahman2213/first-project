@@ -21,7 +21,10 @@ import com.athaan.app.prayer.AsrMadhab
 import com.athaan.app.prayer.CalcMethod
 import com.athaan.app.prayer.DayTimes
 import com.athaan.app.prayer.Prayer
-import com.athaan.app.prayer.PrayerTimesCalc
+import com.athaan.app.prayer.PrayerSchedule
+import com.athaan.app.data.AdhanLength
+import com.athaan.app.data.HeroPattern
+import com.athaan.app.data.LightPalette
 import com.athaan.app.schedule.AdhanScheduler
 import com.athaan.app.service.AdhanService
 import kotlinx.coroutines.delay
@@ -61,15 +64,13 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         ensureSelectedDownloaded()
     }
 
-    fun dayTimes(s: AppSettings, offset: Int, now: Long): DayTimes =
-        PrayerTimesCalc.forDayOffset(offset, s.lat, s.lng, s.method, s.madhab, now, s.zone())
+    fun dayTimes(s: AppSettings, offset: Int, now: Long): DayTimes = PrayerSchedule.day(s, offset, now)
 
     fun nextInfo(s: AppSettings, now: Long): NextInfo {
-        val days = (-1..1).map { dayTimes(s, it, now) }
-        val all = days.flatMap { d -> Prayer.adhanPrayers.map { it to d[it] } }.sortedBy { it.second }
-        val next = all.first { it.second > now }
-        val prev = all.lastOrNull { it.second <= now }?.second ?: (next.second - 6 * 3_600_000L)
-        return NextInfo(next.first, next.second, prev)
+        val all = PrayerSchedule.around(s, now)
+        val next = all.first { it.at > now }
+        val prev = all.lastOrNull { it.at <= now }?.at ?: (next.at - 6 * 3_600_000L)
+        return NextInfo(next.prayer, next.at, prev)
     }
 
     private fun update(t: (AppSettings) -> AppSettings) {
@@ -166,8 +167,57 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
     fun setPreAlert(min: Int) = update { it.copy(preAlertMinutes = min) }
     fun setSilent(on: Boolean) = update { it.copy(silent = on) }
     fun setVibrate(on: Boolean) = update { it.copy(vibrate = on) }
-    fun setArabic(on: Boolean) = store.update { it.copy(arabic = on) }
+    fun setArabic(on: Boolean) = update { it.copy(arabic = on) }
     fun setLight(on: Boolean) = store.update { it.copy(light = on) }
+    fun setPalette(p: LightPalette) = store.update { it.copy(palette = p) }
+    fun setPattern(p: HeroPattern) = store.update { it.copy(pattern = p) }
+    fun setOffset(p: Prayer, minutes: Int) = update { it.copy(offsets = it.offsets + (p to minutes.coerceIn(-60, 60))) }
+    fun setIqama(p: Prayer, minutes: Int) = update { it.copy(iqama = it.iqama + (p to minutes.coerceIn(0, 60))) }
+    fun setAdhanLength(l: AdhanLength) = store.update { it.copy(adhanLength = l) }
+    fun setFadeIn(on: Boolean) = store.update { it.copy(fadeIn = on) }
+    fun setVolumeKeysPause(on: Boolean) = store.update { it.copy(volumeKeysPause = on) }
+    fun setScreenOffPause(on: Boolean) = store.update { it.copy(screenOffPause = on) }
+    fun setFlipToSilence(on: Boolean) = store.update { it.copy(flipToSilence = on) }
+    fun setQuiet(enabled: Boolean? = null, start: Int? = null, end: Int? = null, days: Set<Int>? = null) = update {
+        it.copy(
+            quietEnabled = enabled ?: it.quietEnabled, quietStart = start ?: it.quietStart,
+            quietEnd = end ?: it.quietEnd, quietDays = days ?: it.quietDays,
+        )
+    }
+    fun setFridayMinutes(m: Int) = update { it.copy(fridayMinutes = m) }
+    fun setKahf(on: Boolean) = update { it.copy(kahfReminder = on) }
+    fun setAdhkarReminders(on: Boolean) = update { it.copy(adhkarReminders = on) }
+    fun setSuhoor(m: Int) = update { it.copy(suhoorMinutes = m) }
+    fun setPersistentCountdown(on: Boolean) = update { it.copy(persistentCountdown = on) }
+
+    // ---------- Backup ----------
+
+    fun exportSettings(uri: android.net.Uri, onDone: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val ok = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                runCatching {
+                    getApplication<Application>().contentResolver.openOutputStream(uri, "wt")!!.use {
+                        it.write(store.exportJson().toByteArray())
+                    }
+                }.isSuccess
+            }
+            onDone(ok)
+        }
+    }
+
+    fun importSettings(uri: android.net.Uri, onDone: (Boolean) -> Unit) {
+        viewModelScope.launch {
+            val text = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+                runCatching { getApplication<Application>().contentResolver.openInputStream(uri)!!.use { String(it.readBytes()) } }.getOrNull()
+            }
+            val ok = text != null && store.importJson(text)
+            if (ok) {
+                AdhanScheduler.reschedule(getApplication())
+                ensureSelectedDownloaded()
+            }
+            onDone(ok)
+        }
+    }
     fun setAutoDownload(on: Boolean) {
         store.update { it.copy(autoDownload = on) }
         ensureSelectedDownloaded()
@@ -225,6 +275,8 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         runCatching { ContextCompat.startForegroundService(getApplication(), i) }
     }
 
+    fun pauseAdhan() = sendToService(Intent(getApplication(), AdhanService::class.java).setAction(AdhanService.ACTION_PAUSE))
+    fun resumeAdhan() = sendToService(Intent(getApplication(), AdhanService::class.java).setAction(AdhanService.ACTION_RESUME))
     fun stopAdhan() = sendToService(Intent(getApplication(), AdhanService::class.java).setAction(AdhanService.ACTION_STOP))
     fun toggleMute() = sendToService(Intent(getApplication(), AdhanService::class.java).setAction(AdhanService.ACTION_TOGGLE_MUTE))
 

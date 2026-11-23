@@ -71,6 +71,12 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
         vm.dayTimes(s, 0, now)[pb.prayer]
     }
     val tz = s.zone()
+    // Keep the screen on while this screen is showing (a screen timeout would pause the adhan).
+    val view = androidx.compose.ui.platform.LocalView.current
+    androidx.compose.runtime.DisposableEffect(Unit) {
+        view.keepScreenOn = true
+        onDispose { view.keepScreenOn = false }
+    }
     val pulse = rememberInfiniteTransition(label = "pulse")
     val breath by pulse.animateFloat(0f, 1f, infiniteRepeatable(tween(2600, easing = FastOutSlowInEasing), RepeatMode.Reverse), label = "breath")
     val spin by pulse.animateFloat(0f, 360f, infiniteRepeatable(tween(40_000, easing = LinearEasing)), label = "spin")
@@ -103,7 +109,11 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
 
         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
             T(
-                if (pb.prayer == Prayer.FAJR) tr("حان الآن موعد أذان · الفجر", "It's time for · Fajr adhan") else tr("حان الآن موعد أذان", "It's time for"),
+                when {
+                    pb.paused -> tr("الأذان متوقف مؤقتًا", "Adhan paused")
+                    pb.prayer == Prayer.FAJR -> tr("حان الآن موعد أذان · الفجر", "It's time for · Fajr adhan")
+                    else -> tr("حان الآن موعد أذان", "It's time for")
+                },
                 13.sp, color = AC.Muted, modifier = Modifier.padding(top = 24.dp),
             )
             Spacer(Modifier.height(170.dp))
@@ -111,7 +121,7 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
                 Modifier.graphicsLayer { alpha = enter.value; val sc = 0.8f + 0.2f * enter.value; scaleX = sc; scaleY = sc },
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                T(if (ar) pb.prayer.ar else pb.prayer.en, 58.sp, color = AC.Gold, kufi = true, lineHeight = 70.sp)
+                T(prayerName(pb.prayer, prayerTime, tz, ar), 58.sp, color = AC.Gold, kufi = true, lineHeight = 70.sp)
                 T(TimeFmt.clock(prayerTime, ar, tz), 18.sp, FontWeight.SemiBold)
             }
             Spacer(Modifier.weight(1f))
@@ -140,12 +150,13 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
                 Modifier.fillMaxWidth().padding(horizontal = 24.dp),
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
-                OutlineButton(
-                    if (pb.muted) tr("إلغاء الكتم", "Unmute") else tr("كتم", "Mute"),
-                    { vm.toggleMute() },
-                    Modifier.weight(1f), icon = if (pb.muted) AIcons.Volume else AIcons.Mute, height = 56.dp,
-                )
-                GoldButton(tr("إيقاف الأذان", "Stop adhan"), { vm.stopAdhan() }, Modifier.weight(1f), icon = AIcons.Stop)
+                if (pb.paused) {
+                    GoldButton(tr("كمّل الأذان", "Resume adhan"), { vm.resumeAdhan() }, Modifier.weight(1f), icon = AIcons.Play)
+                    OutlineButton(tr("إنهاء", "Dismiss"), { vm.stopAdhan() }, Modifier.weight(1f), icon = AIcons.Stop, height = 56.dp)
+                } else {
+                    OutlineButton(tr("إيقاف مؤقت", "Pause"), { vm.pauseAdhan() }, Modifier.weight(1f), icon = AIcons.Pause, height = 56.dp)
+                    GoldButton(tr("إيقاف الأذان", "Stop adhan"), { vm.stopAdhan() }, Modifier.weight(1f), icon = AIcons.Stop)
+                }
             }
 
             Column(
@@ -158,9 +169,11 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
                     .padding(horizontal = 16.dp, vertical = 14.dp),
                 verticalArrangement = Arrangement.spacedBy(6.dp),
             ) {
-                T(tr("دعاء بعد الأذان", "Supplication after the adhan"), 11.sp, FontWeight.SemiBold, AC.Muted)
+                val iftar = pb.prayer == Prayer.MAGHRIB && com.athaan.app.prayer.PrayerSchedule.isRamadan(System.currentTimeMillis(), tz)
+                T(if (iftar) tr("دعاء الإفطار", "Iftar supplication") else tr("دعاء بعد الأذان", "Supplication after the adhan"), 11.sp, FontWeight.SemiBold, AC.Muted)
                 androidx.compose.material3.Text(
-                    "اللهم رب هذه الدعوة التامة والصلاة القائمة، آتِ محمدًا الوسيلة والفضيلة، وابعثه مقامًا محمودًا الذي وعدته",
+                    if (iftar) "ذهب الظمأ، وابتلت العروق، وثبت الأجر إن شاء الله"
+                    else "اللهم رب هذه الدعوة التامة والصلاة القائمة، آتِ محمدًا الوسيلة والفضيلة، وابعثه مقامًا محمودًا الذي وعدته",
                     fontFamily = Amiri, fontSize = 16.sp, lineHeight = 29.sp, color = AC.Text,
                 )
             }

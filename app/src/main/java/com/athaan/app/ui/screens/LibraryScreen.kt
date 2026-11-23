@@ -66,7 +66,18 @@ import com.athaan.app.ui.theme.LocalArabic
 import com.athaan.app.ui.theme.Plex
 import com.athaan.app.ui.theme.tr
 
-private enum class Filter { ALL, FAJR, EGYPT, HARAMAIN, GULF, OTHER, CUSTOM, OFFLINE }
+enum class Filter { ALL, FAJR, EGYPT, HARAMAIN, GULF, OTHER, CUSTOM, OFFLINE }
+
+/**
+ * The library's scroll position, search text and filter. Kept by the caller (not inside the
+ * screen) so opening a sheikh's page and coming back returns to exactly the same spot.
+ */
+class LibraryUiState {
+    val list = androidx.compose.foundation.lazy.LazyListState()
+    val chips = androidx.compose.foundation.lazy.LazyListState()
+    var query by mutableStateOf("")
+    var filter by mutableStateOf(Filter.ALL)
+}
 
 /**
  * The muezzin library. With [pickFor] set, only muezzins who can call that prayer are shown
@@ -81,13 +92,14 @@ fun LibraryScreen(
     onPicked: () -> Unit,
     onBack: (() -> Unit)?,
     onAdd: () -> Unit,
+    ui: LibraryUiState = remember { LibraryUiState() },
 ) {
     val s by vm.settings.collectAsState()
     val downloads by vm.downloads.collectAsState()
     val preview by vm.preview.collectAsState()
     val ar = LocalArabic.current
-    var query by rememberSaveable { mutableStateOf("") }
-    var filter by rememberSaveable { mutableStateOf(Filter.ALL) }
+    var query by ui::query
+    var filter by ui::filter
 
     // The recording each card previews: the one that will actually be used.
     fun trackOf(m: Muezzin): Track = if (pickFor != null) m.trackFor(pickFor) else m.defaultTrack
@@ -167,6 +179,7 @@ fun LibraryScreen(
                 add(Filter.OFFLINE to tr("المحمّلة", "Downloaded"))
             }
             LazyRow(
+                state = ui.chips,
                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
@@ -175,6 +188,7 @@ fun LibraryScreen(
 
             LazyColumn(
                 Modifier.weight(1f),
+                state = ui.list,
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp, bottom = if (preview.key != null) 92.dp else 16.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {

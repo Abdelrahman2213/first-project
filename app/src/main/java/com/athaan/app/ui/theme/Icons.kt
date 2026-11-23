@@ -65,6 +65,16 @@ object AIcons {
         width = 2f, size = 64f,
     )
 
+    val Compass = icon("compass", circle(12f, 12f, 8.5f), "M15.5 8.5l-2 5-5 2 2-5z")
+    val Book = icon("book", "M4 5.5A2 2 0 0 1 6 3.5h5v16H6a2 2 0 0 0-2 2z", "M20 5.5a2 2 0 0 0-2-2h-5v16h5a2 2 0 0 1 2 2z")
+    val Beads = icon("beads", circle(12f, 5f, 2f), circle(17.5f, 8.5f, 2f), circle(18f, 14.5f, 2f), circle(6.5f, 8.5f, 2f), circle(6f, 14.5f, 2f), "M12 17v4M10 21h4")
+    val Calendar = icon("calendar", "M4 6.5h16v13.5H4z", "M4 10.5h16M8.5 4v4M15.5 4v4")
+    val Grid = icon("grid", "M4 4h6.5v6.5H4zM13.5 4H20v6.5h-6.5zM4 13.5h6.5V20H4zM13.5 13.5H20V20h-6.5z")
+    val Palette = icon("palette", "M12 3.5a8.5 8.5 0 1 0 0 17c1.2 0 1.8-.9 1.4-1.9-.5-1.2.2-2.4 1.5-2.4H17a3.5 3.5 0 0 0 3.5-3.5c0-5-3.8-9.2-8.5-9.2z", circle(8f, 11f, 1.2f), circle(11f, 7.5f, 1.2f), circle(15.5f, 8.5f, 1.2f))
+    val Backup = icon("backup", "M12 15V4M8 8l4-4 4 4M4 15v3.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V15")
+    val Tune = icon("tune", "M6 4v16M12 4v16M18 4v16", circle(6f, 15f, 2f), circle(12f, 8f, 2f), circle(18f, 13f, 2f))
+    val Briefcase = icon("briefcase", "M3.5 8h17v11h-17z", "M8.5 8V5.5h7V8M3.5 13h17")
+
     fun forPrayer(p: Prayer): ImageVector = when (p) {
         Prayer.FAJR -> Moon
         Prayer.SUNRISE -> Sunrise

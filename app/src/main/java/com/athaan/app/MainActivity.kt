@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
+import android.view.KeyEvent
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.BackHandler
@@ -58,7 +59,18 @@ import com.athaan.app.ui.AppViewModel
 import com.athaan.app.ui.LocStatus
 import com.athaan.app.ui.components.BottomNav
 import com.athaan.app.ui.components.Tab
+import com.athaan.app.data.AdhkarSet
 import com.athaan.app.ui.screens.AddMuezzinScreen
+import com.athaan.app.ui.screens.AdhkarScreen
+import com.athaan.app.ui.screens.HijriCalendarScreen
+import com.athaan.app.ui.screens.LibraryUiState
+import com.athaan.app.ui.screens.MonthTimesScreen
+import com.athaan.app.ui.screens.QiblaScreen
+import com.athaan.app.ui.screens.QuietHoursScreen
+import com.athaan.app.ui.screens.TasbihScreen
+import com.athaan.app.ui.screens.Tool
+import com.athaan.app.ui.screens.ToolsScreen
+import com.athaan.app.ui.screens.TuningScreen
 import com.athaan.app.ui.screens.CityPickerScreen
 import com.athaan.app.ui.screens.HomeScreen
 import com.athaan.app.ui.screens.LibraryScreen
@@ -80,20 +92,25 @@ import kotlinx.coroutines.launch
 /** Screens pushed on top of the tabs. */
 sealed interface Route {
     data class Muezzin(val id: String) : Route
-    data class Pick(val prayer: Prayer) : Route
+    /** [ui] keeps the list position, search and filter while a sheikh page is open on top. */
+    data class Pick(val prayer: Prayer, val ui: LibraryUiState = LibraryUiState()) : Route
     data object CityPicker : Route
     data class AddCustom(val prefill: String?) : Route
+    data class ToolPage(val tool: Tool, val adhkar: AdhkarSet = AdhkarSet.MORNING) : Route
+    data object Tuning : Route
+    data object Quiet : Route
 }
 
 class MainActivity : ComponentActivity() {
     private val vm: AppViewModel by viewModels()
 
-    /** Debug-build-only hooks used by the automated UI test (see .github/workflows). */
-    val debugRoute = mutableStateOf<String?>(null)
+    /** A screen to open, from a notification tap or (debug builds) the automated UI test. */
+    val navRoute = mutableStateOf<String?>(null)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ThemeAnim.t = if (vm.settings.value.light) 1f else 0f
+        ThemeAnim.palette = vm.settings.value.palette
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.auto(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.auto(android.graphics.Color.TRANSPARENT, android.graphics.Color.TRANSPARENT),
@@ -107,17 +124,17 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        handleDebug(intent)
+        if (savedInstanceState == null) handleIntent(intent)
         setContent {
             val s by vm.settings.collectAsState()
-            AthaanTheme(arabic = s.arabic, light = s.light) {
+            AthaanTheme(arabic = s.arabic, light = s.light, palette = s.palette) {
                 val view = LocalView.current
                 SideEffect {
                     val c = WindowCompat.getInsetsController(window, view)
                     c.isAppearanceLightStatusBars = s.light
                     c.isAppearanceLightNavigationBars = s.light
                 }
-                AthaanRoot(vm, debugRoute)
+                AthaanRoot(vm, navRoute)
             }
         }
     }
@@ -125,16 +142,39 @@ class MainActivity : ComponentActivity() {
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         setIntent(intent)
-        handleDebug(intent)
+        handleIntent(intent)
     }
 
-    private fun handleDebug(intent: Intent?) {
-        if (!BuildConfig.DEBUG || intent == null) return
+    /**
+     * The adhan plays on the alarm stream, so the volume keys would only change the ringer
+     * volume. While the app is in front, a volume press pauses the adhan instead (the service
+     * does the same through its media session when the app is in the background).
+     */
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        val volumeKey = event.keyCode == KeyEvent.KEYCODE_VOLUME_UP || event.keyCode == KeyEvent.KEYCODE_VOLUME_DOWN
+        val pb = vm.playback.value
+        if (volumeKey && pb != null && !pb.paused && vm.settings.value.volumeKeysPause) {
+            if (event.action == KeyEvent.ACTION_DOWN && event.repeatCount == 0) {
+                Log.i("AthaanService", "volume key in app")
+                vm.pauseAdhan()
+            }
+            return true
+        }
+        return super.dispatchKeyEvent(event)
+    }
+
+    private fun handleIntent(intent: Intent?) {
+        if (intent == null) return
+        intent.getStringExtra(EXTRA_ROUTE)?.let { navRoute.value = it }
+        if (!BuildConfig.DEBUG) return
         intent.getStringExtra("debug_lang")?.let { vm.setArabic(it == "ar") }
         intent.getStringExtra("debug_theme")?.let { vm.setLight(it == "light") }
         intent.getStringExtra("debug_play")?.let { p -> runCatching { vm.testAdhan(Prayer.valueOf(p)) } }
         intent.getStringExtra("debug_stop")?.let { vm.stopAdhan() }
-        intent.getStringExtra("debug_route")?.let { debugRoute.value = it }
+        intent.getStringExtra("debug_route")?.let { navRoute.value = it }
+        intent.getStringExtra("debug_palette")?.let { p -> runCatching { vm.setPalette(com.athaan.app.data.LightPalette.valueOf(p)) } }
+        intent.getStringExtra("debug_pattern")?.let { p -> runCatching { vm.setPattern(com.athaan.app.data.HeroPattern.valueOf(p)) } }
+        intent.getStringExtra("debug_pause")?.let { vm.pauseAdhan() }
         intent.getStringExtra("debug_add_custom")?.let { name ->
             lifecycleScope.launch {
                 val repo = com.athaan.app.audio.AudioRepository.get(this@MainActivity)
@@ -155,11 +195,12 @@ class MainActivity : ComponentActivity() {
 
     companion object {
         const val EXTRA_OPEN_PLAYING = "open_playing"
+        const val EXTRA_ROUTE = "route"
     }
 }
 
 @Composable
-private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.MutableState<String?>) {
+private fun AthaanRoot(vm: AppViewModel, navRoute: androidx.compose.runtime.MutableState<String?>) {
     val s by vm.settings.collectAsState()
     val playback by vm.playback.collectAsState()
     val loc by vm.locStatus.collectAsState()
@@ -168,6 +209,9 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
 
     var tab by remember { mutableStateOf(Tab.HOME) }
     val stack = remember { mutableStateListOf<Route>() }
+    // Lives above the animated screens so coming back from a sheikh page lands where you were.
+    val libraryUi = remember { LibraryUiState() }
+    val settingsScroll = androidx.compose.foundation.rememberScrollState()
     var onboardingManual by remember { mutableStateOf(false) }
 
     fun closeCityPicker() {
@@ -222,18 +266,30 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
         }
     }
 
-    // Debug-build hooks for the automated screenshot test.
-    LaunchedEffect(debugRoute.value) {
-        val r = debugRoute.value ?: return@LaunchedEffect
-        debugRoute.value = null
+    // Screens opened from a notification (and, in debug builds, by the screenshot test).
+    LaunchedEffect(navRoute.value) {
+        val r = navRoute.value ?: return@LaunchedEffect
+        navRoute.value = null
         stack.clear()
         when {
             r == "home" -> tab = Tab.HOME
             r == "library" -> tab = Tab.LIBRARY
             r == "adhan" -> tab = Tab.ADHAN
+            r == "tools" -> tab = Tab.TOOLS
             r == "settings" -> tab = Tab.SETTINGS
             r == "city" -> stack.add(Route.CityPicker)
             r == "add" -> stack.add(Route.AddCustom(null))
+            r == "tuning" -> { tab = Tab.SETTINGS; stack.add(Route.Tuning) }
+            r == "quiet" -> { tab = Tab.SETTINGS; stack.add(Route.Quiet) }
+            r == "qibla" -> { tab = Tab.TOOLS; stack.add(Route.ToolPage(Tool.QIBLA)) }
+            r == "tasbih" -> { tab = Tab.TOOLS; stack.add(Route.ToolPage(Tool.TASBIH)) }
+            r == "month" -> { tab = Tab.TOOLS; stack.add(Route.ToolPage(Tool.MONTH)) }
+            r == "hijri" -> { tab = Tab.TOOLS; stack.add(Route.ToolPage(Tool.HIJRI)) }
+            r.startsWith("adhkar") -> {
+                tab = Tab.TOOLS
+                val set = when (r.substringAfter(':', "am")) { "pm" -> AdhkarSet.EVENING; "after" -> AdhkarSet.AFTER_PRAYER; else -> AdhkarSet.MORNING }
+                stack.add(Route.ToolPage(Tool.ADHKAR, set))
+            }
             r.startsWith("pick:") -> runCatching { stack.add(Route.Pick(Prayer.valueOf(r.removePrefix("pick:")))) }
             r.startsWith("muezzin:") -> stack.add(Route.Muezzin(r.removePrefix("muezzin:")))
         }
@@ -254,6 +310,8 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
         stack.isNotEmpty() -> stack.size to stack.last()
         else -> "tabs"
     }
+
+    fun pop() { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) }
 
     Box(Modifier.fillMaxSize().background(AC.Ink)) {
         AnimatedContent(
@@ -314,10 +372,21 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
                         is Route.Pick -> LibraryScreen(
                             vm, pickFor = r.prayer,
                             onOpen = { stack.add(Route.Muezzin(it.id)) },
-                            onPicked = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) },
-                            onBack = { if (stack.isNotEmpty()) stack.removeAt(stack.lastIndex) },
+                            onPicked = { pop() },
+                            onBack = { pop() },
                             onAdd = { stack.add(Route.AddCustom(null)) },
+                            ui = r.ui,
                         )
+                        is Route.ToolPage -> when (r.tool) {
+                            Tool.QIBLA -> QiblaScreen(vm, onBack = { pop() })
+                            Tool.ADHKAR -> AdhkarScreen(r.adhkar, onBack = { pop() })
+                            Tool.TASBIH -> TasbihScreen(onBack = { pop() })
+                            Tool.MONTH -> MonthTimesScreen(vm, onBack = { pop() })
+                            Tool.HIJRI -> HijriCalendarScreen(vm, onBack = { pop() })
+                            Tool.MOSQUE -> Box(Modifier.fillMaxSize())
+                        }
+                        Route.Tuning -> TuningScreen(vm, onBack = { pop() })
+                        Route.Quiet -> QuietHoursScreen(vm, onBack = { pop() })
                         Route.CityPicker -> CityPickerScreen(
                             onPick = { vm.setCity(it); closeCityPicker() },
                             onUseGps = { requestLocation() },
@@ -350,12 +419,17 @@ private fun AthaanRoot(vm: AppViewModel, debugRoute: androidx.compose.runtime.Mu
                                     onPicked = {},
                                     onBack = null,
                                     onAdd = { stack.add(Route.AddCustom(null)) },
+                                    ui = libraryUi,
                                 )
                                 Tab.ADHAN -> PerPrayerScreen(vm, onChange = { stack.add(Route.Pick(it)) })
+                                Tab.TOOLS -> ToolsScreen(onOpen = { stack.add(Route.ToolPage(it)) })
                                 Tab.SETTINGS -> SettingsScreen(
                                     vm,
                                     onPickCity = { stack.add(Route.CityPicker) },
                                     onUseLocation = { requestLocation() },
+                                    onTuning = { stack.add(Route.Tuning) },
+                                    onQuiet = { stack.add(Route.Quiet) },
+                                    scroll = settingsScroll,
                                 )
                             }
                         }

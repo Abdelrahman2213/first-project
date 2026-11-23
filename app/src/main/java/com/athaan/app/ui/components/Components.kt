@@ -522,7 +522,7 @@ fun LanguageToggle(arabic: Boolean, onToggle: () -> Unit) {
     }
 }
 
-enum class Tab { HOME, LIBRARY, ADHAN, SETTINGS }
+enum class Tab { HOME, LIBRARY, ADHAN, TOOLS, SETTINGS }
 
 @Composable
 fun BottomNav(current: Tab, onSelect: (Tab) -> Unit) {
@@ -539,6 +539,7 @@ fun BottomNav(current: Tab, onSelect: (Tab) -> Unit) {
                 Triple(Tab.HOME, AIcons.Home, tr("الرئيسية", "Home")),
                 Triple(Tab.LIBRARY, AIcons.Mic, tr("المؤذنين", "Muezzins")),
                 Triple(Tab.ADHAN, AIcons.Clock, tr("الأذان", "Adhan")),
+                Triple(Tab.TOOLS, AIcons.Grid, tr("الأدوات", "Tools")),
                 Triple(Tab.SETTINGS, AIcons.Sliders, tr("الإعدادات", "Settings")),
             )
             items.forEach { (tab, icon, label) ->
@@ -559,7 +560,7 @@ fun BottomNav(current: Tab, onSelect: (Tab) -> Unit) {
                     Box(
                         Modifier
                             .graphicsLayer { scaleX = press; scaleY = press }
-                            .width(56.dp)
+                            .width(52.dp)
                             .height(30.dp),
                         contentAlignment = Alignment.Center,
                     ) {
@@ -574,7 +575,7 @@ fun BottomNav(current: Tab, onSelect: (Tab) -> Unit) {
                         Icon(icon, null, tint = tint, modifier = Modifier.size(22.dp))
                     }
                     Box(Modifier.size(4.dp))
-                    T(label, 11.sp, if (on) FontWeight.SemiBold else FontWeight.Medium, tint, maxLines = 1)
+                    T(label, 11.sp, if (on) FontWeight.SemiBold else FontWeight.Medium, tint, maxLines = 1, overflow = TextOverflow.Clip)
                 }
             }
         }

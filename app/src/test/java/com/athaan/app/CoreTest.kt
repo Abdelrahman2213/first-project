@@ -1,6 +1,11 @@
 package com.athaan.app
 
+import com.athaan.app.data.AppSettings
 import com.athaan.app.data.Muezzins
+import com.athaan.app.prayer.PrayerSchedule
+import com.athaan.app.schedule.AdhanScheduler
+import com.athaan.app.schedule.AlarmKind
+import org.junit.Assert.assertFalse
 import com.athaan.app.data.Places
 import com.athaan.app.prayer.AsrMadhab
 import com.athaan.app.prayer.CalcMethod
@@ -65,5 +70,58 @@ class CoreTest {
     @Test fun arabicSearchNormalisation() {
         assertEquals(Places.normalize("الإسكندرية"), Places.normalize("الاسكندريه"))
         assertEquals("sao paulo", Places.normalize("São Paulo"))
+    }
+
+    private val cairo = TimeZone.getTimeZone("Africa/Cairo")
+    private fun at(y: Int, m: Int, d: Int, h: Int, min: Int, tz: TimeZone = cairo): Long =
+        Calendar.getInstance(tz).apply { clear(); set(y, m - 1, d, h, min) }.timeInMillis
+    private val cairoSettings = AppSettings(lat = 30.0444, lng = 31.2357, method = CalcMethod.EGYPT, madhab = AsrMadhab.STANDARD, timezoneId = "Africa/Cairo")
+
+    @Test fun minuteOffsetsShiftTimes() {
+        val now = at(2026, 11, 16, 12, 0)
+        val s = cairoSettings.copy(offsets = Prayer.values().associateWith { 0 } + (Prayer.FAJR to 5) + (Prayer.ISHA to -3))
+        val d = PrayerSchedule.day(s, 0, now)
+        assertEquals("04:56", hm(d[Prayer.FAJR], cairo))
+        assertEquals("11:41", hm(d[Prayer.DHUHR], cairo))
+        assertEquals("18:16", hm(d[Prayer.ISHA], cairo))
+    }
+
+    @Test fun quietHours() {
+        val s = cairoSettings.copy(quietEnabled = true, quietStart = 9 * 60, quietEnd = 17 * 60,
+            quietDays = setOf(Calendar.SUNDAY, Calendar.MONDAY, Calendar.TUESDAY, Calendar.WEDNESDAY, Calendar.THURSDAY))
+        assertTrue(s.inQuietHours(at(2026, 11, 16, 10, 0)))   // Monday morning
+        assertFalse(s.inQuietHours(at(2026, 11, 16, 17, 0)))  // end is exclusive
+        assertFalse(s.inQuietHours(at(2026, 11, 20, 10, 0)))  // Friday
+        assertFalse(s.copy(quietEnabled = false).inQuietHours(at(2026, 11, 16, 10, 0)))
+        // A night shift that runs past midnight belongs to the day it started.
+        val night = s.copy(quietStart = 22 * 60, quietEnd = 6 * 60, quietDays = setOf(Calendar.MONDAY))
+        assertTrue(night.inQuietHours(at(2026, 11, 16, 23, 0)))  // Monday night
+        assertTrue(night.inQuietHours(at(2026, 11, 17, 3, 0)))   // early Tuesday
+        assertFalse(night.inQuietHours(at(2026, 11, 18, 3, 0)))  // early Wednesday
+    }
+
+    @Test fun alarmPlan() {
+        val now = at(2026, 11, 16, 12, 0) // Monday, after Dhuhr
+        val s = cairoSettings.copy(preAlertMinutes = 10, iqama = Prayer.adhanPrayers.associateWith { 0 } + (Prayer.ASR to 15))
+        val plan = AdhanScheduler.plan(s, now).associateBy { it.kind }
+        val adhan = plan.getValue(AlarmKind.ADHAN)
+        assertEquals(Prayer.ASR, adhan.prayer)
+        assertEquals("14:38", hm(adhan.at, cairo))
+        assertEquals("14:28", hm(plan.getValue(AlarmKind.PRE_ALERT).at, cairo))
+        assertEquals("14:53", hm(plan.getValue(AlarmKind.IQAMA).at, cairo))
+        // Friday reminder 30 minutes before Jumu'ah, Kahf at 9:30 on Friday.
+        val friday = plan.getValue(AlarmKind.FRIDAY)
+        assertTrue(PrayerSchedule.isFriday(friday.at, cairo))
+        assertEquals(30 * 60_000L, friday.target - friday.at)
+        val kahf = plan.getValue(AlarmKind.KAHF)
+        assertTrue(PrayerSchedule.isFriday(kahf.at, cairo))
+        assertEquals("09:30", hm(kahf.at, cairo))
+        // The adhan switch for a prayer turns its alarm off.
+        val noAsr = AdhanScheduler.plan(s.copy(enabled = s.enabled + (Prayer.ASR to false)), now).first { it.kind == AlarmKind.ADHAN }
+        assertEquals(Prayer.MAGHRIB, noAsr.prayer)
+    }
+
+    @Test fun suhoorOnlyInRamadan() {
+        assertTrue(AdhanScheduler.plan(cairoSettings, at(2026, 11, 16, 12, 0)).none { it.kind == AlarmKind.SUHOOR && !PrayerSchedule.isRamadan(it.at, cairo) })
     }
 }

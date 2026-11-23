@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">أذان</string>
+    <string name="widget_desc">الصلاة القادمة ومواقيت اليوم</string>
 </resources>

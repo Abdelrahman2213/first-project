@@ -58,7 +58,8 @@ import com.athaan.app.prayer.TimeFmt
 import com.athaan.app.ui.AppViewModel
 import com.athaan.app.ui.components.Avatar
 import com.athaan.app.ui.components.PlayButton
-import com.athaan.app.ui.components.Rosette
+import com.athaan.app.ui.components.HeroOrnament
+import com.athaan.app.prayer.PrayerSchedule
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.components.ThemeToggle
 import com.athaan.app.ui.components.pressClick
@@ -68,6 +69,10 @@ import com.athaan.app.ui.theme.LocalArabic
 import com.athaan.app.ui.theme.tr
 
 private var homeIntroPlayed = false
+
+/** "الجمعة" for Dhuhr on a Friday, otherwise the prayer's name. */
+fun prayerName(p: Prayer, at: Long, tz: java.util.TimeZone, ar: Boolean): String =
+    if (p == Prayer.DHUHR && PrayerSchedule.isFriday(at, tz)) (if (ar) "الجمعة" else "Jumu'ah") else (if (ar) p.ar else p.en)
 
 @Composable
 fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> Unit) {
@@ -149,17 +154,26 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
             val spin = rememberInfiniteTransition(label = "heroSpin")
             val rot by spin.animateFloat(0f, 45f, infiniteRepeatable(tween(90_000, easing = LinearEasing), RepeatMode.Restart), label = "rot")
             Box(Modifier.matchParentSize()) {
-                Rosette(
+                HeroOrnament(
+                    s.pattern,
                     Modifier
                         .align(Alignment.TopEnd)
-                        .offset(x = 70.dp, y = (-60).dp)
-                        .size(260.dp)
+                        .offset(x = 70.dp, y = (-64).dp)
+                        .size(280.dp)
                         .graphicsLayer { alpha = enter.value },
-                    rotation = rot, alpha = 0.42f,
+                    rotation = if (s.pattern == com.athaan.app.data.HeroPattern.ALHAMBRA) 0f else rot,
                 )
             }
             Column(Modifier.padding(22.dp)) {
-                T(tr("الصلاة القادمة", "Next prayer"), 13.sp, FontWeight.Medium, AC.Muted)
+                val ramadan = PrayerSchedule.isRamadan(next.at, tz)
+                T(
+                    when {
+                        ramadan && next.prayer == Prayer.MAGHRIB -> tr("الصلاة القادمة · موعد الإفطار", "Next · Iftar")
+                        ramadan && next.prayer == Prayer.FAJR -> tr("الصلاة القادمة · الإمساك", "Next · Suhoor ends")
+                        else -> tr("الصلاة القادمة", "Next prayer")
+                    },
+                    13.sp, FontWeight.Medium, AC.Muted,
+                )
                 AnimatedContent(
                     targetState = next.prayer,
                     transitionSpec = {
@@ -169,7 +183,7 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
                     label = "nextPrayer",
                 ) { p ->
                     Row(verticalAlignment = Alignment.Bottom) {
-                        T(if (ar) p.ar else p.en, 46.sp, kufi = true, lineHeight = 60.sp)
+                        T(prayerName(p, next.at, tz, ar), 46.sp, kufi = true, lineHeight = 60.sp)
                         Spacer(Modifier.width(12.dp))
                         T(TimeFmt.clock(next.at, ar, tz), 17.sp, FontWeight.SemiBold, AC.Gold, Modifier.padding(bottom = 12.dp))
                     }
@@ -225,13 +239,15 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
                 val sub = when {
                     !p.hasAdhan -> tr("بدون أذان", "No adhan")
                     s.enabled[p] != true -> tr("الأذان متوقف", "Adhan off")
-                    else -> s.muezzin(p).name(ar) + if (isNext) tr(" · التالية", " · next") else ""
+                    else -> s.muezzin(p).name(ar) +
+                        ((s.iqama[p] ?: 0).takeIf { it > 0 }?.let { tr(" · الإقامة بعد $it د", " · iqama +$it min") } ?: "") +
+                        if (isNext) tr(" · التالية", " · next") else ""
                 }
                 // Staggered entrance per row
                 val local = ((enter.value * 1.6f) - i * 0.12f).coerceIn(0f, 1f)
                 Box(Modifier.graphicsLayer { alpha = local; translationY = (1f - local) * 24.dp.toPx() }) {
                     PrayerRow(
-                        p = p, time = TimeFmt.clock(t, ar, tz), subtitle = sub, highlighted = isNext,
+                        p = p, name = prayerName(p, t, tz, ar), time = TimeFmt.clock(t, ar, tz), subtitle = sub, highlighted = isNext,
                         onClick = if (p.hasAdhan) ({ onPrayer(p) }) else null,
                     )
                 }
@@ -274,7 +290,7 @@ private fun RollingText(text: String, size: TextUnit) {
 }
 
 @Composable
-private fun PrayerRow(p: Prayer, time: String, subtitle: String, highlighted: Boolean, onClick: (() -> Unit)?) {
+private fun PrayerRow(p: Prayer, name: String, time: String, subtitle: String, highlighted: Boolean, onClick: (() -> Unit)?) {
     val ar = LocalArabic.current
     val shape = RoundedCornerShape(16.dp)
     val bg by animateColorAsState(if (highlighted) AC.GoldSoft else AC.Ink.copy(alpha = 0f), tween(500), label = "rowBg")
@@ -293,7 +309,7 @@ private fun PrayerRow(p: Prayer, time: String, subtitle: String, highlighted: Bo
         Icon(AIcons.forPrayer(p), null, tint = if (highlighted) AC.Gold else AC.Muted, modifier = Modifier.size(20.dp))
         Spacer(Modifier.width(12.dp))
         Column(Modifier.weight(1f)) {
-            T(if (ar) p.ar else p.en, 15.sp, if (highlighted) FontWeight.Bold else FontWeight.SemiBold, if (highlighted) AC.Text else AC.TextDim)
+            T(name, 15.sp, if (highlighted) FontWeight.Bold else FontWeight.SemiBold, if (highlighted) AC.Text else AC.TextDim)
             T(subtitle, 11.sp, color = if (highlighted) AC.Gold else AC.Muted, maxLines = 1)
         }
         T(time, 15.sp, if (highlighted) FontWeight.Bold else FontWeight.Normal, if (highlighted) AC.Gold else AC.TextDim)
