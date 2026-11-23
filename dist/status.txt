@@ -1,1 +1,1 @@
-ui-test: success
+ui-test: failure
