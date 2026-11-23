@@ -351,6 +351,14 @@ debug("debug_play FAJR")
 ok("playing screen", wait_for("إيقاف الأذان", timeout=20))
 time.sleep(6)
 shot("playing_fajr")
+sh("cmd statusbar expand-settings")
+time.sleep(3)
+shot("notif_media_player")
+sh("cmd statusbar expand-notifications")
+time.sleep(2)
+shot("notif_media_shade")
+sh("cmd statusbar collapse")
+time.sleep(1.5)
 alog = adb("logcat", "-d", "-s", "AthaanAdhan:*")
 log("     " + alog.strip()[-400:])
 ok("Fajr uses the Fajr recording", "fajr=true" in alog, alog[-300:])
@@ -429,6 +437,46 @@ debug("debug_palette IVORY")
 debug("debug_pattern SHAMSA")
 debug("debug_theme dark")
 debug("debug_route home")
+time.sleep(1)
+
+# ------------------------------------------------------------------ 8b. notifications
+def shade(name):
+    sh("cmd statusbar expand-notifications")
+    time.sleep(3)
+    shot(name)
+    sh("cmd statusbar collapse")
+    time.sleep(1.2)
+
+adb("logcat", "-c")
+debug("debug_render 1")
+time.sleep(4)
+rlog = adb("logcat", "-d", "-s", "AthaanDebug:*")
+for n in ["card_big", "card_small", "card_quote", "widget"]:
+    ok(f"{n} view inflates like the system does", f"render {n} ok" in rlog, rlog[-500:])
+    data = adb("exec-out", "run-as", PKG, "cat", f"files/render_{n}.png", binary=True)
+    if data[:4] == b"\x89PNG":
+        with open(os.path.join(OUT, f"render_{n}.png"), "wb") as f:
+            f.write(data)
+sh("input keyevent KEYCODE_HOME")
+time.sleep(1.5)
+kinds = ["PRE_ALERT", "IQAMA", "FRIDAY", "KAHF", "ADHKAR_AM", "SUHOOR", "SILENT", "COUNTDOWN"]
+for night in ["yes", "no"]:
+    sh(f"cmd uimode night {night}")
+    time.sleep(2)
+    for kind in (kinds if night == "yes" else ["PRE_ALERT", "KAHF", "COUNTDOWN"]):
+        sh(f"am start -n {PKG}/.MainActivity --es debug_notify CLEAR")
+        time.sleep(1)
+        sh(f"am start -n {PKG}/.MainActivity --es debug_notify {kind}")
+        time.sleep(1.5)
+        sh("input keyevent KEYCODE_HOME")
+        time.sleep(1)
+        shade(f"notif_{kind.lower()}_{'dark' if night == 'yes' else 'light'}")
+sh("cmd uimode night yes")
+nlog = adb("logcat", "-d", "-s", "AthaanDebug:*")
+ok("every notification posts", all(f"notify {k} ok" in nlog for k in kinds) and "failed" not in nlog, nlog[-600:])
+with open(os.path.join(OUT, "notifications_all.txt"), "w") as f:
+    f.write(sh("dumpsys notification --noredact | grep -B2 -A40 'pkg=com.athaan.app' | head -400"))
+start("--es debug_notify CLEAR")
 time.sleep(1)
 
 # ------------------------------------------------------------------ 9. a real alarm: jump the clock to just before the next adhan

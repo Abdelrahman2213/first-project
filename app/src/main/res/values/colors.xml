@@ -2,4 +2,6 @@
 <resources>
     <color name="ink">#0B1220</color>
     <color name="gold">#D6B370</color>
+    <!-- Accent on the system notification background (dark gold on light, soft gold on dark). -->
+    <color name="notif_accent">#8A6420</color>
 </resources>

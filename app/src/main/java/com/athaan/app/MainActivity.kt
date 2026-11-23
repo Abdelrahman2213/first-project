@@ -175,6 +175,8 @@ class MainActivity : ComponentActivity() {
         intent.getStringExtra("debug_palette")?.let { p -> runCatching { vm.setPalette(com.athaan.app.data.LightPalette.valueOf(p)) } }
         intent.getStringExtra("debug_pattern")?.let { p -> runCatching { vm.setPattern(com.athaan.app.data.HeroPattern.valueOf(p)) } }
         intent.getStringExtra("debug_pause")?.let { vm.pauseAdhan() }
+        intent.getStringExtra("debug_notify")?.let { DebugNotifications.post(this, it) }
+        intent.getStringExtra("debug_render")?.let { DebugNotifications.renderAll(this) }
         intent.getStringExtra("debug_add_custom")?.let { name ->
             lifecycleScope.launch {
                 val repo = com.athaan.app.audio.AudioRepository.get(this@MainActivity)

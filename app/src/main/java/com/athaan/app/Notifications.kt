@@ -9,6 +9,8 @@ import android.content.Context
 import android.content.Intent
 import android.media.AudioAttributes
 import android.media.RingtoneManager
+import android.media.session.MediaSession
+import android.graphics.drawable.Icon
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.athaan.app.data.AppSettings
@@ -76,94 +78,161 @@ object Notifications {
         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
     )
 
-    fun buildPlaying(context: Context, prayer: Prayer, muezzin: Muezzin, ar: Boolean, paused: Boolean = false): Notification {
-        val stop = serviceIntent(context, AdhanService.ACTION_STOP, 10)
-        val title = if (paused) (if (ar) "أذان ${prayer.ar} متوقف" else "${prayer.en} adhan paused")
-        else (if (ar) "حان الآن موعد أذان ${prayer.ar}" else "It's time for ${prayer.en}")
-        val b = NotificationCompat.Builder(context, CH_ADHAN)
-            .setSmallIcon(R.drawable.ic_stat_adhan)
-            .setContentTitle(title)
-            .setContentText(if (paused) (if (ar) "اضغط «كمّل» للاستماع لباقي الأذان" else "Tap Resume to hear the rest") else muezzin.name(ar))
-            .setCategory(NotificationCompat.CATEGORY_ALARM)
-            .setPriority(NotificationCompat.PRIORITY_MAX)
-            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-            .setOngoing(true)
-            .setSilent(true)
-            .setContentIntent(openAppIntent(context, true))
-        if (paused) {
-            b.addAction(0, if (ar) "كمّل" else "Resume", serviceIntent(context, AdhanService.ACTION_RESUME, 11))
-            b.addAction(0, if (ar) "إنهاء" else "Dismiss", stop)
-        } else {
-            b.addAction(0, if (ar) "إيقاف مؤقت" else "Pause", serviceIntent(context, AdhanService.ACTION_PAUSE, 12))
-            b.addAction(0, if (ar) "إيقاف الأذان" else "Stop adhan", stop)
-        }
-        return b.build()
+    /** Gold used for the notification's icon and app name. */
+    private const val ACCENT = 0xFFB8903F.toInt()
+    private const val INK = 0xFF101A2E.toInt()
+
+    private fun prayerLabel(p: Prayer, at: Long, s: AppSettings): String {
+        val ar = s.arabic
+        return if (p == Prayer.DHUHR && PrayerSchedule.isFriday(at, s.zone())) (if (ar) "الجمعة" else "Jumu'ah") else (if (ar) p.ar else p.en)
     }
 
-    @SuppressLint("MissingPermission")
-    fun showAdhanSilent(context: Context, prayer: Prayer, ar: Boolean, quiet: Boolean) {
-        val n = NotificationCompat.Builder(context, CH_SILENT)
+    private fun city(s: AppSettings) = s.place(s.arabic).substringBefore(if (s.arabic) "،" else ",")
+
+    /**
+     * The playing adhan as a media player: artwork, progress, and pause/resume and stop.
+     * On Android 13+ the controls come from the media session; older versions use these actions.
+     */
+    fun buildPlaying(
+        context: Context, prayer: Prayer, muezzin: Muezzin, s: AppSettings,
+        paused: Boolean = false, token: MediaSession.Token? = null,
+    ): Notification {
+        val ar = s.arabic
+        val now = System.currentTimeMillis()
+        val name = prayerLabel(prayer, now, s)
+        val stop = serviceIntent(context, AdhanService.ACTION_STOP, 10)
+        val toggle = if (paused) Notification.Action.Builder(Icon.createWithResource(context, R.drawable.ic_n_play), if (ar) "كمّل" else "Resume",
+            serviceIntent(context, AdhanService.ACTION_RESUME, 11)).build()
+        else Notification.Action.Builder(Icon.createWithResource(context, R.drawable.ic_n_pause), if (ar) "إيقاف مؤقت" else "Pause",
+            serviceIntent(context, AdhanService.ACTION_PAUSE, 12)).build()
+        val end = Notification.Action.Builder(Icon.createWithResource(context, R.drawable.ic_n_stop),
+            if (paused) (if (ar) "إنهاء" else "Dismiss") else (if (ar) "إيقاف الأذان" else "Stop adhan"), stop).build()
+
+        val style = Notification.MediaStyle().setShowActionsInCompactView(0, 1)
+        if (token != null) style.setMediaSession(token)
+        return Notification.Builder(context, CH_ADHAN)
             .setSmallIcon(R.drawable.ic_stat_adhan)
-            .setContentTitle(if (ar) "حان الآن موعد صلاة ${prayer.ar}" else "It's time for ${prayer.en}")
-            .setContentText(
-                if (quiet) (if (ar) "وقت الشغل: إشعار بدون صوت" else "Quiet hours: notification only")
-                else (if (ar) "الوضع الصامت مفعّل" else "Silent mode is on")
-            )
-            .setCategory(NotificationCompat.CATEGORY_REMINDER)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setAutoCancel(true)
-            .setContentIntent(openAppIntent(context, false))
+            .setContentTitle(if (ar) "أذان $name" else "$name adhan")
+            .setContentText(if (paused) (if (ar) "متوقف مؤقتًا · اضغط كمّل للاستماع لباقي الأذان" else "Paused · tap Resume to hear the rest") else muezzin.title(ar))
+            .setSubText("${TimeFmt.clock(now, ar, s.zone())} · ${city(s)}")
+            .setLargeIcon(NotificationArt.adhanArt())
+            .setStyle(style)
+            .setColor(INK)
+            .setColorized(true)
+            .setCategory(Notification.CATEGORY_ALARM)
+            .setVisibility(Notification.VISIBILITY_PUBLIC)
+            .setOngoing(true)
+            .setShowWhen(false)
+            .setOnlyAlertOnce(true)
+            .setContentIntent(openAppIntent(context, true))
+            .addAction(toggle)
+            .addAction(end)
             .build()
-        runCatching { NotificationManagerCompat.from(context).notify(ID_SILENT, n) }
+    }
+
+    /** Builds a card notification and posts it. */
+    @SuppressLint("MissingPermission")
+    private fun post(
+        context: Context, s: AppSettings, channel: String, id: Int, card: NotificationCards.Card,
+        route: String? = null, action: NotificationCompat.Action? = null, timeoutAt: Long? = null,
+        priority: Int = NotificationCompat.PRIORITY_HIGH, category: String = NotificationCompat.CATEGORY_REMINDER,
+    ) {
+        val small = NotificationCards.small(context, card, s)
+        val b = NotificationCompat.Builder(context, channel)
+            .setSmallIcon(R.drawable.ic_stat_adhan)
+            .setColor(ACCENT)
+            .setContentTitle(listOfNotNull(card.title, card.time).joinToString(" · "))
+            .setContentText(card.text ?: card.label)
+            .setSubText(card.label)
+            .setStyle(NotificationCompat.DecoratedCustomViewStyle())
+            .setCustomContentView(small)
+            .setCustomBigContentView(NotificationCards.big(context, card, s))
+            .setCustomHeadsUpContentView(NotificationCards.small(context, card, s))
+            .setCategory(category)
+            .setPriority(priority)
+            .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
+            .setShowWhen(card.countdownTo == null)
+            .setAutoCancel(true)
+            .setContentIntent(openAppIntent(context, false, route))
+        if (action != null) b.addAction(action)
+        if (timeoutAt != null && timeoutAt > System.currentTimeMillis()) b.setTimeoutAfter(timeoutAt - System.currentTimeMillis())
+        runCatching { NotificationManagerCompat.from(context).notify(id, b.build()) }
+    }
+
+    enum class SilentReason { SILENT, QUIET, BLOCKED }
+
+    fun showAdhanSilent(context: Context, prayer: Prayer, s: AppSettings, reason: SilentReason, at: Long = System.currentTimeMillis()) {
+        val ar = s.arabic
+        val tz = s.zone()
+        val card = NotificationCards.Card(
+            label = if (ar) "حان الآن وقت الصلاة" else "It's prayer time",
+            title = prayerLabel(prayer, at, s),
+            time = TimeFmt.clock(at, ar, tz),
+            text = when (reason) {
+                SilentReason.QUIET -> if (ar) "وقت الشغل · وصلك إشعار بدون صوت الأذان" else "Quiet hours · notification only"
+                SilentReason.SILENT -> if (ar) "الوضع الصامت مفعّل · وصلك إشعار بدون صوت الأذان" else "Silent mode is on · notification only"
+                SilentReason.BLOCKED -> if (ar) "الجهاز منع تشغيل الأذان في الخلفية · استثنِ التطبيق من توفير البطارية" else "The phone blocked background playback · exclude the app from battery saving"
+            },
+            dayOf = at, highlight = prayer,
+        )
+        post(context, s, CH_SILENT, ID_SILENT, card)
     }
 
     /** Reminders. Those about an upcoming moment carry a live countdown, so they are never out of date. */
-    @SuppressLint("MissingPermission")
     fun showReminder(context: Context, kind: AlarmKind, prayer: Prayer?, target: Long, s: AppSettings) {
         val ar = s.arabic
         val tz = s.zone()
         val p = prayer ?: Prayer.FAJR
-        val friday = prayer == Prayer.DHUHR && PrayerSchedule.isFriday(target.takeIf { it > 0 } ?: System.currentTimeMillis(), tz)
-        val pName = if (friday) (if (ar) "الجمعة" else "Jumu'ah") else (if (ar) p.ar else p.en)
-        val (channel, id, title, text, route) = when (kind) {
-            AlarmKind.PRE_ALERT -> R5(CH_PRE, ID_PRE,
-                if (ar) "اقترب أذان $pName" else "$pName is coming up",
-                if (ar) "الأذان الساعة ${TimeFmt.clock(target, true, tz)}" else "Adhan at ${TimeFmt.clock(target, false, tz)}", null)
-            AlarmKind.IQAMA -> R5(CH_IQAMA, ID_IQAMA,
-                if (ar) "الإقامة · صلاة $pName" else "Iqama · $pName",
-                if (ar) "قوموا إلى الصلاة" else "Time to stand for prayer", null)
-            AlarmKind.FRIDAY -> R5(CH_REMIND, ID_REMIND,
-                if (ar) "صلاة الجمعة" else "Jumu'ah prayer",
-                if (ar) "الأذان الساعة ${TimeFmt.clock(target, true, tz)} · بادر بالذهاب إلى المسجد" else "Adhan at ${TimeFmt.clock(target, false, tz)} · head to the mosque early", null)
-            AlarmKind.KAHF -> R5(CH_REMIND, ID_REMIND,
-                if (ar) "يوم الجمعة" else "It's Friday",
-                if (ar) "لا تنسَ قراءة سورة الكهف والإكثار من الصلاة على النبي ﷺ" else "Remember to read Surat al-Kahf", null)
-            AlarmKind.ADHKAR_AM -> R5(CH_REMIND, ID_REMIND,
-                if (ar) "أذكار الصباح" else "Morning adhkar", if (ar) "اضغط لقراءة أذكار الصباح" else "Tap to read the morning adhkar", "adhkar:am")
-            AlarmKind.ADHKAR_PM -> R5(CH_REMIND, ID_REMIND,
-                if (ar) "أذكار المساء" else "Evening adhkar", if (ar) "اضغط لقراءة أذكار المساء" else "Tap to read the evening adhkar", "adhkar:pm")
-            AlarmKind.SUHOOR -> R5(CH_REMIND, ID_REMIND,
-                if (ar) "السحور" else "Suhoor",
-                if (ar) "أذان الفجر الساعة ${TimeFmt.clock(target, true, tz)}" else "Fajr at ${TimeFmt.clock(target, false, tz)}", null)
-            AlarmKind.ADHAN -> return
+        val clock = if (target > 0) TimeFmt.clock(target, ar, tz) else null
+        when (kind) {
+            AlarmKind.PRE_ALERT -> post(context, s, CH_PRE, ID_PRE, NotificationCards.Card(
+                label = (if (ar) "اقترب الأذان · " else "Adhan soon · ") + city(s),
+                title = prayerLabel(p, target, s), time = clock,
+                text = (if (ar) "يؤذّن لها " else "Called by ") + s.muezzin(p).title(ar),
+                countdownTo = target, countLabel = if (ar) "باقي على الأذان" else "Until the adhan",
+                dayOf = target, highlight = p,
+            ), timeoutAt = target)
+            AlarmKind.IQAMA -> post(context, s, CH_IQAMA, ID_IQAMA, NotificationCards.Card(
+                label = (if (ar) "صلاة " else "") + prayerLabel(p, target, s),
+                title = if (ar) "الإقامة" else "Iqama", time = clock,
+                text = if (ar) "حان وقت إقامة الصلاة" else "Time to stand for prayer",
+                quote = if (ar) "قد قامت الصلاة، قد قامت الصلاة" else null,
+                dayOf = target, highlight = p,
+            ), timeoutAt = target + 30 * 60_000L)
+            AlarmKind.FRIDAY -> post(context, s, CH_REMIND, ID_REMIND, NotificationCards.Card(
+                label = if (ar) "صلاة الجمعة" else "Jumu'ah prayer",
+                title = if (ar) "الجمعة" else "Jumu'ah", time = clock,
+                text = if (ar) "بادر بالذهاب إلى المسجد، ويُستحب الغُسل والطِّيب والتبكير" else "Head to the mosque early",
+                countdownTo = target, countLabel = if (ar) "باقي على الأذان" else "Until the adhan",
+            ), timeoutAt = target)
+            AlarmKind.KAHF -> post(context, s, CH_REMIND, ID_REMIND, NotificationCards.Card(
+                label = if (ar) "يوم الجمعة" else "It's Friday",
+                title = if (ar) "سورة الكهف" else "Surat al-Kahf",
+                text = if (ar) "وأكثِر من الصلاة على النبي ﷺ" else "And send many blessings upon the Prophet ﷺ",
+                quote = if (ar) "«مَن قرأ سورة الكهف يوم الجمعة أضاء له من النور ما بين الجمعتين»"
+                else "“Whoever reads Surat al-Kahf on Friday, light will shine for him between the two Fridays.”",
+            ), priority = NotificationCompat.PRIORITY_DEFAULT)
+            AlarmKind.ADHKAR_AM, AlarmKind.ADHKAR_PM -> {
+                val am = kind == AlarmKind.ADHKAR_AM
+                val route = if (am) "adhkar:am" else "adhkar:pm"
+                post(context, s, CH_REMIND, ID_REMIND, NotificationCards.Card(
+                    label = if (ar) "حصّن يومك" else "A moment of remembrance",
+                    title = if (am) (if (ar) "أذكار الصباح" else "Morning adhkar") else (if (ar) "أذكار المساء" else "Evening adhkar"),
+                    text = if (ar) "اضغط لقراءتها وعدّها" else "Tap to read and count them",
+                    quote = if (am) "أَصْبَحْنا وأَصْبَحَ المُلْكُ لله، والحمدُ لله" else "أَمْسَيْنا وأَمْسى المُلْكُ لله، والحمدُ لله",
+                ), route = route, priority = NotificationCompat.PRIORITY_DEFAULT,
+                    action = NotificationCompat.Action(R.drawable.ic_n_book, if (ar) "اقرأ الأذكار" else "Read", openAppIntent(context, false, route)))
+            }
+            AlarmKind.SUHOOR -> post(context, s, CH_REMIND, ID_REMIND, NotificationCards.Card(
+                label = if (ar) "رمضان كريم" else "Ramadan",
+                title = if (ar) "السحور" else "Suhoor", time = clock,
+                text = if (ar) "الإمساك مع أذان الفجر الساعة $clock" else "Stop eating at the Fajr adhan, $clock",
+                countdownTo = target, countLabel = if (ar) "باقي على الفجر" else "Until Fajr",
+                quote = if (ar) "«تسحّروا فإنّ في السَّحور بركة»" else "“Take suhoor, for in suhoor there is blessing.”",
+            ), timeoutAt = target)
+            AlarmKind.ADHAN -> Unit
         }
-        val b = NotificationCompat.Builder(context, channel)
-            .setSmallIcon(R.drawable.ic_stat_adhan)
-            .setContentTitle(title)
-            .setContentText(text)
-            .setCategory(NotificationCompat.CATEGORY_REMINDER)
-            .setPriority(if (channel == CH_REMIND) NotificationCompat.PRIORITY_DEFAULT else NotificationCompat.PRIORITY_HIGH)
-            .setAutoCancel(true)
-            .setContentIntent(openAppIntent(context, false, route))
-        val countsDown = kind == AlarmKind.PRE_ALERT || kind == AlarmKind.FRIDAY || kind == AlarmKind.SUHOOR
-        if (countsDown && target > System.currentTimeMillis()) {
-            b.setWhen(target).setShowWhen(true).setUsesChronometer(true).setChronometerCountDown(true)
-                .setTimeoutAfter(target - System.currentTimeMillis())
-        }
-        runCatching { NotificationManagerCompat.from(context).notify(id, b.build()) }
     }
-
-    private data class R5(val channel: String, val id: Int, val title: String, val text: String, val route: String?)
 
     /** Optional always-on notification with a live countdown to the next adhan. */
     @SuppressLint("MissingPermission")
@@ -171,14 +240,23 @@ object Notifications {
         val nm = NotificationManagerCompat.from(context)
         if (!s.persistentCountdown || next == null || !s.hasLocation) { nm.cancel(ID_COUNTDOWN); return }
         val ar = s.arabic
-        val tz = s.zone()
-        val friday = next.prayer == Prayer.DHUHR && PrayerSchedule.isFriday(next.at, tz)
-        val name = if (friday) (if (ar) "الجمعة" else "Jumu'ah") else (if (ar) next.prayer.ar else next.prayer.en)
+        val card = NotificationCards.Card(
+            label = (if (ar) "الصلاة القادمة · " else "Next prayer · ") + city(s),
+            title = prayerLabel(next.prayer, next.at, s),
+            time = TimeFmt.clock(next.at, ar, s.zone()),
+            text = (if (ar) "يؤذّن لها " else "Called by ") + s.muezzin(next.prayer).title(ar),
+            countdownTo = next.at, countLabel = if (ar) "باقي" else "Left",
+            dayOf = next.at, highlight = next.prayer,
+        )
         val n = NotificationCompat.Builder(context, CH_COUNTDOWN)
             .setSmallIcon(R.drawable.ic_stat_adhan)
-            .setContentTitle(if (ar) "$name · ${TimeFmt.clock(next.at, true, tz)}" else "$name · ${TimeFmt.clock(next.at, false, tz)}")
-            .setContentText(s.place(ar))
-            .setWhen(next.at).setShowWhen(true).setUsesChronometer(true).setChronometerCountDown(true)
+            .setColor(ACCENT)
+            .setContentTitle("${card.title} · ${card.time}")
+            .setContentText(card.label)
+            .setStyle(NotificationCompat.DecoratedCustomViewStyle())
+            .setCustomContentView(NotificationCards.small(context, card, s))
+            .setCustomBigContentView(NotificationCards.big(context, card, s))
+            .setShowWhen(false)
             .setOngoing(true)
             .setSilent(true)
             .setPriority(NotificationCompat.PRIORITY_MIN)

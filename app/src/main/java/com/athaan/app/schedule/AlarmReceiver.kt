@@ -31,7 +31,7 @@ class AlarmReceiver : BroadcastReceiver() {
                 AlarmKind.ADHAN -> if (prayer != null && s.enabled[prayer] == true) {
                     if (s.vibrate) vibrate(context)
                     if (s.silent || s.inQuietHours(now)) {
-                        Notifications.showAdhanSilent(context, prayer, s.arabic, quiet = !s.silent)
+                        Notifications.showAdhanSilent(context, prayer, s, if (s.silent) Notifications.SilentReason.SILENT else Notifications.SilentReason.QUIET, at.takeIf { it > 0 } ?: now)
                     } else {
                         val svc = Intent(context, AdhanService::class.java)
                             .setAction(AdhanService.ACTION_PLAY)
@@ -41,7 +41,7 @@ class AlarmReceiver : BroadcastReceiver() {
                         } catch (e: Exception) {
                             // The system refused to start playback in the background:
                             // at least tell the user it's prayer time.
-                            Notifications.showAdhanSilent(context, prayer, s.arabic, quiet = false)
+                            Notifications.showAdhanSilent(context, prayer, s, Notifications.SilentReason.BLOCKED, at.takeIf { it > 0 } ?: now)
                         }
                     }
                 }

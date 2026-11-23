@@ -12,6 +12,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.media.AudioAttributes
 import android.media.AudioManager
+import android.media.MediaMetadata
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 import android.media.session.MediaSession
@@ -102,7 +103,11 @@ class AdhanService : Service() {
         val s = SettingsStore.get(this).current
         val m = muezzinOverride?.let { Muezzins.find(it) }?.takeIf { it.canCall(prayer) } ?: s.muezzin(prayer)
         val track = m.trackFor(prayer)
-        val notif = Notifications.buildPlaying(this, prayer, m, s.arabic)
+        _state.value = AdhanPlayback(prayer, m.id)
+        val ms = ensureSession()
+        updateMetadata()
+        updateSessionState()
+        val notif = Notifications.buildPlaying(this, prayer, m, s, token = ms.sessionToken)
         val type = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK else 0
         ServiceCompat.startForeground(this, Notifications.ID_PLAYING, notif, type)
 
@@ -142,6 +147,8 @@ class AdhanService : Service() {
             mp.setOnPreparedListener {
                 it.start()
                 _state.value = _state.value?.copy(durationMs = it.duration)
+                updateMetadata()
+                updateSessionState()
                 startTicker()
                 if (s.fadeIn && source != null) fadeTo(volume, 6000)
                 limitLength = source != null
@@ -223,19 +230,6 @@ class AdhanService : Service() {
             }
             ContextCompat.registerReceiver(this, volumeReceiver, IntentFilter("android.media.VOLUME_CHANGED_ACTION"), ContextCompat.RECEIVER_NOT_EXPORTED)
         }
-        if (session == null) {
-            session = MediaSession(this, "AthaanAdhan").apply {
-                setPlaybackToLocal(
-                    AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_ALARM).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
-                )
-                setCallback(object : MediaSession.Callback() {
-                    override fun onPause() = pauseByUser("media button")
-                    override fun onStop() = stopAll()
-                    override fun onPlay() = resume()
-                })
-                isActive = true
-            }
-        }
         updateSessionState()
 
         // Power key: the screen turning off while the adhan plays pauses it.
@@ -312,11 +306,54 @@ class AdhanService : Service() {
         flipListener = null
     }
 
+    /**
+     * The media session drives the media player in the notification shade and on the lock screen
+     * (artwork, progress, pause/resume and stop), and receives the volume keys while playing.
+     */
+    private fun ensureSession(): MediaSession = session ?: MediaSession(this, "AthaanAdhan").apply {
+        setPlaybackToLocal(
+            AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_ALARM).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
+        )
+        setCallback(object : MediaSession.Callback() {
+            override fun onPause() = pauseByUser("media button")
+            override fun onStop() = stopAll()
+            override fun onPlay() = resume()
+            override fun onCustomAction(action: String, extras: android.os.Bundle?) { if (action == CUSTOM_STOP) stopAll() }
+        })
+        setSessionActivity(Notifications.openAppIntent(this@AdhanService, true))
+        isActive = true
+        session = this
+    }
+
+    private fun updateMetadata() {
+        val st = _state.value ?: return
+        val s = SettingsStore.get(this).current
+        val ar = s.arabic
+        val m = Muezzins.byId(st.muezzinId)
+        val name = if (st.prayer == Prayer.DHUHR && com.athaan.app.prayer.PrayerSchedule.isFriday(System.currentTimeMillis(), s.zone()))
+            (if (ar) "الجمعة" else "Jumu'ah") else (if (ar) st.prayer.ar else st.prayer.en)
+        val art = com.athaan.app.NotificationArt.adhanArt()
+        session?.setMetadata(
+            MediaMetadata.Builder()
+                .putString(MediaMetadata.METADATA_KEY_TITLE, if (ar) "أذان $name" else "$name adhan")
+                .putString(MediaMetadata.METADATA_KEY_ARTIST, m.title(ar))
+                .putString(MediaMetadata.METADATA_KEY_ALBUM, s.place(ar))
+                .putLong(MediaMetadata.METADATA_KEY_DURATION, st.durationMs.toLong().coerceAtLeast(0))
+                .putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART, art)
+                .putBitmap(MediaMetadata.METADATA_KEY_DISPLAY_ICON, art)
+                .build()
+        )
+    }
+
     private fun updateSessionState() {
         val st = _state.value
+        val ar = SettingsStore.get(this).current.arabic
         session?.setPlaybackState(
             PlaybackState.Builder()
                 .setActions(PlaybackState.ACTION_PAUSE or PlaybackState.ACTION_PLAY or PlaybackState.ACTION_STOP or PlaybackState.ACTION_PLAY_PAUSE)
+                .addCustomAction(
+                    PlaybackState.CustomAction.Builder(CUSTOM_STOP, if (ar) "إيقاف الأذان" else "Stop adhan", com.athaan.app.R.drawable.ic_n_stop).build()
+                )
                 .setState(if (st?.paused == true) PlaybackState.STATE_PAUSED else PlaybackState.STATE_PLAYING, (st?.positionMs ?: 0).toLong(), 1f)
                 .build()
         )
@@ -355,7 +392,7 @@ class AdhanService : Service() {
     private fun refreshNotification() {
         val st = _state.value ?: return
         val s = SettingsStore.get(this).current
-        val n = Notifications.buildPlaying(this, st.prayer, Muezzins.byId(st.muezzinId), s.arabic, paused = st.paused)
+        val n = Notifications.buildPlaying(this, st.prayer, Muezzins.byId(st.muezzinId), s, paused = st.paused, token = session?.sessionToken)
         runCatching { NotificationManagerCompat.from(this).notify(Notifications.ID_PLAYING, n) }
     }
 
@@ -406,6 +443,7 @@ class AdhanService : Service() {
 
     companion object {
         private const val TAG = "AthaanAdhan"
+        private const val CUSTOM_STOP = "com.athaan.app.STOP"
         const val ACTION_PLAY = "com.athaan.app.PLAY"
         const val ACTION_STOP = "com.athaan.app.STOP"
         const val ACTION_PAUSE = "com.athaan.app.PAUSE"
