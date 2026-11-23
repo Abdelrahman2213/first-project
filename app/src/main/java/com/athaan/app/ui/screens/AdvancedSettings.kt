@@ -119,7 +119,7 @@ fun TuningScreen(vm: AppViewModel, onBack: () -> Unit) {
                             T(if (ar) p.ar else p.en, 15.sp, FontWeight.Medium)
                             T(TimeFmt.clock(today[p], ar, s.zone()), 12.sp, color = AC.Gold)
                         }
-                        Stepper(off, -60, 60, 1, { if (it == 0) tr("بدون", "None") else TimeFmt.signedMinutes(it, ar) }) { vm.setOffset(p, it) }
+                        Stepper(off, -60, 60, 1, { if (it == 0) (if (ar) "بدون" else "None") else TimeFmt.signedMinutes(it, ar) }) { vm.setOffset(p, it) }
                     }
                     if (i < Prayer.values().size - 1) Box(Modifier.fillMaxWidth().height(1.dp).background(AC.Line))
                 }
@@ -143,7 +143,7 @@ fun TuningScreen(vm: AppViewModel, onBack: () -> Unit) {
                             if (iq > 0) T(tr("تنبيه الإقامة ", "Iqama at ") + TimeFmt.clock(today[p] + iq * 60_000L, ar, s.zone()), 12.sp, color = AC.Gold)
                             else T(tr("بدون تنبيه", "No reminder"), 12.sp, color = AC.Muted)
                         }
-                        Stepper(iq, 0, 60, 5, { if (it == 0) tr("بدون", "Off") else tr("$it د", "$it min") }) { vm.setIqama(p, it) }
+                        Stepper(iq, 0, 60, 5, { if (it == 0) (if (ar) "بدون" else "Off") else (if (ar) "$it د" else "$it min") }) { vm.setIqama(p, it) }
                     }
                     if (i < Prayer.adhanPrayers.size - 1) Box(Modifier.fillMaxWidth().height(1.dp).background(AC.Line))
                 }

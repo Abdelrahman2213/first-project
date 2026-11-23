@@ -1,6 +1,7 @@
 package com.athaan.app.ui.screens
 
 import android.content.Intent
+import androidx.compose.foundation.border
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.animateColorAsState
