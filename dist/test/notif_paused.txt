@@ -1,6 +1,6 @@
 Current Notification Manager state:
   Notification List:
-    NotificationRecord(0x0a7b0b0c: pkg=com.athaan.app user=UserHandle{0} id=1 tag=null importance=4 key=0|com.athaan.app|1|null|10192: Notification(channel=adhan_playing shortcut=null contentView=null vibrate=null sound=null defaults=0x0 flags=0x62 color=0x00000000 category=alarm groupKey=silent actions=2 vis=PUBLIC))
+    NotificationRecord(0x0b62c12f: pkg=com.athaan.app user=UserHandle{0} id=1 tag=null importance=4 key=0|com.athaan.app|1|null|10192: Notification(channel=adhan_playing shortcut=null contentView=null vibrate=null sound=null defaults=0x0 flags=0x62 color=0x00000000 category=alarm groupKey=silent actions=2 vis=PUBLIC))
       uid=10192 userId=0
       opPkg=com.athaan.app
       icon=Icon(typ=RESOURCE pkg=com.athaan.app id=0x7f04001d)
@@ -12,11 +12,11 @@ Current Notification Manager state:
       groupKey=0|com.athaan.app|g:silent
       notification=
             fullscreenIntent=null
-            contentIntent=PendingIntent{b098c55: PendingIntentRecord{937736c com.athaan.app startActivity (allowlist: 3ecb629:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+            contentIntent=PendingIntent{942c33c: PendingIntentRecord{2b68490 com.athaan.app startActivity (allowlist: b2a2a2:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
             deleteIntent=null
             number=0
             groupAlertBehavior=1
-            when=1795453572713
+            when=1795454673952
             tickerText=null
             vis=1
             contentView=null
@@ -25,8 +25,8 @@ Current Notification Manager state:
             color=0x00000000
             timeout=unknown
             actions={
-                [0] "كمّل" -> PendingIntent{a90d66a: PendingIntentRecord{27d4d86 com.athaan.app startService (allowlist: 3ecb629:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
-                [1] "إنهاء" -> PendingIntent{fbc75b: PendingIntentRecord{34f3d35 com.athaan.app startService (allowlist: 3ecb629:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+                [0] "كمّل" -> PendingIntent{55198c5: PendingIntentRecord{93141e0 com.athaan.app startService (allowlist: b2a2a2:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+                [1] "إنهاء" -> PendingIntent{da8421a: PendingIntentRecord{63a2353 com.athaan.app startService (allowlist: b2a2a2:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
               }
             extras={
                 android.title=String (أذان الفجر متوقف)

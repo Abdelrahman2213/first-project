@@ -10,18 +10,18 @@ PASS theme switch to light
      screenshot 04_permission_dialog.png
 PASS permission dialog shown and accepted
      (could not find ('Turn on', 'OK', 'تشغيل'))
-PASS location found and home screen opened — القاهرة، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:57 ص | باقي | 0 | 9 | : | 5 | 6 | : | 5 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط
+PASS location found and home screen opened — القاهرة، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:57 ص | باقي | 0 | 9 | : | 3 | 8 | : | 3 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط
      screenshot 05_home_dark.png
-PASS home shows the five prayers — القاهرة، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:57 ص | باقي | 0 | 9 | : | 5 | 6 | : | 4 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط
-PASS home shows a place name — القاهرة، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:57 ص | باقي | 0 | 9 | : | 5 | 6 | : | 4 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط 
+PASS home shows the five prayers — القاهرة، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:57 ص | باقي | 0 | 9 | : | 3 | 8 | : | 2 | 2 | 1 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عب
+PASS home shows a place name — القاهرة، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 2:57 ص | باقي | 0 | 9 | : | 3 | 8 | : | 2 | 2 | 1 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد
      ue
-     11-23 16:59:40.413  4589  4589 I AthaanSchedule: next PRE_ALERT at 1795488420000
-     11-23 16:59:40.430  4589  4589 I AthaanSchedule: next FRIDAY at 1795770840000
-     11-23 16:59:40.442  4589  4589 I AthaanSchedule: next KAHF at 1795771800000
-     11-23 16:59:48.439  4589  4589 I AthaanSchedule: next adhan FAJR at 1795489020000 exact=true
-     11-23 16:59:48.452  4589  4589 I AthaanSchedule: next PRE_ALERT at 1795488420000
-     11-23 16:59:48.457  4589  4589 I AthaanSchedule: next FRIDAY at 1795770840000
-     11-23 16:59:48.462  4589  4589 I AthaanSchedule: next KAHF at 1795771800000
+     11-23 17:17:57.599  4533  4533 I AthaanSchedule: next PRE_ALERT at 1795488420000
+     11-23 17:17:57.600  4533  4533 I AthaanSchedule: next FRIDAY at 1795770840000
+     11-23 17:17:57.602  4533  4533 I AthaanSchedule: next KAHF at 1795771800000
+     11-23 17:18:10.114  4533  4533 I AthaanSchedule: next adhan FAJR at 1795489020000 exact=true
+     11-23 17:18:10.121  4533  4533 I AthaanSchedule: next PRE_ALERT at 1795488420000
+     11-23 17:18:10.122  4533  4533 I AthaanSchedule: next FRIDAY at 1795770840000
+     11-23 17:18:10.122  4533  4533 I AthaanSchedule: next KAHF at 1795771800000
 PASS next adhan scheduled
 PASS light theme on home
      screenshot 06_home_light.png
@@ -41,7 +41,7 @@ PASS settings tab
      screenshot 15_settings_bottom.png
 PASS settings has the new sections — الإعدادات | الموقع والحساب | الموقع | تلقائي · القاهرة، مصر | تغيير | تحديث موقعي الحالي | طريقة حساب المواقيت | الهيئة المصرية العامة للمساحة | وقت العصر | الجمهور (شافعي، مالكي، حنبلي) | ضبط الدقائق والإقامة | طابق مواقيت مسجدك، وحدد وقت الإقامة لكل صلاة | الأذان | طول الأذان | كامل | 30 ثانية | التكبير فقط | الصوت يعلى بالتدريج | يبدأ هادي ويعلى خلال 6 ثواني | مستوى الصوت | الوضع الصامت | إشعار
 PASS tuning screen
-PASS offset +1 for Fajr — رجوع | ضبط الدقائق والإقامة | لو مسجدك بيأذّن قبل أو بعد الحساب بدقايق | تقديم أو تأخير الأذان | الفجر | 2:57 ص | − | +1 د | + | الشروق | 4:27 ص | − | بدون | + | الظهر | 9:42 ص | − | بدون | + | العصر | 12:36 م | − | بدون | + | المغرب | 2:56 م | − | بدون | + | العشاء | 4:17 م | − | بدون | + | الوقت ا
+PASS offset +1 for Fajr — رجوع | ضبط الدقائق والإقامة | لو مسجدك بيأذّن قبل أو بعد الحساب بدقايق | تقديم أو تأخير الأذان | الفجر | 2:57 ص | − | تأخير 1 د | + | الشروق | 4:27 ص | − | بدون | + | الظهر | 9:42 ص | − | بدون | + | العصر | 12:36 م | − | بدون | + | المغرب | 2:56 م | − | بدون | + | العشاء | 4:17 م | − | بدون | + | ال
      screenshot 16_tuning.png
 PASS quiet hours screen
      screenshot 17_quiet_hours.png
@@ -70,7 +70,7 @@ PASS custom muezzin added
 PASS custom muezzin in library — مكتبة المؤذنين | 59 مؤذن · استمع، اختر، وحمّل للاستماع بدون إنترنت | الكل | أذان الفجر | مصر | الحرمين والأقصى | الخليج 
      screenshot 28_library_custom.png
 PASS Dhuhr plays the user's recording — --------- beginning of main
-11-23 17:04:29.023  4589  4589 I AthaanAdhan: adhan DHUHR muezzin=custom_1aa993b5 fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_1aa993b5.mp3
+11-23 17:22:50.173  4533  4533 I AthaanAdhan: adhan DHUHR muezzin=custom_0d662631 fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_0d662631.mp3
 
 PASS country list
      screenshot 29_countries.png
@@ -80,15 +80,15 @@ PASS city list for Egypt
      screenshot 31_cities_egypt.png
      screenshot 32_cities_search.png
 PASS choose Alexandria
-PASS home shows Alexandria — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 5 | 7 | : | 4 | 0 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد 
-PASS countdown digits are drawn — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 5 | 7 | : | 2 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الب
+PASS home shows Alexandria — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 3 | 9 | : | 1 | 8 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد 
+PASS countdown digits are drawn — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 3 | 9 | : | 0 | 2 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط عبد الصمد | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد
      screenshot 33_home_alexandria.png
 PASS playing screen
      screenshot 34_playing_fajr.png
      --------- beginning of main
-11-23 17:05:42.774  4589  4589 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
+11-23 17:24:03.277  4533  4533 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 PASS Fajr uses the Fajr recording — --------- beginning of main
-11-23 17:05:42.774  4589  4589 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
+11-23 17:24:03.277  4533  4533 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 
 PASS no player error
 PASS volume key pauses the adhan (in app) — الأذان متوقف مؤقتًا | الفجر | 5:02 ص | الشيخ عبد الباسط عبد الصمد | الإسكندرية، مصر · الهيئة المصرية العامة للمساحة | 0:12 | 4:46 | كمّل الأذان | إنهاء | دعاء بعد الأذان | اللهم رب هذه الدعوة التامة و
@@ -96,14 +96,14 @@ PASS volume key pauses the adhan (in app) — الأذان متوقف مؤقتً
 PASS volume key logged
 PASS adhan resumes
 PASS volume key pauses the adhan (background) — --------- beginning of main
-11-23 17:06:12.694  4589  4589 I AthaanAdhan: paused by user (volume key)
+11-23 17:24:33.939  4533  4533 I AthaanAdhan: paused by user (volume key)
 
 PASS paused screen in app
 PASS power key pauses the adhan — --------- beginning of main
-11-23 17:06:27.394  4589  4589 I AthaanAdhan: paused by user (screen off)
+11-23 17:24:47.474  4533  4533 I AthaanAdhan: paused by user (screen off)
 
-PASS ends from the paused screen — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 5 | 6 | : | 0 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد البا
-PASS adhan stops — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 5 | 5 | : | 4 | 2 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد 
+PASS ends from the paused screen — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 3 | 7 | : | ع | يؤذّن لها · أذان الفجر | الشيخ عبد الباسط ع
+PASS adhan stops — الإسكندرية، مصر | أذان | الوضع الفاتح | الإثنين · 23 نوفمبر | 13 جمادى الآخرة 1448 هـ | الصلاة القادمة | الفجر | 5:03 ص | باقي | 0 | 9 | : | 3 | 7 | : | 2 | 3 | ع | يؤذّن لها · أذان الفجر | الشيخ عبد 
      screenshot 36_home_english_light.png
      screenshot 37_library_english_light.png
      screenshot 38_settings_english_light.png
@@ -114,9 +114,9 @@ PASS adhan stops — الإسكندرية، مصر | أذان | الوضع ال�
      screenshot 43_home_light_indigo_mamluk.png
      clock moved to 20 s before FAJR adhan (1795489380000)
      --------- beginning of main
-11-24 03:02:40.270  4589  4589 I AthaanAlarm: alarm PRE_ALERT prayer=FAJR due=1795488780000 late=580s
-11-24 03:03:00.001  4589  4589 I AthaanAlarm: alarm ADHAN prayer=FAJR due=1795489380000 late=0s
-11-24 03:03:00.092  4589  4589 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
+11-24 03:02:40.417  4533  4533 I AthaanAlarm: alarm PRE_ALERT prayer=FAJR due=1795488780000 late=580s
+11-24 03:03:00.006  4533  4533 I AthaanAlarm: alarm ADHAN prayer=FAJR due=1795489380000 late=0s
+11-24 03:03:00.064  4533  4533 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 PASS alarm fired and the FAJR adhan started by itself
      screenshot 44_alarm_fired.png
 PASS no crash
