@@ -1,0 +1,17 @@
+> Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/first-project/first-project/app/src/main/java/com/athaan/app/ui/screens/AdvancedSettings.kt:122:65 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/first-project/first-project/app/src/main/java/com/athaan/app/ui/screens/AdvancedSettings.kt:146:62 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/first-project/first-project/app/src/main/java/com/athaan/app/ui/screens/AdvancedSettings.kt:146:85 @Composable invocations can only happen from the context of a @Composable function
+e: file:///home/runner/work/first-project/first-project/app/src/main/java/com/athaan/app/ui/screens/SettingsScreen.kt:255:26 Unresolved reference 'border'.
+e: file:///home/runner/work/first-project/first-project/app/src/main/java/com/athaan/app/ui/screens/SettingsScreen.kt:280:26 Unresolved reference 'border'.
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run-1795451258523.json
+
+FAILURE: Build failed with an exception.
+--
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+--
+BUILD FAILED in 2m 20s
+24 actionable tasks: 24 executed
