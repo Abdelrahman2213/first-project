@@ -10,6 +10,8 @@ import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -84,7 +86,7 @@ private fun Stepper(value: Int, min: Int, max: Int, step: Int, format: (Int) -> 
                 (slideInVertically { if (up) it else -it } + fadeIn()) togetherWith (slideOutVertically { if (up) -it else it } + fadeOut())
             },
             label = "stepper",
-            modifier = Modifier.widthIn(min = 76.dp),
+            modifier = Modifier.width(88.dp),
             contentAlignment = Alignment.Center,
         ) { v ->
             T(format(v), 14.sp, FontWeight.SemiBold, if (v == 0) AC.TextDim else AC.Text, align = TextAlign.Center, maxLines = 1,
@@ -164,6 +166,7 @@ private fun dayName(d: Int, ar: Boolean) = when (d) {
     else -> if (ar) "الجمعة" else "Fri"
 }
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun QuietHoursScreen(vm: AppViewModel, onBack: () -> Unit) {
     val s by vm.settings.collectAsState()
@@ -196,8 +199,12 @@ fun QuietHoursScreen(vm: AppViewModel, onBack: () -> Unit) {
             }
         }
         SectionLabel(tr("الأيام", "Days"))
-        LazyRow(contentPadding = PaddingValues(horizontal = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            items(WEEK) { d ->
+        FlowRow(
+            Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+        ) {
+            WEEK.forEach { d ->
                 val on = d in s.quietDays
                 val bg by animateColorAsState(if (on) AC.Gold else AC.Surface, label = "day")
                 val fg by animateColorAsState(if (on) AC.OnGold else AC.TextDim, label = "dayfg")

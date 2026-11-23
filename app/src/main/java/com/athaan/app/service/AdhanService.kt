@@ -11,9 +11,9 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.media.MediaPlayer
 import android.media.RingtoneManager
-import android.media.VolumeProvider
 import android.media.session.MediaSession
 import android.media.session.PlaybackState
 import android.os.Build
@@ -71,6 +71,8 @@ class AdhanService : Service() {
     private var flipListener: SensorEventListener? = null
     private var faceDownSince = 0L
     private var seenFaceUp = false
+    private var volumeReceiver: BroadcastReceiver? = null
+    private var ignoreVolumeUntil = 0L
     private var screenLock: PowerManager.WakeLock? = null
     private var volume = 0.8f
 
@@ -200,15 +202,32 @@ class AdhanService : Service() {
     private fun startSilencers() {
         val s = SettingsStore.get(this).current
 
-        // Volume keys: a media session that handles volume itself receives the keys while the
-        // adhan plays, even with the screen off. Any press pauses the adhan.
-        if (s.volumeKeysPause && session == null) {
-            session = MediaSession(this, "AthaanAdhan").apply {
-                setPlaybackToRemote(object : VolumeProvider(VOLUME_CONTROL_RELATIVE, 100, 50) {
-                    override fun onAdjustVolume(direction: Int) {
-                        if (direction != 0) pauseByUser("volume key")
+        // Volume keys: while this media session is playing, the system sends the volume keys to
+        // the adhan's (alarm) stream, even with the screen off. Any volume change pauses the
+        // adhan, and the volume is put back as it was.
+        if (s.volumeKeysPause && volumeReceiver == null) {
+            val am = getSystemService(AudioManager::class.java)
+            volumeReceiver = object : BroadcastReceiver() {
+                override fun onReceive(c: Context, i: Intent) {
+                    val stream = i.getIntExtra("android.media.EXTRA_VOLUME_STREAM_TYPE", -1)
+                    val now = i.getIntExtra("android.media.EXTRA_VOLUME_STREAM_VALUE", -1)
+                    val before = i.getIntExtra("android.media.EXTRA_PREV_VOLUME_STREAM_VALUE", -1)
+                    if (stream < 0 || now == before || System.currentTimeMillis() < ignoreVolumeUntil) return
+                    if (_state.value?.paused != false) return
+                    pauseByUser("volume key")
+                    if (before >= 0 && am != null) {
+                        ignoreVolumeUntil = System.currentTimeMillis() + 1500
+                        runCatching { am.setStreamVolume(stream, before, 0) }
                     }
-                })
+                }
+            }
+            ContextCompat.registerReceiver(this, volumeReceiver, IntentFilter("android.media.VOLUME_CHANGED_ACTION"), ContextCompat.RECEIVER_NOT_EXPORTED)
+        }
+        if (session == null) {
+            session = MediaSession(this, "AthaanAdhan").apply {
+                setPlaybackToLocal(
+                    AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_ALARM).setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
+                )
                 setCallback(object : MediaSession.Callback() {
                     override fun onPause() = pauseByUser("media button")
                     override fun onStop() = stopAll()
@@ -287,6 +306,8 @@ class AdhanService : Service() {
         session = null
         screenReceiver?.let { runCatching { unregisterReceiver(it) } }
         screenReceiver = null
+        volumeReceiver?.let { runCatching { unregisterReceiver(it) } }
+        volumeReceiver = null
         flipListener?.let { l -> runCatching { getSystemService(SensorManager::class.java)?.unregisterListener(l) } }
         flipListener = null
     }

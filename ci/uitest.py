@@ -244,18 +244,19 @@ shot("per_prayer")
 
 ok("settings tab", tap("الإعدادات", wait=2, exact=True) and wait_for("طريقة حساب المواقيت"))
 shot("settings_top")
-scroll_down()
-shot("settings_mid")
 txt = screen_text()
-scroll_down()
-shot("settings_reminders")
-txt += screen_text()
-scroll_down()
-shot("settings_appearance")
-txt += screen_text()
-scroll_down()
+shot_app = False
+for i in range(10):
+    scroll_down()
+    txt += screen_text()
+    if i in (1, 3):
+        shot(f"settings_{i}")
+    if not shot_app and find("زخرفة كارت الصلاة") is not None:
+        scroll_down()
+        shot("settings_appearance")
+        txt += screen_text()
+        shot_app = True
 shot("settings_bottom")
-txt += screen_text()
 ok("settings has the new sections", all(k in txt for k in ["زراير الصوت", "زرار القفل", "صلاة الجمعة", "زخرفة كارت الصلاة", "حفظ الإعدادات في ملف"]), txt[:400])
 
 # minute adjustments and iqama
