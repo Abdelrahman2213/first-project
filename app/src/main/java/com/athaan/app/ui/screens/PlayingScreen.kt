@@ -40,7 +40,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.graphics.asComposePath
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -79,7 +79,6 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
     }
     val pulse = rememberInfiniteTransition(label = "pulse")
     val breath by pulse.animateFloat(0f, 1f, infiniteRepeatable(tween(2600, easing = FastOutSlowInEasing), RepeatMode.Reverse), label = "breath")
-    val spin by pulse.animateFloat(0f, 360f, infiniteRepeatable(tween(40_000, easing = LinearEasing)), label = "spin")
     val enter = remember { Animatable(0f) }
     LaunchedEffect(Unit) { enter.animateTo(1f, tween(800, easing = FastOutSlowInEasing)) }
 
@@ -98,13 +97,18 @@ fun PlayingScreen(vm: AppViewModel, pb: AdhanPlayback) {
                 val grow = 1f + breath * 0.05f * (3 - i)
                 drawCircle(gold.copy(alpha = a * (0.7f + 0.6f * breath)), radius = r * k * grow * enter.value, center = c, style = Stroke(1.dp.toPx()))
             }
-            val half = 62f * k
-            val stroke = Stroke(1.2f.dp.toPx())
-            val tl = Offset(c.x - half, c.y - half)
-            rotate(spin, c) {
-                drawRect(gold.copy(alpha = 0.55f), tl, Size(half * 2, half * 2), style = stroke)
-                rotate(45f, c) { drawRect(gold.copy(alpha = 0.55f), tl, Size(half * 2, half * 2), style = stroke) }
+            // A mihrab arch framing the prayer name, breathing with the rings.
+            val grow = (1f + breath * 0.025f) * (0.92f + 0.08f * enter.value)
+            val aw = 112f * k * grow; val ah = 150f * k * grow
+            val base = c.y + ah * 0.52f
+            listOf(0f to 0.6f, 9f * k to 0.32f).forEach { (inset, a) ->
+                val p = android.graphics.Path()
+                com.athaan.app.art.Motifs.arch(p, c.x - aw + inset, c.x + aw - inset, c.y - ah * 0.05f + inset, c.y - ah + inset * 1.6f, base)
+                drawPath(p.asComposePath(), gold.copy(alpha = a * enter.value), style = Stroke(1.2f.dp.toPx(), join = androidx.compose.ui.graphics.StrokeJoin.Round))
             }
+            drawLine(gold.copy(alpha = 0.45f * enter.value), Offset(c.x - aw * 1.15f, base), Offset(c.x + aw * 1.15f, base), strokeWidth = 1.dp.toPx())
+            val moon = com.athaan.app.art.Motifs.crescentPath(c.x, c.y - ah - 14f * k, 7f * k)
+            drawPath(moon.asComposePath(), gold.copy(alpha = 0.75f * enter.value))
         }
 
         Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {

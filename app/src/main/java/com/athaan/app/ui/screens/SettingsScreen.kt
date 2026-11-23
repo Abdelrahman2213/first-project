@@ -284,7 +284,7 @@ fun SettingsScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Box(Modifier.size(76.dp).clip(RoundedCornerShape(12.dp)), contentAlignment = Alignment.Center) {
-                        HeroOrnament(p, Modifier.size(96.dp))
+                        HeroOrnament(p, Modifier.size(72.dp), fadeFromCorner = false)
                     }
                     T(tr(p.ar, p.en), 11.sp, if (on) FontWeight.Bold else FontWeight.Medium, if (on) AC.Gold else AC.Text, maxLines = 2,
                         align = androidx.compose.ui.text.style.TextAlign.Center, modifier = Modifier.padding(top = 6.dp))

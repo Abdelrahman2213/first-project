@@ -150,18 +150,17 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
                 .background(AC.Surface)
                 .border(1.dp, AC.Gold.copy(alpha = 0.22f), RoundedCornerShape(28.dp))
         ) {
-            // A slowly turning rosette tucked into the card's far corner, away from the text.
-            val spin = rememberInfiniteTransition(label = "heroSpin")
-            val rot by spin.animateFloat(0f, 45f, infiniteRepeatable(tween(90_000, easing = LinearEasing), RepeatMode.Restart), label = "rot")
+            // An Islamic ornament (no stars) in the card's far top corner, away from the text, glowing softly.
+            val glow = rememberInfiniteTransition(label = "heroGlow")
+            val shine by glow.animateFloat(0.82f, 1f, infiniteRepeatable(tween(3800, easing = LinearEasing), RepeatMode.Reverse), label = "shine")
             Box(Modifier.matchParentSize()) {
                 HeroOrnament(
                     s.pattern,
                     Modifier
                         .align(Alignment.TopEnd)
-                        .offset(x = 70.dp, y = (-64).dp)
-                        .size(280.dp)
-                        .graphicsLayer { alpha = enter.value },
-                    rotation = if (s.pattern == com.athaan.app.data.HeroPattern.ALHAMBRA) 0f else rot,
+                        .offset(x = 6.dp, y = 10.dp)
+                        .size(176.dp)
+                        .graphicsLayer { alpha = enter.value * shine },
                 )
             }
             Column(Modifier.padding(22.dp)) {

@@ -2,11 +2,11 @@ package com.athaan.app.data
 
 /** Ornament drawn in the corner of the "next prayer" card. */
 enum class HeroPattern(val ar: String, val en: String) {
-    SHAMSA("الشمسة", "Shamsa medallion"),
-    RUB_EL_HIZB("ربع الحزب ۞", "Rub el Hizb ۞"),
-    ALHAMBRA("نجمة وصليب · الحمراء", "Star & cross · Alhambra"),
-    MAMLUK("النجمة العشرية المملوكية", "Mamluk ten-point star"),
-    ROSETTE("الوردة الهندسية", "Geometric rosette"),
+    MOSQUE("القبة والمآذن", "Dome & minarets"),
+    MIHRAB("المحراب والقنديل", "Mihrab & lamp"),
+    CRESCENT("الهلال", "Crescent"),
+    ARABESQUE("أرابيسك نباتي", "Arabesque vine"),
+    MASHRABIYA("المشربية", "Mashrabiya"),
     NONE("بدون زخرفة", "No ornament"),
 }
 

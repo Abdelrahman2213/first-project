@@ -67,7 +67,7 @@ import com.athaan.app.ui.components.GoldButton
 import com.athaan.app.ui.components.OutlineButton
 import com.athaan.app.ui.components.Pill
 import com.athaan.app.ui.components.PlayButton
-import com.athaan.app.ui.components.StarPattern
+import com.athaan.app.ui.components.ArchLattice
 import com.athaan.app.ui.components.Fade
 import com.athaan.app.ui.components.GoldSlider
 import com.athaan.app.ui.components.T
@@ -95,7 +95,7 @@ fun MuezzinScreen(vm: AppViewModel, m: Muezzin, onBack: () -> Unit, onAddVersion
     val ring by breathe.animateFloat(1f, 1.08f, infiniteRepeatable(tween(2200), RepeatMode.Reverse), label = "ringScale")
 
     Box(Modifier.fillMaxSize()) {
-        StarPattern(Modifier.fillMaxWidth().height(300.dp), tile = 52.dp, alpha = 0.10f, fade = Fade.TO_BOTTOM)
+        ArchLattice(Modifier.fillMaxWidth().height(300.dp), tile = 52.dp, alpha = 0.10f, fade = Fade.TO_BOTTOM)
         Box(Modifier.fillMaxWidth().height(300.dp).background(Brush.verticalGradient(0.35f to Color.Transparent, 1f to AC.Ink)))
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
             Row(Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 12.dp)) {

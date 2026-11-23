@@ -46,7 +46,7 @@ object AIcons {
     val Back = icon("back", "M15 6l-6 6 6 6", width = 1.8f, mirror = true)
     val Forward = icon("forward", "M9 6l6 6-6 6", width = 1.8f, mirror = true)
     val Moon = icon("moon", "M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z")
-    val MoonStar = icon("moonStar", "M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z", "M17 4v3M15.5 5.5h3")
+    val MoonStar = icon("moonStar", "M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z", circle(17.5f, 5.5f, 0.9f))
     val Sun = icon("sun", circle(12f, 12f, 4f), "M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4")
     val Sunrise = icon("sunrise", "M4 18h16M7 18a5 5 0 0 1 10 0M12 6v3M5.5 11l1.5 1M18.5 11l-1.5 1")
     val Afternoon = icon("asr", circle(12f, 13f, 3.5f), "M12 5v2M4.5 13h2M17.5 13h2M6.7 7.7l1.4 1.4M15.9 9.1l1.4-1.4M4 19h16")

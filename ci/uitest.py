@@ -427,14 +427,20 @@ shot("settings_light_bottom")
 
 # Ornaments and light palettes the user can pick.
 debug("debug_theme light")
-for pal, pat in [("EMERALD", "ALHAMBRA"), ("TURQUOISE", "RUB_EL_HIZB"), ("DAWN", "ROSETTE"), ("INDIGO", "MAMLUK")]:
+for pal, pat in [("EMERALD", "MIHRAB"), ("TURQUOISE", "CRESCENT"), ("DAWN", "ARABESQUE"), ("INDIGO", "MASHRABIYA")]:
     debug(f"debug_palette {pal}")
     debug(f"debug_pattern {pat}")
     debug("debug_route home")
     time.sleep(2.5)
     shot(f"home_light_{pal.lower()}_{pat.lower()}")
+debug("debug_theme dark")
+for pat in ["MOSQUE", "MIHRAB", "CRESCENT", "ARABESQUE", "MASHRABIYA"]:
+    debug(f"debug_pattern {pat}")
+    debug("debug_route home")
+    time.sleep(2.5)
+    shot(f"home_dark_{pat.lower()}")
 debug("debug_palette IVORY")
-debug("debug_pattern SHAMSA")
+debug("debug_pattern MOSQUE")
 debug("debug_theme dark")
 debug("debug_route home")
 time.sleep(1)

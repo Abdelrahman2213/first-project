@@ -93,7 +93,6 @@ import com.athaan.app.ui.components.ScreenTitle
 import com.athaan.app.ui.components.Segmented
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.components.pressClick
-import com.athaan.app.ui.components.starOutline
 import com.athaan.app.ui.theme.AC
 import com.athaan.app.ui.theme.AIcons
 import com.athaan.app.ui.theme.Amiri
@@ -221,7 +220,8 @@ fun QiblaScreen(vm: AppViewModel, onBack: () -> Unit) {
                     val p2 = Offset(c.x + (r - (if (long) 26 else 18).dp.toPx()) * Math.cos(a).toFloat(), c.y + (r - (if (long) 26 else 18).dp.toPx()) * Math.sin(a).toFloat())
                     drawLine(if (long) gold else line, p1, p2, strokeWidth = (if (long) 2 else 1).dp.toPx())
                 }
-                drawPath(starOutline(c, r * 0.42f, r * 0.42f * 0.765f, 8, 22.5), deco.copy(alpha = 0.25f), style = Stroke(1.5.dp.toPx()))
+                drawCircle(deco.copy(alpha = 0.22f), r * 0.42f, c, style = Stroke(1.5.dp.toPx()))
+                drawCircle(deco.copy(alpha = 0.14f), r * 0.36f, c, style = Stroke(1.dp.toPx()))
                 // Kaaba marker at the qibla bearing
                 rotate(qibla.toFloat(), c) {
                     val tip = Offset(c.x, c.y - r + 34.dp.toPx())

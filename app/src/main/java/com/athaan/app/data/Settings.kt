@@ -54,7 +54,7 @@ data class AppSettings(
     val arabic: Boolean = true,
     val light: Boolean = false,
     val palette: LightPalette = LightPalette.IVORY,
-    val pattern: HeroPattern = HeroPattern.SHAMSA,
+    val pattern: HeroPattern = HeroPattern.MOSQUE,
     val autoDownload: Boolean = true,
 ) {
     fun place(ar: Boolean = arabic) = if (ar) placeAr else placeEn

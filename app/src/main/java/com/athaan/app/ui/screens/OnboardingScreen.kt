@@ -49,7 +49,7 @@ import com.athaan.app.ui.LocStatus
 import com.athaan.app.ui.components.GoldButton
 import com.athaan.app.ui.components.LanguageToggle
 import com.athaan.app.ui.components.OutlineButton
-import com.athaan.app.ui.components.StarPattern
+import com.athaan.app.ui.components.ArchLattice
 import com.athaan.app.ui.components.Fade
 import com.athaan.app.ui.components.T
 import com.athaan.app.ui.components.ThemeToggle
@@ -73,7 +73,7 @@ fun OnboardingScreen(vm: AppViewModel, onAllow: () -> Unit, onManual: () -> Unit
     fun stage(i: Int) = ((enter.value * 1.8f) - i * 0.18f).coerceIn(0f, 1f)
 
     Box(Modifier.fillMaxSize()) {
-        StarPattern(Modifier.fillMaxWidth().height(460.dp), tile = 56.dp, alpha = 0.10f, fade = Fade.TO_BOTTOM)
+        ArchLattice(Modifier.fillMaxWidth().height(460.dp), tile = 56.dp, alpha = 0.10f, fade = Fade.TO_BOTTOM)
         Box(Modifier.fillMaxWidth().height(460.dp).background(Brush.verticalGradient(0.55f to Color.Transparent, 1f to AC.Ink)))
 
         Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()), horizontalAlignment = Alignment.CenterHorizontally) {

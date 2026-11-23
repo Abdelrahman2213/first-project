@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Crescent with a small eight-point star: the status-bar mark. -->
+<!-- A mosque: onion dome under a crescent, two minarets and an arched door. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp" android:height="24dp"
     android:viewportWidth="24" android:viewportHeight="24">
     <path android:fillColor="#FFFFFFFF"
-        android:pathData="M13.2,2.6A9.6,9.6 0,1 0,21.4 16.6A8,8 0,0 1,13.2 2.6z" />
+        android:pathData="M12.9,0.6A1.6,1.6 0,1 0,12.9 3.4A1.25,1.25 0,1 1,12.9 0.6z" />
     <path android:fillColor="#FFFFFFFF"
-        android:pathData="M17.6,4.2l0.75,1.8l1.8,0.75l-1.8,0.75l-0.75,1.8l-0.75,-1.8l-1.8,-0.75l1.8,-0.75z" />
+        android:pathData="M11.65,3.6h0.7v2h-0.7z" />
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M6,13C5.4,9.9 9,8.5 11,6.8C11.6,6.3 11.9,5.8 12,5.3C12.1,5.8 12.4,6.3 13,6.8C15,8.5 18.6,9.9 18,13Z" />
+    <path android:fillColor="#FFFFFFFF" android:fillType="evenOdd"
+        android:pathData="M5,14h14v8H5z M10.4,22v-3.2a1.6,1.6 0,0 1,3.2 0V22z" />
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M1.6,22V11l1.2,-2.6L4,11v11z M20,22V11l1.2,-2.6L22.4,11v11z" />
 </vector>
