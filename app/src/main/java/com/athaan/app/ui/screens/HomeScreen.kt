@@ -158,8 +158,8 @@ fun HomeScreen(vm: AppViewModel, onLocation: () -> Unit, onPrayer: (Prayer) -> U
                     s.pattern,
                     Modifier
                         .align(Alignment.TopEnd)
-                        .offset(x = 6.dp, y = 10.dp)
-                        .size(176.dp)
+                        .offset(x = 10.dp, y = 12.dp)
+                        .size(150.dp)
                         .graphicsLayer { alpha = enter.value * shine },
                 )
             }
