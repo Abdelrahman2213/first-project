@@ -262,7 +262,7 @@ ok("settings has the new sections", all(k in txt for k in ["زراير الصو�
 # minute adjustments and iqama
 debug("debug_route tuning")
 ok("tuning screen", wait_for("تقديم أو تأخير الأذان"))
-ok("offset +1 for Fajr", tap("+", wait=1.2, exact=True) and wait_for("+1 د", timeout=5), screen_text()[:300])
+ok("offset +1 for Fajr", tap("+", wait=1.2, exact=True) and wait_for("تأخير 1 د", timeout=5), screen_text()[:300])
 shot("tuning")
 tap("−", wait=1.2, exact=True)
 debug("debug_route quiet")

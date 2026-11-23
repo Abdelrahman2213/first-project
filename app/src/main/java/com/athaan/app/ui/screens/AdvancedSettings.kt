@@ -121,7 +121,7 @@ fun TuningScreen(vm: AppViewModel, onBack: () -> Unit) {
                             T(if (ar) p.ar else p.en, 15.sp, FontWeight.Medium)
                             T(TimeFmt.clock(today[p], ar, s.zone()), 12.sp, color = AC.Gold)
                         }
-                        Stepper(off, -60, 60, 1, { if (it == 0) (if (ar) "بدون" else "None") else TimeFmt.signedMinutes(it, ar) }) { vm.setOffset(p, it) }
+                        Stepper(off, -60, 60, 1, { if (it == 0) (if (ar) "بدون" else "None") else if (ar) (if (it > 0) "تأخير $it د" else "تقديم ${-it} د") else TimeFmt.signedMinutes(it, false) }) { vm.setOffset(p, it) }
                     }
                     if (i < Prayer.values().size - 1) Box(Modifier.fillMaxWidth().height(1.dp).background(AC.Line))
                 }
