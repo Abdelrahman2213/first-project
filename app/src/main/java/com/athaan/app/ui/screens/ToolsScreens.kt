@@ -260,7 +260,7 @@ fun QiblaScreen(vm: AppViewModel, onBack: () -> Unit) {
     }
 }
 
-private fun vibrator(context: Context): Vibrator? =
+internal fun vibrator(context: Context): Vibrator? =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         context.getSystemService(VibratorManager::class.java)?.defaultVibrator
     } else {
@@ -268,122 +268,11 @@ private fun vibrator(context: Context): Vibrator? =
         context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
     }
 
-private fun tick(context: Context) {
+internal fun tick(context: Context) {
     runCatching { vibrator(context)?.vibrate(VibrationEffect.createOneShot(30, VibrationEffect.DEFAULT_AMPLITUDE)) }
 }
 
 // ---------------------------------------------------------------- Adhkar
-
-@Composable
-fun AdhkarScreen(initial: AdhkarSet, onBack: () -> Unit) {
-    val context = LocalContext.current
-    var set by rememberSaveable { mutableStateOf(initial) }
-    val counts = remember(set) { mutableStateMapOf<Int, Int>() }
-    val list = Adhkar.of(set)
-    val listState = rememberLazyListState()
-    val done = list.indices.count { (counts[it] ?: 0) >= list[it].count }
-
-    Column(Modifier.fillMaxSize()) {
-        BackHeader(tr("الأذكار", "Adhkar"), tr("اضغط على الذكر لعدّه · $done من ${list.size}", "Tap a dhikr to count it · $done of ${list.size}"), onBack)
-        Segmented(
-            AdhkarSet.values().map { it to tr(it.ar, it.en) }, set, { set = it },
-            Modifier.padding(start = 16.dp, end = 16.dp, top = 14.dp),
-        )
-        LazyColumn(state = listState, contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            itemsIndexed(list, key = { i, _ -> "${set.name}$i" }) { i, d ->
-                val n = counts[i] ?: 0
-                val finished = n >= d.count
-                val border by animateColorAsState(if (finished) AC.Mint.copy(alpha = 0.5f) else AC.Line, label = "dk")
-                val fade by animateFloatAsState(if (finished) 0.55f else 1f, label = "dkf")
-                Column(
-                    Modifier
-                        .animateItem()
-                        .fillMaxWidth()
-                        .graphicsLayer { alpha = fade }
-                        .clip(RoundedCornerShape(20.dp))
-                        .background(AC.Surface)
-                        .border(1.dp, border, RoundedCornerShape(20.dp))
-                        .pressClick {
-                            if (!finished) {
-                                counts[i] = n + 1
-                                tick(context)
-                            }
-                        }
-                        .padding(16.dp),
-                ) {
-                    if (d.note.isNotEmpty()) T(d.note, 12.sp, FontWeight.SemiBold, AC.Gold, modifier = Modifier.padding(bottom = 6.dp))
-                    androidx.compose.material3.Text(d.text, fontFamily = Amiri, fontSize = 18.sp, lineHeight = 34.sp, color = AC.Text)
-                    Row(Modifier.padding(top = 10.dp), verticalAlignment = Alignment.CenterVertically) {
-                        Box(
-                            Modifier.clip(RoundedCornerShape(12.dp)).background(if (finished) AC.Mint.copy(alpha = 0.15f) else AC.GoldSoft).padding(horizontal = 12.dp, vertical = 6.dp),
-                        ) {
-                            T(if (finished) tr("تم ✓", "Done ✓") else "${d.count - n}", 14.sp, FontWeight.Bold, if (finished) AC.Mint else AC.Gold)
-                        }
-                        Spacer(Modifier.width(10.dp))
-                        T(tr("التكرار: ${d.count}", "Repeat: ${d.count}"), 12.sp, color = AC.Muted)
-                    }
-                }
-            }
-        }
-    }
-}
-
-// ---------------------------------------------------------------- Tasbih
-
-@Composable
-fun TasbihScreen(onBack: () -> Unit) {
-    val context = LocalContext.current
-    var phrase by rememberSaveable { mutableIntStateOf(0) }
-    var target by rememberSaveable { mutableIntStateOf(33) }
-    var count by rememberSaveable { mutableIntStateOf(0) }
-    val pulse = remember { Animatable(1f) }
-    LaunchedEffect(count) { if (count > 0) { pulse.snapTo(0.94f); pulse.animateTo(1f, spring(dampingRatio = 0.4f)) } }
-    val progress by animateFloatAsState(if (target == 0) 0f else (count % target).toFloat() / target, label = "tp")
-
-    Column(Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
-        Column(Modifier.fillMaxWidth()) { BackHeader(tr("السبحة", "Tasbih"), null, onBack) }
-        LazyRow(contentPadding = PaddingValues(horizontal = 16.dp, vertical = 14.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            itemsIndexed(Adhkar.tasbih) { i, p -> Pill(p, phrase == i, { phrase = i; count = 0 }) }
-        }
-        Segmented(listOf(33 to "33", 100 to "100", 0 to "∞"), target, { target = it; count = 0 }, Modifier.padding(horizontal = 16.dp))
-        Spacer(Modifier.weight(1f))
-        AnimatedContent(phrase, transitionSpec = { fadeIn() togetherWith fadeOut() }, label = "phrase") {
-            androidx.compose.material3.Text(Adhkar.tasbih[it], fontFamily = Amiri, fontSize = 24.sp, color = AC.Text, textAlign = TextAlign.Center, modifier = Modifier.padding(horizontal = 24.dp))
-        }
-        Spacer(Modifier.height(20.dp))
-        val gold = AC.Gold; val track = AC.Track
-        Box(
-            Modifier
-                .size(240.dp)
-                .graphicsLayer { scaleX = pulse.value; scaleY = pulse.value }
-                .clip(CircleShape)
-                .background(AC.Surface)
-                .pressClick(role = Role.Button, label = tr("تسبيحة", "Count")) {
-                    count++
-                    if (target > 0 && count % target == 0) longTick(context) else tick(context)
-                },
-            contentAlignment = Alignment.Center,
-        ) {
-            Canvas(Modifier.fillMaxSize().padding(10.dp)) {
-                drawCircle(track, style = Stroke(8.dp.toPx()))
-                drawArc(gold, -90f, 360f * progress, false, style = Stroke(8.dp.toPx(), cap = androidx.compose.ui.graphics.StrokeCap.Round))
-            }
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                AnimatedContent(count, transitionSpec = { (fadeIn(tween(150)) + scaleIn(initialScale = 0.8f)) togetherWith (fadeOut(tween(100)) + scaleOut(targetScale = 1.2f)) }, label = "count") {
-                    T("$it", 56.sp, FontWeight.Bold)
-                }
-                if (target > 0) T(tr("الدورة ${count / target + 1}", "Round ${count / target + 1}"), 13.sp, color = AC.Muted)
-            }
-        }
-        Spacer(Modifier.height(20.dp))
-        T(tr("إعادة العدّ", "Reset"), 14.sp, FontWeight.SemiBold, AC.Gold, modifier = Modifier.clip(RoundedCornerShape(14.dp)).pressClick { count = 0 }.padding(horizontal = 18.dp, vertical = 12.dp))
-        Spacer(Modifier.weight(1f))
-    }
-}
-
-private fun longTick(context: Context) {
-    runCatching { vibrator(context)?.vibrate(VibrationEffect.createWaveform(longArrayOf(0, 120, 80, 120), -1)) }
-}
 
 // ---------------------------------------------------------------- Month timetable
 

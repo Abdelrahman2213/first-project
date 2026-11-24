@@ -119,7 +119,11 @@ fun LibraryScreen(
             Filter.OFFLINE -> downloads[trackOf(m).key] == DownloadState.Done
         }
         matchPick && matchQ && matchF
+    }.let { l ->
+        // While choosing, the current choice comes first.
+        if (pickFor == null) l else { val cur = s.muezzin(pickFor).id; l.sortedByDescending { it.id == cur } }
     }
+    val pickTotal = if (pickFor == null) 0 else Muezzins.all.count { it.canCall(pickFor) }
 
     fun choose(m: Muezzin) {
         if (pickFor != null) { vm.setMuezzin(pickFor, m.id); vm.stopPreview(); onPicked() } else onOpen(m)
@@ -132,10 +136,27 @@ fun LibraryScreen(
                     if (onBack != null) CircleIconButton(AIcons.Back, tr("رجوع", "Back"), onBack)
                 }
                 ScreenTitle(
-                    tr("اختر مؤذن ${pickFor.ar}", "Muezzin for ${pickFor.en}"),
-                    if (pickFor == Prayer.FAJR) tr("تسجيلات أذان الفجر فقط (فيها «الصلاة خير من النوم»)", "Fajr recordings only (with “prayer is better than sleep”)")
-                    else tr("اضغط على الشيخ لاختياره", "Tap a sheikh to choose him"),
+                    tr("أذان ${pickFor.ar}", "${pickFor.en} adhan"),
+                    if (pickFor == Prayer.FAJR) tr("$pickTotal تسجيل لأذان الفجر · اسمع واختار", "$pickTotal Fajr recordings · listen and choose")
+                    else tr("$pickTotal تسجيل للأذان العادي · اسمع واختار", "$pickTotal regular adhan recordings · listen and choose"),
                 )
+                Row(
+                    Modifier
+                        .padding(start = 16.dp, end = 16.dp, top = 12.dp)
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(16.dp))
+                        .background(AC.GoldSoft)
+                        .padding(horizontal = 14.dp, vertical = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Icon(if (pickFor == Prayer.FAJR) AIcons.MoonStar else AIcons.Mosque, null, tint = AC.Gold, modifier = Modifier.size(20.dp))
+                    Spacer(Modifier.width(10.dp))
+                    T(
+                        if (pickFor == Prayer.FAJR) tr("كل التسجيلات هنا أذان فجر، فيها «الصلاة خير من النوم».", "Every recording here is a Fajr adhan, with “prayer is better than sleep”.")
+                        else tr("هنا الأذان العادي بس. تسجيلات الفجر مش ظاهرة لأنها مخصوصة لصلاة الفجر.", "Regular adhan only. Fajr recordings are kept for Fajr."),
+                        12.sp, color = AC.TextDim, lineHeight = 18.sp,
+                    )
+                }
             } else {
                 ScreenTitle(tr("مكتبة المؤذنين", "Muezzin library"), tr("${Muezzins.all.size} مؤذن · استمع، اختر، وحمّل للاستماع بدون إنترنت", "${Muezzins.all.size} muezzins · listen, choose, download for offline"))
             }
@@ -219,7 +240,10 @@ fun LibraryScreen(
                 }
                 items(shown, key = { it.id }) { m ->
                     val t = trackOf(m)
-                    val usedFor = Prayer.adhanPrayers.filter { s.muezzin(it).id == m.id }
+                    // Which prayers already use this same recording.
+                    val usedFor = Prayer.adhanPrayers.filter { p ->
+                        s.muezzin(p).id == m.id && (pickFor == null || (p == Prayer.FAJR) == (pickFor == Prayer.FAJR))
+                    }
                     MuezzinCard(
                         m = m,
                         modifier = Modifier.animateItem(),
@@ -228,6 +252,7 @@ fun LibraryScreen(
                         playing = preview.key == t.key && preview.playing,
                         loading = preview.key == t.key && preview.loading,
                         selectedForPick = pickFor != null && s.muezzin(pickFor).id == m.id,
+                        pick = pickFor,
                         onClick = { choose(m) },
                         onPlay = { vm.togglePreview(t) },
                     )
@@ -267,6 +292,7 @@ fun LibraryScreen(
                         when {
                             preview.error -> tr("تعذّر التشغيل، تأكد من الإنترنت", "Couldn't play, check internet")
                             isFajr -> tr("معاينة · أذان الفجر", "Preview · Fajr adhan")
+                            pickFor != null -> tr("معاينة · الأذان العادي", "Preview · regular adhan")
                             else -> tr("معاينة", "Preview")
                         },
                         12.sp, color = if (preview.error) AC.Danger else AC.Muted, maxLines = 1,
@@ -296,6 +322,7 @@ private fun MuezzinCard(
     playing: Boolean,
     loading: Boolean,
     selectedForPick: Boolean,
+    pick: Prayer? = null,
     onClick: () -> Unit,
     onPlay: () -> Unit,
 ) {
@@ -334,8 +361,16 @@ private fun MuezzinCard(
                 }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalAlignment = Alignment.CenterVertically) {
-                if (m.hasFajr) Badge(if (m.hasRegular) tr("+ أذان الفجر", "+ Fajr adhan") else tr("أذان الفجر فقط", "Fajr only"))
-                if (usedFor.isNotEmpty()) {
+                when {
+                    selectedForPick -> {
+                        Icon(AIcons.Check, null, tint = AC.Gold, modifier = Modifier.size(14.dp))
+                        T(tr("اختيارك الحالي", "Current choice"), 11.sp, FontWeight.Bold, AC.Gold, maxLines = 1)
+                    }
+                    pick == Prayer.FAJR -> Badge(tr("فيه «الصلاة خير من النوم»", "With “better than sleep”"))
+                    pick != null -> {}
+                    m.hasFajr -> Badge(if (m.hasRegular) tr("+ أذان الفجر", "+ Fajr adhan") else tr("أذان الفجر فقط", "Fajr only"))
+                }
+                if (usedFor.isNotEmpty() && !selectedForPick) {
                     val names = usedFor.joinToString(if (ar) "، " else ", ") { if (ar) it.ar else it.en }
                     T(tr("مختار لـ$names", "For $names"), 11.sp, FontWeight.SemiBold, AC.Gold, maxLines = 1)
                 }

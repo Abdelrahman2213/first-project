@@ -289,7 +289,7 @@ private fun AthaanRoot(vm: AppViewModel, navRoute: androidx.compose.runtime.Muta
             r == "hijri" -> { tab = Tab.TOOLS; stack.add(Route.ToolPage(Tool.HIJRI)) }
             r.startsWith("adhkar") -> {
                 tab = Tab.TOOLS
-                val set = when (r.substringAfter(':', "am")) { "pm" -> AdhkarSet.EVENING; "after" -> AdhkarSet.AFTER_PRAYER; else -> AdhkarSet.MORNING }
+                val set = when (r.substringAfter(':', "am")) { "pm" -> AdhkarSet.EVENING; "after" -> AdhkarSet.AFTER_PRAYER; "sleep" -> AdhkarSet.SLEEP; else -> AdhkarSet.MORNING }
                 stack.add(Route.ToolPage(Tool.ADHKAR, set))
             }
             r.startsWith("pick:") -> runCatching { stack.add(Route.Pick(Prayer.valueOf(r.removePrefix("pick:")))) }
@@ -424,7 +424,12 @@ private fun AthaanRoot(vm: AppViewModel, navRoute: androidx.compose.runtime.Muta
                                     ui = libraryUi,
                                 )
                                 Tab.ADHAN -> PerPrayerScreen(vm, onChange = { stack.add(Route.Pick(it)) })
-                                Tab.TOOLS -> ToolsScreen(onOpen = { stack.add(Route.ToolPage(it)) })
+                                Tab.TOOLS -> ToolsScreen(onOpen = { t ->
+                                    // Adhkar open on the set that fits the time of day.
+                                    val h = java.util.Calendar.getInstance().get(java.util.Calendar.HOUR_OF_DAY)
+                                    val set = when (h) { in 3..13 -> AdhkarSet.MORNING; in 14..21 -> AdhkarSet.EVENING; else -> AdhkarSet.SLEEP }
+                                    stack.add(Route.ToolPage(t, set))
+                                })
                                 Tab.SETTINGS -> SettingsScreen(
                                     vm,
                                     onPickCity = { stack.add(Route.CityPicker) },

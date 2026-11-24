@@ -43,6 +43,8 @@ object AIcons {
     val Search = icon("search", circle(11f, 11f, 6.5f), "M20 20l-4.2-4.2")
     val Download = icon("download", "M12 4v11M7 10l5 5 5-5M5 20h14")
     val Check = icon("check", "M5 12.5l4.5 4.5L19 7.5", width = 2.2f)
+    val Reset = icon("reset", "M4.5 12a7.5 7.5 0 1 0 2.2-5.3", "M4.5 4.5v3.2h3.2")
+    val Minus = icon("minus", "M6 12h12", width = 2f)
     val Back = icon("back", "M15 6l-6 6 6 6", width = 1.8f, mirror = true)
     val Forward = icon("forward", "M9 6l6 6-6 6", width = 1.8f, mirror = true)
     val Moon = icon("moon", "M19 14.5A7.5 7.5 0 0 1 9.5 5a7.5 7.5 0 1 0 9.5 9.5z")
