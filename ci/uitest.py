@@ -305,7 +305,7 @@ ok("tasbih resets to zero", wait_for("باقي 33", timeout=5), screen_text()[:2
 debug("debug_route adhkar:am")
 ok("adhkar morning", wait_for("0 من 24 ذكر", timeout=8), screen_text()[:200])
 tap("آية الكرسي", wait=1.5)
-ok("tapping a dhikr counts it", wait_for("1 من 24 ذكر", timeout=5), screen_text()[:200])
+ok("finishing a dhikr moves on to the next one", wait_for("سورة الإخلاص", timeout=5) and find("آية الكرسي") is None, screen_text()[:200])
 shot("adhkar_counted")
 for _ in range(2):
     scroll_down()

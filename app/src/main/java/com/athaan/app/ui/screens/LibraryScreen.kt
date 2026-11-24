@@ -366,7 +366,6 @@ private fun MuezzinCard(
                         Icon(AIcons.Check, null, tint = AC.Gold, modifier = Modifier.size(14.dp))
                         T(tr("اختيارك الحالي", "Current choice"), 11.sp, FontWeight.Bold, AC.Gold, maxLines = 1)
                     }
-                    pick == Prayer.FAJR -> Badge(tr("فيه «الصلاة خير من النوم»", "With “better than sleep”"))
                     pick != null -> {}
                     m.hasFajr -> Badge(if (m.hasRegular) tr("+ أذان الفجر", "+ Fajr adhan") else tr("أذان الفجر فقط", "Fajr only"))
                 }
