@@ -1,90 +1,90 @@
-    RTC_WAKEUP #23: Alarm{9119e36 type 0 origWhen 1795513080000 whenElapsed 18724721 com.athaan.app}
+    RTC_WAKEUP #23: Alarm{7377a6a type 0 origWhen 1795513080000 whenElapsed 17188061 com.athaan.app}
       tag=*walarm*:com.athaan.app.ACTION_ALARM
       type=RTC_WAKEUP origWhen=2026-11-24 09:38:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3
-      policyWhenElapsed: requester=+4h52m54s880ms app_standby=-3s227ms device_idle=-- battery_saver=-- tare=-3s227ms
-      whenElapsed=+4h52m54s880ms maxWhenElapsed=+4h52m54s880ms
+      policyWhenElapsed: requester=+4h29m6s6ms app_standby=-3s579ms device_idle=-- battery_saver=-- tare=-3s579ms
+      whenElapsed=+4h29m6s6ms maxWhenElapsed=+4h29m6s6ms
 --
-        showIntent=PendingIntent{e790137: PendingIntentRecord{70953c8 com.athaan.app startActivity (allowlist: 8918c8c:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
-      operation=PendingIntent{f6e76a4: PendingIntentRecord{106ac0d com.athaan.app broadcastIntent}}
+        showIntent=PendingIntent{1e79b5b: PendingIntentRecord{57cf9c8 com.athaan.app startActivity (allowlist: ca6c972:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+      operation=PendingIntent{4550ff8: PendingIntentRecord{4e58cd1 com.athaan.app broadcastIntent}}
       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=301, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
-    RTC_WAKEUP #24: Alarm{75167c2 type 0 origWhen 1795513680000 whenElapsed 19324722 com.athaan.app}
+    RTC_WAKEUP #24: Alarm{14ad336 type 0 origWhen 1795513680000 whenElapsed 17788062 com.athaan.app}
       tag=*walarm*:com.athaan.app.ACTION_ALARM
       type=RTC_WAKEUP origWhen=2026-11-24 09:48:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3
-      policyWhenElapsed: requester=+5h2m54s881ms app_standby=-3s268ms device_idle=-- battery_saver=-- tare=-3s268ms
-      whenElapsed=+5h2m54s881ms maxWhenElapsed=+5h2m54s881ms
+      policyWhenElapsed: requester=+4h39m6s7ms app_standby=-3s597ms device_idle=-- battery_saver=-- tare=-3s597ms
+      whenElapsed=+4h39m6s7ms maxWhenElapsed=+4h39m6s7ms
 --
-        showIntent=PendingIntent{d5279d3: PendingIntentRecord{70953c8 com.athaan.app startActivity (allowlist: 8918c8c:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
-      operation=PendingIntent{96e5910: PendingIntentRecord{57efc09 com.athaan.app broadcastIntent}}
+        showIntent=PendingIntent{afa9237: PendingIntentRecord{57cf9c8 com.athaan.app startActivity (allowlist: ca6c972:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+      operation=PendingIntent{2c733a4: PendingIntentRecord{565250d com.athaan.app broadcastIntent}}
       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=301, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
-    ELAPSED_WAKEUP #25: Alarm{fd23e0e type 2 origWhen 21600000 whenElapsed 21600000 com.android.providers.calendar}
+    ELAPSED_WAKEUP #25: Alarm{268ecc2 type 2 origWhen 21600000 whenElapsed 21600000 com.android.providers.calendar}
       tag=*walarm*:com.android.providers.calendar.intent.CalendarProvider2
 --
-    RTC_WAKEUP #48: Alarm{4cdadcd type 0 origWhen 1795764600000 whenElapsed 270244722 com.athaan.app}
+    RTC_WAKEUP #48: Alarm{adcf291 type 0 origWhen 1795764600000 whenElapsed 268708062 com.athaan.app}
       tag=*walarm*:com.athaan.app.ACTION_ALARM
       type=RTC_WAKEUP origWhen=2026-11-27 07:30:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5
-      policyWhenElapsed: requester=+3d2h44m54s881ms app_standby=-3s207ms device_idle=-- battery_saver=-3s207ms tare=-3s207ms
-      whenElapsed=+3d2h44m54s881ms maxWhenElapsed=+3d2h44m54s881ms
-      operation=PendingIntent{15a682: PendingIntentRecord{c7fb193 com.athaan.app broadcastIntent}}
+      policyWhenElapsed: requester=+3d2h21m6s7ms app_standby=-3s571ms device_idle=-- battery_saver=-3s571ms tare=-3s571ms
+      whenElapsed=+3d2h21m6s7ms maxWhenElapsed=+3d2h21m6s7ms
+      operation=PendingIntent{f21a5f6: PendingIntentRecord{428cdf7 com.athaan.app broadcastIntent}}
       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
-    RTC_WAKEUP #49: Alarm{52b95d0 type 0 origWhen 1795771140000 whenElapsed 276784721 com.athaan.app}
+    RTC_WAKEUP #49: Alarm{82b2464 type 0 origWhen 1795771140000 whenElapsed 275248062 com.athaan.app}
       tag=*walarm*:com.athaan.app.ACTION_ALARM
       type=RTC_WAKEUP origWhen=2026-11-27 09:19:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x5
-      policyWhenElapsed: requester=+3d4h33m54s880ms app_standby=-3s225ms device_idle=-- battery_saver=-3s225ms tare=-3s225ms
-      whenElapsed=+3d4h33m54s880ms maxWhenElapsed=+3d4h33m54s880ms
-      operation=PendingIntent{a1459c9: PendingIntentRecord{87ba8ce com.athaan.app broadcastIntent}}
+      policyWhenElapsed: requester=+3d4h10m6s7ms app_standby=-3s572ms device_idle=-- battery_saver=-3s572ms tare=-3s572ms
+      whenElapsed=+3d4h10m6s7ms maxWhenElapsed=+3d4h10m6s7ms
+      operation=PendingIntent{8cd26cd: PendingIntentRecord{ba2b82 com.athaan.app broadcastIntent}}
       idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=302, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
-    RTC #50: Alarm{769d3ef type 1 origWhen 1795950000000 whenElapsed 455644721 com.google.android.apps.wellbeing}
+    RTC #50: Alarm{1125293 type 1 origWhen 1795950000000 whenElapsed 454108062 com.google.android.apps.wellbeing}
       tag=*alarm*:com.google.android.apps.wellbeing.focusmode.growth.SCHEDULED_GROWTH_NOTIFICATION
 --
-  Next wake from idle: Alarm{9119e36 type 0 origWhen 1795513080000 whenElapsed 18724721 com.athaan.app}
+  Next wake from idle: Alarm{7377a6a type 0 origWhen 1795513080000 whenElapsed 17188061 com.athaan.app}
     tag=*walarm*:com.athaan.app.ACTION_ALARM
     type=RTC_WAKEUP origWhen=2026-11-24 09:38:00.000 window=0 exactAllowReason=policy_permission repeatInterval=0 count=0 flags=0x3
-    policyWhenElapsed: requester=+4h52m54s880ms app_standby=-3s227ms device_idle=-- battery_saver=-- tare=-3s227ms
-    whenElapsed=+4h52m54s880ms maxWhenElapsed=+4h52m54s880ms
+    policyWhenElapsed: requester=+4h29m6s6ms app_standby=-3s579ms device_idle=-- battery_saver=-- tare=-3s579ms
+    whenElapsed=+4h29m6s6ms maxWhenElapsed=+4h29m6s6ms
 --
-      showIntent=PendingIntent{e790137: PendingIntentRecord{70953c8 com.athaan.app startActivity (allowlist: 8918c8c:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
-    operation=PendingIntent{f6e76a4: PendingIntentRecord{106ac0d com.athaan.app broadcastIntent}}
+      showIntent=PendingIntent{1e79b5b: PendingIntentRecord{57cf9c8 com.athaan.app startActivity (allowlist: ca6c972:+30s0ms/0/NOTIFICATION_SERVICE/NotificationManagerService)}}
+    operation=PendingIntent{4550ff8: PendingIntentRecord{4e58cd1 com.athaan.app broadcastIntent}}
     idle-options=Bundle[{android.pendingIntent.backgroundActivityAllowed=false, android:broadcast.temporaryAppAllowlistReasonCode=301, android:broadcast.temporaryAppAllowlistDuration=10000, android:broadcast.temporaryAppAllowlistReason=, android:broadcast.temporaryAppAllowlistType=0, android:broadcast.flags=8}]
   
   Past-due non-wakeup alarms: (none)
 --
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+3d2h44m54s881ms app_standby=-4s349ms device_idle=-- battery_saver=-4s349ms tare=-4s349ms
-      #2: Reason=alarm_cancelled elapsed=-3s366ms rtc=2026-11-24 04:45:01.754
+          policyWhenElapsed: requester=+3d2h21m6s7ms app_standby=-4s601ms device_idle=-- battery_saver=-4s601ms tare=-4s601ms
+      #2: Reason=alarm_cancelled elapsed=-3s620ms rtc=2026-11-24 05:08:50.373
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+3d4h33m54s881ms app_standby=-4s350ms device_idle=-- battery_saver=-4s350ms tare=-4s350ms
-      #3: Reason=alarm_cancelled elapsed=-3s377ms rtc=2026-11-24 04:45:01.742
+          policyWhenElapsed: requester=+3d4h10m6s7ms app_standby=-4s602ms device_idle=-- battery_saver=-4s602ms tare=-4s602ms
+      #3: Reason=alarm_cancelled elapsed=-3s621ms rtc=2026-11-24 05:08:50.373
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+4h52m54s881ms app_standby=-4s353ms device_idle=-- battery_saver=-- tare=-4s353ms
-      #4: Reason=alarm_cancelled elapsed=-3s378ms rtc=2026-11-24 04:45:01.741
+          policyWhenElapsed: requester=+4h29m6s7ms app_standby=-4s603ms device_idle=-- battery_saver=-- tare=-4s603ms
+      #4: Reason=alarm_cancelled elapsed=-3s621ms rtc=2026-11-24 05:08:50.372
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+5h2m54s880ms app_standby=-4s360ms device_idle=-- battery_saver=-- tare=-4s360ms
-      #5: Reason=alarm_cancelled elapsed=-4s382ms rtc=2026-11-24 04:45:00.738
+          policyWhenElapsed: requester=+4h39m6s6ms app_standby=-4s605ms device_idle=-- battery_saver=-- tare=-4s605ms
+      #5: Reason=alarm_cancelled elapsed=-4s616ms rtc=2026-11-24 05:08:49.377
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+3d2h44m54s880ms app_standby=-4s395ms device_idle=-- battery_saver=-4s395ms tare=-4s395ms
-      #6: Reason=alarm_cancelled elapsed=-4s382ms rtc=2026-11-24 04:45:00.737
+          policyWhenElapsed: requester=+3d2h21m6s7ms app_standby=-4s673ms device_idle=-- battery_saver=-4s673ms tare=-4s673ms
+      #6: Reason=alarm_cancelled elapsed=-4s616ms rtc=2026-11-24 05:08:49.377
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+3d4h33m54s881ms app_standby=-4s396ms device_idle=-- battery_saver=-4s396ms tare=-4s396ms
-      #7: Reason=alarm_cancelled elapsed=-4s385ms rtc=2026-11-24 04:45:00.735
+          policyWhenElapsed: requester=+3d4h10m6s6ms app_standby=-4s676ms device_idle=-- battery_saver=-4s676ms tare=-4s676ms
+      #7: Reason=alarm_cancelled elapsed=-4s617ms rtc=2026-11-24 05:08:49.376
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+4h52m54s880ms app_standby=-4s406ms device_idle=-- battery_saver=-- tare=-4s406ms
-      #8: Reason=alarm_cancelled elapsed=-4s387ms rtc=2026-11-24 04:45:00.733
+          policyWhenElapsed: requester=+4h29m6s7ms app_standby=-4s676ms device_idle=-- battery_saver=-- tare=-4s676ms
+      #8: Reason=alarm_cancelled elapsed=-4s620ms rtc=2026-11-24 05:08:49.373
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+5h2m54s880ms app_standby=-4s413ms device_idle=-- battery_saver=-- tare=-4s413ms
-      #9: Reason=alarm_cancelled elapsed=-4s441ms rtc=2026-11-24 04:45:00.679
+          policyWhenElapsed: requester=+4h39m6s7ms app_standby=-4s677ms device_idle=-- battery_saver=-- tare=-4s677ms
+      #9: Reason=alarm_cancelled elapsed=-4s732ms rtc=2026-11-24 05:08:49.261
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+3d2h44m54s881ms app_standby=-17s13ms device_idle=-- battery_saver=-17s13ms tare=-17s13ms
-      #10: Reason=alarm_cancelled elapsed=-4s441ms rtc=2026-11-24 04:45:00.678
+          policyWhenElapsed: requester=+3d2h21m6s6ms app_standby=-16s364ms device_idle=-- battery_saver=-16s364ms tare=-16s364ms
+      #10: Reason=alarm_cancelled elapsed=-4s737ms rtc=2026-11-24 05:08:49.256
         Snapshot:
           type=RTC_WAKEUP tag=*walarm*:com.athaan.app.ACTION_ALARM 
-          policyWhenElapsed: requester=+3d4h33m54s881ms app_standby=-17s19ms device_idle=-- battery_saver=-17s19ms tare=-17s19ms
+          policyWhenElapsed: requester=+3d4h10m6s7ms app_standby=-16s364ms device_idle=-- battery_saver=-16s364ms tare=-16s364ms
   
   Top Alarms:

@@ -10,18 +10,18 @@ PASS theme switch to light
      screenshot 04_permission_dialog.png
 PASS permission dialog shown and accepted
      (could not find ('Turn on', 'OK', 'تشغيل'))
-PASS location found and home screen opened — القاهرة، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 9:43 ص | باقي | 0 | 5 | : | 1 | 3 | : | م | يؤذّن لها | الشيخ محمد محمود الطبلاوي | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط عبد الصمد | 2:57
+PASS location found and home screen opened — القاهرة، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 9:43 ص | باقي | 0 | 4 | : | 4 | 8 | : | 4 | م | يؤذّن لها | الشيخ محمد محمود الطبلاوي | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط عبد الصمد | 
      screenshot 05_home_dark.png
-PASS home shows the five prayers — القاهرة، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 9:43 ص | باقي | 0 | 5 | : | 1 | 3 | : | 1 | 8 | م | يؤذّن لها | الشيخ محمد محمود الطبلاوي | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط عبد الصم
-PASS home shows a place name — القاهرة، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 9:43 ص | باقي | 0 | 5 | : | 1 | 3 | : | 1 | 8 | م | يؤذّن لها | الشيخ محمد محمود الطبلاوي
+PASS home shows the five prayers — القاهرة، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 9:43 ص | باقي | 0 | 4 | : | 4 | 8 | : | 3 | م | يؤذّن لها | الشيخ محمد محمود الطبلاوي | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط عبد الصمد | 
+PASS home shows a place name — القاهرة، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 9:43 ص | باقي | 0 | 4 | : | 4 | 8 | : | 3 | م | يؤذّن لها | الشيخ محمد محمود الطبلاوي | ا
      e
-     11-24 04:28:53.208  4871  4871 I AthaanSchedule: next PRE_ALERT at 1795512780000
-     11-24 04:28:53.210  4871  4871 I AthaanSchedule: next FRIDAY at 1795770840000
-     11-24 04:28:53.211  4871  4871 I AthaanSchedule: next KAHF at 1795771800000
-     11-24 04:29:07.101  4871  4871 I AthaanSchedule: next adhan DHUHR at 1795513380000 exact=true
-     11-24 04:29:07.103  4871  4871 I AthaanSchedule: next PRE_ALERT at 1795512780000
-     11-24 04:29:07.105  4871  4871 I AthaanSchedule: next FRIDAY at 1795770840000
-     11-24 04:29:07.106  4871  4871 I AthaanSchedule: next KAHF at 1795771800000
+     11-24 04:53:40.996  4454  4454 I AthaanSchedule: next PRE_ALERT at 1795512780000
+     11-24 04:53:41.033  4454  4454 I AthaanSchedule: next FRIDAY at 1795770840000
+     11-24 04:53:41.042  4454  4454 I AthaanSchedule: next KAHF at 1795771800000
+     11-24 04:53:51.549  4454  4454 I AthaanSchedule: next adhan DHUHR at 1795513380000 exact=true
+     11-24 04:53:51.550  4454  4454 I AthaanSchedule: next PRE_ALERT at 1795512780000
+     11-24 04:53:51.551  4454  4454 I AthaanSchedule: next FRIDAY at 1795770840000
+     11-24 04:53:51.554  4454  4454 I AthaanSchedule: next KAHF at 1795771800000
 PASS next adhan scheduled
 PASS light theme on home
      screenshot 06_home_light.png
@@ -63,7 +63,7 @@ PASS tasbih count is saved after closing the app — رجوع | السبحة | �
 PASS tasbih reset asks first
 PASS tasbih resets to zero — رجوع | السبحة | العدّ بيتحفظ حتى لو قفلت التطبيق | سبحان الله | الحمد لله | الله أكبر | لا إله إلا الله | أستغفر الله | 33 | 100 | 1000 | ∞ | سبحان الله | 0 | الدورة 1 · باقي 33 | 2 | النهارده | 2 | إ
 PASS adhkar morning — رجوع | الأذكار | بيتحفظ اللي قريته، ويبدأ من جديد كل يوم | الصباح | المساء | بعد الصلاة | النوم | 0% | أذكار الصباح | 0 من 24 ذكر | ابدأ من الأول | 1 | آية الكرسي | مرة واحدة | أَعُوذُ بِاللَّهِ مِنَ 
-FAIL tapping a dhikr counts it — رجوع | الأذكار | بيتحفظ اللي قريته، ويبدأ من جديد كل يوم | الصباح | المساء | بعد الصلاة | النوم | 2 | سورة الإخلاص | 3 مرات | بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+PASS finishing a dhikr moves on to the next one — رجوع | الأذكار | بيتحفظ اللي قريته، ويبدأ من جديد كل يوم | الصباح | المساء | بعد الصلاة | النوم | 2 | سورة الإخلاص | 3 مرات | بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
 قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ 
      screenshot 25_adhkar_counted.png
      screenshot 26_adhkar_cards.png
@@ -75,7 +75,7 @@ PASS adhkar reset to zero — رجوع | الأذكار | بيتحفظ اللي 
 PASS fajr picker opened
      screenshot 28_pick_fajr.png
 PASS fajr picker hides muezzins without a Fajr recording — رجوع | أذان الفجر | 21 تسجيل لأذان الفجر · اسمع واختار | كل التسجيلات هنا أذان فجر، فيها «الصلاة خير من النوم». | الكل | مصر | الحرمين والأقصى | الخليج | أخرى | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | ع | عبد الباسط عبد الصمد | مصر | محمّل | اختيارك الحالي | معاينة | ن 
-PASS fajr picker lists a Fajr-only recording — رجوع | أذان الفجر | 21 تسجيل لأذان الفجر · اسمع واختار | كل التسجيلات هنا أذان فجر، فيها «الصلاة خير من النوم». | Juhaim | الكل | مصر | الحرمين والأقصى | الخليج | أخرى | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | خ | خالد الجهيم | السعودية | فيه «الصلاة خير من النوم» | معا
+PASS fajr picker lists a Fajr-only recording — رجوع | أذان الفجر | 21 تسجيل لأذان الفجر · اسمع واختار | كل التسجيلات هنا أذان فجر، فيها «الصلاة خير من النوم». | Juhaim | الكل | مصر | الحرمين والأقصى | الخليج | أخرى | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | خ | خالد الجهيم | السعودية | معاينة
 PASS dhuhr picker opened
      screenshot 29_pick_dhuhr.png
 PASS dhuhr picker shows no Fajr badge — رجوع | أذان الظهر | 53 تسجيل للأذان العادي · اسمع واختار | هنا الأذان العادي بس. تسجيلات الفجر مش ظاهرة لأنها مخصوصة لصلاة الفجر. | الكل | مصر | الحرمين والأقصى | الخليج | أخرى | + | إضافة صوت مؤذن | شيخ مش موجود أو نسخة تانية، من ملف على موبايلك | م | محمد محمود الطبلاوي | مصر | محمّل | اختيارك الح
@@ -88,7 +88,7 @@ PASS custom muezzin added
 PASS custom muezzin in library — مكتبة المؤذنين | 59 مؤذن · استمع، اختر، وحمّل للاستماع بدون إنترنت | الكل | أذان الفجر | مصر | الحرمين والأقصى | الخليج 
      screenshot 32_library_custom.png
 PASS Dhuhr plays the user's recording — --------- beginning of main
-11-24 04:36:15.238  8284  8284 I AthaanAdhan: adhan DHUHR muezzin=custom_f6e9461d fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_f6e9461d.mp3
+11-24 05:00:28.437  8245  8245 I AthaanAdhan: adhan DHUHR muezzin=custom_79826e8f fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_79826e8f.mp3
 
 PASS country list
      screenshot 33_countries.png
@@ -98,17 +98,17 @@ PASS city list for Egypt
      screenshot 35_cities_egypt.png
      screenshot 36_cities_search.png
 PASS choose Alexandria
-PASS home shows Alexandria — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 5 | : | 1 | 0 | : | 5 | 3 | ص | يؤذّن لها | صوتي_للتجربة | استمع 
-PASS countdown digits are drawn — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 5 | : | 1 | 0 | : | 3 | ص | يؤذّن لها | صوتي_للتجربة | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط عبد الصمد | 5:03 ص | 
+PASS home shows Alexandria — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 4 | : | 4 | 6 | : | 4 | 2 | ص | يؤذّن لها | صوتي_للتجربة | استمع 
+PASS countdown digits are drawn — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 4 | : | 4 | 6 | : | 2 | 6 | ص | يؤذّن لها | صوتي_للتجربة | استمع لمعاينة الأذان | مواقيت اليوم | الهيئة المصرية العامة للمساحة | الفجر | عبد الباسط عبد الصمد | 5:03 
      screenshot 37_home_alexandria.png
 PASS playing screen
      screenshot 38_playing_fajr.png
      screenshot 39_notif_media_player.png
      screenshot 40_notif_media_shade.png
      --------- beginning of main
-11-24 04:37:32.469  8284  8284 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
+11-24 05:01:38.760  8245  8245 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 PASS Fajr uses the Fajr recording — --------- beginning of main
-11-24 04:37:32.469  8284  8284 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
+11-24 05:01:38.760  8245  8245 I AthaanAdhan: adhan FAJR muezzin=basit fajr=true source=/data/user/0/com.athaan.app/files/adhans/basit_fajr_cb4c56f2.mp3
 
 PASS no player error
 PASS volume key pauses the adhan (in app) — الأذان متوقف مؤقتًا | الفجر | 5:03 ص | الشيخ عبد الباسط عبد الصمد | الإسكندرية، مصر · الهيئة المصرية العامة للمساحة | 0:21 | 4:46 | كمّل الأذان | إنهاء | دعاء بعد الأذان | اللهم رب هذه الدعوة التامة و
@@ -116,14 +116,14 @@ PASS volume key pauses the adhan (in app) — الأذان متوقف مؤقتً
 PASS volume key logged
 PASS adhan resumes
 PASS volume key pauses the adhan (background) — --------- beginning of main
-11-24 04:38:14.942  8284  8284 I AthaanAdhan: paused by user (volume key)
+11-24 05:02:17.728  8245  8245 I AthaanAdhan: paused by user (volume key)
 
 PASS paused screen in app
 PASS power key pauses the adhan — --------- beginning of main
-11-24 04:38:31.508  8284  8284 I AthaanAdhan: paused by user (screen off)
+11-24 05:02:30.991  8245  8245 I AthaanAdhan: paused by user (screen off)
 
-PASS ends from the paused screen — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 5 | : | 0 | 9 | : | 0 | ص | يؤذّن لها | صوتي_للتجربة | استمع لمعا
-PASS adhan stops — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 5 | : | 0 | 8 | : | 3 | ص | يؤذّن لها | صوتي_للتجربة | استمع لمعا
+PASS ends from the paused screen — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 4 | : | 4 | 5 | : | 0 | 6 | ص | يؤذّن لها | صوتي_للتجربة | استمع 
+PASS adhan stops — الإسكندرية، مصر | أذان | الوضع الفاتح | الثلاثاء · 24 نوفمبر | 14 جمادى الآخرة 1448 هـ | الصلاة القادمة | الظهر | 11:48 ص | باقي | 0 | 4 | : | 4 | 4 | : | 3 | 7 | 6 | ص | يؤذّن لها | صوتي_للتجربة | اس
      screenshot 42_home_english_light.png
      screenshot 43_library_english_light.png
      screenshot 44_settings_english_light.png
@@ -138,32 +138,32 @@ PASS adhan stops — الإسكندرية، مصر | أذان | الوضع ال�
      screenshot 53_home_dark_arabesque.png
      screenshot 54_home_dark_mashrabiya.png
 PASS card_big view inflates like the system does — --------- beginning of main
-11-24 04:41:46.170  8284  8284 I AthaanDebug: render card_big ok
-11-24 04:41:46.186  8284  8284 I AthaanDebug: render card_small ok
-11-24 04:41:46.248  8284  8284 I AthaanDebug: render card_quote ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: render widget ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
+11-24 05:05:41.456  8245  8245 I AthaanDebug: render card_big ok
+11-24 05:05:41.468  8245  8245 I AthaanDebug: render card_small ok
+11-24 05:05:41.516  8245  8245 I AthaanDebug: render card_quote ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: render widget ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
 
 PASS card_small view inflates like the system does — --------- beginning of main
-11-24 04:41:46.170  8284  8284 I AthaanDebug: render card_big ok
-11-24 04:41:46.186  8284  8284 I AthaanDebug: render card_small ok
-11-24 04:41:46.248  8284  8284 I AthaanDebug: render card_quote ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: render widget ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
+11-24 05:05:41.456  8245  8245 I AthaanDebug: render card_big ok
+11-24 05:05:41.468  8245  8245 I AthaanDebug: render card_small ok
+11-24 05:05:41.516  8245  8245 I AthaanDebug: render card_quote ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: render widget ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
 
 PASS card_quote view inflates like the system does — --------- beginning of main
-11-24 04:41:46.170  8284  8284 I AthaanDebug: render card_big ok
-11-24 04:41:46.186  8284  8284 I AthaanDebug: render card_small ok
-11-24 04:41:46.248  8284  8284 I AthaanDebug: render card_quote ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: render widget ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
+11-24 05:05:41.456  8245  8245 I AthaanDebug: render card_big ok
+11-24 05:05:41.468  8245  8245 I AthaanDebug: render card_small ok
+11-24 05:05:41.516  8245  8245 I AthaanDebug: render card_quote ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: render widget ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
 
 PASS widget view inflates like the system does — --------- beginning of main
-11-24 04:41:46.170  8284  8284 I AthaanDebug: render card_big ok
-11-24 04:41:46.186  8284  8284 I AthaanDebug: render card_small ok
-11-24 04:41:46.248  8284  8284 I AthaanDebug: render card_quote ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: render widget ok
-11-24 04:41:46.290  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
+11-24 05:05:41.456  8245  8245 I AthaanDebug: render card_big ok
+11-24 05:05:41.468  8245  8245 I AthaanDebug: render card_small ok
+11-24 05:05:41.516  8245  8245 I AthaanDebug: render card_quote ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: render widget ok
+11-24 05:05:41.548  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3c577502
 
      screenshot 55_notif_pre_alert_dark.png
      screenshot 56_notif_iqama_dark.png
@@ -187,20 +187,20 @@ PASS widget view inflates like the system does — --------- beginning of main
      screenshot 74_notif_countdown_light.png
      screenshot 75_notif_countdown_light_expanded.png
 PASS every notification posts — ug: handled debug intent android.util.MapCollections$KeySet@3613cab5
-11-24 04:44:46.593  8284  8284 I AthaanDebug: notify CLEAR ok
-11-24 04:44:46.593  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3613cab5
-11-24 04:44:48.062  8284  8284 I AthaanDebug: notify COUNTDOWN ok
-11-24 04:44:48.062  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3613cab5
-11-24 04:45:00.731  8284  8284 I AthaanDebug: notify COUNTDOWN_OFF ok
-11-24 04:45:00.731  8284  8284 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3613cab5
+11-24 05:08:36.086  8245  8245 I AthaanDebug: notify CLEAR ok
+11-24 05:08:36.086  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3613cab5
+11-24 05:08:37.599  8245  8245 I AthaanDebug: notify COUNTDOWN ok
+11-24 05:08:37.599  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3613cab5
+11-24 05:08:49.369  8245  8245 I AthaanDebug: notify COUNTDOWN_OFF ok
+11-24 05:08:49.369  8245  8245 I AthaanDebug: handled debug intent android.util.MapCollections$KeySet@3613cab5
 
      clock moved to 20 s before DHUHR adhan (1795513680000)
      --------- beginning of main
-11-24 09:47:40.880  8284  8284 I AthaanAlarm: alarm PRE_ALERT prayer=DHUHR due=1795513080000 late=580s
-11-24 09:48:00.005  8284  8284 I AthaanAlarm: alarm ADHAN prayer=DHUHR due=1795513680000 late=0s
-11-24 09:48:00.256  8284  8284 I AthaanAdhan: adhan DHUHR muezzin=custom_f6e9461d fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_f6e9461d.mp3
+11-24 09:47:40.599  8245  8245 I AthaanAlarm: alarm PRE_ALERT prayer=DHUHR due=1795513080000 late=580s
+11-24 09:48:00.004  8245  8245 I AthaanAlarm: alarm ADHAN prayer=DHUHR due=1795513680000 late=0s
+11-24 09:48:00.264  8245  8245 I AthaanAdhan: adhan DHUHR muezzin=custom_79826e8f fajr=false source=/data/user/0/com.athaan.app/files/adhans/custom_79826e8f.mp3
 PASS alarm fired and the DHUHR adhan started by itself
      screenshot 76_alarm_fired.png
 PASS no crash
 
-FAILED: tapping a dhikr counts it
+ALL PASSED
